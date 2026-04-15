@@ -13,7 +13,6 @@
   "license": "GPL-3.0-or-later",
   "author": "Tim Ruland, Marc Obst",
   "type": "module",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vite",

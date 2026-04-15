@@ -1,7 +1,23 @@
+@layer utilities, reset;
+
 :root {
     --border-radius: 1rem;
     --border-width: 0.2rem;
     --gap: 1rem;
+    --backup-fonts: Arial, Helvetica, sans-serif;
+    /* TODO: Font */
+    --font: Roboto, var(--backup-fonts);
+    
+    font-family: var(--font);
+}
+
+@layer utilities {
+    .h1{}
+    .h2{}
+    .h3{}
+    .h4{}
+    .h5{}
+    .h6{}
 }
 
 @layer reset {
