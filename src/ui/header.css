@@ -1,6 +1,19 @@
-header{
+header {
+    /* TODO: red = placeholder */
     position: sticky;
     top: 0;
     height: 5rem;
-    background-color: red;
+    background-color: oklch(from red l c h / 0.25);
+    border: var(--border-width) red solid;
+    backdrop-filter: blur(4px);
+    border-radius: var(--border-radius);
+    margin-top: var(--gap);
+    margin-inline: auto;
+    width: calc(100% - 2 * var(--gap));
+    padding: var(--gap);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: var(--gap);
 }

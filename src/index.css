@@ -1,4 +1,8 @@
-:root {}
+:root {
+    --border-radius: 1rem;
+    --border-width: 0.2rem;
+    --gap: 1rem;
+}
 
 @layer reset {
 
@@ -89,5 +93,10 @@
 
     ul {
         list-style: none;
+    }
+
+    a{
+        color: currentColor;
+        text-decoration: none;
     }
 }
