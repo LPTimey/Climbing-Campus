@@ -6,8 +6,8 @@
     --gap: 1rem;
 
     /* Widths */
-    --text-width: min(calc(100% - var(--gap)), 60ch);
-    --content-width: min(calc(100% - var(--gap)), 65rem);
+    --text-width: min(calc(90% - var(--gap)), 60ch);
+    --content-width: min(calc(90% - var(--gap)), 65rem);
 
     /* Font stuff */
     --major-third: 1.25;
