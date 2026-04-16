@@ -13,12 +13,10 @@ function App() {
         {/* Intro */}
         <section id="Intro">
           <hgroup className="h1">
-            <h1>{/* Titel */}</h1>
+            <h1>TreppenTakt</h1>
             <p>Ups &amp; Downs</p>
           </hgroup>
-          <p>
-            {/* Explainer/Teaser Text */}
-          </p>
+          <p>{/* Explainer/Teaser Text */}</p>
         </section>
         {/* Game */}
         <section id="Game">

@@ -1,6 +1,6 @@
-# TODO: Name
+# TreppenTakt
 
-- [TODO: Name](#todo-name)
+- [TreppenTakt](#treppentakt)
   - [German](#german)
   - [English](#english)
   - [How To Run](#how-to-run)
