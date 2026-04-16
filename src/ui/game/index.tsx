@@ -34,6 +34,7 @@ export default function Game() {
     // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
+      renderer.setSize(window.innerWidth, window.innerHeight);
 
       cube.rotation.x += 0.01;
       cube.rotation.y += 0.01;

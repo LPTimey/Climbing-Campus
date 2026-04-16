@@ -6,11 +6,11 @@ export default function Section({
   children,
   className,
   id,
-  width,
+  width = "content",
 }: {
   children?: React.ReactNode;
   id?: string;
-  width?: { center?: boolean };
+  width?: "full" | "content" | "text";
   className?: "string";
 }) {
   let content = (
@@ -18,6 +18,10 @@ export default function Section({
       {children}
     </section>
   );
-  let wrapper = <MaxWWrapper asChild {...width}>{content}</MaxWWrapper>;
+  let wrapper = (
+    <MaxWWrapper asChild center {...(width==="text" && {small:true})}>
+      {content}
+    </MaxWWrapper>
+  );
   return width ? wrapper : content;
 }
