@@ -21,8 +21,8 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@mdx-js/rollup": "^3.1.1",
     "@eslint/js": "^9.39.4",
+    "@mdx-js/rollup": "^3.1.1",
     "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react-dom": "^19.2.5",
+    "vite-plugin-svgr": "^5.2.0"
   }
 }

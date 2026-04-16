@@ -1,0 +1,6 @@
+.content-width{
+    width: var(--content-width);
+    &[data-center]{
+        margin-inline: auto;
+    }
+}

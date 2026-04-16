@@ -7,8 +7,15 @@
     --backup-fonts: Arial, Helvetica, sans-serif;
     /* TODO: Font */
     --font: Roboto, var(--backup-fonts);
-    
+    --content-width: min(calc(100% - var(--gap)), 1025px);
+
+    --primary: oklch(97% 0.028 199);
+    /* TODO: red = placeholder */
+    --secondary: red;
+    --accent: oklch(75.569% 0.15383 49.481);
+
     font-family: var(--font);
+    scroll-behavior: smooth;
 }
 
 @layer utilities {

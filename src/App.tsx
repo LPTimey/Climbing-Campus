@@ -1,9 +1,8 @@
-// import reactLogo from './assets/react.svg'
-// import viteLogo from './assets/vite.svg'
-// import heroImg from './assets/hero.png'
 import "./App.css";
+import ToTop from "./components/to-top";
 import Footer from "./ui/footer";
 import Header from "./ui/header";
+import Section from "./ui/section";
 
 function App() {
   return (
@@ -11,25 +10,26 @@ function App() {
       <Header />
       <main>
         {/* Intro */}
-        <section id="Intro">
+        <Section id="Intro" width={{ center: true }}>
           <hgroup className="h1">
             <h1>TreppenTakt</h1>
             <p>Ups &amp; Downs</p>
           </hgroup>
           <p>{/* Explainer/Teaser Text */}</p>
-        </section>
+        </Section>
         {/* Game */}
-        <section id="Game">
+        <Section id="Game" width={{ center: true }}>
           <canvas></canvas>
-        </section>
+        </Section>
         {/* Map */}
-        <section id="Map"></section>
+        <Section id="Map" width={{ center: true }}></Section>
         {/* Charts */}
-        <section id="Charts"></section>
+        <Section id="Charts" width={{ center: true }}></Section>
         {/* Explanation */}
-        <section id="Explanation"></section>
+        <Section id="Explanation" width={{ center: true }}></Section>
       </main>
       <Footer />
+      <ToTop />
     </>
   );
 }
