@@ -1,6 +1,7 @@
 import "./App.css";
 import ToTop from "./components/to-top";
 import Footer from "./ui/footer";
+import Game from "./ui/game";
 import Header from "./ui/header";
 import Section from "./ui/section";
 
@@ -12,14 +13,14 @@ function App() {
         {/* Intro */}
         <Section id="Intro" width={{ center: true }}>
           <hgroup className="h1">
-            <h1>TreppenTakt</h1>
-            <p>Ups &amp; Downs</p>
+            <h1 className="h1">Treppentakt</h1>
+            <p className="h3">Ups &amp; Downs</p>
           </hgroup>
           <p>{/* Explainer/Teaser Text */}</p>
         </Section>
         {/* Game */}
-        <Section id="Game" width={{ center: true }}>
-          <canvas></canvas>
+        <Section id="Game">
+          <Game />
         </Section>
         {/* Map */}
         <Section id="Map" width={{ center: true }}></Section>

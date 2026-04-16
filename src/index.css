@@ -6,7 +6,10 @@
     --gap: 1rem;
     --backup-fonts: Arial, Helvetica, sans-serif;
     /* TODO: Font */
-    --font: Roboto, var(--backup-fonts);
+    --font: 'Tomorrow', var(--backup-fonts);
+    --display-font:
+        'Aldrich',
+        var(--backup-fonts);
     --content-width: min(calc(100% - var(--gap)), 1025px);
 
     --primary: oklch(97% 0.028 199);
@@ -19,12 +22,53 @@
 }
 
 @layer utilities {
-    .h1{}
-    .h2{}
-    .h3{}
-    .h4{}
-    .h5{}
-    .h6{}
+    .h1 {
+        font-family: var(--display-font);
+    }
+
+    .h2 {
+        font-family: var(--display-font);
+    }
+
+    .h3 {
+        font-family: var(--display-font);
+    }
+
+    .h4 {
+        font-family: var(--display-font);
+    }
+
+    .h5 {
+        font-family: var(--display-font);
+    }
+
+    .h6 {
+        font-family: var(--display-font);
+    }
+
+    p {
+        font-family: var(--font);
+    }
+
+    .display-font {
+        font-family: var(--display-font);
+    }
+
+    .body-font {
+        font-family: var(--font);
+    }
+}
+
+@font-face {
+    font-family: 'Aldrich';
+    src: url('./Aldrich/Aldrich-Regular.ttf') format('truetype');
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Tomorrow';
+    src: url('./Tomorrow/Tomorrow-Regular.ttf') format('truetype');
+    font-weight: 400;
 }
 
 @layer reset {
@@ -118,7 +162,7 @@
         list-style: none;
     }
 
-    a{
+    a {
         color: currentColor;
         text-decoration: none;
     }
