@@ -3,4 +3,7 @@
     &[data-center]{
         margin-inline: auto;
     }
+    &[data-small]{
+        width: var(--text-width);
+    }
 }

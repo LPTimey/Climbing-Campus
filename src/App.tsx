@@ -1,4 +1,5 @@
 import "./App.css";
+import MaxWWrapper from "./components/max-w-wrapper";
 import ToTop from "./components/to-top";
 import Footer from "./ui/footer";
 import Game from "./ui/game";
@@ -12,11 +13,22 @@ function App() {
       <main>
         {/* Intro */}
         <Section id="Intro" width={{ center: true }}>
-          <hgroup className="h1">
-            <h1 className="h1">Treppentakt</h1>
-            <p className="h3">Ups &amp; Downs</p>
-          </hgroup>
-          <p>{/* Explainer/Teaser Text */}</p>
+          <div style={{ display: "grid", gap: "4rem" }} className="text-center">
+            <hgroup>
+              <h1 className="h1">Treppentakt</h1>
+              <p className="h4">Ups and Downs</p>
+            </hgroup>
+            <MaxWWrapper asChild center small>
+              <p>
+                {/* Explainer/Teaser Text */}
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                erat, sed diam voluptua. At vero eos et accusam et justo duo
+                dolores et ea rebum. Stet clita kasd gubergren, no sea takimata
+                sanctus est Lorem ipsum dolor sit amet.
+              </p>
+            </MaxWWrapper>
+          </div>
         </Section>
         {/* Game */}
         <Section id="Game">

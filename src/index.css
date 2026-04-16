@@ -4,58 +4,137 @@
     --border-radius: 1rem;
     --border-width: 0.2rem;
     --gap: 1rem;
+
+    /* Widths */
+    --text-width: min(calc(100% - var(--gap)), 60ch);
+    --content-width: min(calc(100% - var(--gap)), 65rem);
+
+    /* Font stuff */
+    --major-third: 1.25;
+    --ratio: var(--major-third);
     --backup-fonts: Arial, Helvetica, sans-serif;
-    /* TODO: Font */
     --font: 'Tomorrow', var(--backup-fonts);
     --display-font:
         'Aldrich',
         var(--backup-fonts);
-    --content-width: min(calc(100% - var(--gap)), 1025px);
 
-    --primary: oklch(97% 0.028 199);
-    /* TODO: red = placeholder */
-    --secondary: red;
-    --accent: oklch(75.569% 0.15383 49.481);
+    /* Colors */
+    --primary: oklch(80% 0.144 199);
+    --secondary: oklch(80% 0.144 50);
+    --accent: oklch(80% 0.144 337.85);
 
+    /* Settings */
     font-family: var(--font);
     scroll-behavior: smooth;
 }
 
 @layer utilities {
+    .text-center{
+        text-align: center;
+    }
+    .self-center{
+        place-self: center;
+    }
+    .center{
+        place-items: center;
+        place-content: center;
+    }
     .h1 {
         font-family: var(--display-font);
+        --step: 6;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
     }
 
     .h2 {
         font-family: var(--display-font);
+        --step: 5;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
     }
 
     .h3 {
         font-family: var(--display-font);
+        --step: 4;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
     }
 
     .h4 {
         font-family: var(--display-font);
+        --step: 3;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
     }
 
     .h5 {
         font-family: var(--display-font);
+        --step: 2;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
     }
 
     .h6 {
         font-family: var(--display-font);
+        --step: 1;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
     }
 
-    p {
+    .p {
         font-family: var(--font);
+        --step: 0;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
     }
 
-    .display-font {
+    .small {
+        font-family: var(--font);
+        --step: -1;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .display-font,
+    .font-display {
         font-family: var(--display-font);
     }
 
-    .body-font {
+    .body-font,
+    .font-body {
         font-family: var(--font);
+    }
+
+    .fs-titel {
+        --step: 6;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-larger {
+        --step: 5;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-large {
+        --step: 4;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-bigger {
+        --step: 3;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-big {
+        --step: 2;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-medium {
+        --step: 1;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-normal {
+        --step: 0;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-small {
+        --step: -1;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
     }
 }
 
