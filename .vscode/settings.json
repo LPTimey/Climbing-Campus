@@ -2,4 +2,17 @@
     "[markdown]": {
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
+    "[html]": {
+        "editor.indentSize": 2
+    },
+    "[css]": {
+        "editor.indentSize": 4
+    },
+    "[javascript]": {
+        "editor.indentSize": 2
+    },
+    "[typescript]": {
+        "editor.indentSize": 2
+    },
+    "cSpell.language": "en,de-DE,en-GB",
 }
