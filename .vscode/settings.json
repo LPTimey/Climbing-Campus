@@ -3,16 +3,20 @@
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
     "[html]": {
-        "editor.indentSize": 2
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[css]": {
-        "editor.indentSize": 4
+        "editor.tabSize": 4,
+        "editor.defaultFormatter": "vscode.css-language-features"
     },
     "[javascript]": {
-        "editor.indentSize": 2
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "[typescript]": {
-        "editor.indentSize": 2
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "cSpell.language": "en,de-DE,en-GB",
 }

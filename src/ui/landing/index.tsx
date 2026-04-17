@@ -4,7 +4,7 @@ import Section from "../section";
 export default function LandingSection({ id }: { id: string }) {
   return (
     <Section id={id}>
-      <div style={{ display: "grid", gap: "5rem" }} className="text-center">
+      <div style={{ display: "flex", flexDirection: "column", overflow: "hidden", maxWidth: "100%", gap: "5rem" }} className="text-center">
         <hgroup>
           <h1 className="h1">Treppentakt</h1>
           <p className="h4">Ups and Downs</p>

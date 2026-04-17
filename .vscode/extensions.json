@@ -5,6 +5,7 @@
         "wayou.vscode-todo-highlight",
         "gruntfuggly.todo-tree",
         "yzhang.markdown-all-in-one",
-        "davidanson.vscode-markdownlint"
+        "davidanson.vscode-markdownlint",
+        "esbenp.prettier-vscode"
     ]
 }

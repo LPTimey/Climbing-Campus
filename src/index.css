@@ -9,6 +9,9 @@
     --text-width: min(calc(90% - var(--gap)), 60ch);
     --content-width: min(calc(90% - var(--gap)), 65rem);
 
+    --text-padding: calc((100% - var(--text-width)) / 2);
+    --content-padding: calc((100% - var(--content-width)) / 2);
+
     /* Font stuff */
     --major-third: 1.25;
     --perfect-fourth: 1.33;
@@ -32,16 +35,19 @@
 }
 
 @layer utilities {
-    .text-center{
+    .text-center {
         text-align: center;
     }
-    .self-center{
+
+    .self-center {
         place-self: center;
     }
-    .center{
+
+    .center {
         place-items: center;
         place-content: center;
     }
+
     .h1 {
         font-family: var(--display-font);
         --step: 6;

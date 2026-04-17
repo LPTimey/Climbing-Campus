@@ -7,21 +7,28 @@ export default function Section({
   className,
   id,
   width = "content",
+  paddingBlock = false,
 }: {
   children?: React.ReactNode;
   id?: string;
   width?: "full" | "content" | "text";
   className?: "string";
+  paddingBlock?: boolean | string;
 }) {
   let content = (
-    <section id={id} className={className}>
+    <section
+      id={id}
+      className={className}
+      {...(paddingBlock === true && { "data-padding": true })}
+      {...(typeof paddingBlock === "string" && {style:{paddingBlock}})}
+    >
       {children}
     </section>
   );
   let wrapper = (
-    <MaxWWrapper asChild center {...(width==="text" && {small:true})}>
+    <MaxWWrapper asChild center {...(width === "text" && { small: true })}>
       {content}
     </MaxWWrapper>
   );
-  return width ? wrapper : content;
+  return width === "full" ? content : wrapper;
 }

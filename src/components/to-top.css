@@ -10,5 +10,7 @@
     border: var(--border-width) solid var(--primary);
     padding: calc(var(--gap) / 2);
     color: var(--primary);
+    backdrop-filter: blur(6px);
+    background-color: rgb(from white r g b / 0.75);
     fill: currentColor;
 }
