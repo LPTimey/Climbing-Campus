@@ -51,4 +51,5 @@ export function resizeIfNeeded(renderer: THREE.WebGLRenderer, camera: THREE.Pers
         return false;
     }
     resize(renderer, camera);
+    return true;
 }
