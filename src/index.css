@@ -29,10 +29,10 @@
 
     /* Colors */
     --light: #F8F1E6;
+    --primary: #183746;
+    --secondary: #142832;
     --dark: #07151C;
-    --primary: oklch(80% 0.144 199);
-    --secondary: oklch(80% 0.144 50);
-    --accent: oklch(80% 0.144 337.85);
+    --accent: oklch(80% 0.144 180);
 
     /* Settings */
     font-family: var(--font);

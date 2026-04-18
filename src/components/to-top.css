@@ -9,7 +9,7 @@
     border-radius: max(100dvh, 100dvw);
     border: var(--border-width) currentColor solid;
     padding: calc(var(--gap) / 2);
-    color: oklch(from var(--primary) 97% 0.05 h / 0.75);
+    color: oklch(from var(--light) l c h);
     backdrop-filter: blur(6px);
     fill: currentColor;
 }

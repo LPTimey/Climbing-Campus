@@ -3,8 +3,8 @@ header {
     left: 50%;
     translate: -50% 0;
     top: var(--gap);
-    background-color: oklch(from var(--primary) 97% 0.02 h / 0.5);
-    border: var(--border-width) oklch(from var(--primary) 97% 0.05 h / 0.75) solid;
+    background-color: oklch(from var(--secondary) 25% c h / 0.75);
+    border: var(--border-width) oklch(from var(--primary) 50% c h / 0.75) solid;
     backdrop-filter: blur(6px);
     border-radius: var(--border-radius);
     margin-inline: auto;
