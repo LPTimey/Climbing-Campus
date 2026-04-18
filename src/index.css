@@ -23,8 +23,13 @@
     --display-font:
         'Aldrich',
         var(--backup-fonts);
+    --logo-font:
+        'Coda',
+        var(--backup-fonts);
 
     /* Colors */
+    --light: #F8F1E6;
+    --dark: #07151C;
     --primary: oklch(80% 0.144 199);
     --secondary: oklch(80% 0.144 50);
     --accent: oklch(80% 0.144 337.85);
@@ -32,6 +37,34 @@
     /* Settings */
     font-family: var(--font);
     scroll-behavior: smooth;
+    color: var(--light)
+}
+
+body{
+    background: var(--dark);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
 }
 
 @layer utilities {
@@ -158,6 +191,18 @@
     src: url('./assets/Tomorrow/Tomorrow-Regular.ttf') format('truetype');
     font-weight: 400;
 }
+
+@font-face {
+    font-family: 'GoogleSansFlex';
+    src: url('./assets/Google_Sans_Flex/GoogleSansFlex-VariableFont_GRAD\,ROND\,opsz\,slnt\,wdth\,wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Coda';
+    src: url('./assets/Coda/Coda-ExtraBold.ttf') format('truetype');
+    font-weight: 900;
+}
+
 
 @layer reset {
 

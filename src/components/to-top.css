@@ -7,10 +7,9 @@
     width: auto;
     aspect-ratio: 1;
     border-radius: max(100dvh, 100dvw);
-    border: var(--border-width) solid var(--primary);
+    border: var(--border-width) currentColor solid;
     padding: calc(var(--gap) / 2);
-    color: var(--primary);
+    color: oklch(from var(--primary) 97% 0.05 h / 0.75);
     backdrop-filter: blur(6px);
-    background-color: rgb(from white r g b / 0.75);
     fill: currentColor;
 }

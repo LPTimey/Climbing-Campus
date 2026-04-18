@@ -1,7 +1,8 @@
 import MaxWWrapper from "@/components/max-w-wrapper";
 import Section from "../section";
+import Landing from "@/assets/temp/landing-dark.svg?react";
 
-export default function LandingSection({ id }: { id: string }) {
+export function LandingSectionOld({ id }: { id: string }) {
   return (
     <Section id={id}>
       <div
@@ -11,6 +12,7 @@ export default function LandingSection({ id }: { id: string }) {
           overflow: "hidden",
           maxWidth: "100%",
           gap: "5rem",
+          alignItems: "center",
         }}
         className="text-center"
       >
@@ -27,6 +29,13 @@ export default function LandingSection({ id }: { id: string }) {
           </p>
         </MaxWWrapper>
       </div>
+    </Section>
+  );
+}
+export default function LandingSection({ id }: { id: string }) {
+  return (
+    <Section id={id}>
+      <Landing style={{ marginTop: "-5rem" }} />
     </Section>
   );
 }
