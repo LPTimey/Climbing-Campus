@@ -4,15 +4,24 @@ import Section from "../section";
 export default function LandingSection({ id }: { id: string }) {
   return (
     <Section id={id}>
-      <div style={{ display: "flex", flexDirection: "column", overflow: "hidden", maxWidth: "100%", gap: "5rem" }} className="text-center">
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          overflow: "hidden",
+          maxWidth: "100%",
+          gap: "5rem",
+        }}
+        className="text-center"
+      >
         <hgroup>
-          <h1 className="h1">Treppentakt</h1>
+          <h1 className="h1">Climbing Campus</h1>
           <p className="h4">Ups and Downs</p>
         </hgroup>
         <MaxWWrapper asChild center small>
           <p className="fs-medium">
-            Treppentakt uncovers the (literal) “ups and downs” of school life,
-            mapping every stair-rise and fall across buildings and floors.
+            Climbing Campus uncovers the (literal) “ups and downs” of school
+            life, mapping every stair-rise and fall across buildings and floors.
             Explore the patterns, download the data, and marvel at the zigs and
             zags of school life.
           </p>

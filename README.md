@@ -1,6 +1,6 @@
-# TreppenTakt
+# Climbing Campus
 
-- [TreppenTakt](#treppentakt)
+- [Climbing Campus](#climbing-campus)
   - [German](#german)
   - [English](#english)
   - [How To Run](#how-to-run)
