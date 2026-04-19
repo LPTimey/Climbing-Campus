@@ -6,14 +6,18 @@ export async function getConnectionData() {
     "./assets/Treppenstufen nach Gebäude - Verbindungen.csv",
   ).then((res) => res.text());
 
+  console.log(text)
+
   let res = parseCsv(text, {
     delimiter: ",",
     hasHeaders: true,
     parsers: {
       fromBuilding: (v) => v,
-      fromLevel: (v) => Number(v),
+      fromLevel: (v) => (v === "0" ? 0 : Number(v)),
       toBuilding: (v) => v,
-      toLevel: (v) => Number(v),
+      toLevel: (v) => (v === "0" ? 0 : Number(v)),
+      steps: (v) => (v === "0" ? 0 : Number(v)),
+      notes: (v) => v,
     },
   });
 

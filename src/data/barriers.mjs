@@ -11,7 +11,7 @@ export async function getBarrierData() {
     hasHeaders: true,
     parsers: {
       building: (v) => v,
-      level: (v) => Number(v),
+      levels: (v) => v.split(";").map(Number),
       note: (v) => v,
     },
   });
