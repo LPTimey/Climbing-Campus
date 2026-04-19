@@ -1,9 +1,0 @@
-.content-width{
-    width: var(--content-width);
-    &[data-center]{
-        margin-inline: auto;
-    }
-    &[data-small]{
-        width: var(--text-width);
-    }
-}

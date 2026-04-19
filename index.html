@@ -1,15 +1,102 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
+    <script type="importmap">
+      {
+        "imports": {
+          "@/": "/src/",
+          "three": "/node_modules/three/build/three.module.js"
+        }
+      }
+    </script>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Treppentakt - Ups and Downs</title>
-</head>
+    <title>Climbing Campus - Ups and Downs</title>
+    <script type="module" src="./src/components/max-w-wrapper.mjs"></script>
+    <script type="module" src="./src/ui/dash.mjs"></script>
+    <script type="module" src="./src/ui/game/element.mjs"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
-    <script type="module" src="/src/main.tsx"></script>
-</body>
-
+  <body>
+    <header>
+      <a href="#Intro">Start</a>
+      <a href="#Game">Results</a>
+      <a href="#Map">Map</a>
+      <a href="#Charts">Graphs</a>
+      <a href="#Explanation">Explanations</a>
+    </header>
+    <main>
+      <section id="Intro">
+        <max-w-wrapper center>
+          <img src="assets/temp/landing-dark.svg" alt="" />
+        </max-w-wrapper>
+      </section>
+      <section id="Game">
+        <results-game></results-game>
+      </section>
+      <section id="Map">
+        <max-w-wrapper center>
+          <picture
+            ><img
+              src="assets/temp/THI_map-dark.jpeg"
+              alt=""
+              style="max-height: 90vh"
+          /></picture>
+        </max-w-wrapper>
+      </section>
+      <section id="Charts">
+        <dash-board />
+      </section>
+      <section id="Explanation">
+        <max-w-wrapper center>
+          <div>
+            <h2 class="h2">Explanations</h2>
+            <article>
+              <h3 class="h4">What we did</h3>
+              <max-w-wrapper small center>
+                <p>
+                  Climbing Campus uncovers the (literal) “ups and downs” of
+                  school life, mapping every stair-rise and fall across
+                  buildings and floors. Explore the patterns, download the data,
+                  and marvel at the zigs and zags of school life.
+                </p>
+              </max-w-wrapper>
+            </article>
+            <article>
+              <h3 class="h4">What we did</h3>
+              <max-w-wrapper small center>
+                <p>
+                  Climbing Campus uncovers the (literal) “ups and downs” of
+                  school life, mapping every stair-rise and fall across
+                  buildings and floors. Explore the patterns, download the data,
+                  and marvel at the zigs and zags of school life.
+                </p>
+              </max-w-wrapper>
+            </article>
+            <article>
+              <h3 class="h4">What we did</h3>
+              <max-w-wrapper small center>
+                <p>
+                  Climbing Campus uncovers the (literal) “ups and downs” of
+                  school life, mapping every stair-rise and fall across
+                  buildings and floors. Explore the patterns, download the data,
+                  and marvel at the zigs and zags of school life.
+                </p>
+              </max-w-wrapper>
+            </article>
+          </div>
+        </max-w-wrapper>
+      </section>
+    </main>
+    <footer>
+      <p>
+        Made by Tim Ruland
+        <a href="https://github.com/LPTimey" target="_blank"> @LPTimey </a>
+        and Marc Obst
+        <a href="https://github.com/Mangonssen" target="_blank"> @Mangonsen </a>
+      </p>
+    </footer>
+  </body>
 </html>

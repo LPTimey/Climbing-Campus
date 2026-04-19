@@ -1,0 +1,347 @@
+@layer utilities, reset;
+
+:root {
+    --border-radius: 1rem;
+    --border-width: 0.2rem;
+    --gap: 1rem;
+
+    /* Widths */
+    --text-width: min(calc(90% - var(--gap)), 60ch);
+    --content-width: min(calc(90% - var(--gap)), 65rem);
+
+    --text-padding: calc((100% - var(--text-width)) / 2);
+    --content-padding: calc((100% - var(--content-width)) / 2);
+
+    /* Font stuff */
+    --major-third: 1.25;
+    --perfect-fourth: 1.33;
+    --perfect-fifth: 1.50;
+    --golden-ratio: 1.618;
+    --ratio: var(--perfect-fourth);
+    --backup-fonts: Arial, Helvetica, sans-serif;
+    --font: 'Tomorrow', var(--backup-fonts);
+    --display-font:
+        'Aldrich',
+        var(--backup-fonts);
+    --logo-font:
+        'Coda',
+        var(--backup-fonts);
+
+    /* Colors */
+    --light: #F8F1E6;
+    --primary: #183746;
+    --secondary: #142832;
+    --dark: #07151C;
+    --accent: oklch(80% 0.144 180);
+
+    /* Settings */
+    font-family: var(--font);
+    scroll-behavior: smooth;
+    color: var(--light)
+}
+
+body {
+    background: var(--dark);
+}
+
+header {
+    position: fixed;
+    left: 50%;
+    translate: -50% 0;
+    top: var(--gap);
+    background-color: oklch(from var(--secondary) 25% c h / 0.75);
+    border: var(--border-width) oklch(from var(--primary) 50% c h / 0.75) solid;
+    backdrop-filter: blur(6px);
+    border-radius: var(--border-radius);
+    margin-inline: auto;
+    padding: var(--gap);
+    width: var(--content-width);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: var(--gap);
+}
+
+section {
+    margin-inline: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+footer {
+    backdrop-filter: blur(6px);
+    border-radius: var(--border-radius);
+    margin-inline: auto;
+    padding: var(--gap);
+    padding-inline: var(--content-padding);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    gap: var(--gap);
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.not-sr-only {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+}
+
+@layer utilities {
+    .text-center {
+        text-align: center;
+    }
+
+    .self-center {
+        place-self: center;
+    }
+
+    .center {
+        place-items: center;
+        place-content: center;
+    }
+
+    .h1 {
+        font-family: var(--display-font);
+        --step: 6;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .h2 {
+        font-family: var(--display-font);
+        --step: 5;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .h3 {
+        font-family: var(--display-font);
+        --step: 4;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .h4 {
+        font-family: var(--display-font);
+        --step: 3;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .h5 {
+        font-family: var(--display-font);
+        --step: 2;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .h6 {
+        font-family: var(--display-font);
+        --step: 1;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .p {
+        font-family: var(--font);
+        --step: 0;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .small {
+        font-family: var(--font);
+        --step: -1;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .display-font,
+    .font-display {
+        font-family: var(--display-font);
+    }
+
+    .body-font,
+    .font-body {
+        font-family: var(--font);
+    }
+
+    .fs-titel {
+        --step: 6;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-larger {
+        --step: 5;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-large {
+        --step: 4;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-bigger {
+        --step: 3;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-big {
+        --step: 2;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-medium {
+        --step: 1;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-normal {
+        --step: 0;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+
+    .fs-small {
+        --step: -1;
+        font-size: calc(1rem * pow(var(--ratio), var(--step)));
+    }
+}
+
+@font-face {
+    font-family: 'Aldrich';
+    src: url('./assets/Aldrich/Aldrich-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Tomorrow';
+    src: url('./assets/Tomorrow/Tomorrow-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GoogleSansFlex';
+    src: url('./assets/Google_Sans_Flex/GoogleSansFlex-VariableFont_GRAD\,ROND\,opsz\,slnt\,wdth\,wght.ttf') format('truetype');
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Coda';
+    src: url('./assets/Coda/Coda-ExtraBold.ttf') format('truetype');
+    font-weight: 900;
+    font-display: swap;
+}
+
+
+@layer reset {
+
+    /* see https://www.joshwcomeau.com/css/custom-css-reset/ */
+    /* 1. Use a more-intuitive box-sizing model */
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+
+    /* 2. Remove default margin */
+    *:not(dialog) {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* 3. Enable keyword animations */
+    @media (prefers-reduced-motion: no-preference) {
+        html {
+            interpolate-size: allow-keywords;
+        }
+    }
+
+    body {
+        /* 4. Increase line-height */
+        line-height: 1.5;
+        /* 5. Improve text rendering */
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* 6. Improve media defaults */
+    img,
+    picture,
+    video,
+    canvas,
+    svg {
+        display: block;
+        max-width: 100%;
+    }
+
+    /* 7. Inherit fonts for form controls */
+    input,
+    button,
+    textarea,
+    select {
+        font: inherit;
+    }
+
+    /* 8. Avoid text overflows */
+    p,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        overflow-wrap: break-word;
+    }
+
+    /* 9. Improve line wrapping */
+    p {
+        text-wrap: pretty;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        text-wrap: balance;
+    }
+
+    /*
+    10. Create a root stacking context
+    */
+    #root,
+    #__next {
+        isolation: isolate;
+    }
+
+    button {
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    a {
+        color: currentColor;
+        text-decoration: none;
+    }
+}
