@@ -1,3 +1,4 @@
+"use strict";
 import { resizeIfNeeded } from "@/lib/three_utils.mjs";
 import * as THREE from "three";
 
@@ -16,11 +17,13 @@ template.innerHTML = `
 class ResultsGame extends HTMLElement {
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.attachShadow({ mode: "open" }).appendChild(
+      template.content.cloneNode(true),
+    );
   }
   connectedCallback() {
-    const canvas = this.shadowRoot.querySelector("canvas");
+    if (!this.shadowRoot) return;
+    const canvas = /** @type {HTMLCanvasElement} */(this.shadowRoot.querySelector("canvas"));
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(

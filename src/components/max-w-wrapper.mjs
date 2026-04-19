@@ -1,3 +1,4 @@
+"use strict";
 const template = document.createElement("template");
 
 template.innerHTML = `
@@ -29,8 +30,9 @@ export class MaxWWrapper extends HTMLElement {
 
   constructor() {
     super();
-    this.attachShadow({ mode: "open" });
-    this.shadowRoot.appendChild(template.content.cloneNode(true));
+    this.attachShadow({ mode: "open" }).appendChild(
+      template.content.cloneNode(true),
+    );
   }
 
   connectedCallback() {
@@ -42,13 +44,19 @@ export class MaxWWrapper extends HTMLElement {
   }
 
   _render() {
+    if (!this.shadowRoot) {
+      return;
+    }
     const center = this.hasAttribute("center");
     const small = this.hasAttribute("small");
     const asChild = this.hasAttribute("as-child");
 
-    /** @type {HTMLDivElement|HTMLElement} */
-    const wrapper = /***/ this.shadowRoot.querySelector(".content-width");
-    const slot = this.shadowRoot.querySelector("slot");
+    const wrapper = /** @type {HTMLDivElement|HTMLElement} */ (
+      this.shadowRoot.querySelector(".content-width")
+    );
+    const slot = /** @type {HTMLSlotElement} */ (
+      this.shadowRoot.querySelector("slot")
+    );
 
     // Reset
     wrapper.removeAttribute("data-center");

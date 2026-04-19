@@ -1,3 +1,4 @@
+"use strict";
 import { parseCsv } from "@/lib/parse-csv.mjs";
 
 export async function getStepData() {

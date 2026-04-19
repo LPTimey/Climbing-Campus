@@ -4,8 +4,9 @@
     <script type="importmap">
       {
         "imports": {
-          "@/": "/src/",
-          "three": "/node_modules/three/build/three.module.js"
+          "@/": "./src/",
+          "three": "./node_modules/three/build/three.module.js",
+          "echarts": "./node_modules/echarts/dist/echarts.esm.js"
         }
       }
     </script>
@@ -48,6 +49,7 @@
       </section>
       <section id="Charts">
         <dash-board />
+        <div id="main" style="height: 60rem;width:120ch"></div>
       </section>
       <section id="Explanation">
         <max-w-wrapper center>

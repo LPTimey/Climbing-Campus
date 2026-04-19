@@ -1,3 +1,4 @@
+"use strict";
 /**
   @template T
   @typedef {
@@ -11,7 +12,6 @@
     }
   } ParseCsvOptions
  */
-
 
 /**
  *
@@ -49,7 +49,7 @@ export function parseCsv(text, options) {
       obj[key] = parsers[key](raw);
     }
 
-    result.push(/** @type {T} */(obj));
+    result.push(/** @type {T} */ (obj));
   }
 
   return result;

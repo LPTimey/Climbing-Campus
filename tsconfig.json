@@ -6,7 +6,8 @@
             "ES2023",
             "DOM"
         ],
-        "checkJs":true,
+        "checkJs": true,
+        "strict": true,
         "module": "esnext",
         "skipLibCheck": true,
         /* Bundler mode */

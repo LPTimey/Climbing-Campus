@@ -37,7 +37,8 @@
     /* Settings */
     font-family: var(--font);
     scroll-behavior: smooth;
-    color: var(--light)
+    color: var(--light);
+    color-scheme: dark;
 }
 
 body {
@@ -45,6 +46,7 @@ body {
 }
 
 header {
+    z-index: 10;
     position: fixed;
     left: 50%;
     translate: -50% 0;
