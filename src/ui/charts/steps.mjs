@@ -15,9 +15,14 @@ export default function StepsStacked(div, data) {
   const buildings = [...new Set(data.map((d) => d.building))];
   const levels = [...new Set(data.map((d) => d.toLevel))].sort((a, b) => a - b);
 
+  const notes = new Map();
   const matrix = new Map();
   levels.forEach((level) => {
     matrix.set(level, new Array(buildings.length).fill(0));
+  });
+  // FIXME: connect notes correctly, currently they are random if 1 Level Exists more than once
+  data.forEach((data) => {
+    notes.set(data.toLevel, data.notes);
   });
 
   data.forEach((d) => {
@@ -71,7 +76,7 @@ export default function StepsStacked(div, data) {
             }
 
             return `
-              <b>${params.name}</b><br/>
+              <b>${params.name} - ${notes.get(level)}</b><br/>
               ${params.seriesName}<br/>
               Steps (this level): ${params.value}<br/>
               Total up to here: <b>${total}</b><br/>
