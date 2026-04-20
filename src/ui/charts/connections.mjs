@@ -1,173 +1,89 @@
 "use strict";
 import * as echarts from "echarts";
-/** @import {EChartsOption} from "echarts" */
+
+/** @typedef {import("echarts").EChartsOption} EChartsOption */
+/** @typedef {import("echarts").GraphSeriesOption} GraphSeriesOption */
 
 /**
-  TODO: make better than this slop
-  @param {HTMLElement|echarts.ECharts} chart 
-  @param {{
-    fromBuilding: string;
-    fromLevel: number;
-    toBuilding: string;
-    toLevel: number;
-    steps: number;
-    notes?: string;
-  }[]} data 
+ * @typedef {Object} Connection
+ * @property {string} fromBuilding
+ * @property {number} fromLevel
+ * @property {string} toBuilding
+ * @property {number} toLevel
+ * @property {number} [steps]
+ * @property {string} [notes]
+ */
+
+/**
+ * @typedef {Object} GraphNode
+ * @property {string} id
+ * @property {string} name
+ * @property {number} category
+ */
+
+/**
+ * @typedef {Object} GraphLink
+ * @property {string} source
+ * @property {string} target
+ */
+
+/**
+ * Unified graph with building categories
+ *
+ * @param {HTMLElement | echarts.ECharts} chart
+ * @param {Connection[]} data
+ * @returns {echarts.ECharts}
  */
 export default function ConnectionsGraph(chart, data) {
-  console.log(data);
   if (chart instanceof HTMLElement) {
     chart = echarts.init(chart);
   }
-  // TODO: sort data by fromBuilding and fromLevel
-  const sortedData = [...data].sort((a, b) => {
-    if (a.fromBuilding === b.fromBuilding) {
-      return a.fromLevel - b.fromLevel;
-    }
-    return a.fromBuilding.localeCompare(b.fromBuilding);
-  });
 
-  // TODO: create 1 Node for Every Building+Level Combi
+  /** @type {Map<string, GraphNode>} */
   const nodeMap = new Map();
-  const nodeId = (b, l) => `${b} (${l})`;
 
-  for (const d of data) {
-    const from = nodeId(d.fromBuilding, d.fromLevel);
-    const to = nodeId(d.toBuilding, d.toLevel);
-
-    nodeMap.set(from, { id: from, name: from });
-    nodeMap.set(to, { id: to, name: to });
-  }
-
-  const nodes = Array.from(nodeMap.values());
-
-  // TODO: Create Edges Set
+  /** @type {Set<string>} */
   const edgeSet = new Set();
+
+  /** @type {GraphLink[]} */
   const links = [];
 
-  // helper for canonical edge (undirected)
-  const edgeKey = (a, b) => (a < b ? `${a}__${b}` : `${b}__${a}`);
+  /**
+   * @param {string} building
+   * @param {number} level
+   */
+  const getId = (building, level) => `${building} (${level})`;
 
-  // TODO: Connect Pairs as in data
-  for (const d of sortedData) {
-    const from = nodeId(d.fromBuilding, d.fromLevel);
-    const to = nodeId(d.toBuilding, d.toLevel);
-
-    const key = edgeKey(from, to);
-    if (!edgeSet.has(key)) {
-      edgeSet.add(key);
-      links.push({ source: from, target: to });
-    }
-  }
-
-  /** @type {echarts.EChartsOption} */
-  const options = {
-    tooltip: {
-      type: "item",
-    },
-    backgroundColor: "#00000000",
-    toolbox: {
-      show: true,
-      feature: {
-        dataView: { readOnly: false },
-        restore: {},
-        saveAsImage: {},
-      },
-    },
-    textStyle: { color: "#fff" },
-    title: {
-      text: "Connections between & inside Buildings",
-      left: "center",
-      textStyle: {
-        color: "#fff",
-      },
-    },
-    legend: {
-      bottom: 25,
-      textStyle: {
-        color: "#fff",
-      },
-    },
-    series: [
-      {
-        type: "graph",
-        // layout: "circular",
-        layout: "force",
-        draggable: true,
-
-        data: nodes,
-        links,
-
-        roam: "move",
-
-        label: {
-          show: true,
-          color: "#fff",
-        },
-
-        force: {
-          repulsion: 250,
-          edgeLength: 0.5,
-          initLayout: "circular",
-        },
-
-        edgeSymbol: ["none", "none"],
-
-        lineStyle: {
-          color: "#aaa",
-          opacity: 0.6,
-        },
-      },
-    ],
-  };
-
-  chart.setOption(options);
-  return chart;
-}
-
-/**
-  @param {HTMLElement} div 
-  @param {{
-    fromBuilding: string;
-    fromLevel: number;
-    toBuilding: string;
-    toLevel: number;
-  }[]} data 
- */
-export function ConnectionsStacked2(div, data) {
-  const chart = echarts.init(div);
-
-  const nodeMap = new Map();
-  const edgeSet = new Set();
-
-  const getId = (b, l) => `${b} (${l})`;
-
-  const getGroup = (b) => String(b);
-
+  /** @type {string[]} */
   const categories = [];
 
-  const ensureCategory = (b) => {
-    if (!categories.includes(b)) categories.push(b);
+  /**
+   * @param {string} building
+   */
+  const ensureCategory = (building) => {
+    if (!categories.includes(building)) categories.push(building);
   };
 
+  /**
+   * @param {string} id
+   * @param {string} building
+   */
   const addNode = (id, building) => {
     if (!nodeMap.has(id)) {
       nodeMap.set(id, {
         id,
         name: id,
-        category: getGroup(building),
+        category: categories.indexOf(building),
       });
     }
   };
 
-  const links = [];
-
   for (const d of data) {
-    const from = getId(d.fromBuilding, d.fromLevel);
-    const to = getId(d.toBuilding, d.toLevel);
-
     ensureCategory(d.fromBuilding);
     ensureCategory(d.toBuilding);
+
+    const from = getId(d.fromBuilding, d.fromLevel);
+    const to = getId(d.toBuilding, d.toLevel);
 
     addNode(from, d.fromBuilding);
     addNode(to, d.toBuilding);
@@ -180,57 +96,103 @@ export function ConnectionsStacked2(div, data) {
     }
   }
 
-  const nodes = Array.from(nodeMap.values());
+  const degreeMap = new Map();
+
+  for (const l of links) {
+    degreeMap.set(l.source, (degreeMap.get(l.source) ?? 0) + 1);
+    degreeMap.set(l.target, (degreeMap.get(l.target) ?? 0) + 1);
+  }
+
+  // --- Nodes mit Größe + Farbe ---
+  const nodes = Array.from(nodeMap.values()).map((node) => {
+    const degree = degreeMap.get(node.id) ?? 0;
+
+    return {
+      ...node,
+      symbolSize: 10 + degree * 5,
+
+      // itemStyle: {
+      //   color: degree > 8 ? "#ff6b6b" : degree > 4 ? "#ffd166" : "#4dabf7",
+      // },
+    };
+  });
+
+  /** @type {GraphSeriesOption[]} */
+  const series = [
+    {
+      type: "graph",
+      layout: "force",
+
+      data: nodes,
+      links,
+
+      categories: categories.map((name) => ({ name })),
+
+      legendHoverLink: false,
+
+      draggable: true,
+      roam: true,
+      scaleLimit: {
+        min: 0.5,
+        max: 3,
+      },
+
+      label: {
+        show: true,
+        color: "#fff",
+        backgroundColor: "#99999940",
+        align: "left",
+      },
+
+      force: {
+        repulsion: 500,
+        edgeLength: 50,
+        gravity: 0.2,
+      },
+      emphasis: {
+        focus: "adjacency",
+        lineStyle: {
+          width: 5,
+        },
+      },
+
+      lineStyle: {
+        color: "#aaa",
+        opacity: 0.6,
+      },
+    },
+  ];
 
   /** @type {EChartsOption} */
   const options = {
     backgroundColor: "transparent",
 
     title: {
-      text: "Building Connections (Clustered)",
+      text: "Building Connections",
       left: "center",
       textStyle: { color: "#fff" },
     },
 
-    legend: [
-      {
-        data: categories,
-        textStyle: { color: "#fff" },
+    legend: {
+      data: categories,
+      bottom: 20,
+      textStyle: { color: "#fff" },
+    },
+
+    tooltip: {
+      trigger: "item",
+    },
+
+    toolbox: {
+      show: true,
+      feature: {
+        dataView: { readOnly: false },
+        restore: {},
+        saveAsImage: { type: "png" },
       },
-    ],
+    },
 
-    series: [
-      {
-        type: "graph",
-        layout: "force",
-
-        data: nodes,
-        links,
-
-        categories: categories.map((name) => ({ name })),
-
-        roam: false,
-
-        label: {
-          show: true,
-          color: "#fff",
-          fontSize: 11,
-        },
-
-        force: {
-          repulsion: 300,
-          edgeLength: 140,
-          gravity: 0.1,
-        },
-
-        edgeSymbol: ["none", "none"],
-
-        lineStyle: {
-          color: "#aaa",
-          opacity: 0.6,
-        },
-      },
-    ],
+    series,
   };
 
   chart.setOption(options);
