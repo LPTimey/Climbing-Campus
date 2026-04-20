@@ -45,9 +45,13 @@ class Dash extends HTMLElement {
 
     const stepChart = echarts.init(
       /** @type {HTMLDivElement} */ (this.shadowRoot.getElementById("chart")),
+      null,
+      {renderer:"svg"}
     );
     const connectionsGraph = echarts.init(
       /** @type {HTMLDivElement} */ (this.shadowRoot.getElementById("graph")),
+      null,
+      {renderer:"svg"}
     );
 
     stepChart.showLoading();
