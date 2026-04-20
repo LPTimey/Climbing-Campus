@@ -2,10 +2,9 @@
 import * as echarts from "echarts";
 /** @import {EChartsOption} from "echarts" */
 
-
 /**
   TODO: make better than this slop
-  @param {HTMLElement} div 
+  @param {HTMLElement|echarts.ECharts} chart 
   @param {{
     fromBuilding: string;
     fromLevel: number;
@@ -15,9 +14,11 @@ import * as echarts from "echarts";
     notes?: string;
   }[]} data 
  */
-export default function ConnectionsGraph(div, data) {
+export default function ConnectionsGraph(chart, data) {
   console.log(data);
-  const chart = echarts.init(div);
+  if (chart instanceof HTMLElement) {
+    chart = echarts.init(chart);
+  }
   // TODO: sort data by fromBuilding and fromLevel
   const sortedData = [...data].sort((a, b) => {
     if (a.fromBuilding === b.fromBuilding) {
@@ -64,6 +65,15 @@ export default function ConnectionsGraph(div, data) {
     tooltip: {
       type: "item",
     },
+    backgroundColor: "#00000000",
+    toolbox: {
+      show: true,
+      feature: {
+        dataView: { readOnly: false },
+        restore: {},
+        saveAsImage: {},
+      },
+    },
     textStyle: { color: "#fff" },
     title: {
       text: "Connections between & inside Buildings",
@@ -81,14 +91,14 @@ export default function ConnectionsGraph(div, data) {
     series: [
       {
         type: "graph",
-        layout: "circular",
-        // layout: "force",
-        // draggable:true,
+        // layout: "circular",
+        layout: "force",
+        draggable: true,
 
         data: nodes,
         links,
 
-        // roam: "move",
+        roam: "move",
 
         label: {
           show: true,
@@ -96,7 +106,8 @@ export default function ConnectionsGraph(div, data) {
         },
 
         force: {
-          repulsion: 300,
+          repulsion: 250,
+          edgeLength: 0.5,
           initLayout: "circular",
         },
 

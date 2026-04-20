@@ -1,5 +1,5 @@
 "use strict";
-import { resizeIfNeeded } from "@/lib/three_utils.mjs";
+import { resize, resizeIfNeeded } from "@/lib/three_utils.mjs";
 import * as THREE from "three";
 
 const template = document.createElement("template");
@@ -7,7 +7,15 @@ const template = document.createElement("template");
 template.innerHTML = `
   <style>
     :host {
-      display: block;
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      width:100%;
+      height:100dvh;
+    }
+    canvas{
+      width:100%;
+      height:100%;
     }
   </style>
 
@@ -23,7 +31,9 @@ class ResultsGame extends HTMLElement {
   }
   connectedCallback() {
     if (!this.shadowRoot) return;
-    const canvas = /** @type {HTMLCanvasElement} */(this.shadowRoot.querySelector("canvas"));
+    const canvas = /** @type {HTMLCanvasElement} */ (
+      this.shadowRoot.querySelector("canvas")
+    );
     const scene = new THREE.Scene();
 
     const camera = new THREE.PerspectiveCamera(
@@ -39,7 +49,6 @@ class ResultsGame extends HTMLElement {
       antialias: true,
       alpha: true,
     });
-    renderer.setSize(window.innerWidth, window.innerHeight);
 
     // Cube
     const geometry = new THREE.BoxGeometry();
@@ -66,6 +75,7 @@ class ResultsGame extends HTMLElement {
       renderer.render(scene, camera);
     };
 
+    resize(renderer, camera);
     renderer.setAnimationLoop(animate);
   }
 }

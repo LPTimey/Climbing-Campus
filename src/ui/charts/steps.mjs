@@ -3,7 +3,7 @@ import * as echarts from "echarts";
 /** @import {EChartsOption} from "echarts" */
 
 /**
-  @param {HTMLElement} div 
+  @param {HTMLElement|echarts.ECharts} chart 
   @param {{
     building: string;
     toLevel: number;
@@ -11,7 +11,7 @@ import * as echarts from "echarts";
     notes?: string;
   }[]} data 
  */
-export default function StepsStacked(div, data) {
+export default function StepsStacked(chart, data) {
   const buildings = [...new Set(data.map((d) => d.building))];
   const levels = [...new Set(data.map((d) => d.toLevel))].sort((a, b) => a - b);
 
@@ -30,12 +30,23 @@ export default function StepsStacked(div, data) {
     matrix.get(d.toLevel)[bIndex] += d.steps * Math.sign(d.toLevel);
   });
 
-  const chart = echarts.init(div);
+  if (chart instanceof HTMLElement) {
+    chart = echarts.init(chart);
+  }
 
   /** @type {EChartsOption} */
   const options = {
+    backgroundColor: "#00000000",
     tooltip: {
       type: "item",
+    },
+    toolbox: {
+      show: true,
+      feature: {
+        dataView: { readOnly: false },
+        restore: {},
+        saveAsImage: { type: "png" },
+      },
     },
     textStyle: { color: "#fff" },
     title: {

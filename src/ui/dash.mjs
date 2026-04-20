@@ -16,7 +16,7 @@ template.innerHTML = `
       gap: 2rem;
     }
     #chart, #graph {
-      width: 160ch;
+      width: 100ch;
       height: 45rem;
     }
   </style>
@@ -42,17 +42,27 @@ class Dash extends HTMLElement {
     if (!this.shadowRoot) {
       return;
     }
+
+    const stepChart = echarts.init(
+      /** @type {HTMLDivElement} */ (this.shadowRoot.getElementById("chart")),
+    );
+    const connectionsGraph = echarts.init(
+      /** @type {HTMLDivElement} */ (this.shadowRoot.getElementById("graph")),
+    );
+
+    stepChart.showLoading();
+    connectionsGraph.showLoading();
+
     const stepData = await getStepData();
     const connections = await getConnectionData();
     const barriers = await getBarrierData();
 
-    const chartDom = /** @type {HTMLDivElement} */(this.shadowRoot.getElementById("chart"));
-    StepsStacked(chartDom, stepData);
 
-    const graphDom = /** @type {HTMLDivElement} */ (
-      this.shadowRoot.getElementById("graph")
-    );
-    ConnectionsGraph(graphDom, connections);
+    StepsStacked(stepChart, stepData);
+    ConnectionsGraph(connectionsGraph, connections);
+
+    stepChart.hideLoading();
+    connectionsGraph.hideLoading();
     return;
   }
 }

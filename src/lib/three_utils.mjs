@@ -36,6 +36,8 @@ export function rendererNeedsResize(renderer) {
 export function resize(renderer, camera) {
   const canvas = renderer.domElement;
   const pixelRatio = window.devicePixelRatio;
+  canvas.removeAttribute("width");
+  canvas.removeAttribute("height");
   const width = canvas.clientWidth;
   const height = canvas.clientHeight;
 
