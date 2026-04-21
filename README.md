@@ -1,8 +1,16 @@
 # Climbing Campus
 
+![Logo](assets/temp/landing-dark.svg)
+
 - [Climbing Campus](#climbing-campus)
-  - [German](#german)
+  - [German / Deutsch](#german--deutsch)
+    - [Aufgabe / Mission](#aufgabe--mission)
+    - [Umfrage](#umfrage)
+    - [Seite](#seite)
   - [English](#english)
+    - [Mission](#mission)
+    - [Survey](#survey)
+    - [Website](#website)
   - [How To Run](#how-to-run)
     - [Download](#download)
       - [With git](#with-git)
@@ -14,9 +22,40 @@
       - [Production Server](#production-server)
       - [Build Site](#build-site)
 
-## German
+## German / Deutsch
+
+### Aufgabe / Mission
+
+Im Rahmen des Wahlpflichtfachs *Informationsvisualisierung* erhielten wir das Oberthema **„Ups and Downs“**.  
+Statt dieses abstrakt als Vor- Nachteile bzw. Wechseldynamiken zu interpretieren, haben wir uns bewusst für eine wörtliche und zugleich spielerische Umsetzung entschieden.
+
+Der Campus der Technischen Hochschule Ingolstadt ist weitläufig und vor allem: voller Treppen, Ebenen und Höhenunterschiede.
+Für Studierende bedeutet das täglich kleine „Aufstiege“ und „Abstiege“, sei es auf dem Weg zur Vorlesung, zur Mensa oder generell zwischen Gebäuden.
+
+Mit **Climbing Campus** machen wir genau diese physischen „Ups and Downs“ sichtbar.
+
+### Umfrage
+
+Um ein besseres Verständnis für die Wahrnehmung der Studierenden zu gewinnen, haben wir eine Umfrage durchgeführt.
+
+Dabei wollten wir unter anderem herausfinden:
+
+- Wie anstrengend wird der Campus im Alltag empfunden?
+- Welche Wege werden besonders häufig genutzt?
+- Welche Orte gelten als „anstrengend“ oder „entspannt“ oder ...?
+- TODO: mehr
+
+Die Ergebnisse dieser Umfrage sind in unsere Visualisierung eingeflossen und bilden eine wichtige Grundlage für die Interpretation der Daten.
+
+### Seite
 
 ## English
+
+### Mission
+
+### Survey
+
+### Website
 
 ## How To Run
 
