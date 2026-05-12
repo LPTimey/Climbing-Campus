@@ -20,5 +20,8 @@
     "@types/three": "^0.184.0",
     "echarts": "^6.0.0",
     "three": "^0.184.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.7.0"
   }
 }

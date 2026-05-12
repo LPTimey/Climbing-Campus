@@ -1,5 +1,5 @@
 /**
- * @typedef {Object} ATTimeTableParams
+ * @typedef {Object} TimeTableParams
  * @property {number} sem - Semester (SoSe26 = 50)
  * @property {string} showdate - Date in format "month/day/year" (e.g., "4/30/2026")
  * @property {"week"} viewtype - Type of view: currently supports "week" or other portal modes
@@ -8,7 +8,7 @@
  * @property {string} User - UserName (vvnXXXX)
  * @property {string} mode - usually "calendar" or similar portal constants
  * @property {number} stgru - Studiengruppe number (integer)
- * @property {string} [csrfToken] - CSRF Token if required (optional, depending on endpoint security) 
+ * @property {string} [csrfToken] - CSRF Token if required (optional, depending on endpoint security)
  */
 
 const fromNetworkTab = `
@@ -32,27 +32,42 @@ await fetch("https://www3.primuss.de/stpl/index.php?FH=fhin&Language=de&sem=50&m
     "method": "POST",
     "mode": "cors"
 });
-`
+`;
 
 /**
- * Fetches the A-TimeTable data.
- * 
- * @param {ATTimeTableParams} params - Object containing all portal parameters and credentials.
+ * Fetches the TimeTable data.
+ *
+ * @param {TimeTableParams} params - Object containing all portal parameters and credentials.
  * @returns {Promise<string>} - Returns the raw response text or parsed JSON depending on config.
- * 
+ *
  * @example
+ * // Example based on a real browser network request
  * const result = await fetchATimeTable({
+ *   sem: 50, // SoSe26
  *   showdate: "4/30/2026",
  *   viewtype: "week",
  *   timezone: 2,
- *   Session: "...",
- *   User: "...",
- *   mode: "calender",
- *   stgru: 1329
+ *   Session: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+ *   User: "vvn1234",
+ *   mode: "calendar",
+ *   stgru: 1329,
+ *   csrfToken: undefined // optional
  * });
+ *
+ * console.log(result);
  */
 export default async function fetchATimeTable(params) {
-  const { showdate, viewtype, timezone, Session, User, mode, stgru, csrfToken, sem } = params;
+  const {
+    showdate,
+    viewtype,
+    timezone,
+    Session,
+    User,
+    mode,
+    stgru,
+    csrfToken,
+    sem,
+  } = params;
 
   // Build the URL encoded body safely
   const body = new URLSearchParams();
@@ -68,15 +83,16 @@ export default async function fetchATimeTable(params) {
 
   /** @type {HeadersInit} */
   const headers = {
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0", // Updated Version
-    "Accept": "application/json, text/javascript, */*; q=0.01",
+    "User-Agent":
+      "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:128.0) Gecko/20100101 Firefox/128.0", // Updated Version
+    Accept: "application/json, text/javascript, */*; q=0.01",
     "Accept-Language": "de,en-US;q=0.9,en;q=0.8",
     "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
     // Only include CSRF if provided (Security Best Practice)
     "anti-csrf-token": csrfToken || "undefined",
     "X-Requested-With": "XMLHttpRequest",
-    "Pragma": "no-cache",
-    "Cache-Control": "no-cache"
+    Pragma: "no-cache",
+    "Cache-Control": "no-cache",
   };
 
   // Construct referer dynamically if not already fixed
@@ -93,8 +109,8 @@ export default async function fetchATimeTable(params) {
       credentials: "include", // Ensures browser cookies are sent automatically
       headers,
       referrer: referrerUrl.toString(),
-      body: body.toString()
-    }
+      body: body.toString(),
+    },
   );
 
   if (!response.ok) {
