@@ -23,8 +23,7 @@
 )
 #set text(
   lang: "de",
-  // TODO: better fonts
-  font: ("Libertinus Serif"),
+  font: ("Mozilla Text"),
 )
 
 // TODO: make doc
