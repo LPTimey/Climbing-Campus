@@ -28,3 +28,5 @@
 )
 
 // TODO: make doc
+
+#bibliography(title: none, "Dokumentation.bib", style: "iso-690-numeric")
