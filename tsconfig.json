@@ -22,7 +22,11 @@
     "paths": {
       "@/*": [
         "./src/*"
-      ]
+      ],
+      "three": ["./node_modules/three/build/"],
+      "three/addons": ["./node_modules/three/examples/jsm/"],
+      "three/fonts": ["./node_modules/three/examples/fonts/"],
+      "echarts": ["./node_modules/echarts/dist/"]
     }
   },
   "include": [

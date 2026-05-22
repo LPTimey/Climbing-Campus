@@ -6,6 +6,8 @@
         "imports": {
           "@/": "./src/",
           "three": "./node_modules/three/build/three.module.js",
+          "three/addons": "./node_modules/three/examples/jsm/addons.js",
+          "three/fonts": "./node_modules/three/examples/fonts/",
           "echarts": "./node_modules/echarts/dist/echarts.esm.js"
         }
       }
@@ -14,9 +16,9 @@
     <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Climbing Campus - Ups and Downs</title>
-    <script type="module" src="./src/components/max-w-wrapper.mjs"></script>
     <script type="module" src="./src/ui/dash.mjs"></script>
     <script type="module" src="./src/ui/game/element.mjs"></script>
+    <script type="module" src="./src/ui/bg.mjs"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -29,68 +31,58 @@
       <a href="#Explanation">Explanations</a>
     </header>
     <main>
-      <section id="Intro">
-        <max-w-wrapper center>
-          <img src="assets/temp/landing-dark.svg" alt="" />
-        </max-w-wrapper>
+      <section
+        id="Intro"
+        style="display: flex; justify-content: center; align-items: center"
+      >
+        <div
+          style="
+            height: 6rem;
+            width: 2rem;
+            background: linear-gradient(
+              to bottom,
+              var(--blue-light),
+              var(--blue-dark)
+            );
+          "
+        ></div>
+        <div
+          style="
+            height: 6rem;
+            width: 2rem;
+            background: linear-gradient(
+              to bottom,
+              var(--purple-light),
+              var(--purple-dark)
+            );
+          "
+        ></div>
+        <div
+          style="
+            height: 6rem;
+            width: 2rem;
+            background: linear-gradient(
+              to bottom,
+              var(--violet-light),
+              var(--violet-dark)
+            );
+          "
+        ></div>
       </section>
       <section id="Game">
-        <results-game></results-game>
+        <results-game />
       </section>
       <section id="Map">
-        <max-w-wrapper center>
-          <picture
-            ><img
-              src="assets/temp/THI_map-dark.jpeg"
-              alt=""
-              style="max-height: 90vh"
-          /></picture>
-        </max-w-wrapper>
+        <div class="max-w-wrapper"></div>
       </section>
-      <section id="Charts" style="padding-block: 5rem;">
-        <dash-board />
+      <section id="charts">
+        <div class="max-w-wrapper">
+          <dash-board />
+        </div>
       </section>
-      <section id="Explanation">
-        <max-w-wrapper center>
-          <div>
-            <h2 class="h2">Explanations</h2>
-            <article>
-              <h3 class="h4">What we did</h3>
-              <max-w-wrapper small center>
-                <p>
-                  Climbing Campus uncovers the (literal) “ups and downs” of
-                  school life, mapping every stair-rise and fall across
-                  buildings and floors. Explore the patterns, download the data,
-                  and marvel at the zigs and zags of school life.
-                </p>
-              </max-w-wrapper>
-            </article>
-            <article>
-              <h3 class="h4">What we did</h3>
-              <max-w-wrapper small center>
-                <p>
-                  Climbing Campus uncovers the (literal) “ups and downs” of
-                  school life, mapping every stair-rise and fall across
-                  buildings and floors. Explore the patterns, download the data,
-                  and marvel at the zigs and zags of school life.
-                </p>
-              </max-w-wrapper>
-            </article>
-            <article>
-              <h3 class="h4">What we did</h3>
-              <max-w-wrapper small center>
-                <p>
-                  Climbing Campus uncovers the (literal) “ups and downs” of
-                  school life, mapping every stair-rise and fall across
-                  buildings and floors. Explore the patterns, download the data,
-                  and marvel at the zigs and zags of school life.
-                </p>
-              </max-w-wrapper>
-            </article>
-          </div>
-        </max-w-wrapper>
-      </section>
+      <section id="Explanation"></section>
     </main>
+    <canvas id="SiteBG"></canvas>
     <footer>
       <p>
         Made by Tim Ruland
