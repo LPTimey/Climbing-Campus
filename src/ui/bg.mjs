@@ -18,23 +18,62 @@ const Objs = Object.freeze({
     scene: loaders.usd.loadAsync("./assets/Blender Output/3D/Accessibility Blocky.usdz"),
     initialScale: new THREE.Vector3(2, 2, 2)
   },
-  stairs: {},
-  palette: {},
-  lightSimple: {},
-  lightComplex: {},
-  letter: {},
-  telescope: {},
-  spiral: {},
-  questionMark: {},
-  survey: {},
-  image: {},
+  stairs: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/stairs.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  palette: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/palette.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  lightSimple: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/lightbulb Simple.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  lightComplex: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/lightbulb.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  letter: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/letter.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  telescope: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/telescope.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  spiral: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/stess.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  questionMark: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/question-mark.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  survey: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/ClipBoard.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  image: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
   threeJs: {
     scene: loaders.fbx.loadAsync("./assets/Blender Output/3D/Threejs.fbx"),
     initialScale: new THREE.Vector3(0.01, 0.01, 0.01)
   },
-  penStation: {},
-  moodBoard: {},
-  calender: {},
+  penStation: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/PenStation.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  moodBoard: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/moodboard.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
+  calender: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/Calender.usdz"),
+    initialScale: new THREE.Vector3(1, 1, 1),
+  },
 });
 
 const scene = new THREE.Scene();
