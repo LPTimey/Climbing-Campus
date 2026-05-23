@@ -35,39 +35,44 @@
         id="Intro"
         style="display: flex; justify-content: center; align-items: center"
       >
-        <div
-          style="
-            height: 6rem;
-            width: 2rem;
-            background: linear-gradient(
-              to bottom,
-              var(--blue-light),
-              var(--blue-dark)
-            );
-          "
-        ></div>
-        <div
-          style="
-            height: 6rem;
-            width: 2rem;
-            background: linear-gradient(
-              to bottom,
-              var(--purple-light),
-              var(--purple-dark)
-            );
-          "
-        ></div>
-        <div
-          style="
-            height: 6rem;
-            width: 2rem;
-            background: linear-gradient(
-              to bottom,
-              var(--violet-light),
-              var(--violet-dark)
-            );
-          "
-        ></div>
+        <div class="max-w-wrapper">
+          <div id="ColorPhiols" style="display: none; justify-content: center; align-items: center">
+            <div
+              style="
+                height: 6rem;
+                width: 2rem;
+                background: linear-gradient(
+                  to bottom,
+                  var(--blue-light),
+                  var(--blue-dark)
+                );
+              "
+            ></div>
+            <div
+              style="
+                height: 6rem;
+                width: 2rem;
+                background: linear-gradient(
+                  to bottom,
+                  var(--purple-light),
+                  var(--purple-dark)
+                );
+              "
+            ></div>
+            <div
+              style="
+                height: 6rem;
+                width: 2rem;
+                background: linear-gradient(
+                  to bottom,
+                  var(--violet-light),
+                  var(--violet-dark)
+                );
+              "
+            ></div>
+          </div>
+
+        </div>
       </section>
       <section id="Game">
         <results-game />
@@ -75,7 +80,7 @@
       <section id="Map">
         <div class="max-w-wrapper"></div>
       </section>
-      <section id="charts">
+      <section id="Charts">
         <div class="max-w-wrapper">
           <dash-board />
         </div>

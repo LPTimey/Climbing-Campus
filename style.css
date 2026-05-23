@@ -40,17 +40,21 @@
     --backup-fonts: Arial, Helvetica, sans-serif;
 
     --font:
-        'Arial',
+        'Mozilla Text',
         var(--backup-fonts);
     --display-font:
-        'Arial',
+        'Mozilla Text',
         var(--backup-fonts);
     --logo-font:
         'Coda',
         var(--backup-fonts);
+    --subtile-font:
+        'GoogleSansFlex',
+        var(var(--backup-fonts));
 
     /* Colors */
     --light: #F8F1E6;
+    --gray: #bbb;
     --dark: #0c071c;
     --blue-light: #2466f3;
     --blue-dark: #001162;
@@ -61,6 +65,8 @@
 
     /* Settings */
     font-family: var(--font);
+    --step: 0;
+    font-size: calc(1rem * pow(var(--ratio), var(--step)));
     scroll-behavior: smooth;
     color: var(--light);
     color-scheme: dark;
