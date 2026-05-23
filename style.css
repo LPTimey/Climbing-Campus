@@ -1,4 +1,4 @@
-@layer layout, utilities, reset;
+@layer reset, utilities, layout;
 
 @font-face {
     font-family: 'GoogleSansFlex';
