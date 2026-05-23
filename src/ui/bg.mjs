@@ -14,7 +14,7 @@ const loaders = Object.freeze({
 });
 
 const Objs = Object.freeze({
-  threeJs: loaders.fbx.loadAsync("./assets/Threejs.fbx"),
+  threeJs: loaders.fbx.loadAsync("./assets/Blender Output/3D/Threejs.fbx"),
   // stairs: loaders.
 });
 
