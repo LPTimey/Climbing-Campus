@@ -118,6 +118,7 @@
         flex-direction: column;
         background: url("./assets/mesh-gradient-background.png") fixed;
         background-position: 50% 50%;
+        background-size: cover;
     }
 
     section {
