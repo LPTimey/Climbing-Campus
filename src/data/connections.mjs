@@ -3,7 +3,7 @@ import { parseCsv } from "@/lib/parse-csv.mjs";
 
 export async function getConnectionData() {
   let text = await fetch(
-    "./assets/Treppenstufen nach Gebäude - Verbindungen.csv",
+    "./assets/data/Treppenstufen nach Gebäude - Verbindungen.csv",
   ).then((res) => res.text());
 
   console.log(text)

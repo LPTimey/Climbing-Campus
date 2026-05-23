@@ -10,71 +10,152 @@ const loaders = Object.freeze({
   gltf: new GLTFLoader(),
   usd: new USDLoader(),
   fbx: new FBXLoader(),
-  image: new THREE.ImageLoader(),
 });
 
-const Objs = Object.freeze({
+/**
+ * @template {keyof typeof loaders} T
+ * @typedef {Object} SceneObjectDefinition
+ *
+ * @property {T} type
+ * Loader-Typ.
+ *
+ * @property {string} path
+ * Asset-Pfad.
+ *
+ * @property {number} initialScale
+ * Startskalierung.
+ *
+ * @property {THREE.Object3D | null} cache
+ * Geladenes Objekt.
+ */
+
+/**
+ * @typedef {{
+ *   [key: string]: SceneObjectDefinition<keyof typeof loaders>
+ * }} Objs_t
+ */
+
+/** @satisfies {Record<string, SceneObjectDefinition<keyof typeof loaders>>} */
+const Objs = {
   accessibilityBoy: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/Accessibility Blocky.usdz"),
-    initialScale: new THREE.Vector3(2, 2, 2)
+    type: "gltf",
+    path: "./assets/Blender Output/3D/Accessibility Blocky.glb",
+    initialScale: 3,
+    cache: null,
   },
   calender: {
-    scene: loaders.fbx.loadAsync("./assets/Blender Output/3D/Calender.fbx"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/Calender.glb",
+    initialScale: 10,
+    cache: null,
   },
   clipBoard: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/ClipBoard.usdz"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/ClipBoard.glb",
+    initialScale: 10,
+    cache: null,
   },
   letter: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/letter.usdz"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/letter.glb",
+    initialScale: 10,
+    cache: null,
   },
   lightSimple: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/lightbulb Simple.usdz"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/lightbulb Simple.glb",
+    initialScale: 10,
+    cache: null,
   },
   lightComplex: {
-    scene: loaders.fbx.loadAsync("./assets/Blender Output/3D/lightbulb.fbx"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/lightbulb.glb",
+    initialScale: 10,
+    cache: null,
   },
   moodBoard: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/moodboard.usdz"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/moodboard.glb",
+    initialScale: 4,
+    cache: null,
   },
   palette: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/palette.usdz"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/palette.glb",
+    initialScale: 12,
+    cache: null,
   },
   penStation: {
-    scene: loaders.fbx.loadAsync("./assets/Blender Output/3D/PenStation.fbx"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/PenStation.glb",
+    initialScale: 8,
+    cache: null,
   },
   questionMark: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/question-mark.usdz"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/question-mark.glb",
+    initialScale: 4,
+    cache: null,
   },
   stairs: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/stairs.usdz"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/stairs.glb",
+    initialScale: 4,
+    cache: null,
   },
   stress: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/stess.usdz"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/stress.glb",
+    initialScale: 8,
+    cache: null,
   },
   telescope: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/telescope.usdz"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/telescope.glb",
+    initialScale: 5,
+    cache: null,
   },
   threeJs: {
-    scene: loaders.fbx.loadAsync("./assets/Blender Output/3D/Threejs.fbx"),
-    initialScale: new THREE.Vector3(0.01, 0.01, 0.01)
+    type: "gltf",
+    path: "./assets/Blender Output/3D/Threejs.glb",
+    initialScale: 2,
+    cache: null,
   },
   image: {
-    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/image.usdz"),
-    initialScale: new THREE.Vector3(1, 1, 1),
+    type: "gltf",
+    path: "./assets/Blender Output/3D/image.glb",
+    initialScale: 1,
+    cache: null,
   },
-});
+};
+
+/**
+ * @param {keyof typeof Objs} name
+ */
+export async function getObject(name) {
+  const obj = /** @type {SceneObjectDefinition<(typeof Objs)[name]["type"]>} */(
+    Objs[name]
+  );
+
+  if (!obj) {
+    throw new Error(`Unknown object: ${name}`);
+  }
+
+  if (obj.cache) {
+    return obj.cache
+  }
+
+  const loader = loaders[obj.type];
+
+  const loaded = await loader.loadAsync(obj.path).then(loaded => "scene" in loaded ? loaded.scene : loaded);
+  loaded.scale.set(obj.initialScale, obj.initialScale, obj.initialScale)
+  const group = new THREE.Group();
+  group.add(loaded);
+
+  obj.cache = group;
+
+  return group;
+}
 
 const scene = new THREE.Scene();
 
@@ -101,14 +182,12 @@ const ambient = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambient);
 
 // Load model and add to scene
-const three = await Objs.accessibilityBoy.scene;
+const threeDObj = await getObject("accessibilityBoy");
 
-
-scene.add(three);
+scene.add(threeDObj);
 
 // Optional positioning/scaling
-three.position.set(0, 0, 0);
-three.scale.set(Objs.accessibilityBoy.initialScale.x, Objs.accessibilityBoy.initialScale.z, Objs.accessibilityBoy.initialScale.z);
+threeDObj.position.set(0, 0, 0);
 
 // Animation loop
 let lastTime = 0;
@@ -117,8 +196,7 @@ const animate = (time, _frame) => {
   const deltaTime = time - lastTime;
   resizeIfNeeded(renderer, camera);
 
-  three.rotation.y += deltaTime * 0.001;
-  three.rotation.x += deltaTime * 0.001;
+  threeDObj.rotation.y += deltaTime * 0.001;
 
   lastTime = time;
   renderer.render(scene, camera);
