@@ -14,7 +14,8 @@ const loaders = Object.freeze({
 });
 
 const Objs = Object.freeze({
-  person: loaders.fbx.loadAsync("./assets/Threejs.fbx"),
+  threeJs: loaders.fbx.loadAsync("./assets/Threejs.fbx"),
+  // stairs: loaders.
 });
 
 const scene = new THREE.Scene();
@@ -42,14 +43,14 @@ const ambient = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambient);
 
 // Load model and add to scene
-const person = await Objs.person;
+const three = await Objs.threeJs;
 
 
-scene.add(person);
+scene.add(three);
 
 // Optional positioning/scaling
-person.position.set(0, 0, 0);
-person.scale.set(0.1, 0.1, 0.1);
+three.position.set(0, 0, 0);
+three.scale.set(0.1, 0.1, 0.1);
 
 // Animation loop
 let lastTime = 0;
@@ -58,8 +59,8 @@ const animate = (time, _frame) => {
   const deltaTime = time - lastTime;
   resizeIfNeeded(renderer, camera);
 
-  person.rotation.y += deltaTime * 0.001;
-  person.rotation.x += deltaTime * 0.001;
+  three.rotation.y += deltaTime * 0.001;
+  three.rotation.x += deltaTime * 0.001;
 
   lastTime = time;
   renderer.render(scene, camera);
