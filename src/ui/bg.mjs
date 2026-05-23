@@ -15,6 +15,10 @@ const loaders = Object.freeze({
 
 const Objs = Object.freeze({
   threeJs: loaders.fbx.loadAsync("./assets/Blender Output/3D/Threejs.fbx"),
+  accessibilityBoy: {
+    scene: loaders.usd.loadAsync("./assets/Blender Output/3D/Accessibility Blocky.usdz"),
+    initialScale: new THREE.Vector3(2, 2, 2)
+  },
   // stairs: loaders.
 });
 
@@ -43,14 +47,14 @@ const ambient = new THREE.AmbientLight(0xffffff, 0.5);
 scene.add(ambient);
 
 // Load model and add to scene
-const three = await Objs.threeJs;
+const three = await Objs.accessibilityBoy.scene;
 
 
 scene.add(three);
 
 // Optional positioning/scaling
 three.position.set(0, 0, 0);
-three.scale.set(0.1, 0.1, 0.1);
+// three.scale.set(0.1, 0.1, 0.1);
 
 // Animation loop
 let lastTime = 0;
