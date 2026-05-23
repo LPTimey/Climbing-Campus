@@ -14,12 +14,27 @@ const loaders = Object.freeze({
 });
 
 const Objs = Object.freeze({
-  threeJs: loaders.fbx.loadAsync("./assets/Blender Output/3D/Threejs.fbx"),
   accessibilityBoy: {
     scene: loaders.usd.loadAsync("./assets/Blender Output/3D/Accessibility Blocky.usdz"),
     initialScale: new THREE.Vector3(2, 2, 2)
   },
-  // stairs: loaders.
+  stairs: {},
+  palette: {},
+  lightSimple: {},
+  lightComplex: {},
+  letter: {},
+  telescope: {},
+  spiral: {},
+  questionMark: {},
+  survey: {},
+  image: {},
+  threeJs: {
+    scene: loaders.fbx.loadAsync("./assets/Blender Output/3D/Threejs.fbx"),
+    initialScale: new THREE.Vector3(0.01, 0.01, 0.01)
+  },
+  penStation: {},
+  moodBoard: {},
+  calender: {},
 });
 
 const scene = new THREE.Scene();
@@ -54,7 +69,7 @@ scene.add(three);
 
 // Optional positioning/scaling
 three.position.set(0, 0, 0);
-// three.scale.set(0.1, 0.1, 0.1);
+three.scale.set(Objs.accessibilityBoy.initialScale.x, Objs.accessibilityBoy.initialScale.z, Objs.accessibilityBoy.initialScale.z);
 
 // Animation loop
 let lastTime = 0;
