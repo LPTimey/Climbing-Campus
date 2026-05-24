@@ -18,7 +18,7 @@ export const easing = {
 const animationSegments = [
   {
     startScrollOffset: 0,
-    endScrollOffset: () => window.innerHeight,
+    endScrollOffset: () => window.innerHeight * 2,
     objects: {
       stairs: {
         startPos: new THREE.Vector3(-55, 15, 10),
@@ -26,7 +26,7 @@ const animationSegments = [
 
         easing: easing.easeOutCubic,
 
-        idleAnimation(deltaTime, object) {
+        idleAnimation({ deltaTime, object }) {
           object.rotation.z += deltaTime * 0.001;
           object.rotation.x += deltaTime * 0.001;
         },
@@ -38,7 +38,7 @@ const animationSegments = [
 
         easing: easing.easeInOutQuad,
 
-        idleAnimation(deltaTime, object) {
+        idleAnimation({ deltaTime, object }) {
           object.rotation.y += deltaTime * 0.001;
           object.rotation.x = Math.sin(4);
           object.rotation.z = Math.sin(0.5);
@@ -48,8 +48,8 @@ const animationSegments = [
   },
 
   {
-    startScrollOffset: () => window.innerHeight,
-    endScrollOffset: () => window.innerHeight * 2,
+    startScrollOffset: () => window.innerHeight * 2,
+    endScrollOffset: () => window.innerHeight * 4,
     objects: {
       accessibilityBoy: {
         startPos: new THREE.Vector3(-10, 0, 0),
@@ -57,7 +57,7 @@ const animationSegments = [
 
         easing: easing.linear,
 
-        idleAnimation(deltaTime, object) {
+        idleAnimation({ deltaTime, object }) {
           object.rotation.y += deltaTime * 0.001;
           object.rotation.x = 0;
           object.rotation.z = 0;
@@ -84,21 +84,21 @@ export function createAnimation({
 
   /**
    * 
-   * @param {(deltaTime:number)=>*} fn 
+   * @param {(absTime:number,deltaTime:number)=>*} fn 
    */
   const animate = (fn) => {
     return /** @type {XRFrameRequestCallback} */ (time) => {
       const deltaTime = time - lastTime;
       resizeIfNeeded(renderer, camera);
 
-      fn(deltaTime)
+      fn(time, deltaTime)
 
       lastTime = time;
       renderer.render(scene, camera);
     }
   };
 
-  return animate((deltaTime) => {
+  return animate((time, deltaTime) => {
     const scrollY = window.scrollY;
 
     for (const segment of animationSegments) {
@@ -135,7 +135,7 @@ export function createAnimation({
           easedT,
         );
 
-        animation.idleAnimation(deltaTime, object);
+        (/** @type {IdleAnimation} */(animation.idleAnimation))({ absTime: time, deltaTime, object });
       }
     }
   });
@@ -151,13 +151,17 @@ function resolveOffset(value) {
 }
 
 /**
+ * @typedef {(params:{absTime:number, deltaTime: number, object: THREE.Object3D}) => void} IdleAnimation
+ */
+
+/**
  * @typedef {Object} AnimationObject
  * @property {THREE.Vector3} startPos
  * @property {THREE.Vector3} endPos
  * Receives normalized progress (0-1)
  * and returns eased progress (0-1).
  * @property {(t: number) => number} easing
- * @property {(deltaTime: number, object: THREE.Object3D) => void} idleAnimation
+ * @property {IdleAnimation} idleAnimation
  */
 
 /**
