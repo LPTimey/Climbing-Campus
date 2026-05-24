@@ -53,15 +53,16 @@
         var(var(--backup-fonts));
 
     /* Colors */
-    --light: #F8F1E6;
-    --gray: #bbb;
-    --dark: #0c071c;
-    --blue-light: #2466f3;
-    --blue-dark: #001162;
-    --purple-light: #7624f3;
-    --purple-dark: #3e0596;
-    --violet-light: #3a0092;
-    --violet-dark: #17003a;
+    --light: oklch(96.06% 0.01632 79.28);
+    --dark: oklch(15.054% 0.04411 291.713);
+    --lightgray: oklch(79.208% 0.00009 271.152);
+    --darkgray: oklch(43.495% 0.00005 271.152);
+    --blue-light: oklch(55.829% 0.22205 262.67);
+    --blue-dark: oklch(24.63% 0.14067 263.947);
+    --purple-light: oklch(52.179% 0.26956 291.543);
+    --purple-dark: oklch(34.752% 0.19503 287.949);
+    --violet-light: var(--purple-dark);
+    --violet-dark: oklch(18.342% 0.10213 292.719);
 
     /* Settings */
     font-family: var(--font);
@@ -124,6 +125,56 @@
         left: 0;
         right: 0;
         top: 1rem;
+
+        nav {
+            gap: calc(var(--gap) / 2);
+            display: flex;
+            padding: calc(var(--gap) / 2) var(--gap);
+            border-radius: max(100vh, 100vw);
+            background: color-mix(in oklch, var(--violet-light) 75%, var(--violet-dark));
+            box-shadow:
+                8px 8px 18px oklch(8% 0.03 290 / 0.6),
+                -6px -6px 16px oklch(28% 0.04 290 / 0.45);
+            border:
+                1px solid oklch(100% 0 0 / 0.04);
+            transition:
+                box-shadow 180ms ease,
+                transform 180ms ease,
+                background 180ms ease;
+
+            &:hover {
+                box-shadow:
+                    12px 12px 24px oklch(8% 0.03 290 / 0.7),
+                    -8px -8px 20px oklch(32% 0.04 290 / 0.5);
+            }
+
+            a {
+                color: var(--light);
+                text-decoration: none;
+                padding: 0.8rem 1.2rem;
+                border-radius: max(100vh, 100vw);
+                transition:
+                    box-shadow 180ms ease,
+                    transform 180ms ease,
+                    background 180ms ease;
+
+                &:hover {
+                    box-shadow:
+                        inset 3px 3px 6px oklch(10% 0.03 290 / 0.7),
+                        inset -2px -2px 5px oklch(30% 0.04 290 / 0.3);
+                    transform: translateY(1px);
+                }
+
+                &:active,
+                &.active {
+                    box-shadow:
+                        inset 5px 5px 10px oklch(10% 0.03 290 / 0.75),
+                        inset -4px -4px 8px oklch(30% 0.04 290 / 0.25);
+                    background:
+                        color-mix(in oklch, var(--dark) 96%, white);
+                }
+            }
+        }
     }
 
     body {
