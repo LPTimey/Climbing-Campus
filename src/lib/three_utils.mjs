@@ -1,5 +1,20 @@
 "use strict";
 import * as THREE from "three";
+import { FBXLoader, GLTFLoader, USDLoader } from "three/addons";
+
+
+export const loaders = Object.freeze({
+  threeD: {
+    gltf: new GLTFLoader(),
+    usd: new USDLoader(),
+    fbx: new FBXLoader(),
+  },
+  image: new THREE.TextureLoader(),
+});
+
+/**
+ * @typedef {typeof loaders} Loaders
+ */
 
 /**
  *

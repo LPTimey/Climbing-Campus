@@ -1,19 +1,14 @@
-import { FBXLoader, GLTFLoader, USDLoader } from "three/addons";
+"use strict";
 import * as THREE from "three";
-import { resize, resizeIfNeeded } from "@/lib/three_utils.mjs";
+import { loaders, resize, resizeIfNeeded } from "@/lib/three_utils.mjs";
+/** @import { Loaders } from "@/lib/three_utils.mjs" */
 
 const canvas = /** @type {HTMLCanvasElement} */ (
   document.getElementById("SiteBG")
 );
 
-const loaders = Object.freeze({
-  gltf: new GLTFLoader(),
-  usd: new USDLoader(),
-  fbx: new FBXLoader(),
-});
-
 /**
- * @template {keyof typeof loaders} T
+ * @template {keyof Loaders["threeD"]} T
  * @typedef {Object} SceneObjectDefinition
  *
  * @property {T} type
@@ -31,12 +26,12 @@ const loaders = Object.freeze({
 
 /**
  * @typedef {{
- *   [key: string]: SceneObjectDefinition<keyof typeof loaders>
- * }} Objs_t
+ *   [key: string]: SceneObjectDefinition<keyof Loaders["threeD"]>
+ * }} Objs
  */
 
-/** @satisfies {Record<string, SceneObjectDefinition<keyof typeof loaders>>} */
-const Objs = {
+/** @satisfies {Objs} */
+const objs = {
   accessibilityBoy: {
     type: "gltf",
     path: "./assets/Blender Output/3D/Accessibility Blocky.glb",
@@ -130,11 +125,11 @@ const Objs = {
 };
 
 /**
- * @param {keyof typeof Objs} name
+ * @param {keyof typeof objs} name
  */
 export async function getObject(name) {
-  const obj = /** @type {SceneObjectDefinition<(typeof Objs)[name]["type"]>} */(
-    Objs[name]
+  const obj = /** @type {SceneObjectDefinition<(typeof objs)[name]["type"]>} */(
+    objs[name]
   );
 
   if (!obj) {
@@ -145,7 +140,7 @@ export async function getObject(name) {
     return obj.cache
   }
 
-  const loader = loaders[obj.type];
+  const loader = loaders.threeD[obj.type];
 
   const loaded = await loader.loadAsync(obj.path).then(loaded => "scene" in loaded ? loaded.scene : loaded);
   loaded.scale.set(obj.initialScale, obj.initialScale, obj.initialScale)
