@@ -27,7 +27,8 @@
       "three/addons": ["./node_modules/three/examples/jsm/"],
       "three/fonts": ["./node_modules/three/examples/fonts/"],
       "echarts": ["./node_modules/echarts/dist/"]
-    }
+    },
+    "types": ["node"]
   },
   "include": [
     "src",
