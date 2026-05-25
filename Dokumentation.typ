@@ -80,18 +80,41 @@
   • gibt es Pre-studies / externe Literatur?
 
 = Idee
-= Konzept
+zwei Ideen\
+Erklärung beider
+#figure(image("assets/archive/InfoVis Ideas.png"))
+
+
+Treppensteigen als finale Idee
 = Vorgehen
 == Vorbereitungen
 === Statische Daten
 ==== Treppenzählen
+Treppen am ganzen Campus zählen\
+Excel Tabelle Screenshot\
+Split in Stufen und Wegstrecken / Verbindungen\
+Export als CSV
 ==== Stundenplan
+Stundenpläne aus Primuss-Stundenplan extrahiert\
+NodeJS-Skript\
+Export als CSV\
 === Visualisierung
+Blender 3D-Objekte angefertigt\
+Konzipieren einer Farbpalette\
+Branding-Sachen\
 === Umfrage
+Konzipierung des Fragebogens\
+Umsetzung der Umfrage mit Tally (Screenshot)\
 == Umsetzung
+Finden von Umfrageteilnehmern per Schneeball-System\
+Auswertung der Umfrage per CVS-Export-Funktion von Tally
 === Visualisierung
+Programmierung der Web-Anwendung unter Einbindung der erstellten 3D-Elemente\
+Gestaltung wie in grobem Styleguide definiert\
 === Umfrage
-
+Ausführung der Umfrage\
+Export der Ergebnisse als CSV\
+Verwendung dieser Ergebnisse für die Visualiserung
 
 // TODO: make doc
 
