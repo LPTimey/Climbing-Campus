@@ -62,15 +62,15 @@
 
 = Aufgabe
 1) Visualisierung
-  • Plakat, Flyer oder Ähnliches erstellen
-  • Medium frei wählbar (auch analog <-> digital)
+• Plakat, Flyer oder Ähnliches erstellen
+• Medium frei wählbar (auch analog <-> digital)
 2) Präsentation
-   • ca. 10 Minuten
+• ca. 10 Minuten
 3) Dokumentation
-   • ~ A4, 8-12 Seiten
-   • Texte und Bilder
-   • als pdf am Ende abgeben
-   • am besten schon nebenbei erstellen
+• ~ A4, 8-12 Seiten
+• Texte und Bilder
+• als pdf am Ende abgeben
+• am besten schon nebenbei erstellen
 
 - Semester-Thema: "UPS AND DOWNS"
 - Bearbeitung in Teams ()
@@ -78,6 +78,8 @@
   • Warum relevant / interessant?
   • Funktioniert es als Umfrage? (Common Thema / Wissen)
   • gibt es Pre-studies / externe Literatur?
+
+  #figure(image("Aufgabe/Folie mit Aufgabe.png"))
 
 = Idee
 zwei Ideen\
@@ -102,9 +104,12 @@ Export als CSV\
 Blender 3D-Objekte angefertigt\
 Konzipieren einer Farbpalette\
 Branding-Sachen\
+
+#figure(image("assets/Blender Output/imgs/accessibility-dude.png"))
 === Umfrage
 Konzipierung des Fragebogens\
 Umsetzung der Umfrage mit Tally (Screenshot)\
+#figure(image("assets/archive/Umfrage Draft.png"))
 == Umsetzung
 Finden von Umfrageteilnehmern per Schneeball-System\
 Auswertung der Umfrage per CVS-Export-Funktion von Tally
