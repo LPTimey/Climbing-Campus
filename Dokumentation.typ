@@ -32,7 +32,7 @@
 )
 #show raw: it => text(font: "JetBrainsMono NF")[#it]
 #set par(justify: true)
-#set par.line(numbering: line => text(fill: red, size: 8pt)[#line])
+#set par.line(numbering: line => text(fill: oklch(34.752%, 0.19503, 287.949deg), size: 8pt)[#line])
 // Number equations and list them as figures
 #show figure.where(kind: "equation"): it => block[
   #grid(
@@ -57,7 +57,7 @@
 ])
 
 #heading(numbering: none)[Abstrakt]
-#lorem(50)
+Im Zuge unseres Themas "Climbing Campus" haben wir das tägliche „Auf und Ab“ am Campus der THI im Bezug zu Mobilität und Barrierefreiheit untersucht und dies mit objektiven und subjektiven Daten in Form einer SinglePage-Webseite aufgearbeitet und aufbereitet.
 
 #outline(depth: 3)
 #pagebreak(weak: true)
