@@ -20,6 +20,7 @@
 )
 #set page(
   paper: "a4",
+  numbering: "1",
 )
 #set text(
   lang: "de",
@@ -49,7 +50,9 @@
 #show math.equation.where(block: true): it => figure(kind: "equation", supplement: "Equation", it)
 #set heading(numbering: "1.1.a.I")
 
-#text(font: "Coda", hyphenate: false, align(center)[
+#figure(image("assets/Icons/Climbing Campus/Komposition=Combined, Theme=light.svg"), caption: "Logo")
+
+#text(hyphenate: false, align(center)[
   #title()
 ])
 
@@ -57,39 +60,60 @@
 #lorem(50)
 
 #outline(depth: 3)
-
-#set page(columns: 2)
+#pagebreak(weak: true)
 
 = Aufgabe
-1) Visualisierung
-• Plakat, Flyer oder Ähnliches erstellen
-• Medium frei wählbar (auch analog <-> digital)
-2) Präsentation
-• ca. 10 Minuten
-3) Dokumentation
-• ~ A4, 8-12 Seiten
-• Texte und Bilder
-• als pdf am Ende abgeben
-• am besten schon nebenbei erstellen
+Für das Wahlpflichtfach Informationsvisualisierung sollten wir zum Semesterthema „Ups and Downs“ ein visuelles Konzept gestalten, präsentieren und dokumentieren.
+Genauer heißt dass, eine Visualisierung im Medium unserer Wahl, eine ca. 10 minütige Presentation und diese Dokumentation.
 
-- Semester-Thema: "UPS AND DOWNS"
-- Bearbeitung in Teams ()
-- 14. April: Vorstellung des gewählten Themas
-  • Warum relevant / interessant?
-  • Funktioniert es als Umfrage? (Common Thema / Wissen)
-  • gibt es Pre-studies / externe Literatur?
+Wie das Inhaltsverzeichnis bereits gespoilert hat befinden sich in diesem DIN ISO A4 Dokument #context [#counter(page).final().at(0)] Seiten, welche unsere Gedankengänge und Zwischenergebnisse (hoffentlich) logisch und intuitiv darstellen.
 
-  #figure(image("Aufgabe/Folie mit Aufgabe.png"))
+/*
++ Visualisierung
+  - Plakat, Flyer oder Ähnliches erstellen
+  - Medium frei wählbar (auch analog <-> digital)
++ Präsentation
+  - ca. 10 Minuten
++ Dokumentation
+  - ~ A4, 8-12 Seiten
+  - Texte und Bilder
+  - als pdf am Ende abgeben
+  - am besten schon nebenbei erstellen
+
+  - Semester-Thema: "UPS AND DOWNS"
+  - Bearbeitung in Teams ()
+  - 14. April: Vorstellung des gewählten Themas
+    - Warum relevant / interessant?
+    - Funktioniert es als Umfrage? (Common Thema / Wissen)
+    - gibt es Pre-studies / externe Literatur?
+*/
+
+#figure(image("Aufgabe/Folie mit Aufgabe.png"), caption: "Aufgabenstellung 24.März")
 
 = Idee
-zwei Ideen\
-Erklärung beider
-#figure(image("assets/archive/InfoVis Ideas.png"))
+Als Exploration sind uns 2 vorstellbare Ideen gekommen.
+/* TODO: ausformulieren*/\* mit einem Klaren Favoriten
 
+Die Ideen umfassten folgendes:
+- Analyse der Wegstrecken in der Uni (Treppen)
+- Analyse der Luftqualität in der Uni
 
-Treppensteigen als finale Idee
+// Erklärung Luftqualität
+Auf das Thema "Luftqualität in der THI" sind wir aufgrund des InfoVis-Zimmers gekommen (K-Gebäude 👎🏻) und sollte das Schwingen der Luftschwüle aufgrund von Lüften vs. Aufenthaltsnebel als Ups und Downs darstellen.\
+Dafür hätten wir als statische Daten Hygrometer benutzt und für die Umfrage subjektiv nach Luftqualität pro Gebäude und Zeiteinheit gefragt.
+
+// Erklärung Treppen
+Das Thema Treppensteigen war unser Favorit, da die sehr direkte und bildliche Assoziation zu Oben und Unten einen doch hochwertigen Reiz auslöst. Die weitergeführte Idee beinhaltet die Stundenpläne und Treppenanzahl als objektive Daten und stellt subjektiv Akzeptanz und Barrierefreiheit zur (Um-)Frage.
+
+#figure(image("assets/archive/InfoVis Ideas.png"), caption: "Bildschirmfoto der Ideen aus FigJam")
+
+Nach genauerer Analyse des Überthemas "Ups and Downs" haben wir uns entschieden das Thema spaßeshalber wörtlich zu nehmen /*TODO: write*/(sagen unseriös sein wollen und so).
+
+Nach der Besprechung und deswegen haben wir uns für das Treppensteigen als finale Idee entschieden
 = Vorgehen
+#lorem(40)
 == Vorbereitungen
+#lorem(20)
 === Statische Daten
 ==== Treppenzählen
 Treppen am ganzen Campus zählen\
