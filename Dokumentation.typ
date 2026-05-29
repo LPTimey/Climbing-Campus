@@ -110,42 +110,57 @@ Das Thema Treppensteigen war unser Favorit, da die sehr direkte und bildliche As
 Nach genauerer Analyse des Überthemas "Ups and Downs" haben wir uns entschieden das Thema spaßeshalber wörtlich zu nehmen /*TODO: write*/(sagen unseriös sein wollen und so).
 
 Nach der Besprechung und deswegen haben wir uns für das Treppensteigen als finale Idee entschieden
+
 = Vorgehen
-#lorem(40)
 == Vorbereitungen
-#lorem(20)
+Nachdem wir uns auf unsere Grundidee geeinigt haben, haben wir angefangen, die Logistik und Planung genauer zu betrachten. Dabei haben wir uns folgende Struktur überlegt: eine Aufteilung in statische Daten, dynamische Daten und die finale Visualisierung.
+
 === Statische Daten
-==== Treppenzählen
-Treppen am ganzen Campus zählen\
-Excel Tabelle Screenshot\
+Statische Daten sind Daten die sich ändern und Objektiv aufnehmen lassen.
+// TODO: add Barrierefreiheit wie Aufzüge und Rampen
+In unserem Beispiel sind das die tatsächlichen physikalischen Gebäude, deren Treppenhäuser und Treppenzahl und die Verbindungswege der THI, sowie die festgelegten Stundenpläne, welche sich aus Primuss(-Stundenplan) ziehen lassen.
+
+==== Treppenzahlen und mehr begehbares
+Um diese Daten zu erheben sind wir alle (Haupt-) Gebäude abgegangen und sind alle Treppenhäuser abgegangen und haben beide /* TODO: übersetzten*/ "independently" die stufen gezählt und Ergebnisse verglichen. Außerdem haben wir eine Liste aller Gebäudeverbindungen erstellt.
+
+#figure(
+  image("assets/archive/sheets/Stufen - Treppenstufen nach Gebäude - Google Sheets.png"),
+  caption: "Screenshot der Google Sheets Datei",
+)
+
+// TODO:
 Split in Stufen und Wegstrecken / Verbindungen\
 Export als CSV
+
 ==== Stundenplan
 Stundenpläne aus Primuss-Stundenplan extrahiert\
 NodeJS-Skript\
 Export als CSV\
+
+=== Umfrage
+Konzipierung des Fragebogens\
+Umsetzung der Umfrage mit Tally (Screenshot)\
+#figure(image("assets/archive/Umfrage Draft.png"))
+
 === Visualisierung
 Blender 3D-Objekte angefertigt\
 Konzipieren einer Farbpalette\
 Branding-Sachen\
 
 #figure(image("assets/Blender Output/imgs/accessibility-dude.png"))
-=== Umfrage
-Konzipierung des Fragebogens\
-Umsetzung der Umfrage mit Tally (Screenshot)\
-#figure(image("assets/archive/Umfrage Draft.png"))
+
 == Umsetzung
 Finden von Umfrageteilnehmern per Schneeball-System\
 Auswertung der Umfrage per CVS-Export-Funktion von Tally
+
 === Visualisierung
 Programmierung der Web-Anwendung unter Einbindung der erstellten 3D-Elemente\
 Gestaltung wie in grobem Styleguide definiert\
+
 === Umfrage
 Ausführung der Umfrage\
 Export der Ergebnisse als CSV\
-Verwendung dieser Ergebnisse für die Visualiserung
-
-// TODO: make doc
+Verwendung dieser Ergebnisse für die Visualisierung
 
 #outline(target: figure, title: "Bilderverzeichnis")
 #bibliography(title: none, "Dokumentation.bib", style: "iso-690-numeric")
