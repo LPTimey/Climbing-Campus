@@ -27,4 +27,5 @@
         "Threejs",
         "usdz"
     ],
+    "latex-workshop.intellisense.citation.backend": "biblatex",
 }

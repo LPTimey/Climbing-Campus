@@ -1,3 +1,8 @@
+#import "setup.typ": *;
+#import "glossary.typ": *;
+// #import "@preview/glossy:0.9.1": *
+#import "vendor/glossy 0.9.1/lib.typ": *
+
 #let date = datetime.today();
 
 #set document(
@@ -22,33 +27,17 @@
   paper: "a4",
   numbering: "1",
 )
-#set text(
-  lang: "de",
-  region: "DE",
-  number-width: "tabular",
-  slashed-zero: true,
-  overhang: true,
-  font: "Mozilla Text",
-)
-#show raw: it => text(font: "JetBrainsMono NF")[#it]
-#set par(justify: true)
-#set par.line(numbering: line => text(fill: oklch(34.752%, 0.19503, 287.949deg), size: 8pt)[#line])
-// Number equations and list them as figures
-#show figure.where(kind: "equation"): it => block[
-  #grid(
-    columns: (1fr, auto),
-    align: center,
 
-    it.body,
-    align(right)[
-      (#context counter(figure.where(kind: "equation")).display())
-    ],
-  )
+#show: setup(myGlossary)
 
-  #it.caption
-]
-#show math.equation.where(block: true): it => figure(kind: "equation", supplement: "Equation", it)
-#set heading(numbering: "1.1.a.I")
+/*
+ Text boxes from < https://www.infyways.com/tools/text-box-generator/ >
+ ╔══════════════════════════════════ Section ═══════════════════════════════════╗
+ ║                                                                              ║
+ ║                                Document Start                                ║
+ ║                                                                              ║
+ ╚══════════════════════════════════════════════════════════════════════════════╝
+*/
 
 #figure(image("assets/Icons/Climbing Campus/Komposition=Combined, Theme=light.svg"), caption: "Logo")
 
@@ -60,6 +49,14 @@
 Im Zuge unseres Themas "Climbing Campus" haben wir das tägliche „Auf und Ab“ am Campus der THI im Bezug zu Mobilität und Barrierefreiheit untersucht und dies mit objektiven und subjektiven Daten in Form einer SinglePage-Webseite aufgearbeitet und aufbereitet.
 
 #outline(depth: 3)
+
+#glossary(
+  title: "Glossar",
+  theme: theme-academic,
+  sort: true,
+  show-all: false,
+)
+
 #pagebreak(weak: true)
 
 = Aufgabe
@@ -68,31 +65,10 @@ Genauer heißt dass, eine Visualisierung im Medium unserer Wahl, eine ca. 10 min
 
 Wie das Inhaltsverzeichnis bereits gespoilert hat befinden sich in diesem DIN ISO A4 Dokument #context [#counter(page).final().at(0)] Seiten, welche unsere Gedankengänge und Zwischenergebnisse (hoffentlich) logisch und intuitiv darstellen.
 
-/*
-+ Visualisierung
-  - Plakat, Flyer oder Ähnliches erstellen
-  - Medium frei wählbar (auch analog <-> digital)
-+ Präsentation
-  - ca. 10 Minuten
-+ Dokumentation
-  - ~ A4, 8-12 Seiten
-  - Texte und Bilder
-  - als pdf am Ende abgeben
-  - am besten schon nebenbei erstellen
-
-  - Semester-Thema: "UPS AND DOWNS"
-  - Bearbeitung in Teams ()
-  - 14. April: Vorstellung des gewählten Themas
-    - Warum relevant / interessant?
-    - Funktioniert es als Umfrage? (Common Thema / Wissen)
-    - gibt es Pre-studies / externe Literatur?
-*/
-
 #figure(image("Aufgabe/Folie mit Aufgabe.png"), caption: "Aufgabenstellung 24.März")
 
 = Idee
 Als Exploration sind uns 2 vorstellbare Ideen gekommen.
-/* TODO: ausformulieren*/\* mit einem Klaren Favoriten
 
 Die Ideen umfassten folgendes:
 - Analyse der Wegstrecken in der Uni (Treppen)
@@ -100,7 +76,7 @@ Die Ideen umfassten folgendes:
 
 // Erklärung Luftqualität
 Auf das Thema "Luftqualität in der THI" sind wir aufgrund des InfoVis-Zimmers gekommen (K-Gebäude 👎🏻) und sollte das Schwingen der Luftschwüle aufgrund von Lüften vs. Aufenthaltsnebel als Ups und Downs darstellen.\
-Dafür hätten wir als statische Daten Hygrometer benutzt und für die Umfrage subjektiv nach Luftqualität pro Gebäude und Zeiteinheit gefragt.
+Dafür hätten wir @hygrometer:cap als statische Datenquelle benutzt und für die Umfrage subjektiv nach Luftqualität pro Gebäude und Zeiteinheit gefragt.
 
 // Erklärung Treppen
 Das Thema Treppensteigen war unser Favorit, da die sehr direkte und bildliche Assoziation zu Oben und Unten einen doch hochwertigen Reiz auslöst. Die weitergeführte Idee beinhaltet die Stundenpläne und Treppenanzahl als objektive Daten und stellt subjektiv Akzeptanz und Barrierefreiheit zur (Um-)Frage.
@@ -128,26 +104,26 @@ Um diese Daten zu erheben sind wir alle (Haupt-) Gebäude abgegangen und sind al
   caption: "Screenshot der Google Sheets Datei",
 )
 
-// TODO:
-Split in Stufen und Wegstrecken / Verbindungen\
-Export als CSV
-
 ==== Stundenplan
-Stundenpläne aus Primuss-Stundenplan extrahiert\
-NodeJS-Skript\
+Um Daten zu den Stundenplänen für z.B: übliche Routen zu ziehen, haben wir das Primuss-Stundenplan-System Analysiert und herausgefunden wie die Stundenpläne geladen werden.
+Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten mit input eines Validen Sessiontokens die Daten extrahiert und als CSV-Datei exportiert.\
+
 Export als CSV\
 
 === Umfrage
 Konzipierung des Fragebogens\
 Umsetzung der Umfrage mit Tally (Screenshot)\
-#figure(image("assets/archive/Umfrage Draft.png"))
+#figure(image("assets/archive/Umfrage Draft.png"), caption: "Screenshot des Drafts der Umfrage aus FigJam")
 
 === Visualisierung
 Blender 3D-Objekte angefertigt\
 Konzipieren einer Farbpalette\
 Branding-Sachen\
 
-#figure(image("assets/Blender Output/imgs/accessibility-dude.png"))
+#figure(
+  image("assets/Blender Output/imgs/accessibility-dude.png"),
+  caption: "TODO: set Caption",
+)
 
 == Umsetzung
 Finden von Umfrageteilnehmern per Schneeball-System\
