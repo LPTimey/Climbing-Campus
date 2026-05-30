@@ -36,7 +36,6 @@
   ),
   sessiontoken: (
     short: "Session Token",
-    long: "Session Token",
     description: [
       Ein eindeutiger Wert, der nach einer erfolgreichen Anmeldung erzeugt wird und einen Benutzer während einer Sitzung identifiziert. Der Token wird typischerweise vom Client gespeichert und bei weiteren Anfragen an den Server übermittelt, sodass der Benutzer nicht bei jeder Anfrage erneut seine Anmeldedaten angeben muss.
     ],

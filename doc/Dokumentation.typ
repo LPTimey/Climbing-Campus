@@ -107,7 +107,7 @@ Um diese Daten zu erheben sind wir alle (Haupt-) Gebäude abgegangen und sind al
 
 ==== Stundenplan
 Um Daten zu den Stundenplänen für z.B: übliche Routen zu ziehen, haben wir das Primuss-Stundenplan-System Analysiert und herausgefunden wie die Stundenpläne geladen werden.
-Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten mit input eines validen Session-tokens die Daten extrahiert und als @csv\-Datei exportiert.
+Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten mit input eines validen @sessiontoken\s die Daten extrahiert und als @csv\-Datei exportiert.
 
 === Umfrage
 Für schnelles Iterieren haben wir uns dazu entschieden die Umfrage zuerst in FigJam grob auszulegen, da FigJam viele Templates beinhaltet und simples Drag and Drop Editing nutzt.
