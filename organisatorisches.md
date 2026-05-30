@@ -13,8 +13,7 @@
 
 * Semester-Thema: "UPS AND DOWNS"
 * Bearbeitung in Teams ()
-* 14. April: Vorstellung des gewählten Themas
+* 14\. April: Vorstellung des gewählten Themas
   * Warum relevant / interessant?
   * Funktioniert es als Umfrage? (Common Thema / Wissen)
   * gibt es Pre-studies / externe Literatur?
-  * 
