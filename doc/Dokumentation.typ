@@ -128,12 +128,14 @@ Der Plan für die Umfrage umfasst den Start, welcher eine Zustimmung und Demogra
 === Visualisierung
 Eine gute Visualisierung lebt von vielen Dingen, Themen, Sachen, und Teilen.
 Dazu gehören Konsistenz, Appeal und readability.
-Um uns eine Klarere Übersicht und gemeinsame Vorstellung zu schaffen haben wir angefangen ein Moodboard (@Moodboard) zu erstellen.
+Um uns eine klarere Übersicht und gemeinsame Vorstellung zu schaffen, haben wir angefangen ein Moodboard (@Moodboard) zu erstellen.
 Es beinhaltet eine Ansammlung an zum Teil gefundenen und zum Teil selbst gemachten Kacheln, welche versuchen eine konstante und visuell ansprechende Bildsprache zu definieren.
-Genauer kann man aus den Kacheln herauslesen, dass wir sehr dreidimensional mit echten 3D-Objekten und Neumorphismus arbeiten wollen, sowie eine verlaufende Gloss/Specular-Farbsprache angepeilt wird.
+// TODO: Better machen
+Genauer kann man aus den Kacheln herauslesen, dass wir sehr dreidimensional mit echten 3D-Objekten und Neumorphismus arbeiten wollen, sowie eine verlaufende Gloss/Specular-Farbsprache anpeilen.
 
-Ein interessanter Aspekt der visuellen Gestaltung ist die Überschneidung mit dem bestehenden Brand Design.
+Ein interessanter Aspekt der visuellen Gestaltung ist die Überschneidung mit Brand Design.
 Dabei werden zentrale Elemente wie Formen, Farben und gestalterische Prinzipien aufgegriffen, um einen konsistenten und wiedererkennbaren Markenauftritt zu gewährleisten.
+// TODO: Unser Logo genauer nicht grob
 Insbesondere die charakteristischen Eigenschaften des Logos dienen als Grundlage und ziehen sich subtil durch die gesamte visuelle Sprache, wodurch eine klare Verbindung zur Markenidentität entsteht (@LogoKomponente).
 
 Zur weiteren Ausarbeitung haben wir 3D Modelle in @blender:cap in diesem zuvor ausgearbeitetem Stil erstellt.
