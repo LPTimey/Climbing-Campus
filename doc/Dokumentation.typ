@@ -76,7 +76,7 @@ Die Ideen umfassten folgendes:
 - Analyse der Luftqualität in der Uni
 
 // Erklärung Luftqualität
-Auf das Thema "Luftqualität in der THI" sind wir aufgrund des InfoVis-Zimmers gekommen (K-Gebäude 👎🏻) und sollte das Schwingen der Luftschwüle aufgrund von Lüften vs. Aufenthaltsnebel als Ups und Downs darstellen.\
+Auf das Thema "Luftqualität in der THI" sind wir aufgrund des InfoVis-Zimmers gekommen (K-Gebäude 👎🏻) und sollte das Schwingen der Luftschwüle in relation zu Lüften gegen Aufenthaltsnebel als Ups und Downs darstellen.\
 Dafür hätten wir @hygrometer:cap als statische Datenquelle benutzt und für die Umfrage subjektiv nach Luftqualität pro Gebäude und Zeiteinheit gefragt.
 
 // Erklärung Treppen
@@ -98,38 +98,50 @@ Statische Daten sind Daten die sich ändern und Objektiv aufnehmen lassen.
 In unserem Beispiel sind das die tatsächlichen physikalischen Gebäude, deren Treppenhäuser und Treppenzahl und die Verbindungswege der THI, sowie die festgelegten Stundenpläne, welche sich aus Primuss(-Stundenplan) ziehen lassen.
 
 ==== Treppenzahlen und mehr begehbares
-Um diese Daten zu erheben sind wir alle (Haupt-) Gebäude abgegangen und sind alle Treppenhäuser abgegangen und haben beide /* TODO: übersetzten*/ "independently" die stufen gezählt und Ergebnisse verglichen. Außerdem haben wir eine Liste aller Gebäudeverbindungen erstellt.
+Um diese Daten zu erheben sind wir alle (Haupt-) Gebäude abgegangen und sind alle Treppenhäuser abgegangen und haben beide /* TODO: übersetzten*/ "independently" die stufen gezählt und Ergebnisse verglichen. Außerdem haben wir eine Liste aller Gebäudeverbindungen erstellt (@StairSheet).
 
-#figure(
-  image("../assets/archive/sheets/Stufen - Treppenstufen nach Gebäude - Google Sheets.png"),
-  caption: "Screenshot der Google Sheets Datei",
-)
 
 ==== Stundenplan
 Um Daten zu den Stundenplänen für z.B: übliche Routen zu ziehen, haben wir das Primuss-Stundenplan-System Analysiert und herausgefunden wie die Stundenpläne geladen werden.
 Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten mit input eines validen @sessiontoken\s die Daten extrahiert und als @csv\-Datei exportiert.
 
 === Umfrage
-Für schnelles Iterieren haben wir uns dazu entschieden die Umfrage zuerst in FigJam grob auszulegen, da FigJam viele Templates beinhaltet und simples Drag and Drop Editing nutzt.
+Für schnelles Iterieren haben wir uns dazu entschieden die Umfrage zuerst in FigJam grob auszulegen, da FigJam viele Templates beinhaltet und simples Drag and Drop Editing nutzt (@SurveyDraft).
 Der Plan für die Umfrage umfasst den Start, welcher eine Zustimmung und Demographie-Daten beinhaltet, dem Hauptteil A mit generellen Fragen zur Campus-Gesamterfahrung, B mit Fragen zum Stundenplan, dem Stufen und Infrastruktur Teil C, und als letztes, aber nicht als das letzte, Teile D und E in denen die Barrierefreiheit, Chancengleichheit und generelle Akzeptanz pro Gebäude abgefragt werden.
 
-#figure(image("../assets/archive/Umfrage Draft.png"), caption: "Screenshot des Drafts der Umfrage aus FigJam")
+#grid(
+  columns: (auto, auto),
+  gutter: 2em,
+  align: center + bottom,
+  [
+    #figure(
+      image("../assets/archive/sheets/Stufen - Treppenstufen nach Gebäude - Google Sheets.png"),
+      caption: "Screenshot der Google Sheets Datei",
+    )<StairSheet>
+  ],
+  [
+    #figure(image("../assets/archive/Umfrage Draft.png"), caption: "Screenshot des Drafts der Umfrage aus FigJam")<SurveyDraft>
+  ],
+)
+
 
 === Visualisierung
 Eine gute Visualisierung lebt von vielen Dingen, Themen, Sachen, und Teilen.
-Dazu gehören Konsistenz, Appeal und readability.\
-Überschneidung mit Branddesign\
-Konzipieren einer Farbpalette\
-@Moodboard
+Dazu gehören Konsistenz, Appeal und readability.
+Um uns eine Klarere Übersicht und gemeinsame Vorstellung zu schaffen haben wir angefangen ein Moodboard (@Moodboard) zu erstellen.
+Es beinhaltet eine Ansammlung an zum Teil gefundenen und zum Teil selbst gemachten Kacheln, welche versuchen eine konstante und visuell ansprechende Bildsprache zu definieren.
+Genauer kann man aus den Kacheln herauslesen, dass wir sehr dreidimensional mit echten 3D-Objekten und Neumorphismus arbeiten wollen, sowie eine verlaufende Gloss/Specular-Farbsprache angepeilt wird.
 
-Branding-Sachen\
-@LogoKomponente
+Ein interessanter Aspekt der visuellen Gestaltung ist die Überschneidung mit dem bestehenden Brand Design.
+Dabei werden zentrale Elemente wie Formen, Farben und gestalterische Prinzipien aufgegriffen, um einen konsistenten und wiedererkennbaren Markenauftritt zu gewährleisten.
+Insbesondere die charakteristischen Eigenschaften des Logos dienen als Grundlage und ziehen sich subtil durch die gesamte visuelle Sprache, wodurch eine klare Verbindung zur Markenidentität entsteht (@LogoKomponente).
 
-Blender 3D-Objekte angefertigt\
-@BlenderRender
+Zur weiteren Ausarbeitung haben wir 3D Modelle in @blender:cap in diesem zuvor ausgearbeitetem Stil erstellt.
+Diese folgen zusätzlich/genauer einem Hard-Surface-Ansatz mit klar definierten Kanten und präzisen, technischen Formen.
+Durch den gezielten Einsatz von Materialien, Licht und Reflexionen unterstützen sie die angestrebte visuelle Wirkung und verstärken die im Moodboard definierte Gloss- und Specular-Ästhetik (@BlenderRender).
 
 #figure(
-  image("../assets/Moodboard_ Bild- & Grafikstil und Farben.png"),
+  image("../assets/Moodboard_ Bild- & Grafikstil und Farben.png", height: 10cm),
   caption: "Moodboard",
 )<Moodboard>
 
@@ -157,6 +169,7 @@ Blender 3D-Objekte angefertigt\
     )<BlenderRender>
   ],
 )
+#pagebreak(weak: true)
 
 == Umsetzung
 Finden von Umfrageteilnehmern per Schneeball-System\

@@ -18,7 +18,7 @@
 #let no_numbering = (..num) => ""
 #let norm_numbering = "1.1.a.I"
 
-#let setup = (entry-list) => {
+#let setup = entry-list => {
   body => [
     /// from https://typst.app/universe/package/glossy
     // #import "@preview/glossy:0.9.1": *
@@ -40,6 +40,28 @@
 
     // set Code font
     #show raw: it => text(font: "JetBrainsMono NF")[#it]
+
+
+    // Number equations and list them as figures
+    #show figure.where(kind: "equation"): it => block[
+      #grid(
+        columns: (1fr, auto),
+        align: center,
+
+        it.body,
+        align(right)[
+          (#context counter(figure.where(kind: "equation")).display())
+        ],
+      )
+
+      #it.caption
+    ]
+    #show math.equation.where(block: true): it => figure(kind: "equation", supplement: "Equation", it)
+
+    // set heading numbering-scheme
+    #set heading(numbering: norm_numbering)
+
+    #show: init-glossary.with(entry-list, term-links: true)
 
     // Color Links
     #show link: it => {
@@ -75,27 +97,15 @@
         // [#it (unknown dest type = #type(it.dest))]
       }
     }
-
-    // Number equations and list them as figures
-    #show figure.where(kind: "equation"): it => block[
-      #grid(
-        columns: (1fr, auto),
-        align: center,
-
-        it.body,
-        align(right)[
-          (#context counter(figure.where(kind: "equation")).display())
-        ],
+    #show ref: it => {
+      if it.element == none or it.element.func() == metadata {
+        return it
+      }
+      text(
+        underline(it),
+        fill: black,
       )
-
-      #it.caption
-    ]
-    #show math.equation.where(block: true): it => figure(kind: "equation", supplement: "Equation", it)
-
-    // set heading numbering-scheme
-    #set heading(numbering: norm_numbering)
-
-    #show: init-glossary.with(entry-list)
+    }
 
     #body
   ]

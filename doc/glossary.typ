@@ -74,6 +74,12 @@
     ],
     group: "Data",
   ),
+  blender:(
+    short:"blender",
+    description:[
+      Ein Programm zur Erstellung von 3D Modellen aud punkten kanten und Flächen.
+    ]
+  )
   // tps: (
   //   short: "TPS",
   //   long: "test procedure specification",
