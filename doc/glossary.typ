@@ -77,8 +77,9 @@
   blender:(
     short:"blender",
     description:[
-      Ein Programm zur Erstellung von 3D Modellen aud punkten kanten und Flächen.
-    ]
+      Ein Programm zur Erstellung von 3D Modellen aus Punkten, Kanten und Flächen.
+    ],
+    group: "Werkzeug"
   )
   // tps: (
   //   short: "TPS",
