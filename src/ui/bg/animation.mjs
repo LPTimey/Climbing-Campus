@@ -21,10 +21,33 @@ const animationSegments = [
     endScrollOffset: () => window.innerHeight * 2,
     objects: {
       stairs: {
-        startPos: new THREE.Vector3(-55, 15, 10),
-        endPos: new THREE.Vector3(10, 5, 0),
+        startTransform: {
+          position: new THREE.Vector3(-55, 15, 10)
+        },
+        endTransform: {
+          position: new THREE.Vector3(10, 5, 0)
+        },
 
         easing: easing.easeOutCubic,
+
+        onEnter({ startTime, absTime, object }) {
+          const durationSecs = 1 * 1000;
+          const scale1 = 0;
+          const scale2 = 1;
+          const t = THREE.MathUtils.clamp((absTime - startTime) / (durationSecs), 0, 1);
+          const scale = THREE.MathUtils.lerp(scale1, scale2, t);
+          object.scale.set(scale,scale,scale);
+          return t >= 1;
+        },
+        onExit({ startTime, absTime, object }) {
+          const durationSecs = 1 * 1000;
+          const scale1 = 1;
+          const scale2 = 0;
+          const t = THREE.MathUtils.clamp((absTime - startTime) / (durationSecs), 0, 1);
+          const scale = THREE.MathUtils.lerp(scale1, scale2, t);
+          object.scale.set(scale, scale, scale);
+          return t >= 1;
+        },
 
         idleAnimation({ deltaTime, object }) {
           object.rotation.z += deltaTime * 0.001;
@@ -33,10 +56,25 @@ const animationSegments = [
       },
 
       accessibilityBoy: {
-        startPos: new THREE.Vector3(100, -50, -50),
-        endPos: new THREE.Vector3(-10, 0, 0),
+        startTransform: {
+          position: new THREE.Vector3(100, -50, -50)
+        },
+        endTransform: {
+          position: new THREE.Vector3(-10, 0, 0)
+        },
 
         easing: easing.easeInOutQuad,
+
+        onEnter({ startTime, absTime, object }) {
+          const durationSecs = 1 * 1000;
+          const scale1 = 0;
+          const scale2 = 1;
+          const t = THREE.MathUtils.clamp((absTime - startTime) / (durationSecs), 0, 1);
+          const scale = THREE.MathUtils.lerp(scale1, scale2, t);
+          object.scale.set(scale, scale, scale);
+          return t >= 1;
+        },
+        onExit() { return true },
 
         idleAnimation({ deltaTime, object }) {
           object.rotation.y += deltaTime * 0.001;
@@ -52,10 +90,26 @@ const animationSegments = [
     endScrollOffset: () => window.innerHeight * 4,
     objects: {
       accessibilityBoy: {
-        startPos: new THREE.Vector3(-10, 0, 0),
-        endPos: new THREE.Vector3(0, 10, 0),
+        startTransform: {
+          position: new THREE.Vector3(-10, 0, 0)
+        },
+        endTransform: {
+          position: new THREE.Vector3(0, 10, 0)
+        },
 
         easing: easing.linear,
+
+        onEnter() { return true },
+        onExit({ startTime, absTime, object }) {
+          const durationSecs = 1 * 1000;
+          const scale1 = 1;
+          const scale2 = 0;
+          const t = THREE.MathUtils.clamp((absTime - startTime) / (durationSecs), 0, 1);
+          const scale = THREE.MathUtils.lerp(scale1, scale2, t);
+          object.scale.set(scale, scale, scale);
+          return t >= 1;
+        },
+
 
         idleAnimation({ deltaTime, object }) {
           object.rotation.y += deltaTime * 0.001;
@@ -116,7 +170,7 @@ export function createAnimation({
         (scrollY - resolveOffset(segment.startScrollOffset)) /
         segmentLength;
 
-      for (const [name, animation] of Object.entries(segment.objects)) {
+      for (const [name, animation] of /** @type {[string,AnimationObject][]} */(Object.entries(segment.objects))) {
         let object = scene.getObjectByName(name);
 
         if (!object) {
@@ -129,16 +183,42 @@ export function createAnimation({
         }
         const easedT = animation.easing(rawT);
 
-        object.position.lerpVectors(
-          animation.startPos,
-          animation.endPos,
-          easedT,
-        );
+        lerpTransforms(animation, object, easedT);
 
-        (/** @type {IdleAnimation} */(animation.idleAnimation))({ absTime: time, deltaTime, object });
+        animation.idleAnimation({ absTime: time, deltaTime, object });
       }
     }
   });
+}
+
+/**
+ * 
+ * @param {AnimationObject} animation 
+ * @param {THREE.Object3D} object 
+ * @param {number} t 
+ */
+function lerpTransforms(animation, object, t) {
+  if (animation.startTransform.position && animation.endTransform.position) {
+    object.position.lerpVectors(
+      animation.startTransform.position,
+      animation.endTransform.position,
+      t,
+    );
+  }
+  if (animation.startTransform.scale && animation.endTransform.scale) {
+    object.scale.lerpVectors(
+      animation.startTransform.scale,
+      animation.endTransform.scale,
+      t,
+    );
+  }
+  if (animation.startTransform.rotation && animation.endTransform.rotation) {
+    object.quaternion.slerpQuaternions(
+      animation.startTransform.rotation,
+      animation.endTransform.rotation,
+      t,
+    );
+  }
 }
 
 /**
@@ -153,11 +233,23 @@ function resolveOffset(value) {
 /**
  * @typedef {(params:{absTime:number, deltaTime: number, object: THREE.Object3D}) => void} IdleAnimation
  */
+/**
+ * @typedef {(params:{startTime:number, absTime:number, deltaTime: number, object: THREE.Object3D}) => boolean} SingleAnimation
+ */
+
+/**
+ * @typedef {Object} Transform
+ * @property {THREE.Vector3} position
+ * @property {THREE.Vector3} scale
+ * @property {THREE.Quaternion} rotation
+ */
 
 /**
  * @typedef {Object} AnimationObject
- * @property {THREE.Vector3} startPos
- * @property {THREE.Vector3} endPos
+ * @property {Partial<Transform>} startTransform
+ * @property {Partial<Transform>} endTransform
+ * @property {SingleAnimation} onEnter
+ * @property {SingleAnimation} onExit
  * Receives normalized progress (0-1)
  * and returns eased progress (0-1).
  * @property {(t: number) => number} easing
