@@ -12,6 +12,9 @@ const results = /** @type {HTMLElement} */(
 const map = /** @type {HTMLElement} */(
   document.getElementById("Map")
 );
+const charts = /** @type {HTMLElement} */(
+  document.getElementById("Charts")
+);
 const explanation = /** @type {HTMLElement} */(
   document.getElementById("Explanation")
 );
@@ -83,7 +86,27 @@ export const animations = {
         object.rotation.x = Math.sin(4);
         object.rotation.z = Math.sin(0.5);
       },
-    }],
+    }, {
+        easing: easing.easeInOutQuad,
+        get startOffset() {
+          return getSectionOffsets(charts).startOffset;
+        },
+
+        get endOffset() {
+          return getSectionOffsets(charts).endOffset;
+        },
+        startTransform: {
+          position: new THREE.Vector3(100, -50, -50)
+        },
+        endTransform: {
+          position: new THREE.Vector3(-10, 0, 0)
+        },
+        idleAnimation({ deltaTime, object }) {
+          object.rotation.y += deltaTime * 0.001;
+          object.rotation.x = Math.sin(4);
+          object.rotation.z = Math.sin(0.5);
+        },
+      }],
     onEnter({ startTime, absTime, object }) {
       const durationSecs = 0.25 * 1000;
       const scale1 = 0;
