@@ -6,6 +6,8 @@ import { loaders } from "@/lib/three_utils.mjs";
 
 /**
  * @param {keyof typeof objs} name
+ * @returns {THREE.Object3D<THREE.Object3DEventMap> | Promise<THREE.Object3D<THREE.Object3DEventMap>>}
+}
  */
 export function getObject(name) {
   const obj = /** @type {SceneObjectDefinition<(typeof objs)[name]["type"]>} */(
@@ -124,7 +126,7 @@ export const objs = {
   image: {
     type: "gltf",
     path: "./assets/Blender Output/3D/image.glb",
-    initialScale: 1,
+    initialScale: 8,
     cache: null,
   },
 };

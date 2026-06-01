@@ -137,10 +137,10 @@ export const animations = {
         return getSectionOffsets(map).endOffset;
       },
       startTransform: {
-        position: new THREE.Vector3(100, -50, -50)
+        position: new THREE.Vector3(0,0,0)
       },
       endTransform: {
-        position: new THREE.Vector3(-10, 0, 0)
+        position: new THREE.Vector3(0, 0, 0)
       },
       idleAnimation({ deltaTime, object }) {
         object.rotation.y += deltaTime * 0.001;
