@@ -166,7 +166,7 @@ export const animations = {
       object.scale.set(scale, scale, scale);
       return t >= 1;
     },
-  }
+  },
 }
 
 /**
