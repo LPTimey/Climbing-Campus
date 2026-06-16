@@ -73,6 +73,17 @@
     color-scheme: dark;
 }
 
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-snap-stop: always;
+}
+
+section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+}
+
 
 .sr-only {
     position: absolute;
