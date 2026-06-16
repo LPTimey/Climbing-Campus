@@ -51,6 +51,12 @@ export const objs = {
     initialScale: 10,
     cache: null,
   },
+  campus: {
+    type: "gltf",
+    path: "assets/Blender Output/3D/Campus.glb",
+    initialScale: 1,
+    cache: null,
+  },
   clipBoard: {
     type: "gltf",
     path: "./assets/Blender Output/3D/ClipBoard.glb",

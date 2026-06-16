@@ -57,7 +57,7 @@ export function createAnimation({
 
       const activeSection = anim.segments.find(segment => {
         const start = resolveOffset(segment.startOffset);
-        const end = resolveOffset(segment.endOffset) - 5;
+        const end = resolveOffset(segment.endOffset) - 1;
         return scrollY >= start && scrollY <= end;
       });
 
