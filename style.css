@@ -79,11 +79,6 @@ html {
     scroll-snap-stop: always;
 }
 
-section {
-    min-height: 100vh;
-    scroll-snap-align: start;
-}
-
 
 .sr-only {
     position: absolute;
@@ -198,6 +193,11 @@ section {
     section {
         min-height: 99dvh;
         overflow: hidden;
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 
     #SiteBG {

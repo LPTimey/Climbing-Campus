@@ -6,8 +6,8 @@ import * as THREE from "three"
 const intro = /** @type {HTMLElement} */(
   document.getElementById("Intro")
 );
-const results = /** @type {HTMLElement} */(
-  document.getElementById("Game")
+const students = /** @type {HTMLElement} */(
+  document.getElementById("Students")
 );
 const map = /** @type {HTMLElement} */(
   document.getElementById("Map")
@@ -25,7 +25,7 @@ const explanation = /** @type {HTMLElement} */(
 
 /** @satisfies {Animation} */
 export const animations = {
-  campus:{
+  campus: {
     segments: [{
       easing: easing.easeInOutQuad,
       get startOffset() {
@@ -105,27 +105,52 @@ export const animations = {
     },
   },
   accessibilityBoy: {
-    segments: [{
-      easing: easing.easeInOutQuad,
-      get startOffset() {
-        return getSectionOffsets(intro).startOffset;
-      },
+    segments: [
+      {
+        easing: easing.easeInOutQuad,
+        get startOffset() {
+          return getSectionOffsets(intro).startOffset;
+        },
 
-      get endOffset() {
-        return getSectionOffsets(intro).endOffset - window.innerHeight * 0.1;
+        get endOffset() {
+          return getSectionOffsets(intro).endOffset - window.innerHeight * 0.1;
+        },
+        startTransform: {
+          position: new THREE.Vector3(100, -50, -50),
+        },
+        endTransform: {
+          position: new THREE.Vector3(-45, 0, -5),
+          scale: new THREE.Vector3(1.5, 1.5, 1.5)
+        },
+        idleAnimation({ deltaTime, object }) {
+          object.rotation.y += deltaTime * 0.001;
+          object.rotation.x = Math.sin(4);
+          object.rotation.z = Math.sin(0.5);
+        },
       },
-      startTransform: {
-        position: new THREE.Vector3(100, -50, -50)
-      },
-      endTransform: {
-        position: new THREE.Vector3(-10, 0, 0)
-      },
-      idleAnimation({ deltaTime, object }) {
-        object.rotation.y += deltaTime * 0.001;
-        object.rotation.x = Math.sin(4);
-        object.rotation.z = Math.sin(0.5);
-      },
-    }],
+      {
+        easing: easing.easeInOutQuad,
+        get startOffset() {
+          return getSectionOffsets(intro).endOffset - window.innerHeight * 0.1;
+        },
+
+        get endOffset() {
+          return getSectionOffsets(students).endOffset - window.innerHeight * 0.1;
+        },
+        startTransform: {
+          position: new THREE.Vector3(-45, 0, -5),
+          scale: new THREE.Vector3(1.5, 1.5, 1.5)
+        },
+        endTransform: {
+          position: new THREE.Vector3(-100, 50, -25),
+        },
+        idleAnimation({ deltaTime, object }) {
+          object.rotation.y += deltaTime * 0.001;
+          object.rotation.x = Math.sin(4);
+          object.rotation.z = Math.sin(0.5);
+        }
+      }
+    ],
     onEnter({ startTime, absTime, object }) {
       const durationSecs = 0.25 * 1000;
       const scale1 = 0;
