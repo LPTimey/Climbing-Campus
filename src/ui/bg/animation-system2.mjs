@@ -1,18 +1,30 @@
 import { ECS } from "@/lib/ecs.mjs";
+import { objs } from "./objects.mjs";
+import { loaders } from "@/lib/three_utils.mjs";
 /** @import { System, Component } from "@/lib/ecs.mjs" */
+/** @import { Loaders } from "@/lib/three_utils.mjs" */
 
 /** @implements {Component} */
 export class Component3D {
   /**
-   * @param {string} path
    * @param {number} scale
    */
-  constructor(path, scale = 1) {
-    /** @type {string} */
-    this.path = path;
-
+  constructor(scale = 1) {
     /** @type {number} */
     this.scale = scale;
+  }
+}
+
+/** @implements {Component} */
+export class Loader {
+  /**
+   * @param {string} path
+   * @param {keyof Loaders["threeD"]} type
+   */
+  constructor(path, type) {
+    /** @type {string} */
+    this.path = path;
+    this.type = type;
   }
 }
 
@@ -29,13 +41,7 @@ export class Loaded {
 
 /** @implements {Component} */
 export class Loading {
-  /**
-   * @param {Promise<any>} promise
-   */
-  constructor(promise) {
-    /** @type {Promise<any>} */
-    this.promise = promise;
-  }
+  state = null;
 }
 
 /** @implements {Component} */
@@ -47,20 +53,22 @@ export class LoadModels {
    * @param {ECS} world
    */
   update(world) {
-    for (const [entity, loading, component3d] of world.view(
-      Loading,
-      Component3D,
-    )) {
-      if (world.getComponent(entity, Loaded)) continue;
-
-      loading.promise
-        .then((asset) => {
-          world.addComponent(entity, new Loaded(asset));
-          world.removeComponent(entity, Loading)
-        })
-        .catch((err) => {
-          console.error("Failed to load model:", component3d.path, err);
-        });
+    for (const [entity, loading, loader] of world.view(Loading, Loader)) {
+      if (world.getComponent(entity, Loaded)) {
+        world.removeComponent(entity, Loading);
+        continue;
+      }
+      if (loading.state === null) {
+        // loading.state = loaders.threeD[loader.type].loadAsync()
+      }
     }
   }
 }
+
+const world = new ECS();
+world.addSystem(new LoadModels());
+const boy = world.spawn(
+  new Component3D(1),
+  new Loader(objs.accessibilityBoy.path, objs.accessibilityBoy.type),
+);
+world.addComponent(boy, new Loading());

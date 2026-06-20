@@ -38,7 +38,7 @@ export function getObject(name) {
 }
 
 /** @satisfies {Objs} */
-export const objs = {
+export const objs = Object.freeze({
   accessibilityBoy: {
     type: "gltf",
     path: "./assets/Blender Output/3D/Accessibility Blocky.glb",
@@ -135,7 +135,7 @@ export const objs = {
     initialScale: 8,
     cache: null,
   },
-};
+});
 
 
 /**
