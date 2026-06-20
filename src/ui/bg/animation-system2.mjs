@@ -59,7 +59,7 @@ export class LoadModels {
         continue;
       }
       if (loading.state === null) {
-        // loading.state = loaders.threeD[loader.type].loadAsync()
+        loading.state = loaders.threeD[loader.type].loadAsync(loader.path)
       }
     }
   }
