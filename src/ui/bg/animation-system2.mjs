@@ -39,9 +39,11 @@ export class Loaded {
   }
 }
 
-/** @implements {Component} */
+/**
+ * @implements {Component}
+ */
 export class Loading {
-  state = null;
+  started = false;
 }
 
 /** @implements {Component} */
@@ -58,14 +60,32 @@ export class LoadModels {
         world.removeComponent(entity, Loading);
         continue;
       }
-      if (loading.state === null) {
-        loading.state = loaders.threeD[loader.type].loadAsync(loader.path)
+      if (loading.started) {
+        continue;
       }
+      loading.started = true;
+      loaders.threeD[loader.type].load(loader.path, (data) => {
+        world.removeComponent(entity, Loading);
+        world.addComponent(entity, new Loaded(data));
+      });
+    }
+  }
+}
+
+/** @implements {System} */
+export class loadedModels {
+  /**
+   * @param {ECS} world
+   */
+  update(world) {
+    for (const [entity, loaded] of world.view(Loaded)) {
+      console.log(entity);
     }
   }
 }
 
 const world = new ECS();
+world.addSystem(new LoadModels());
 world.addSystem(new LoadModels());
 const boy = world.spawn(
   new Component3D(1),
