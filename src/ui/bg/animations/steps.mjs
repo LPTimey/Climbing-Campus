@@ -5,7 +5,7 @@ import {
   intro,
   outline,
   steps,
-} from "../animation.mjs";
+} from "../sections.mjs";
 import * as THREE from "three";
 /**
  * @import {AnimationObject, IdleAnimation} from "../animation-system.mjs"
