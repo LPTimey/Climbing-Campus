@@ -1,67 +1,93 @@
 "use strict";
 import { resizeIfNeeded } from "@/lib/three_utils.mjs";
 import { getObject } from "./objects.mjs";
-import * as THREE from "three"
+import * as THREE from "three";
 /** @import {objs} from "./objects.mjs" */
 
 /** @satisfies {{[K in string]: ((t:number)=>number)}} */
 export const easing = {
   linear: (t) => t,
   easeOutCubic: (t) => 1 - Math.pow(1 - t, 3),
-  easeInOutQuad: (t) =>
-    t < 0.5
-      ? 2 * t * t
-      : 1 - Math.pow(-2 * t + 2, 2) / 2,
+  easeInOutQuad: (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2),
 };
+/**
+ * @param {SegmentStream} stream
+ * @param {number} scrollY
+ */
+function getActiveStep(stream, scrollY) {
+  for (let i = 0; i < stream.steps.length; i++) {
+    const step = stream.steps[i];
+
+    const start = resolveOffset(step.offset);
+
+    const end =
+      i + 1 < stream.steps.length
+        ? resolveOffset(stream.steps[i + 1].offset)
+        : resolveOffset(stream.end.offset);
+
+    if (scrollY >= start && scrollY < end) {
+      return {
+        step,
+        index: i,
+        start,
+        end,
+      };
+    }
+  }
+
+  return null;
+}
 
 /**
- * 
- * @param {Object} param0 
+ *
+ * @param {Object} param0
  * @param {THREE.WebGLRenderer} param0.renderer
  * @param {THREE.PerspectiveCamera | THREE.OrthographicCamera} param0.camera
  * @param {THREE.Scene} param0.scene
  * @param {Animation} param0.animation
  * @returns {XRFrameRequestCallback}
  */
-export function createAnimation({
-  renderer,
-  camera,
-  scene,
-  animation
-}) {
+export function createAnimation({ renderer, camera, scene, animation }) {
   let lastTime = 0;
 
   /**
-   * 
-   * @param {(absTime:number,deltaTime:number)=>*} fn 
+   * @param {(absTime:number,deltaTime:number)=>*} fn
    */
   const animate = (fn) => {
     return /** @type {XRFrameRequestCallback} */ (time) => {
       const deltaTime = time - lastTime;
+
       resizeIfNeeded(renderer, camera);
 
-      fn(time, deltaTime)
+      fn(time, deltaTime);
 
       lastTime = time;
       renderer.render(scene, camera);
-    }
+    };
   };
+
   return animate((time, deltaTime) => {
     const scrollY = window.scrollY;
 
     for (const [name, anim] of Object.entries(animation)) {
-
       if (!anim.state) {
-        anim.state = {enum:"inactive"}
+        anim.state = { enum: "inactive" };
       }
 
-      const activeSection = anim.segments.find(segment => {
-        const start = resolveOffset(segment.startOffset);
-        const end = resolveOffset(segment.endOffset) - 1;
-        return scrollY >= start && scrollY <= end;
-      });
+      let activeStream = null;
+      let activeStepInfo = null;
 
-      if (activeSection) {
+      for (const stream of anim.segments) {
+        const stepInfo = getActiveStep(stream, scrollY);
+
+        if (stepInfo) {
+          activeStream = stream;
+          activeStepInfo = stepInfo;
+          break;
+        }
+      }
+
+      if (activeStepInfo) {
         switch (anim.state.enum) {
           case "inactive":
             anim.state.enum = "activating";
@@ -69,9 +95,6 @@ export function createAnimation({
             break;
 
           default:
-          case "active":
-          case "activating":
-          case "deactivating":
             break;
         }
       } else {
@@ -82,9 +105,6 @@ export function createAnimation({
             break;
 
           default:
-          case "inactive":
-          case "activating":
-          case "deactivating":
             break;
         }
       }
@@ -96,68 +116,114 @@ export function createAnimation({
       let object = scene.getObjectByName(name);
 
       if (!object) {
-        const get = getObject(/** @type {keyof typeof objs} */(name));
+        const get = getObject(/** @type {keyof typeof objs} */ (name));
+
         if (get instanceof Promise) {
           continue;
         }
+
         object = get;
         scene.add(object);
       }
 
       switch (anim.state.enum) {
         case "active":
-          activeSection?.idleAnimation?.({ absTime: time, deltaTime, object });
+          activeStepInfo?.step.idleAnimation?.({
+            absTime: time,
+            deltaTime,
+            object,
+          });
           break;
+
         case "activating": {
-          const done = anim.onEnter?.({ startTime: anim.state.startTime??time, absTime: time, deltaTime, object });
-          if (done) anim.state.enum = "active";
-        }
+          const done = activeStream?.onEnter?.({
+            startTime: anim.state.startTime ?? time,
+            absTime: time,
+            deltaTime,
+            object,
+          });
+
+          if (done) {
+            anim.state.enum = "active";
+          }
           break;
+        }
+
         case "deactivating": {
-          const done = anim.onExit?.({ startTime: anim.state.startTime??time, absTime: time, deltaTime, object });
-          if (done) anim.state.enum = "inactive";
+          const done = activeStream?.onExit?.({
+            startTime: anim.state.startTime ?? time,
+            absTime: time,
+            deltaTime,
+            object,
+          });
+
+          if (done) {
+            anim.state.enum = "inactive";
+          }
+          break;
         }
-          break;
-        default:
-          break;
       }
-      if (!activeSection) {
+
+      if (!activeStream || !activeStepInfo) {
         continue;
       }
-      const segmentLength = resolveOffset(activeSection.endOffset) - resolveOffset(activeSection.startOffset);
-      if (segmentLength <= 0) continue;
-      const rawT = (scrollY - resolveOffset(activeSection.startOffset)) / segmentLength;
-      const easedT = activeSection.easing(rawT);
-      lerpTransforms(activeSection, object, easedT);
+
+      const { step, index, start, end } = activeStepInfo;
+
+      const segmentLength = end - start;
+
+      if (segmentLength <= 0) {
+        continue;
+      }
+
+      const t = THREE.MathUtils.clamp(
+        (scrollY - start) / segmentLength,
+        0,
+        1,
+      );
+
+      const endTransform =
+        index + 1 < activeStream.steps.length
+          ? activeStream.steps[index + 1].startTransform
+          : activeStream.end.transform;
+
+      lerpTransforms(
+        step.startTransform,
+        endTransform,
+        object,
+        t,
+      );
     }
   });
 }
 
 /**
- * 
- * @param {Segment} segment 
- * @param {THREE.Object3D} object 
- * @param {number} t 
+ * @param {Partial<Transform>} startTransform
+ * @param {Partial<Transform>} endTransform
+ * @param {THREE.Object3D} object
+ * @param {number} t
  */
-function lerpTransforms(segment, object, t) {
-  if (segment.startTransform.position && segment.endTransform.position) {
+function lerpTransforms(startTransform, endTransform, object, t) {
+  if (startTransform.position && endTransform.position) {
     object.position.lerpVectors(
-      segment.startTransform.position,
-      segment.endTransform.position,
+      startTransform.position,
+      endTransform.position,
       t,
     );
   }
-  if (segment.startTransform.scale && segment.endTransform.scale) {
+
+  if (startTransform.scale && endTransform.scale) {
     object.scale.lerpVectors(
-      segment.startTransform.scale,
-      segment.endTransform.scale,
+      startTransform.scale,
+      endTransform.scale,
       t,
     );
   }
-  if (segment.startTransform.rotation && segment.endTransform.rotation) {
+
+  if (startTransform.rotation && endTransform.rotation) {
     object.quaternion.slerpQuaternions(
-      segment.startTransform.rotation,
-      segment.endTransform.rotation,
+      startTransform.rotation,
+      endTransform.rotation,
       t,
     );
   }
@@ -167,9 +233,7 @@ function lerpTransforms(segment, object, t) {
  * @param {number | (() => number)} value
  */
 function resolveOffset(value) {
-  return typeof value === "function"
-    ? value()
-    : value;
+  return typeof value === "function" ? value() : value;
 }
 
 /**
@@ -197,14 +261,23 @@ function resolveOffset(value) {
  * }) => boolean} SingleAnimation
  */
 
+
+/** @typedef {number | (() => number)} Offset */
+
 /**
- * @typedef {Object} Segment
- * @property {number | (() => number)} startOffset
- * @property {number | (() => number)} endOffset
+ * @typedef {Object} SegmentStream
+ * @property {SegmentStreamStep[]} steps
+ * @property {Object} end
+ * @property {Offset} end.offset
+ * @property {Partial<Transform>} end.transform
+ * @property {SingleAnimation} [onEnter]
+ * @property {SingleAnimation} [onExit]
+ */
+/**
+ * @typedef {Object} SegmentStreamStep
+ * @property {Offset} offset
  * @property {Partial<Transform>} startTransform
- * @property {Partial<Transform>} endTransform
- * @property {(t:number)=>number} easing
- * @property {IdleAnimation} [idleAnimation]
+ * @property {IdleAnimation} idleAnimation
  */
 
 /**
@@ -214,9 +287,7 @@ function resolveOffset(value) {
 /**
  * @typedef {Object} AnimationObject
  * @property {AnimationState} [state]
- * @property {Segment[]} segments
- * @property {SingleAnimation} [onEnter]
- * @property {SingleAnimation} [onExit]
+ * @property {SegmentStream[]} segments
  */
 
 /**

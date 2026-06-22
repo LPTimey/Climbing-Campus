@@ -1,11 +1,10 @@
 "use strict";
 
-import { easing } from "./animation-system.mjs";
 import { accessibilityBoy } from "./animations/boi.mjs";
 import { campus } from "./animations/campus.mjs";
 import { questionMark } from "./animations/questionmark.mjs";
 import { steps3D } from "./animations/steps.mjs";
-import * as THREE from "three";
+
 /**
  * @import {Animation} from "./animation-system.mjs"
  */
@@ -32,6 +31,12 @@ export const feelings = /** @type {HTMLElement} */ (
   document.getElementById("Feelings") ??
     (() => {
       throw new Error('Element "Feelings" nicht gefunden');
+    })()
+);
+export const outline = /** @type {HTMLElement} */ (
+  document.getElementById("MetaOutline") ??
+    (() => {
+      throw new Error('Element "MetaOutline" nicht gefunden');
     })()
 );
 export const map = /** @type {HTMLElement} */ (
