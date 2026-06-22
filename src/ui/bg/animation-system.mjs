@@ -176,11 +176,7 @@ export function createAnimation({ renderer, camera, scene, animation }) {
         continue;
       }
 
-      const t = THREE.MathUtils.clamp(
-        (scrollY - start) / segmentLength,
-        0,
-        1,
-      );
+      const t = THREE.MathUtils.clamp((scrollY - start) / segmentLength, 0, 1);
 
       const endTransform =
         index + 1 < activeStream.steps.length
@@ -188,7 +184,9 @@ export function createAnimation({ renderer, camera, scene, animation }) {
           : activeStream.end.transform;
 
       lerpTransforms(
-        step.startTransform,
+        anim.state.enum == "activating"
+          ? { position: step.startTransform.position }
+          : step.startTransform,
         endTransform,
         object,
         t,
@@ -213,11 +211,7 @@ function lerpTransforms(startTransform, endTransform, object, t) {
   }
 
   if (startTransform.scale && endTransform.scale) {
-    object.scale.lerpVectors(
-      startTransform.scale,
-      endTransform.scale,
-      t,
-    );
+    object.scale.lerpVectors(startTransform.scale, endTransform.scale, t);
   }
 
   if (startTransform.rotation && endTransform.rotation) {
@@ -260,7 +254,6 @@ function resolveOffset(value) {
  *   object: THREE.Object3D
  * }) => boolean} SingleAnimation
  */
-
 
 /** @typedef {number | (() => number)} Offset */
 
