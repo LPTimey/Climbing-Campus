@@ -64,34 +64,6 @@ export const accessibilityBoy = {
           scale: new THREE.Vector3(0.5, 0.5, 0.5),
         },
       },
-
-      onEnter({ startTime, absTime, object }) {
-        const durationSecs = 0.25 * 1000;
-        const t = THREE.MathUtils.clamp(
-          (absTime - startTime) / durationSecs,
-          0,
-          1,
-        );
-
-        const scale = THREE.MathUtils.lerp(0, 1, t);
-        object.scale.set(scale, scale, scale);
-
-        return t >= 1;
-      },
-
-      onExit({ startTime, absTime, object }) {
-        const durationSecs = 0.25 * 1000;
-        const t = THREE.MathUtils.clamp(
-          (absTime - startTime) / durationSecs,
-          0,
-          1,
-        );
-
-        const scale = THREE.MathUtils.lerp(1, 0, t);
-        object.scale.set(scale, scale, scale);
-
-        return t >= 1;
-      },
     },
   ],
 };

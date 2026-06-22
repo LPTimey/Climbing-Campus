@@ -136,7 +136,7 @@ export function createAnimation({ renderer, camera, scene, animation }) {
           break;
 
         case "activating": {
-          const done = activeStream?.onEnter?.({
+          const done = (activeStream?.onEnter??defaultOnEnter)({
             startTime: anim.state.startTime ?? time,
             absTime: time,
             deltaTime,
@@ -150,7 +150,7 @@ export function createAnimation({ renderer, camera, scene, animation }) {
         }
 
         case "deactivating": {
-          const done = activeStream?.onExit?.({
+          const done = (activeStream?.onExit??defaultOnExit)({
             startTime: anim.state.startTime ?? time,
             absTime: time,
             deltaTime,
@@ -222,6 +222,28 @@ function lerpTransforms(startTransform, endTransform, object, t) {
     );
   }
 }
+
+/** @satisfies {SingleAnimation} */
+export const defaultOnEnter = function ({ startTime, absTime, object }) {
+  const durationSecs = 0.25 * 1000;
+  const t = THREE.MathUtils.clamp((absTime - startTime) / durationSecs, 0, 1);
+
+  const scale = THREE.MathUtils.lerp(0, 1, t);
+  object.scale.set(scale, scale, scale);
+
+  return t >= 1;
+};
+
+/** @satisfies {SingleAnimation} */
+export const defaultOnExit = function ({ startTime, absTime, object }) {
+  const durationSecs = 0.25 * 1000;
+  const t = THREE.MathUtils.clamp((absTime - startTime) / durationSecs, 0, 1);
+
+  const scale = THREE.MathUtils.lerp(1, 0, t);
+  object.scale.set(scale, scale, scale);
+
+  return t >= 1;
+};
 
 /**
  * @param {number | (() => number)} value
