@@ -1,11 +1,12 @@
 // @ts-nocheck
 import fs from "fs";
 import * as cheerio from "cheerio";
-import { fileURLToPath } from "url";
+// import { fileURLToPath } from "url";
 import path from "path";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+const __dirname = path.join(".", "assets", "data", "stundenpläne", "metadata");
 
 const INPUT_FILE = path.join(__dirname, "stgrus.html");
 const html = fs.readFileSync(INPUT_FILE, "utf8");
