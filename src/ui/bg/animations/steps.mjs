@@ -51,7 +51,7 @@ export const steps3D = {
             );
           },
           startTransform: {
-            position: new THREE.Vector3(-45, 0, -5),
+            position: new THREE.Vector3(-40, 0, -5),
             scale: new THREE.Vector3(1.5, 1.5, 1.5),
           },
           idleAnimation,
