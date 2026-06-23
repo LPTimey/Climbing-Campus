@@ -47,6 +47,8 @@ Normalized:
 3) I experience regular relaxation periods (AVG 3.0)
 4) I feel stressed by my timetable (AVG 2.8)
 
+## Timetables
+
 ### Impact of timetable on mobility efforts
 
 - The average perceived impact amongst participants was 3.5, meaning medium to high
