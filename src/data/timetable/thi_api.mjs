@@ -38,7 +38,7 @@ await fetch("https://www3.primuss.de/stpl/index.php?FH=fhin&Language=de&sem=50&m
  * Fetches the TimeTable data.
  *
  * @param {TimeTableParams} params - Object containing all portal parameters and credentials.
- * @returns {Promise<string>} - Returns the raw response text or parsed JSON depending on config.
+ * @returns {Promise<import("./timetable_returntype").Welcome>} - Returns the raw response text or parsed JSON depending on config.
  *
  * @example
  * // Example based on a real browser network request
@@ -119,5 +119,5 @@ export default async function fetchATimeTable(params) {
 
   // Depending on the API contract, return the raw Response or parse JSON.
   // Here we default to returning the Response object.
-  return response.text();
+  return response.json();
 }

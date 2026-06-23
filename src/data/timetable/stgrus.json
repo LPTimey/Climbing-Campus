@@ -1,0 +1,1857 @@
+[
+  {
+    "name": "BS",
+    "children": [
+      {
+        "name": "BW-B",
+        "children": [
+          {
+            "id": 174,
+            "title": "Betriebswirtschaft Bachelor Studiengang Betriebswirtschaft, BA, FW-Fächer, SW-Fächer",
+            "short": "BWBA-FW-SW"
+          },
+          {
+            "id": 853,
+            "title": "Betriebswirtschaft Bachelor Studiengang Betriebswirtschaft, BA, FW-Fächer, SW-Fächer, NW-Fächer",
+            "short": "BWBA-FW-SW-NW"
+          },
+          {
+            "id": 230,
+            "title": "Betriebswirtschaft Bachelor Studiengang Betriebswirtschaft, Bachelor, Grundstudium mit Vorlesungen im 1. Semester, die zeitgleich bei 1a und 1b stattfinden",
+            "short": "BWBA-GS1"
+          },
+          {
+            "id": 842,
+            "title": "Betriebswirtschaft Bachelor Studiengang Betriebswirtschaft Grundstudium 2. Semester",
+            "short": "BWBA-GS2"
+          },
+          {
+            "id": 843,
+            "title": "Betriebswirtschaft Bachelor Studiengang Betriebswirtschaft Grundstudium 3. Semester",
+            "short": "BWBA-GS3"
+          },
+          {
+            "id": 216,
+            "title": "Betriebswirtschaft Bachelor Studiengang Betriebswirtschaft, Bachelor, Hauptstudium 4.-7. Semester (neue StuPO). Sie haben regulär 3 Studiensemester Zeit, um alle Module zu studieren!",
+            "short": "BWBA-VS"
+          }
+        ]
+      },
+      {
+        "name": "DB-B",
+        "children": [
+          {
+            "id": 541,
+            "title": "Digital Business Digital Business",
+            "short": "DB2"
+          },
+          {
+            "id": 605,
+            "title": "Digital Business Digital Business",
+            "short": "DB4"
+          },
+          {
+            "id": 603,
+            "title": "Digital Business Digital Business",
+            "short": "DB5"
+          },
+          {
+            "id": 602,
+            "title": "Digital Business Digital Business",
+            "short": "DB7"
+          },
+          {
+            "id": 655,
+            "title": "Digital Business Studiengang Digital Business, BA, FW-Fächer, SW-Fächer",
+            "short": "DB-FW-SW"
+          },
+          {
+            "id": 854,
+            "title": "Digital Business Studiengang Digital Business, BA, FW-Fächer, SW-Fächer, NW-Fächer",
+            "short": "DB-FW-SW-NW"
+          }
+        ]
+      },
+      {
+        "name": "GBM-B",
+        "children": [
+          {
+            "id": 830,
+            "title": "Global Economics and Business Management Global Economics and Business Management (BA) 2. Semester",
+            "short": "GBM2"
+          },
+          {
+            "id": 832,
+            "title": "Global Economics and Business Management Global Economics and Business Management (BA) 4. Semester",
+            "short": "GBM4"
+          },
+          {
+            "id": 833,
+            "title": "Global Economics and Business Management Global Economics and Business Management (BA) 5. Semester",
+            "short": "GBM5"
+          },
+          {
+            "id": 1163,
+            "title": "Global Economics and Business Management Global Economics and Business Management (BA) 6. Semester",
+            "short": "GBM6"
+          },
+          {
+            "id": 943,
+            "title": "Global Economics and Business Management Global Economics and Business Management (BA) 7. Semester",
+            "short": "GBM7"
+          },
+          {
+            "id": 1099,
+            "title": "Global Economics and Business Management Global Economics and Business Management (BA) Wahlpflichtfächer FW-SW-NW",
+            "short": "GBM Electives"
+          }
+        ]
+      },
+      {
+        "name": "IG-B",
+        "children": [
+          {
+            "id": 412,
+            "title": "International Management Bachelor International Management BA 2. Semester",
+            "short": "IGBA2"
+          },
+          {
+            "id": 439,
+            "title": "International Management Bachelor International Management BA 4. Semester",
+            "short": "IGBA4"
+          },
+          {
+            "id": 479,
+            "title": "International Management Bachelor International Management BA 7. Semester",
+            "short": "IGBA7"
+          },
+          {
+            "id": 426,
+            "title": "International Management Bachelor International Management BA Wahlpflichfächer FW,SW",
+            "short": "IGBA-FW-SW"
+          },
+          {
+            "id": 888,
+            "title": "International Management Bachelor International Management BA Wahlpflichtfächer FW, SW, NW",
+            "short": "IGBA-FW-SW-NW"
+          }
+        ]
+      },
+      {
+        "name": "IHM-B",
+        "children": [
+          {
+            "id": 332,
+            "title": "Internationales Handelsmanagement Bachelor Studiengang Internationales Handelsmangement, BA,  FW-SW-WF-Fächer",
+            "short": "IHMBA-FW-SW"
+          }
+        ]
+      },
+      {
+        "name": "LSM-B",
+        "children": [
+          {
+            "id": 966,
+            "title": "Life Science Management Life Science Management BA 2. Semester",
+            "short": "LSM2"
+          },
+          {
+            "id": 968,
+            "title": "Life Science Management Life Science Management BA 4. Semester",
+            "short": "LSM4"
+          },
+          {
+            "id": 970,
+            "title": "Life Science Management Life Science Management BA 6. Semester",
+            "short": "LSM6"
+          },
+          {
+            "id": 971,
+            "title": "Life Science Management Life Science Management BA 7. Semester",
+            "short": "LSM7"
+          },
+          {
+            "id": 1149,
+            "title": "Life Science Management Life Science Management, BA, FW-Fächer, SW-Fächer, NW-Fächer",
+            "short": "LSM-FW-SW-NW"
+          }
+        ]
+      },
+      {
+        "name": "MPS-B",
+        "children": [
+          {
+            "id": 973,
+            "title": "Medienpsychologie und Digital Business Medienpsychologie und Digital Business BA 2. Semester",
+            "short": "MPS2"
+          },
+          {
+            "id": 975,
+            "title": "Medienpsychologie und Digital Business Medienpsychologie und Digital Business BA 4. Semester",
+            "short": "MPS4"
+          },
+          {
+            "id": 976,
+            "title": "Medienpsychologie und Digital Business Medienpsychologie und Digital Business BA 5. Semester",
+            "short": "MPS5"
+          },
+          {
+            "id": 977,
+            "title": "Medienpsychologie und Digital Business Medienpsychologie und Digital Business BA 6. Semester",
+            "short": "MPS6"
+          },
+          {
+            "id": 978,
+            "title": "Medienpsychologie und Digital Business Medienpsychologie und Digital Business BA 7. Semester",
+            "short": "MPS7"
+          },
+          {
+            "id": 1143,
+            "title": "Medienpsychologie und Digital Business Medienpsychologie und Digital Business, BA, FW-Fächer, SW-Fächer, NW-Fächer",
+            "short": "MPS-FW-SW-NW"
+          }
+        ]
+      },
+      {
+        "name": "ECV-M",
+        "children": [
+          {
+            "id": 1378,
+            "title": "Entrepreneuership and Corporate Venturing Entrepreneurship and Corporate Venturing - alle",
+            "short": "ECV"
+          },
+          {
+            "id": 1445,
+            "title": "Entrepreneuership and Corporate Venturing All Electives",
+            "short": "ECV-Electives"
+          }
+        ]
+      },
+      {
+        "name": "EDB-M",
+        "children": [
+          {
+            "id": 1136,
+            "title": "Entrepreneurship and Digital Business Entrepreneurship and Digital Business - alle",
+            "short": "EDB"
+          }
+        ]
+      },
+      {
+        "name": "FMC-M",
+        "children": [
+          {
+            "id": 411,
+            "title": "Financial Management und Controlling FMC Semesterplanung Gesamt",
+            "short": "FMC-SP"
+          }
+        ]
+      },
+      {
+        "name": "GBU-M",
+        "children": [
+          {
+            "id": 1306,
+            "title": "Global Business Global Business - Semester 1",
+            "short": "GBU1"
+          },
+          {
+            "id": 1307,
+            "title": "Global Business Global Business - Semester 2",
+            "short": "GBU2"
+          },
+          {
+            "id": 1253,
+            "title": "Global Business Global Business - Semester 3 and 4",
+            "short": "GBU3-4"
+          },
+          {
+            "id": 1247,
+            "title": "Global Business Global Business - all Electives",
+            "short": "GBU - Electives"
+          }
+        ]
+      },
+      {
+        "name": "MVM-M",
+        "children": [
+          {
+            "id": 370,
+            "title": "Marketing, Vertrieb, Medien (Master) Marketing, Vertrieb, Medien (Master) - alle",
+            "short": "MVM_SP"
+          }
+        ]
+      },
+      {
+        "name": "RCM-M",
+        "children": [
+          {
+            "id": 681,
+            "title": "Retail und Consumer Management RCM",
+            "short": "RCM"
+          }
+        ]
+      },
+      {
+        "name": "SB-M",
+        "children": [
+          {
+            "id": 826,
+            "title": "Steuern und Beratung Steuern und Beratung Gesamtgruppe mit allen Semester",
+            "short": "SB1"
+          }
+        ]
+      },
+      {
+        "name": "Exchg",
+        "children": [
+          {
+            "id": 440,
+            "title": "Exchange Students",
+            "short": "Exchange Bachelor"
+          },
+          {
+            "id": 502,
+            "title": "Exchange Students",
+            "short": "Exchange Language"
+          },
+          {
+            "id": 1207,
+            "title": "Exchange Students",
+            "short": "Exchange Master"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "E",
+    "children": [
+      {
+        "name": "AVE-B",
+        "children": [
+          {
+            "id": 937,
+            "title": "Autonomous Vehicle Engineering",
+            "short": "AVE2"
+          },
+          {
+            "id": 995,
+            "title": "Autonomous Vehicle Engineering",
+            "short": "AVE4"
+          },
+          {
+            "id": 1112,
+            "title": "Autonomous Vehicle Engineering",
+            "short": "AVE5"
+          },
+          {
+            "id": 1135,
+            "title": "Autonomous Vehicle Engineering",
+            "short": "AVE6"
+          },
+          {
+            "id": 1122,
+            "title": "Autonomous Vehicle Engineering FW-Fächer",
+            "short": "AVE-FW"
+          }
+        ]
+      },
+      {
+        "name": "BEE-B",
+        "children": [
+          {
+            "id": 993,
+            "title": "Bio-Electrical Engineering",
+            "short": "BEE5"
+          },
+          {
+            "id": 1035,
+            "title": "Bio-Electrical Engineering",
+            "short": "BEE_FW"
+          }
+        ]
+      },
+      {
+        "name": "BME-B",
+        "children": [
+          {
+            "id": 1195,
+            "title": "Biomedical Engineering",
+            "short": "BME2"
+          },
+          {
+            "id": 1197,
+            "title": "Biomedical Engineering",
+            "short": "BME4"
+          },
+          {
+            "id": 1198,
+            "title": "Biomedical Engineering",
+            "short": "BME5"
+          },
+          {
+            "id": 1199,
+            "title": "Biomedical Engineering Praxissemester + Gdl.BW/Gründertum",
+            "short": "BME6"
+          },
+          {
+            "id": 1327,
+            "title": "Biomedical Engineering FW für Semester 4 5 6 und 7",
+            "short": "BME_FW"
+          }
+        ]
+      },
+      {
+        "name": "EIT-B",
+        "children": [
+          {
+            "id": 143,
+            "title": "Elektro- und Informationstechnik Bachelor Elektro- und Informationstechnik, ganze Semestergruppe 2",
+            "short": "EIT2"
+          },
+          {
+            "id": 95,
+            "title": "Elektro- und Informationstechnik Bachelor Elektro- und Informationstechnik, Semestergruppe 4",
+            "short": "EIT4"
+          },
+          {
+            "id": 96,
+            "title": "Elektro- und Informationstechnik Bachelor Elektro- und Informationstechnik, Semestergruppe 5, (Praxissemester)",
+            "short": "EIT5"
+          },
+          {
+            "id": 138,
+            "title": "Elektro- und Informationstechnik Bachelor EIT 6.Semester, ganze Semestergruppe",
+            "short": "EIT6"
+          },
+          {
+            "id": 839,
+            "title": "Elektro- und Informationstechnik Bachelor EIT, FW-Fächer",
+            "short": "EIT-FW"
+          }
+        ]
+      },
+      {
+        "name": "EMB-B",
+        "children": [
+          {
+            "id": 436,
+            "title": "Elektrotechnik und Elektromobilität",
+            "short": "EMB2"
+          },
+          {
+            "id": 473,
+            "title": "Elektrotechnik und Elektromobilität",
+            "short": "EMB4"
+          },
+          {
+            "id": 483,
+            "title": "Elektrotechnik und Elektromobilität",
+            "short": "EMB5"
+          },
+          {
+            "id": 485,
+            "title": "Elektrotechnik und Elektromobilität",
+            "short": "EMB7"
+          },
+          {
+            "id": 476,
+            "title": "Elektrotechnik und Elektromobilität",
+            "short": "EMB-FW"
+          }
+        ]
+      },
+      {
+        "name": "MT-B",
+        "children": [
+          {
+            "id": 380,
+            "title": "Mechatronik Bachelor FW-Fächer des Studiengangs Mechatronik",
+            "short": "MT_FW"
+          }
+        ]
+      },
+      {
+        "name": "ROB-B",
+        "children": [
+          {
+            "id": 851,
+            "title": "Robotik",
+            "short": "ROB2"
+          },
+          {
+            "id": 1004,
+            "title": "Robotik",
+            "short": "ROB4"
+          },
+          {
+            "id": 1092,
+            "title": "Robotik",
+            "short": "ROB5"
+          },
+          {
+            "id": 1131,
+            "title": "Robotik",
+            "short": "ROB6"
+          },
+          {
+            "id": 955,
+            "title": "Robotik FW-Fächer des Studiengangs Robotik",
+            "short": "ROB_FW"
+          }
+        ]
+      },
+      {
+        "name": "AI-M",
+        "children": [
+          {
+            "id": 1184,
+            "title": "AI Engineering of Autonomous Systems first semester",
+            "short": "AI1"
+          },
+          {
+            "id": 1203,
+            "title": "AI Engineering of Autonomous Systems second semester",
+            "short": "AI2"
+          }
+        ]
+      },
+      {
+        "name": "AR-M",
+        "children": [
+          {
+            "id": 424,
+            "title": "Applied Research in Engineering Sciences Studierende des Applied Research Master",
+            "short": "AR"
+          }
+        ]
+      },
+      {
+        "name": "AUF-M",
+        "children": [
+          {
+            "id": 683,
+            "title": "Automatisiertes Fahren und Fahrzeugsicherheit",
+            "short": "AUF-1"
+          },
+          {
+            "id": 706,
+            "title": "Automatisiertes Fahren und Fahrzeugsicherheit",
+            "short": "AUF-2"
+          },
+          {
+            "id": 684,
+            "title": "Automatisiertes Fahren und Fahrzeugsicherheit",
+            "short": "AUF-FW"
+          }
+        ]
+      },
+      {
+        "name": "EMO-M",
+        "children": [
+          {
+            "id": 1219,
+            "title": "Elektrotechnik und Elektromobilität",
+            "short": "EMO1"
+          },
+          {
+            "id": 1220,
+            "title": "Elektrotechnik und Elektromobilität",
+            "short": "EMO2"
+          },
+          {
+            "id": 1222,
+            "title": "Elektrotechnik und Elektromobilität zur FW-Fächerwahl",
+            "short": "EMO-FW"
+          }
+        ]
+      },
+      {
+        "name": "EMS-M",
+        "children": [
+          {
+            "id": 420,
+            "title": "Master Elektrotechnik mobiler Systeme",
+            "short": "EMS1"
+          },
+          {
+            "id": 802,
+            "title": "Master Elektrotechnik mobiler Systeme Für Wahlpflichtfächer Gruppe B",
+            "short": "EMS_FW"
+          }
+        ]
+      },
+      {
+        "name": "IAE-M",
+        "children": [
+          {
+            "id": 1372,
+            "title": "International Automotive Engineering",
+            "short": "IAE1"
+          },
+          {
+            "id": 1373,
+            "title": "International Automotive Engineering",
+            "short": "IAE2&3"
+          },
+          {
+            "id": 498,
+            "title": "International Automotive Engineering FW-Angebot im IAE",
+            "short": "IAE_FW"
+          },
+          {
+            "id": 509,
+            "title": "International Automotive Engineering Vechicle Electronics 2. Semester",
+            "short": "IAE_VE2"
+          },
+          {
+            "id": 511,
+            "title": "International Automotive Engineering Vechicle Safety 2. Semester",
+            "short": "IAE_VS2"
+          }
+        ]
+      },
+      {
+        "name": "PAT-M",
+        "children": [
+          {
+            "id": 1295,
+            "title": "Patentingenieurwesen",
+            "short": "PAT1"
+          },
+          {
+            "id": 1296,
+            "title": "Patentingenieurwesen",
+            "short": "PAT2"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "I",
+    "children": [
+      {
+        "name": "BMI-B",
+        "children": [
+          {
+            "id": 1227,
+            "title": "Bio- und Medizininformatik",
+            "short": "BiMi2"
+          },
+          {
+            "id": 1316,
+            "title": "Bio- und Medizininformatik",
+            "short": "BiMi4"
+          },
+          {
+            "id": 1382,
+            "title": "Bio- und Medizininformatik",
+            "short": "BiMi6"
+          },
+          {
+            "id": 1289,
+            "title": "Bio- und Medizininformatik Fachwissenschaftliche Wahlpflichtfächer",
+            "short": "BiMi-FW"
+          }
+        ]
+      },
+      {
+        "name": "CAI-B",
+        "children": [
+          {
+            "id": 1011,
+            "title": "Computer Science and Artificial Intelligence",
+            "short": "CAI2"
+          },
+          {
+            "id": 1115,
+            "title": "Computer Science and Artificial Intelligence",
+            "short": "CAI4"
+          },
+          {
+            "id": 1223,
+            "title": "Computer Science and Artificial Intelligence",
+            "short": "CAI6"
+          },
+          {
+            "id": 1248,
+            "title": "Computer Science and Artificial Intelligence Electives for CAI Bachelor",
+            "short": "CAI_FW"
+          }
+        ]
+      },
+      {
+        "name": "CLS-B",
+        "children": [
+          {
+            "id": 1138,
+            "title": "Computational Life Sciences",
+            "short": "CLS6"
+          },
+          {
+            "id": 1183,
+            "title": "Computational Life Sciences Fachwissenschaftliche Wahlpflichtfächer",
+            "short": "CLS-FW"
+          }
+        ]
+      },
+      {
+        "name": "CSI-B",
+        "children": [
+          {
+            "id": 1141,
+            "title": "Cybersicherheit",
+            "short": "CSI2"
+          },
+          {
+            "id": 1224,
+            "title": "Cybersicherheit",
+            "short": "CSI4"
+          },
+          {
+            "id": 1262,
+            "title": "Cybersicherheit",
+            "short": "CSI6"
+          },
+          {
+            "id": 1398,
+            "title": "Cybersicherheit FW-Fächer im Studiengang CSI",
+            "short": "CSI_FW"
+          }
+        ]
+      },
+      {
+        "name": "FFI-B",
+        "children": [
+          {
+            "id": 297,
+            "title": "Flug- und Fahrzeuginformatik Flug- und Fahrzeuginformatik, 2. Semester",
+            "short": "FFI2"
+          },
+          {
+            "id": 401,
+            "title": "Flug- und Fahrzeuginformatik Flug- und Fahrzeuginformatik, 4. Semester",
+            "short": "FFI4"
+          },
+          {
+            "id": 403,
+            "title": "Flug- und Fahrzeuginformatik Flug- und Fahrzeuginformatik, 6. Semester",
+            "short": "FFI6"
+          },
+          {
+            "id": 1397,
+            "title": "Flug- und Fahrzeuginformatik",
+            "short": "FFI-FW"
+          }
+        ]
+      },
+      {
+        "name": "INF-B",
+        "children": [
+          {
+            "id": 144,
+            "title": "Informatik Bachelor Informatik, Semestergruppe 2",
+            "short": "INF2"
+          },
+          {
+            "id": 184,
+            "title": "Informatik Bachelor Informatik, Semestergruppe 4",
+            "short": "INF4"
+          },
+          {
+            "id": 112,
+            "title": "Informatik Bachelor Informatik, Semestergruppe 6, Studienrichtung Allgemeine Informatik",
+            "short": "INF6"
+          },
+          {
+            "id": 359,
+            "title": "Informatik Bachelor FW-Fächer im Studiengang Informatik, Studienrichtung Allgemeine Informatik",
+            "short": "INF-FW"
+          }
+        ]
+      },
+      {
+        "name": "KI-B",
+        "children": [
+          {
+            "id": 801,
+            "title": "Künstliche Intelligenz",
+            "short": "KI2"
+          },
+          {
+            "id": 852,
+            "title": "Künstliche Intelligenz",
+            "short": "KI4"
+          },
+          {
+            "id": 958,
+            "title": "Künstliche Intelligenz",
+            "short": "KI5"
+          },
+          {
+            "id": 959,
+            "title": "Künstliche Intelligenz",
+            "short": "KI6"
+          },
+          {
+            "id": 1403,
+            "title": "Künstliche Intelligenz FW-Fächer im Studiengang Künstliche Intelligenz",
+            "short": "KI_FW"
+          }
+        ]
+      },
+      {
+        "name": "UXD-B",
+        "children": [
+          {
+            "id": 478,
+            "title": "User Experience Design UXD-Studiengruppe Semester 2",
+            "short": "UXD2"
+          },
+          {
+            "id": 499,
+            "title": "User Experience Design UXD-Studiengruppe Semester 4",
+            "short": "UXD4"
+          },
+          {
+            "id": 539,
+            "title": "User Experience Design UXD-Studiengruppe Semester 6",
+            "short": "UXD6"
+          },
+          {
+            "id": 540,
+            "title": "User Experience Design UXD-Studiengruppe Semester 7",
+            "short": "UXD7"
+          },
+          {
+            "id": 1329,
+            "title": "User Experience Design",
+            "short": "UXD_FW"
+          }
+        ]
+      },
+      {
+        "name": "WINF-B",
+        "children": [
+          {
+            "id": 303,
+            "title": "Wirtschaftsinformatik 2. Semester Wirtschaftsinformatik",
+            "short": "WINFBA2"
+          },
+          {
+            "id": 641,
+            "title": "Wirtschaftsinformatik 4.Semester Wirtschaftsinformatik",
+            "short": "WINFBA4"
+          },
+          {
+            "id": 383,
+            "title": "Wirtschaftsinformatik 6. Semester Wirtschaftsinformatik",
+            "short": "WINFBA6"
+          },
+          {
+            "id": 372,
+            "title": "Wirtschaftsinformatik Fachwissenschaftliche Wahlfpflichtfächer Wirtschaftsinformatik",
+            "short": "WINFBA-FW"
+          }
+        ]
+      },
+      {
+        "name": "AIN-M",
+        "children": [
+          {
+            "id": 1310,
+            "title": "Artificial Intelligence (M)",
+            "short": "AINM-1"
+          },
+          {
+            "id": 1311,
+            "title": "Artificial Intelligence (M)",
+            "short": "AINM-2"
+          }
+        ]
+      },
+      {
+        "name": "BE-M",
+        "children": [
+          {
+            "id": 1049,
+            "title": "Business Information Systems Engineering",
+            "short": "BISEM-1"
+          },
+          {
+            "id": 1050,
+            "title": "Business Information Systems Engineering",
+            "short": "BISEM-2"
+          }
+        ]
+      },
+      {
+        "name": "CSE-M",
+        "children": [
+          {
+            "id": 1052,
+            "title": "Cloud Applications und Security Engineering",
+            "short": "CASEM-1"
+          },
+          {
+            "id": 1053,
+            "title": "Cloud Applications und Security Engineering",
+            "short": "CASEM-2"
+          }
+        ]
+      },
+      {
+        "name": "INF-M",
+        "children": [
+          {
+            "id": 461,
+            "title": "Informatik Master Informatik Master, Semestergruppe 1, Schwerpunkt Information Systems Engineering",
+            "short": "INFM-1-ISE"
+          },
+          {
+            "id": 460,
+            "title": "Informatik Master Informatik Master, Semestergruppe 1, Schwerpunkt Security and Safety",
+            "short": "INFM-1-SAS"
+          },
+          {
+            "id": 462,
+            "title": "Informatik Master Informatik Master, Semestergruppe 2, Schwerpunkt Information Systems Engineering",
+            "short": "INFM-2-ISE"
+          },
+          {
+            "id": 463,
+            "title": "Informatik Master Informatik Master, Semestergruppe 2, Schwerpunkt Security and Safety",
+            "short": "INFM-2-SAS"
+          }
+        ]
+      },
+      {
+        "name": "KI-M",
+        "children": [
+          {
+            "id": 1104,
+            "title": "Künstliche Intelligenz (Master)",
+            "short": "KIM-1"
+          },
+          {
+            "id": 1105,
+            "title": "Künstliche Intelligenz (Master)",
+            "short": "KIM-2"
+          }
+        ]
+      },
+      {
+        "name": "SOC-M",
+        "children": [
+          {
+            "id": 1428,
+            "title": "Socialtechnical Cybersecurity Alle SOC-Studierende des ersten Semesters",
+            "short": "SOC1"
+          }
+        ]
+      },
+      {
+        "name": "UXD-M",
+        "children": [
+          {
+            "id": 757,
+            "title": "User Experience Design (Master)",
+            "short": "UXDM1"
+          },
+          {
+            "id": 759,
+            "title": "User Experience Design (Master)",
+            "short": "UXDM3"
+          }
+        ]
+      },
+      {
+        "name": "UXD-M TZ",
+        "children": [
+          {
+            "id": 1265,
+            "title": "User Experience Design (Master, Teilzeit)",
+            "short": "UXD-M TZ1"
+          },
+          {
+            "id": 1267,
+            "title": "User Experience Design (Master, Teilzeit)",
+            "short": "UXD-M TZ3"
+          },
+          {
+            "id": 1269,
+            "title": "User Experience Design (Master, Teilzeit)",
+            "short": "UXD-M TZ5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "M",
+    "children": [
+      {
+        "name": "BIO-B",
+        "children": [
+          {
+            "id": 1133,
+            "title": "Biomechanik Bachelor",
+            "short": "BIO2"
+          },
+          {
+            "id": 1169,
+            "title": "Biomechanik Bachelor",
+            "short": "BIO4"
+          },
+          {
+            "id": 1170,
+            "title": "Biomechanik Bachelor",
+            "short": "BIO5"
+          },
+          {
+            "id": 1171,
+            "title": "Biomechanik Bachelor",
+            "short": "BIO6"
+          },
+          {
+            "id": 1173,
+            "title": "Biomechanik Bachelor",
+            "short": "BIO_FW"
+          }
+        ]
+      },
+      {
+        "name": "EEE-B",
+        "children": [
+          {
+            "id": 730,
+            "title": "Energiesysteme und Erneuerbare Energien Energiesysteme und Erneuerbare Energien, Semestergruppe 1",
+            "short": "EEE1"
+          },
+          {
+            "id": 760,
+            "title": "Energiesysteme und Erneuerbare Energien Energiesysteme und Erneuerbare Energien, Semestergruppe 2",
+            "short": "EEE2"
+          },
+          {
+            "id": 815,
+            "title": "Energiesysteme und Erneuerbare Energien Energiesysteme und Erneuerbare Energien, Semestergruppe 3",
+            "short": "EEE3"
+          },
+          {
+            "id": 845,
+            "title": "Energiesysteme und Erneuerbare Energien Energiesysteme und Erneuerbare Energien, Semestergruppe 4",
+            "short": "EEE4"
+          },
+          {
+            "id": 1126,
+            "title": "Energiesysteme und Erneuerbare Energien Energiesysteme und Erneuerbare Energien, Semestergruppe 5",
+            "short": "EEE5"
+          },
+          {
+            "id": 1013,
+            "title": "Energiesysteme und Erneuerbare Energien Energiesysteme und Erneuerbare Energien, Semestergruppe 6",
+            "short": "EEE6"
+          },
+          {
+            "id": 1098,
+            "title": "Energiesysteme und Erneuerbare Energien Energiesysteme und Erneuerbare Energien, Semestergruppe 7",
+            "short": "EEE7"
+          },
+          {
+            "id": 790,
+            "title": "Energiesysteme und Erneuerbare Energien Energiesysteme und Erneuerbare Energien, FW-Fächer",
+            "short": "EEE_FW"
+          }
+        ]
+      },
+      {
+        "name": "ESYS-B",
+        "children": [
+          {
+            "id": 1012,
+            "title": "Energy Systems and Renewable Energies Energy Systems and Renewable Energies, Semestergruppe 2",
+            "short": "ESYS2"
+          },
+          {
+            "id": 1097,
+            "title": "Energy Systems and Renewable Energies Energy Systems and Renewable Energies, Semestergruppe 3",
+            "short": "ESYS3"
+          },
+          {
+            "id": 1134,
+            "title": "Energy Systems and Renewable Energies Energy Systems and Renewable Energies, Semestergruppe 4",
+            "short": "ESYS4"
+          },
+          {
+            "id": 1208,
+            "title": "Energy Systems and Renewable Energies Energy Systems and Renewable Energies, Semestergruppe 5",
+            "short": "ESYS5"
+          },
+          {
+            "id": 1209,
+            "title": "Energy Systems and Renewable Energies Energy Systems and Renewable Energies, Semestergruppe 6",
+            "short": "ESYS6"
+          },
+          {
+            "id": 1108,
+            "title": "Energy Systems and Renewable Energies Energy Systems and Renewable Energies, FW-Fächer",
+            "short": "ESYS_FW"
+          }
+        ]
+      },
+      {
+        "name": "ET-B",
+        "children": [
+          {
+            "id": 791,
+            "title": "Energietechnik und Erneuerbare Energien Energietechnik und Erneuerbare Energien, FW-Fächer",
+            "short": "ET_FW"
+          }
+        ]
+      },
+      {
+        "name": "FT-B",
+        "children": [
+          {
+            "id": 231,
+            "title": "Fahrzeugtechnik Bachelor Fahrzeugtechnik - Bachelor, Semester 2 gesamt\n(für alle Untergruppen)",
+            "short": "FT2"
+          },
+          {
+            "id": 237,
+            "title": "Fahrzeugtechnik Bachelor Fahrzeugtechnik - Bachelor, Semester 3 gesamt\n(für alle Untergruppen)",
+            "short": "FT3"
+          },
+          {
+            "id": 250,
+            "title": "Fahrzeugtechnik Bachelor Fahrzeugtechnik - Bachelor, Semester 4 gesamt\n(für alle Untergruppen)",
+            "short": "FT4"
+          },
+          {
+            "id": 274,
+            "title": "Fahrzeugtechnik Bachelor Fahrzeugtechnik- Bachelor, Semester 5 gesamt (für alle Untergruppen)",
+            "short": "FT5"
+          },
+          {
+            "id": 773,
+            "title": "Fahrzeugtechnik Bachelor Fahrzeugtechnik-Bachelor, Semester 6, SP Elektromobilität",
+            "short": "FT6_EMo"
+          },
+          {
+            "id": 774,
+            "title": "Fahrzeugtechnik Bachelor Fahrzeugtechnik-Bachelor, Semester 6, SP Karosseriegestaltung und Fahrzeugsicherheit",
+            "short": "FT6_KFS"
+          },
+          {
+            "id": 792,
+            "title": "Fahrzeugtechnik Bachelor Fahrzeugtechnik, FW-Fächer Elektromobilität",
+            "short": "FT_FW_SP_EMo"
+          },
+          {
+            "id": 793,
+            "title": "Fahrzeugtechnik Bachelor Fahrzeugtechnik FW-Fächer Schwerpunkt Karosseriegestaltung und Fahrzeugsicherheit",
+            "short": "FT_FW_SP_KFS"
+          }
+        ]
+      },
+      {
+        "name": "ING-B",
+        "children": [
+          {
+            "id": 728,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Semestergruppe 1",
+            "short": "ING1"
+          },
+          {
+            "id": 729,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Semestergruppe 2",
+            "short": "ING2"
+          },
+          {
+            "id": 913,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Schwerpunkt Digital Engineering",
+            "short": "ING4_SP_DE"
+          },
+          {
+            "id": 917,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften Schwerpunkt Elektromobilität",
+            "short": "ING4_SP_EM"
+          },
+          {
+            "id": 920,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Schwerpunkt Entwicklung Flugsysteme",
+            "short": "ING4_SP_EntFS"
+          },
+          {
+            "id": 934,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Schwerpunkt Energietechnik",
+            "short": "ING4_SP_ET"
+          },
+          {
+            "id": 910,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Schwerpunkt Entwicklung und Konstruktion",
+            "short": "ING4_SP_EuK"
+          },
+          {
+            "id": 903,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften Praxissemester",
+            "short": "ING5"
+          },
+          {
+            "id": 908,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften Schwerpunkt Automotive Engineering",
+            "short": "ING6_SP_AE"
+          },
+          {
+            "id": 902,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften Schwerpunkt Automotive Management",
+            "short": "ING6_SP_AutM"
+          },
+          {
+            "id": 914,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Schwerpunkt Digital Engineering",
+            "short": "ING6_SP_DE"
+          },
+          {
+            "id": 918,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften Schwerpunkt Elektromobilität",
+            "short": "ING6_SP_EM"
+          },
+          {
+            "id": 921,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Schwerpunkt Entwicklung Flugsysteme",
+            "short": "ING6_SP_EntFS"
+          },
+          {
+            "id": 935,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Schwerpunkt Energietechnik",
+            "short": "ING6_SP_ET"
+          },
+          {
+            "id": 911,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Schwerpunkt Entwicklung und Konstruktion",
+            "short": "ING6_SP_EuK"
+          },
+          {
+            "id": 924,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften Schwerpunkt Karosserie und Design",
+            "short": "ING6_SP_KuD"
+          },
+          {
+            "id": 929,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, Schwerpunkt Produktion, Logistik und Beschaffung",
+            "short": "ING6_SP_PLoB"
+          },
+          {
+            "id": 795,
+            "title": "Ingenieurwissenschaften Ingenieurwissenschaften, FW-Fächer",
+            "short": "ING_FW"
+          }
+        ]
+      },
+      {
+        "name": "LT-B",
+        "children": [
+          {
+            "id": 345,
+            "title": "Luftfahrtechnik Bachelor Luftfahrttechnik, Semestergruppe 2",
+            "short": "LT2"
+          },
+          {
+            "id": 374,
+            "title": "Luftfahrtechnik Bachelor Luftfahrttechnik, Semestergruppe 4",
+            "short": "LT4"
+          },
+          {
+            "id": 441,
+            "title": "Luftfahrtechnik Bachelor Luftfahrttechnik, Semestergruppe 5",
+            "short": "LT5"
+          },
+          {
+            "id": 405,
+            "title": "Luftfahrtechnik Bachelor Luftfahrttechnik, Semestergruppe 6",
+            "short": "LT6"
+          },
+          {
+            "id": 796,
+            "title": "Luftfahrtechnik Bachelor Luftfahrttechnik, FW-Fächer",
+            "short": "LT_FW"
+          }
+        ]
+      },
+      {
+        "name": "MB-B",
+        "children": [
+          {
+            "id": 139,
+            "title": "Maschinenbau Bachelor Maschinenbau - Bachelor, Semester 2 gesamt\n(für alle Untergruppen)",
+            "short": "MB2"
+          },
+          {
+            "id": 125,
+            "title": "Maschinenbau Bachelor Maschinenbau - Bachelor, Semester 4 gesamt\n(für alle Untergruppen)",
+            "short": "MB4"
+          },
+          {
+            "id": 272,
+            "title": "Maschinenbau Bachelor Maschinenbau - Bachelor, Semester 6, SP Entwicklung und Konstruktion",
+            "short": "MB6_EuK"
+          },
+          {
+            "id": 271,
+            "title": "Maschinenbau Bachelor Maschinenbau - Bachelor, Semester 6, SP Fahrzeugtechnik",
+            "short": "MB6_FT"
+          },
+          {
+            "id": 798,
+            "title": "Maschinenbau Bachelor Maschinenbau, FW-Fächer, Schwerpunkt Digitale Produktion und Logistik",
+            "short": "MB_FW_SP_DPuL"
+          },
+          {
+            "id": 797,
+            "title": "Maschinenbau Bachelor Maschinenbau, FW-Fächer Schwerpunkt Entwicklung und Konstruktion",
+            "short": "MB_FW_SP_EuK"
+          },
+          {
+            "id": 799,
+            "title": "Maschinenbau Bachelor Maschinenbau,FW-Fächer, Schwerpunkt Fahrzeugtechnik",
+            "short": "MB_FW_SP_FT"
+          }
+        ]
+      },
+      {
+        "name": "M-FT",
+        "children": [
+          {
+            "id": 1028,
+            "title": "Master Fahrzeugtechnik Alle Semester",
+            "short": "M-FT"
+          }
+        ]
+      },
+      {
+        "name": "M-LT",
+        "children": [
+          {
+            "id": 1029,
+            "title": "Master Luftfahrttechnik Alle Semester",
+            "short": "M-LT"
+          }
+        ]
+      },
+      {
+        "name": "M-Res",
+        "children": [
+          {
+            "id": 1030,
+            "title": "Master RES Alle Semester",
+            "short": "M-RES"
+          }
+        ]
+      },
+      {
+        "name": "M-TE",
+        "children": [
+          {
+            "id": 1031,
+            "title": "Master TE ab Sommersemester17 Alle Semester",
+            "short": "M-TE"
+          }
+        ]
+      },
+      {
+        "name": "M-WR",
+        "children": [
+          {
+            "id": 1285,
+            "title": "Master Werkstofftechnik und Ressourceneffizentes Engineering Alle Semester",
+            "short": "M-WR"
+          }
+        ]
+      },
+      {
+        "name": "M-WT",
+        "children": [
+          {
+            "id": 1032,
+            "title": "Master Werkstofftechnik Alle Semester",
+            "short": "M-WT"
+          }
+        ]
+      },
+      {
+        "name": "M-WTW",
+        "children": [
+          {
+            "id": 1100,
+            "title": "Master Wasserstofftechnologie und -wirtschaft Alle Semester",
+            "short": "M-WTW"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "NI",
+    "children": [
+      {
+        "name": "ARC-B",
+        "children": [
+          {
+            "id": 1436,
+            "title": "Architecture ARC 1. Semester",
+            "short": "ARC1_B"
+          }
+        ]
+      },
+      {
+        "name": "NB-B",
+        "children": [
+          {
+            "id": 1150,
+            "title": "Nachhaltiges Bauingenieurwesen NB 2. Semester",
+            "short": "NB2_B"
+          },
+          {
+            "id": 1230,
+            "title": "Nachhaltiges Bauingenieurwesen NB 4. Semester",
+            "short": "NB4_B"
+          },
+          {
+            "id": 1273,
+            "title": "Nachhaltiges Bauingenieurwesen NB 5. Semester",
+            "short": "NB5_B"
+          },
+          {
+            "id": 1328,
+            "title": "Nachhaltiges Bauingenieurwesen NB 6. Semester",
+            "short": "NB6_B"
+          },
+          {
+            "id": 1204,
+            "title": "Nachhaltiges Bauingenieurwesen Vertiefungsmodule",
+            "short": "NB-FW"
+          }
+        ]
+      },
+      {
+        "name": "NUM-B",
+        "children": [
+          {
+            "id": 1154,
+            "title": "Nachhaltigkeits- und Umweltmanagement NUM 2. Semester",
+            "short": "NUM2_B"
+          },
+          {
+            "id": 1151,
+            "title": "Nachhaltigkeits- und Umweltmanagement NUM 4. Semester",
+            "short": "NUM4_B"
+          },
+          {
+            "id": 1231,
+            "title": "Nachhaltigkeits- und Umweltmanagement NUM 6. Semester",
+            "short": "NUM6_B"
+          },
+          {
+            "id": 1127,
+            "title": "Nachhaltigkeits- und Umweltmanagement Vertiefungsmodule",
+            "short": "NUM-FW"
+          }
+        ]
+      },
+      {
+        "name": "SCE-B",
+        "children": [
+          {
+            "id": 1202,
+            "title": "Sustainable Civil Engineering SCE 1. Semester",
+            "short": "SCE1_B"
+          },
+          {
+            "id": 1232,
+            "title": "Sustainable Civil Engineering SCE 2. Semester",
+            "short": "SCE2_B"
+          },
+          {
+            "id": 1274,
+            "title": "Sustainable Civil Engineering SCE 3. Semester",
+            "short": "SCE3_B"
+          },
+          {
+            "id": 1275,
+            "title": "Sustainable Civil Engineering SCE 4. Semester",
+            "short": "SCE4_B"
+          },
+          {
+            "id": 1276,
+            "title": "Sustainable Civil Engineering SCE 5. Semester",
+            "short": "SCE5_B"
+          },
+          {
+            "id": 1277,
+            "title": "Sustainable Civil Engineering SCE 6. Semester",
+            "short": "SCE6_B"
+          },
+          {
+            "id": 1303,
+            "title": "Sustainable Civil Engineering SCE_Specialization modules",
+            "short": "SCE_FW"
+          }
+        ]
+      },
+      {
+        "name": "WIB-B",
+        "children": [
+          {
+            "id": 1233,
+            "title": "Wirtschaftsingenieurwesen-Bau 6. Semester WIB",
+            "short": "WIB6_B"
+          },
+          {
+            "id": 1128,
+            "title": "Wirtschaftsingenieurwesen-Bau Fachwissenschaftliche Wahlpflichtmodule",
+            "short": "WIB-FW"
+          }
+        ]
+      },
+      {
+        "name": "SMT-M",
+        "children": [
+          {
+            "id": 1396,
+            "title": "Sustainability Management and Technologies SMT 2.Semester",
+            "short": "SMT"
+          },
+          {
+            "id": 1318,
+            "title": "Sustainability Management and Technologies SMT 1. Semester",
+            "short": "SMT1_M"
+          },
+          {
+            "id": 1433,
+            "title": "Sustainability Management and Technologies SMT 3.Semester",
+            "short": "SMT3_M"
+          },
+          {
+            "id": 1395,
+            "title": "Sustainability Management and Technologies SMT Electives",
+            "short": "SMT-FW"
+          }
+        ]
+      },
+      {
+        "name": "ORGANISATION",
+        "children": [
+          {
+            "id": 1002,
+            "title": "Sonderveranstaltungen Neuburg NI_Fakultät",
+            "short": "NI_Fakultät"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "SZ",
+    "children": [
+      {
+        "name": "AW",
+        "children": [
+          {
+            "id": 489,
+            "title": "AW-Fächer",
+            "short": "AW"
+          }
+        ]
+      },
+      {
+        "name": "SZ-SonstigeFächer",
+        "children": [
+          {
+            "id": 450,
+            "title": "Sonstige Fächer des Sprachenzentrums Intercultrural Classes, European Union",
+            "short": "SZ-ANDERE/OTHERS"
+          }
+        ]
+      },
+      {
+        "name": "SZ-Sprachen",
+        "children": [
+          {
+            "id": 444,
+            "title": "Sprachenangebot des Sprachenzentrums",
+            "short": "SZ_CHINESISCH"
+          },
+          {
+            "id": 448,
+            "title": "Sprachenangebot des Sprachenzentrums",
+            "short": "SZ_DEUTSCH"
+          },
+          {
+            "id": 442,
+            "title": "Sprachenangebot des Sprachenzentrums",
+            "short": "SZ_ENGLISCH"
+          },
+          {
+            "id": 445,
+            "title": "Sprachenangebot des Sprachenzentrums",
+            "short": "SZ_FRANZÖSISCH"
+          },
+          {
+            "id": 1282,
+            "title": "Sprachenangebot des Sprachenzentrums",
+            "short": "SZ_JAPANISCH"
+          },
+          {
+            "id": 447,
+            "title": "Sprachenangebot des Sprachenzentrums",
+            "short": "SZ_PORTUGIESISCH"
+          },
+          {
+            "id": 449,
+            "title": "Sprachenangebot des Sprachenzentrums",
+            "short": "SZ_RUSSISCH"
+          },
+          {
+            "id": 446,
+            "title": "Sprachenangebot des Sprachenzentrums",
+            "short": "SZ_SPANISCH"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "WI",
+    "children": [
+      {
+        "name": "DS-B",
+        "children": [
+          {
+            "id": 1048,
+            "title": "Data Science in Technik und Wirtschaft Data Science in Technik und Wirtschaft, Semestergruppe 2",
+            "short": "DS 2"
+          },
+          {
+            "id": 1192,
+            "title": "Data Science in Technik und Wirtschaft Data Science in Technik und Wirtschaft, Semestergruppe 4",
+            "short": "DS 4"
+          },
+          {
+            "id": 1424,
+            "title": "Data Science in Technik und Wirtschaft",
+            "short": "DS 4 (SPO WS 22/23)"
+          },
+          {
+            "id": 1259,
+            "title": "Data Science in Technik und Wirtschaft Data Science in Technik und Wirtschaft, Semestergruppe 6",
+            "short": "DS 6"
+          },
+          {
+            "id": 1191,
+            "title": "Data Science in Technik und Wirtschaft Allgemeinwissenschaftliche",
+            "short": "DS-AW"
+          },
+          {
+            "id": 1190,
+            "title": "Data Science in Technik und Wirtschaft Fachwissenschaftliche Wahlpflichtfächer",
+            "short": "DS-FW"
+          }
+        ]
+      },
+      {
+        "name": "EGM-B",
+        "children": [
+          {
+            "id": 493,
+            "title": "Engineering and Management Engineering and Management",
+            "short": "EGM2"
+          },
+          {
+            "id": 536,
+            "title": "Engineering and Management Engineering and Management, Semestergruppe 4",
+            "short": "EGM4"
+          },
+          {
+            "id": 537,
+            "title": "Engineering and Management Engineering and Management, Semestergruppe 6",
+            "short": "EGM6"
+          },
+          {
+            "id": 770,
+            "title": "Engineering and Management Electives/Specialization",
+            "short": "EGM-FW"
+          }
+        ]
+      },
+      {
+        "name": "TD-B",
+        "children": [
+          {
+            "id": 727,
+            "title": "Technisches Design Technisches Design, Semestergruppe 2",
+            "short": "TD2"
+          },
+          {
+            "id": 837,
+            "title": "Technisches Design Technisches Design, Semestergruppe 4",
+            "short": "TD4"
+          },
+          {
+            "id": 1008,
+            "title": "Technisches Design Technisches Design, Semestergruppe 6",
+            "short": "TD6"
+          },
+          {
+            "id": 838,
+            "title": "Technisches Design Fachwissenschaftliche Wahlpflichtfächer",
+            "short": "TD-FW"
+          }
+        ]
+      },
+      {
+        "name": "WI-B",
+        "children": [
+          {
+            "id": 130,
+            "title": "Wirtschaftsingenieurwesen Bachelor Wirtschaftsingenieurwesen, Semestergruppe 1",
+            "short": "WI1"
+          },
+          {
+            "id": 238,
+            "title": "Wirtschaftsingenieurwesen Bachelor",
+            "short": "WI2"
+          },
+          {
+            "id": 47,
+            "title": "Wirtschaftsingenieurwesen Bachelor Wirtschaftsingenieurwesen, Semestergruppe 3",
+            "short": "WI3"
+          },
+          {
+            "id": 79,
+            "title": "Wirtschaftsingenieurwesen Bachelor Wirtschaftsingenieurwesen, Semestergruppe 4",
+            "short": "WI4"
+          },
+          {
+            "id": 1155,
+            "title": "Wirtschaftsingenieurwesen Bachelor Studienrichtung Business Intelligence & Analytics",
+            "short": "WI6_I"
+          },
+          {
+            "id": 761,
+            "title": "Wirtschaftsingenieurwesen Bachelor Studienrichtung Business & Management",
+            "short": "WI6_M"
+          },
+          {
+            "id": 763,
+            "title": "Wirtschaftsingenieurwesen Bachelor Studienrichtung Produktion & Logistik",
+            "short": "WI6_P"
+          },
+          {
+            "id": 244,
+            "title": "Wirtschaftsingenieurwesen Bachelor Allgemeinwissenschaftliche Wahlpflichtfächer",
+            "short": "WI-AW"
+          },
+          {
+            "id": 855,
+            "title": "Wirtschaftsingenieurwesen Bachelor FW-Fach, Schwerpunkt Digitale Produktion und Logistik",
+            "short": "WI-FW_SP_D"
+          },
+          {
+            "id": 1156,
+            "title": "Wirtschaftsingenieurwesen Bachelor FW-Fach Schwerpunktrichtung Business Intelligence & Analytics",
+            "short": "WI-FW_SP_I"
+          },
+          {
+            "id": 856,
+            "title": "Wirtschaftsingenieurwesen Bachelor FW-Fach, Schwerpunkt Management",
+            "short": "WI-FW_SP_M"
+          }
+        ]
+      },
+      {
+        "name": "M-APE",
+        "children": [
+          {
+            "id": 434,
+            "title": "Master Automotive Production Engineering Master Automotive Production Engineering, Semestergruppe 1",
+            "short": "M-APE1"
+          }
+        ]
+      },
+      {
+        "name": "M-DES",
+        "children": [
+          {
+            "id": 1139,
+            "title": "Master Digitaler Einkauf und Nachhaltiges SCM M-DES 1. Semester",
+            "short": "M-DES1"
+          }
+        ]
+      },
+      {
+        "name": "M-DL",
+        "children": [
+          {
+            "id": 1090,
+            "title": "Design Leadership Master Design Leadership, Semestergruppe 1",
+            "short": "M-DL1"
+          },
+          {
+            "id": 1091,
+            "title": "Design Leadership Master Design Leadership, Semestergruppe 2",
+            "short": "M-DL2"
+          }
+        ]
+      },
+      {
+        "name": "M-EGM",
+        "children": [
+          {
+            "id": 957,
+            "title": "Engineering and Management Master Engineering and Management, Semestergruppe 1",
+            "short": "M-EGM1"
+          },
+          {
+            "id": 962,
+            "title": "Engineering and Management Master Engineering and Management, Semestergruppe 2",
+            "short": "M_EGM2"
+          }
+        ]
+      },
+      {
+        "name": "M-GFT",
+        "children": [
+          {
+            "id": 963,
+            "title": "Global Foresight and Technology Management Master Global Foresight and Technology Management, Semestergruppe 1",
+            "short": "M-GFT 1"
+          },
+          {
+            "id": 964,
+            "title": "Global Foresight and Technology Management Master Global Foresight and Technology Management, Semestergruppe 2",
+            "short": "M-GFT 2"
+          }
+        ]
+      },
+      {
+        "name": "M-WI",
+        "children": [
+          {
+            "id": 548,
+            "title": "Master Wirtschaftsingenieurwesen M-WI 1. Semester",
+            "short": "M-WI1"
+          },
+          {
+            "id": 549,
+            "title": "Master Wirtschaftsingenieurwesen M-WI 2. Semester",
+            "short": "M-WI2"
+          }
+        ]
+      }
+    ]
+  }
+]

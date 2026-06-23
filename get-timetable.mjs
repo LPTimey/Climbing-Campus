@@ -1,4 +1,5 @@
 import fetchTimetable from "./src/data/timetable/thi_api.mjs";
+import { writeFile } from "node:fs/promises";
 /** @import {} from "@types/node/index.d.ts" */
 
 const help = `
@@ -37,16 +38,17 @@ async function main() {
   try {
     const result = await fetchTimetable({
       sem: 50, // SoSe26
-      showdate: "4/30/2026",
+      showdate: "6/23/2026",
       viewtype: "week",
       timezone: 2,
       Session: session,
       User: user,
       mode: "calendar",
-      stgru: 1329,
+      stgru: 539,
     });
 
-    console.log(result);
+    await writeFile("timetable.json", JSON.stringify(result), "utf8");
+    // console.log(result);
   } catch (error) {
     console.error("Failed to fetch timetable:", error);
   }
