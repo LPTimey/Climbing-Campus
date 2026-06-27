@@ -120,7 +120,7 @@ async function main() {
     timetables.push(TimeTable.fromAPI(api));
   }
 
-  console.dir(timetables, { depth: 4 });
+  console.dir(timetables, { depth: 8 });
 
   //#endregion IMPL
 }

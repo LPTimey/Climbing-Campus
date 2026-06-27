@@ -191,14 +191,15 @@ Auswertung der Umfrage per @csv\-Export-Funktion von @tally:cap
 )
 
 === Visualisierung
-Programmierung der Web-Anwendung unter Einbindung der erstellten 3D-Elemente\
-Gestaltung wie in grobem Styleguide definiert\
+Mit der nun bestehenden konzeptionellen Grundlage konnten wir jetzt schließlich mit der konkreten technischen Ausarbeitung beginnen. Hierzu legten wir zunächst ein Github-Repository an, um ein zentralisiertes Speichersystem sowie eine Historie an Änderungen gut verwalten zu können. Der nächste Schritt war nun das initiale technische Layouting der HTML-Datei. Wir überlegten uns also konkret, welche Sektionen die finale Ausarbeitung umfassen sollte und legten diese im Anschluss an.
+Da wir wie erwähnt mit einem 3d-Framework arbeiten, mussten wir dieses zusätzlich richtig einbinden und einige Vorbereitung in diesem Kontext anstellen. Dies umfasst vor allem das Aufsetzen eines Animations-Systems, welches wir selbst geschrieben haben. Dieses wird benötigt, um den einzelnen Objekte Abläufe zuzuschreiben, d.h. jeweils eine Eingangsanimation wenn das Objekt erscheint, eine Idle-Animation beim bloßen Verweilen des Objekts und eine Exit-Animation sobald es wieder verschwindet. Diese lassen sich auch je nach dem, in welcher Sektion sie sich befinden abwandeln. Somit haben wir volle Kontrolle über alle visuellen Geschehnisse, die beim Scrollen über die Website aufkommen. //TODO: Screenshot Animation System
+Nachdem dieses Grundgerüst bestand, machten wir uns an das genauere Ausarbeiten der Inhalte. Dies betraf zum einen die konkreten Inhalt selbst, die wir in die vorher definierten Sektionen, bzw. Abschnitte einfügten, zum anderen jedoch auch das Styling. Dieses wurde durch feste Style-Definitionen per CSS und stets im Bezug zum festgelegten Styleguide realisiert. //TODO: CSS Screenshot
 
 === Umfrage
-Umsetzung der Umfrage mit @tally:cap (Screenshot)\
-Ausführung der Umfrage\
-Export der Ergebnisse als @csv\
-Verwendung dieser Ergebnisse für die Visualisierung
+Um die Umfrage entsprechend unseres erstellten Layouts umzusetzen, mussten wir uns erst einmal auf die Suche nach einer geeigneten Plattform machen. Konkret musste diese vor allem ein Branching-Logik-System, mit dem man konditionelle Abzweigungen je nach Antwort einstellen kann, beinhalten. Dies ist deshalb wichtig, da, wie bereits oben erwähnt, Studierende und Angestellte unterschiedliche Antworten ausfüllen sollen.
+Letztenendes fiel die Wahl auf @tally, da diese Plattform kostenlos nutzbar ist und die gewünschten Features implementiert. Zusätzlich besteht die Möglichkeit, die Umfrage sehr detailliert zu stylen, wodurch wir schließlich auch die Umfrage in unseren Style gestalten konnten. //TODO: Screenshot von Tally-Umfrage
+Nach dem Übertragen der Frageblöcke auf @tally haben eine Pilot-Durchführung mit einer Person durchgeführt. Diese wies uns auf einige Unschönheiten und Fehler innerhalb des Aufbaus um, sodass wir diese beheben konnten, bevor wir die Umfrage in einem größeren Rahmen ausspielten.
+Nachdem die Ergebnisse letztenendes erhoben wurden, ließen sich diese ganz einfach als @csv Datei ausgeben, was uns die anschließende Auswertung per Excel sehr vereinfachte.
 
 = Ergebnis
 

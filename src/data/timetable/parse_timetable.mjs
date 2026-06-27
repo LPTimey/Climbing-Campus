@@ -1,3 +1,5 @@
+/** @import {Welcome} from "./timetable_returntype" */
+
 export class Room {
   /**
    *
@@ -8,10 +10,25 @@ export class Room {
   constructor(building, level, number) {
     /** @type {string} */
     this.building = building;
+
     /** @type {number} */
     this.level = level;
+
     /** @type {number} */
     this.number = number;
+  }
+
+  /**
+   *
+   * @param {Welcome} api
+   * @param {string} id
+   * @returns {Room | null}
+   */
+  static fromAPI(api, id) {
+    const obj = api.raeume?.[id];
+    if (!obj?.nummer) return null;
+
+    return Room.parseFromRoomDescription(obj.nummer);
   }
 
   /**
@@ -38,21 +55,51 @@ export class Room {
   }
 }
 
+export class Course {
+  constructor(name, rooms) {
+    /** @type {string} */
+    this.name = name;
+
+    /** @type {Room[]} */
+    this.rooms = rooms;
+  }
+
+  /**
+   *
+   * @param {Welcome} api
+   * @param {*} termin
+   * @returns {Course}
+   */
+  static fromTermin(api, termin) {
+    const rooms = [];
+
+    for (const id of termin.raeume ?? []) {
+      const room = Room.fromAPI(api, id);
+      if (room) rooms.push(room);
+    }
+
+    return new Course(
+      termin.fach_name || termin.kurztitel || "Unknown Course",
+      rooms,
+    );
+  }
+}
+
 export class SchoolDay {
   /**
    *
-   * @param {Room[]} slots
+   * @param {Course[]} slots
    */
   constructor(slots = []) {
-    /** @type {Room[]} */
+    /** @type {Course[]} */
     this.slots = slots;
   }
 
   /**
-   * @param {Room} room
+   * @param {Course} course
    */
-  addRoom(room) {
-    this.slots.push(room);
+  addCourse(course) {
+    this.slots.push(course);
   }
 }
 
@@ -60,57 +107,91 @@ export class TimeTable {
   constructor() {
     /** @type {SchoolDay} */
     this.monday = new SchoolDay();
+
     /** @type {SchoolDay} */
     this.tuesday = new SchoolDay();
+
     /** @type {SchoolDay} */
     this.wednesday = new SchoolDay();
+
     /** @type {SchoolDay} */
     this.thursday = new SchoolDay();
+
     /** @type {SchoolDay} */
     this.friday = new SchoolDay();
   }
 
   /**
-   * FIXME: only adds the first one everywhere
-   * Creates a TimeTable from the API response.
+   * Creates an "average week" timetable from the API response.
+   * (ignores dates, treats occurrences as weekly pattern)
    *
-   * @param {import("./timetable_returntype").Welcome} api
+   * @param {Welcome} api
    * @returns {TimeTable}
    */
   static fromAPI(api) {
     const timetable = new TimeTable();
 
-    const days = [
-      timetable.monday,
-      timetable.tuesday,
-      timetable.wednesday,
-      timetable.thursday,
-      timetable.friday,
-    ];
+    if (!api?.termine) return timetable;
 
-    api.events.forEach((dayEvents, dayIndex) => {
-      const schoolDay = days[dayIndex];
-      if (!schoolDay) return;
+    const roomTable = api.raeume ?? {};
 
-      /** @type {Set<string>} */
-      const seenRooms = new Set();
+    const dayMap = {
+      1: timetable.monday,
+      2: timetable.tuesday,
+      3: timetable.wednesday,
+      4: timetable.thursday,
+      5: timetable.friday,
+    };
 
-      for (const event of dayEvents) {
-        if (typeof event !== "object" || event === null) continue;
+    /** @type {Map<string, Course>} */
+    const courseCache = new Map();
 
-        const rooms = event.raeume
-          .split(",")
-          .map((room) => room.trim())
-          .filter(Boolean);
+    for (const termin of Object.values(api.termine)) {
+      const courseId = termin.lvid || termin.key;
 
-        for (const room of rooms) {
-          if (seenRooms.has(room)) continue;
+      // --- build course once ---
+      if (!courseCache.has(courseId)) {
+        const rooms = [];
 
-          seenRooms.add(room);
-          schoolDay.addRoom(Room.parseFromRoomDescription(room));
+        for (const id of termin.raeume ?? []) {
+          const r = roomTable[id];
+          if (!r?.nummer) continue;
+
+          rooms.push(Room.parseFromRoomDescription(r.nummer));
+        }
+
+        courseCache.set(
+          courseId,
+          new Course(
+            termin.fach_name || termin.kurztitel || "Unknown Course",
+            rooms,
+          ),
+        );
+      }
+
+      const course = courseCache.get(courseId);
+
+      // --- detect weekdays where this course appears ---
+      const weekdays = new Set();
+
+      for (const zeit of Object.values(termin.zeiten ?? {})) {
+        if (!zeit?.datum) continue;
+
+        const [d, m, y] = zeit.datum.split(".").map(Number);
+        const date = new Date(y, m - 1, d);
+
+        const jsDay = date.getDay(); // 0=Sun ... 6=Sat
+
+        if (jsDay >= 1 && jsDay <= 5) {
+          weekdays.add(jsDay);
         }
       }
-    });
+
+      // --- assign course once per weekday ---
+      for (const day of weekdays) {
+        dayMap[day].addCourse(course);
+      }
+    }
 
     return timetable;
   }
