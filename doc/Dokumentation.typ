@@ -108,6 +108,7 @@ Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches di
 === Umfrage
 Für schnelles Iterieren haben wir uns dazu entschieden die Umfrage zuerst in FigJam grob auszulegen, da FigJam viele Templates beinhaltet und simples Drag and Drop Editing nutzt (@SurveyDraft).
 Der Plan für die Umfrage umfasst den Start, welcher eine Zustimmung und Demographie-Daten beinhaltet, dem Hauptteil A mit generellen Fragen zur Campus-Gesamterfahrung, B mit Fragen zum Stundenplan, dem Stufen und Infrastruktur Teil C, und als letztes, aber nicht als das letzte, Teile D und E in denen die Barrierefreiheit, Chancengleichheit und generelle Akzeptanz pro Gebäude abgefragt werden.
+Da die Umfrage sich wohl an Stundenten als auch Angestelle an der THI richtet, mussten wir eine Entsprechende Logik innerhalb der Umfrage integrieren, sodass Angestellte etwa nicht die Frage nach dem Studiengang beantworten mussten.
 
 #grid(
   columns: (auto, auto),
@@ -127,19 +128,19 @@ Der Plan für die Umfrage umfasst den Start, welcher eine Zustimmung und Demogra
 
 === Visualisierung
 Eine gute Visualisierung lebt von vielen Dingen, Themen, Sachen, und Teilen.
-Dazu gehören Konsistenz, Appeal und readability.
+Dazu gehören Konsistenz, Appeal und Readability.
 Um uns eine klarere Übersicht und gemeinsame Vorstellung zu schaffen, haben wir angefangen ein Moodboard (@Moodboard) zu erstellen.
-Es beinhaltet eine Ansammlung an zum Teil gefundenen und zum Teil selbst gemachten Kacheln, welche versuchen eine konstante und visuell ansprechende Bildsprache zu definieren.
+Es beinhaltet eine Ansammlung an zum Teil gefundenen und zum Teil selbst gemachten Kacheln, welche versuchen, eine konstante und visuell ansprechende Bildsprache zu definieren.
 // TODO: Better machen
-Genauer kann man aus den Kacheln herauslesen, dass wir sehr dreidimensional mit echten 3D-Objekten und Neumorphismus arbeiten wollen, sowie eine verlaufende Gloss/Specular-Farbsprache anpeilen.
+Genauer soll der Inhalt unseres Moodboard vermitteln, dass wir uns stilistisch stark in einem 3-dimensionalen Raum bewegen, in der Objekte und andere UI-Elemente in einem neumorphistischen Kontext existieren. Zur weiteren Stilisierung soll zudem die Materialität dieser Objekte veranschaulicht werden, welche man als leicht glänzend und glatt (glossy) beschreiben kann. 
 
-Ein interessanter Aspekt der visuellen Gestaltung ist die Überschneidung mit Brand Design.
-Dabei werden zentrale Elemente wie Formen, Farben und gestalterische Prinzipien aufgegriffen, um einen konsistenten und wiedererkennbaren Markenauftritt zu gewährleisten.
-// TODO: Unser Logo genauer nicht grob
-Insbesondere die charakteristischen Eigenschaften des Logos dienen als Grundlage und ziehen sich subtil durch die gesamte visuelle Sprache, wodurch eine klare Verbindung zur Markenidentität entsteht (@LogoKomponente).
+Insgesamt legten wir beim Moodboard ein besonderes Augenmerk auf Konsistenz, womit dieses Vorgehen stark dem Gestalten eines Brand Styleguides ähnelte. Hierzu definierten wir eine zwar etwas weniger stringente Farbpalette, dafür aber desto mehr festgelegte Typografie, für welche Schriftgrößen und Variableneinstellungen klar einem bestimmten Use Case zugeschrieben wurden.
+
+Konkret entschieden wir uns hierbei für 3 Schriftarten --- Coda, Mozilla Text und GoogleSansFlex --- wobei nur die letzten beiden wirklich konstante Anwendung fanden, da Coda nur für das Logo unserer Informationsvisualierung verwendet wurde (@LogoKomponente). Mozilla Text fungierte dahingegen als unsere Font für Inhalte, die im Fokus stehen sollten, beispielsweise Überschriften oder wichtige KPIs, die besonders hervorgehoben werden sollten. Dies soll dann durch Textinhalte in GoogleSansFlex unterstützt werden, die wir in einem dünneren Schriftschnitt sowie einer geringeren Schriftbreite darstellen.
+Wir kreierten somit ein einheitliches visuelles Bild und klarere Hierarchien, um den visuellen Flow des Betrachter zu unterstützen.
 
 Zur weiteren Ausarbeitung haben wir 3D Modelle in @blender:cap in diesem zuvor ausgearbeitetem Stil erstellt.
-Diese folgen zusätzlich/genauer einem Hard-Surface-Ansatz mit klar definierten Kanten und präzisen, technischen Formen.
+Diese folgen zusätzlich / genauer einem Hard-Surface-Ansatz mit klar definierten Kanten und präzisen, technischen Formen, um den stark geometrischen Charakter noch einmal zusätzlich zu verstärken.
 Durch den gezielten Einsatz von Materialien, Licht und Reflexionen unterstützen sie die angestrebte visuelle Wirkung und verstärken die im Moodboard definierte Gloss- und Specular-Ästhetik (@BlenderRender).
 
 #figure(
@@ -174,8 +175,20 @@ Durch den gezielten Einsatz von Materialien, Licht und Reflexionen unterstützen
 #pagebreak(weak: true)
 
 == Umsetzung
-Finden von Umfrageteilnehmern per Schneeball-System\
+Als Grundlage für die konkrete Umsetzung benötigten wir zunächst die grundlegenden Daten, auf denen die Visualisierung später Aufbauen würde. Hierzu entschieden wir uns zunächst, die Umfrage in die uns zugänglichen Verteiler, also diverse WhatsApp-Gruppen, zu schicken. Hierbei galt stets die Bitte, die Umfrage nach der Bearbeitung per Schneeball-System weiterzuleiten. Leider stellte sich dieses Konzept in der Realität mehr als Wunschdenken heraus, da wir nach etwa 2 Wochen lediglich 7 Teilnehmer gesammelt hatten.
+Wir mussten also unsere Strategie anpassen, weshalb wir gezielt auf einzelne Personen zugekommen sind und diese persönlich für unsere Umfrage rekrutiert haben. Dies geschah sowohl mit Stundenten als auch mit Angestellten der THI.\
 Auswertung der Umfrage per @csv\-Export-Funktion von @tally:cap
+
+#figure(
+  block(
+    fill: purple.darken(95%),
+    inset: 1em,
+    width: 100%,
+  )[
+    #image("../assets/archive/Storyboard Sketches.png", width: 100%)
+  ],
+  caption: [Storyboard Sketches],
+)
 
 === Visualisierung
 Programmierung der Web-Anwendung unter Einbindung der erstellten 3D-Elemente\
