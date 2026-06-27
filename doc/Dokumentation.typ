@@ -93,17 +93,17 @@ Nach der Besprechung und deswegen haben wir uns für das Treppensteigen als fina
 Nachdem wir uns auf unsere Grundidee geeinigt haben, haben wir angefangen, die Logistik und Planung genauer zu betrachten. Dabei haben wir uns folgende Struktur überlegt: eine Aufteilung in statische Daten, dynamische Daten und die finale Visualisierung.
 
 === Statische Daten
-Statische Daten sind Daten die sich ändern und Objektiv aufnehmen lassen.
+Statische Daten sind Daten die sich ändern und objektiv aufnehmen lassen.
 // TODO: add Barrierefreiheit wie Aufzüge und Rampen
 In unserem Beispiel sind das die tatsächlichen physikalischen Gebäude, deren Treppenhäuser und Treppenzahl und die Verbindungswege der THI, sowie die festgelegten Stundenpläne, welche sich aus Primuss(-Stundenplan) ziehen lassen.
 
 ==== Treppenzahlen und mehr begehbares
-Um diese Daten zu erheben sind wir alle (Haupt-) Gebäude abgegangen und sind alle Treppenhäuser abgegangen und haben beide /* TODO: übersetzten*/ "independently" die stufen gezählt und Ergebnisse verglichen. Außerdem haben wir eine Liste aller Gebäudeverbindungen erstellt (@StairSheet).
+Um diese Daten zu erheben sind wir alle (Haupt-) Gebäude des und sind alle Treppenhäuser THI Campus' abgegangen. Zur Fehlervermeidung haben wir hierbei beide einzeln unabhängig voneinander die Treppenzählungen durchgeführt und im Anschluss diese miteinander abgeglichen. Zudem haben wir eine Liste aller Gebäudeverbindungen erstellt (@StairSheet).
 
 
 ==== Stundenplan
-Um Daten zu den Stundenplänen für z.B: übliche Routen zu ziehen, haben wir das Primuss-Stundenplan-System Analysiert und herausgefunden wie die Stundenpläne geladen werden.
-Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten mit input eines validen @sessiontoken\s die Daten extrahiert und als @csv\-Datei exportiert.
+Um Daten zu den Stundenplänen für z.B: übliche Routen zu ziehen, haben wir das Primuss-Stundenplan-System analysiert und herausgefunden, wie die Stundenpläne geladen werden.
+Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten unter Input eines validen @sessiontoken\s aus der Datenbank extrahiert und als @csv\-Datei exportiert.
 
 === Umfrage
 Für schnelles Iterieren haben wir uns dazu entschieden die Umfrage zuerst in FigJam grob auszulegen, da FigJam viele Templates beinhaltet und simples Drag and Drop Editing nutzt (@SurveyDraft).
