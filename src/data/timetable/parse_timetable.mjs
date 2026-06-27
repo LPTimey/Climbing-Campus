@@ -36,12 +36,17 @@ export class Room {
    * Example: "G102" -> building="G", level=1, number=2
    *
    * @param {string} desc
-   * @returns {Room}
+   * @returns {Room|null}
    */
   static parseFromRoomDescription(desc) {
     const match = desc.trim().match(/^([A-Za-z]+)(\d)(\d+)$/);
 
-    if (!match) {
+    if (!match && desc.toUpperCase() === "BIBLIOTHEK") {
+      return new Room("A", 0, 0);
+    }
+    if (!match && desc.toUpperCase() === "VIRTUELL") {
+      return null;
+    } else if (!match) {
       throw new Error(`Invalid room description: "${desc}"`);
     }
 
@@ -55,12 +60,17 @@ export class Room {
   }
 }
 
+/** FIXME: use only the correct room for the date */
 export class Course {
+  /**
+   * @param {string} name
+   * @param {(Room | null)[]} rooms
+   */
   constructor(name, rooms) {
     /** @type {string} */
     this.name = name;
 
-    /** @type {Room[]} */
+    /** @type {(Room|null)[]} */
     this.rooms = rooms;
   }
 

@@ -1,6 +1,7 @@
-import { readdir, readFile } from "node:fs/promises";
+import { readdir, readFile, writeFile, mkdir } from "node:fs/promises";
 import { TimeTable } from "./src/data/timetable/parse_timetable.mjs";
 import path from "node:path";
+
 /** @import {} from "@types/node/index.d.ts" */
 
 const help = `\
@@ -12,15 +13,18 @@ Options:
   -d <dir>                    Directory containing API .json files
   -r                          Recurse into subdirectories (only with -d)
   -f <file>                   Single API .json file
+  -o <dir>                   Output directory (default: ./assets/data/parsed_timetables/)
 `;
 
 async function main() {
   //#region PARSER
+
   /** @type {{
    *   help: boolean,
    *   directory: string | null,
    *   recurse: boolean,
-   *   file: string | null
+   *   file: string | null,
+   *   output: string
    * }}
    */
   const options = {
@@ -28,6 +32,7 @@ async function main() {
     directory: null,
     recurse: false,
     file: null,
+    output: "./assets/data/parsed_timetables/",
   };
 
   const args = process.argv.slice(2);
@@ -59,6 +64,13 @@ async function main() {
         options.file = args[++i];
         break;
 
+      case "-o":
+        if (i + 1 >= args.length) {
+          throw new Error("-o requires an output directory");
+        }
+        options.output = args[++i];
+        break;
+
       default:
         throw new Error(`Unknown argument: ${arg}`);
     }
@@ -82,18 +94,18 @@ async function main() {
   }
 
   console.log(options);
+
   //#endregion PARSER
 
-  //#region IMPL
+  //#region COLLECT FILES
+
   let files = [];
 
   if (options.file) {
     files.push(options.file);
   }
-  if (options.dir) {
-    /**
-     * @param {string} dir
-     */
+
+  if (options.directory) {
     async function collectJsonFiles(dir) {
       const entries = await readdir(dir, { withFileTypes: true });
 
@@ -110,26 +122,38 @@ async function main() {
       }
     }
 
-    await collectJsonFiles(options.dir);
+    await collectJsonFiles(options.directory);
   }
 
-  let timetables = [];
+  //#endregion COLLECT FILES
+
+  //#region PROCESS + OUTPUT
+
+  await mkdir(options.output, { recursive: true });
+
+  const timetables = [];
+
   for (const file of files) {
-    let jsonStr = await readFile(file);
-    let api = JSON.parse(jsonStr);
-    timetables.push(TimeTable.fromAPI(api));
+    const jsonStr = await readFile(file, "utf-8");
+    const api = JSON.parse(jsonStr);
+
+    const timetable = TimeTable.fromAPI(api);
+    timetables.push(timetable);
+
+    const baseName = path.basename(file, ".json");
+    const outPath = path.join(options.output, `${baseName}.json`);
+
+    await writeFile(outPath, JSON.stringify(timetable, null, 2), "utf-8");
   }
 
   console.dir(timetables, { depth: 8 });
 
-  //#endregion IMPL
+  //#endregion PROCESS + OUTPUT
 }
 
-await main().catch(
-  /** @param {Error} err */ (err) => {
-    console.error(err.stack);
-    console.error(`Error: ${err}\n`);
-    console.log(help);
-    process.exit(1);
-  },
-);
+await main().catch((err) => {
+  console.error(err.stack);
+  console.error(`Error: ${err}\n`);
+  console.log(help);
+  process.exit(1);
+});

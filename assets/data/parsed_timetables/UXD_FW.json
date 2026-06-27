@@ -1,0 +1,177 @@
+{
+  "monday": {
+    "slots": [
+      {
+        "name": "Bild- & Video-Generierungstools im Praxisvergleich",
+        "rooms": [
+          {
+            "building": "K",
+            "level": 0,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "name": "Digitalfotografie- von der Idee zum produktionsfähigen Bild",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 12
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 15
+          }
+        ]
+      }
+    ]
+  },
+  "tuesday": {
+    "slots": [
+      {
+        "name": "Informationsvisualisierung",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 2,
+            "number": 2
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 10
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "name": "eTHIcs_basic",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 15
+          }
+        ]
+      }
+    ]
+  },
+  "wednesday": {
+    "slots": [
+      {
+        "name": "eTHIcs_basic",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 15
+          }
+        ]
+      }
+    ]
+  },
+  "thursday": {
+    "slots": [
+      {
+        "name": "eTHIcs_basic",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 15
+          }
+        ]
+      }
+    ]
+  },
+  "friday": {
+    "slots": [
+      {
+        "name": "Introduction to Vibe Coding for User Experience Designers",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 12
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 14
+          }
+        ]
+      },
+      {
+        "name": "Medienpsychologie - Effekte digitaler Medien auf Individuum und Gesellschaft",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 5
+          }
+        ]
+      },
+      {
+        "name": "Brand Design Development",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      }
+    ]
+  }
+}

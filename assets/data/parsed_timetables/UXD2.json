@@ -1,0 +1,347 @@
+{
+  "monday": {
+    "slots": [
+      {
+        "name": "Gestaltung 2",
+        "rooms": [
+          {
+            "building": "E",
+            "level": 1,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Projekt zu Gestaltung 2",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Projekt zu Gestaltung 2",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      }
+    ]
+  },
+  "tuesday": {
+    "slots": [
+      {
+        "name": "Praktikum Softwareentwicklung 2",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 11
+          }
+        ]
+      },
+      {
+        "name": "Projekt zu Gestaltung 2",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Softwareentwicklung 2",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          }
+        ]
+      },
+      {
+        "name": "Grundlagen der Informatik",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "D",
+            "level": 3,
+            "number": 14
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 2
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 14
+          }
+        ]
+      }
+    ]
+  },
+  "wednesday": {
+    "slots": [
+      {
+        "name": "Statistik",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          }
+        ]
+      },
+      {
+        "name": "Informationspsychologie",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Softwareentwicklung 2",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 11
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Softwareentwicklung 2",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 11
+          }
+        ]
+      }
+    ]
+  },
+  "thursday": {
+    "slots": [
+      {
+        "name": "Softwareentwicklung 2",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          }
+        ]
+      },
+      {
+        "name": "Grundlagen der Informatik",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "D",
+            "level": 3,
+            "number": 14
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 2
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 14
+          }
+        ]
+      },
+      {
+        "name": "Informationspsychologie",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Übung zu Statistik",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 12
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "name": "Übung zu Statistik",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 12
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      }
+    ]
+  },
+  "friday": {
+    "slots": [
+      {
+        "name": "Grundlagen der Informatik",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "D",
+            "level": 3,
+            "number": 14
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 2
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 14
+          }
+        ]
+      },
+      {
+        "name": "Statistik",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          }
+        ]
+      },
+      {
+        "name": "Übung zu Statistik",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 12
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "name": "Übung zu Statistik",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 12
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "name": "Gestaltung 2",
+        "rooms": [
+          {
+            "building": "E",
+            "level": 1,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Gestaltung 2",
+        "rooms": [
+          {
+            "building": "E",
+            "level": 1,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Gestaltung 2",
+        "rooms": [
+          {
+            "building": "E",
+            "level": 1,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      }
+    ]
+  }
+}

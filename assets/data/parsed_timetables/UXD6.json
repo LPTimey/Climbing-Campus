@@ -1,0 +1,481 @@
+{
+  "monday": {
+    "slots": [
+      {
+        "name": "Nachbereitendes Praxisseminar (PLV 2)",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 2,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "name": "Projekt",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      },
+      {
+        "name": "Digitalfotografie",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 12
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "name": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 4
+          },
+          null
+        ]
+      },
+      {
+        "name": "Projekt",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      }
+    ]
+  },
+  "tuesday": {
+    "slots": [
+      {
+        "name": "Nachbereitendes Praxisseminar (PLV 2)",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 2,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "name": "Projekt",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      },
+      {
+        "name": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 4
+          },
+          null
+        ]
+      },
+      {
+        "name": "Praktikum Virtual und Augmented Reality",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          }
+        ]
+      },
+      {
+        "name": "Informationsvisualisierung",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 2,
+            "number": 2
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 10
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "name": "Projekt",
+        "rooms": [
+          {
+            "building": "K",
+            "level": 0,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "name": "Projekt",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      },
+      {
+        "name": "Projekt",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      },
+      {
+        "name": "fiktiv für Raumbelegung I",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      }
+    ]
+  },
+  "wednesday": {
+    "slots": [
+      {
+        "name": "Projekt",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      },
+      {
+        "name": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 4
+          },
+          null
+        ]
+      },
+      {
+        "name": "Praktikum Virtual und Augmented Reality",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          }
+        ]
+      },
+      {
+        "name": "Studiendesign und Durchführung von UX Tests",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 5
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 2
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "name": "Fachwissenschaftliches Seminar",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 2,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "name": "Fachwissenschaftliches Seminar",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 2,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "name": "Fachwissenschaftliches Seminar",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 2,
+            "number": 10
+          }
+        ]
+      }
+    ]
+  },
+  "thursday": {
+    "slots": [
+      {
+        "name": "Projekt",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      },
+      {
+        "name": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 4
+          },
+          null
+        ]
+      },
+      {
+        "name": "Informations- und Medienkompetenz (PLV3)",
+        "rooms": [
+          {
+            "building": "A",
+            "level": 0,
+            "number": 0
+          }
+        ]
+      },
+      {
+        "name": "Informations- und Medienkompetenz (PLV3)",
+        "rooms": [
+          {
+            "building": "A",
+            "level": 0,
+            "number": 0
+          }
+        ]
+      },
+      {
+        "name": "Virtual und Augmented Reality",
+        "rooms": [
+          {
+            "building": "K",
+            "level": 0,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Virtual und Augmented Reality",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          }
+        ]
+      }
+    ]
+  },
+  "friday": {
+    "slots": [
+      {
+        "name": "Projekt",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      },
+      {
+        "name": "Introduction to Vibe Coding for User Experience Designers",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 12
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 14
+          }
+        ]
+      },
+      {
+        "name": "Medienpsychologie - Effekte digitaler Medien auf Individuum und Gesellschaft",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 5
+          }
+        ]
+      },
+      {
+        "name": "Brand Design Development",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      }
+    ]
+  }
+}

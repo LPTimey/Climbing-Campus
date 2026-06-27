@@ -1,0 +1,437 @@
+{
+  "monday": {
+    "slots": [
+      {
+        "name": "Übung zu Webdesign und Webusability",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "J",
+            "level": 2,
+            "number": 2
+          }
+        ]
+      },
+      {
+        "name": "Übung zu Webdesign und Webusability",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "J",
+            "level": 2,
+            "number": 2
+          }
+        ]
+      },
+      {
+        "name": "Webdesign und Webusability",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 15
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "name": "Computergrafik/3D-Design",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "name": "Projektmanagement",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 15
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Computergrafik/3D-Design",
+        "rooms": [
+          {
+            "building": "C",
+            "level": 2,
+            "number": 4
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "name": "Produktdesign",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      }
+    ]
+  },
+  "tuesday": {
+    "slots": [
+      {
+        "name": "Produktdesign",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Prinzipien der Mensch-Maschine Interaktion",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Grundlagen der Betriebswirtschaft und des Gründertums",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 3,
+            "number": 15
+          },
+          {
+            "building": "G",
+            "level": 1,
+            "number": 5
+          }
+        ]
+      },
+      {
+        "name": "fiktiv für Raumbelegung I",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 7
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Computergrafik/3D-Design",
+        "rooms": [
+          {
+            "building": "C",
+            "level": 2,
+            "number": 4
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      }
+    ]
+  },
+  "wednesday": {
+    "slots": [
+      {
+        "name": "Webdesign und Webusability",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 15
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "name": "Projektmanagement",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 15
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Grundlagen der Betriebswirtschaft und des Gründertums",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 3,
+            "number": 15
+          },
+          {
+            "building": "G",
+            "level": 1,
+            "number": 5
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Prinzipien der Mensch-Maschine Interaktion",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Prinzipien der Mensch-Maschine Interaktion",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      }
+    ]
+  },
+  "thursday": {
+    "slots": [
+      {
+        "name": "Projektmanagement",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 15
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "name": "Informations- und Medienkompetenz (PLV3)",
+        "rooms": [
+          {
+            "building": "A",
+            "level": 0,
+            "number": 0
+          }
+        ]
+      },
+      {
+        "name": "Informations- und Medienkompetenz (PLV3)",
+        "rooms": [
+          {
+            "building": "A",
+            "level": 0,
+            "number": 0
+          }
+        ]
+      },
+      {
+        "name": "Prinzipien der Mensch-Maschine Interaktion",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 14
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 12
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Computergrafik/3D-Design",
+        "rooms": [
+          {
+            "building": "C",
+            "level": 2,
+            "number": 4
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      }
+    ]
+  },
+  "friday": {
+    "slots": [
+      {
+        "name": "Computergrafik/3D-Design",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Computergrafik/3D-Design",
+        "rooms": [
+          {
+            "building": "C",
+            "level": 2,
+            "number": 4
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Computergrafik/3D-Design",
+        "rooms": [
+          {
+            "building": "C",
+            "level": 2,
+            "number": 4
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "name": "Praktikum Computergrafik/3D-Design",
+        "rooms": [
+          {
+            "building": "C",
+            "level": 2,
+            "number": 4
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      }
+    ]
+  }
+}

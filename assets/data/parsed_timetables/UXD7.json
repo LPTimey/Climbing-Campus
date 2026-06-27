@@ -1,0 +1,28 @@
+{
+  "monday": {
+    "slots": []
+  },
+  "tuesday": {
+    "slots": [
+      {
+        "name": "Seminar Bachelorarbeit",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      }
+    ]
+  },
+  "wednesday": {
+    "slots": []
+  },
+  "thursday": {
+    "slots": []
+  },
+  "friday": {
+    "slots": []
+  }
+}
