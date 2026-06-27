@@ -60,11 +60,13 @@ Im Zuge unseres Themas "Climbing Campus" haben wir das tägliche „Auf und Ab�
 
 #pagebreak(weak: true)
 
-= Aufgabe
+= Aufgabe <Aufgabe>
 Für das Wahlpflichtfach Informationsvisualisierung sollten wir zum Semester-Thema „Ups and Downs“ ein visuelles Konzept gestalten, präsentieren und dokumentieren.
 Genauer heißt dass, eine Visualisierung im Medium unserer Wahl, eine ca. 10 minütige Presentation und diese Dokumentation.
 
-Wie das Inhaltsverzeichnis bereits gespoilert hat befinden sich in diesem DIN ISO A4 Dokument #context [#counter(page).final().at(0)] der verlangten 8-12 Seiten, welche unsere Gedankengänge und Zwischenergebnisse (hoffentlich) logisch und intuitiv darstellen, aber auch abzurechnende Titel und andere Post-/Preamble beinhalten.
+Wie das Inhaltsverzeichnis bereits gespoilert hat befinden sich in diesem DIN ISO A4 Dokument #context [#{counter(page).at(label("ListOfFigures")).at(0) - counter(page).at(label("Aufgabe")).at(0)}] der verlangten 8-12 Inhaltsseiten, welche unsere Gedankengänge und Zwischenergebnisse (hoffentlich) logisch und intuitiv darstellen
+// HAHA hab's jetzt raus-gerechnet, aber auch abzurechnende Titel und andere Post-/Preamble beinhalten
+.
 
 // #figure(image("../Aufgabe/Folie mit Aufgabe.png"), caption: "Aufgabenstellung 24.März")
 
@@ -203,5 +205,5 @@ Nachdem die Ergebnisse letztenendes erhoben wurden, ließen sich diese ganz einf
 
 = Ergebnis
 
-#outline(target: figure, title: "Bilderverzeichnis")
+#outline(target: figure, title: "Bilderverzeichnis") <ListOfFigures>
 #bibliography("Dokumentation.bib", style: "iso-690-numeric")
