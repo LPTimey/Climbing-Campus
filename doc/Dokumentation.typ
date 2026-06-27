@@ -64,7 +64,7 @@ Im Zuge unseres Themas "Climbing Campus" haben wir das tägliche „Auf und Ab�
 Für das Wahlpflichtfach Informationsvisualisierung sollten wir zum Semester-Thema „Ups and Downs“ ein visuelles Konzept gestalten, präsentieren und dokumentieren.
 Genauer heißt dass, eine Visualisierung im Medium unserer Wahl, eine ca. 10 minütige Presentation und diese Dokumentation.
 
-Wie das Inhaltsverzeichnis bereits gespoilert hat befinden sich in diesem DIN ISO A4 Dokument #context [#{counter(page).at(label("ListOfFigures")).at(0) - counter(page).at(label("Aufgabe")).at(0)}] der verlangten 8-12 Inhaltsseiten, welche unsere Gedankengänge und Zwischenergebnisse (hoffentlich) logisch und intuitiv darstellen
+Wie das Inhaltsverzeichnis bereits gespoilert hat befinden sich in diesem DIN ISO A4 Dokument #context [#{ counter(page).at(label("ListOfFigures")).at(0) - counter(page).at(label("Aufgabe")).at(0) }] der verlangten 8-12 Inhaltsseiten, welche unsere Gedankengänge und Zwischenergebnisse (hoffentlich) logisch und intuitiv darstellen
 // HAHA hab's jetzt raus-gerechnet, aber auch abzurechnende Titel und andere Post-/Preamble beinhalten
 .
 
@@ -123,7 +123,10 @@ Da die Umfrage sich wohl an Stundenten als auch Angestelle an der THI richtet, m
     )<StairSheet>
   ],
   [
-    #figure(image("../assets/archive/Umfrage Draft.png"), caption: "Screenshot des Drafts der Umfrage aus FigJam")<SurveyDraft>
+    #figure(
+      image("../assets/archive/Umfrage Draft.png"),
+      caption: "Screenshot des Drafts der Umfrage aus FigJam",
+    )<SurveyDraft>
   ],
 )
 
@@ -134,7 +137,7 @@ Dazu gehören Konsistenz, Appeal und Readability.
 Um uns eine klarere Übersicht und gemeinsame Vorstellung zu schaffen, haben wir angefangen ein Moodboard (@Moodboard) zu erstellen.
 Es beinhaltet eine Ansammlung an zum Teil gefundenen und zum Teil selbst gemachten Kacheln, welche versuchen, eine konstante und visuell ansprechende Bildsprache zu definieren.
 // TODO: Better machen
-Genauer soll der Inhalt unseres Moodboard vermitteln, dass wir uns stilistisch stark in einem 3-dimensionalen Raum bewegen, in der Objekte und andere UI-Elemente in einem neumorphistischen Kontext existieren. Zur weiteren Stilisierung soll zudem die Materialität dieser Objekte veranschaulicht werden, welche man als leicht glänzend und glatt (glossy) beschreiben kann. 
+Genauer soll der Inhalt unseres Moodboard vermitteln, dass wir uns stilistisch stark in einem 3-dimensionalen Raum bewegen, in der Objekte und andere UI-Elemente in einem neumorphistischen Kontext existieren. Zur weiteren Stilisierung soll zudem die Materialität dieser Objekte veranschaulicht werden, welche man als leicht glänzend und glatt (glossy) beschreiben kann.
 
 Insgesamt legten wir beim Moodboard ein besonderes Augenmerk auf Konsistenz, womit dieses Vorgehen stark dem Gestalten eines Brand Styleguides ähnelte. Hierzu definierten wir eine zwar etwas weniger stringente Farbpalette, dafür aber desto mehr festgelegte Typografie, für welche Schriftgrößen und Variableneinstellungen klar einem bestimmten Use Case zugeschrieben wurden.
 
@@ -174,7 +177,7 @@ Durch den gezielten Einsatz von Materialien, Licht und Reflexionen unterstützen
     )<BlenderRender>
   ],
 )
-#pagebreak(weak: true)
+// #pagebreak(weak: true)
 
 == Umsetzung
 Als Grundlage für die konkrete Umsetzung benötigten wir zunächst die grundlegenden Daten, auf denen die Visualisierung später Aufbauen würde. Hierzu entschieden wir uns zunächst, die Umfrage in die uns zugänglichen Verteiler, also diverse WhatsApp-Gruppen, zu schicken. Hierbei galt stets die Bitte, die Umfrage nach der Bearbeitung per Schneeball-System weiterzuleiten. Leider stellte sich dieses Konzept in der Realität mehr als Wunschdenken heraus, da wir nach etwa 2 Wochen lediglich 7 Teilnehmer gesammelt hatten.
@@ -194,16 +197,68 @@ Auswertung der Umfrage per @csv\-Export-Funktion von @tally:cap
 
 === Visualisierung
 Mit der nun bestehenden konzeptionellen Grundlage konnten wir jetzt schließlich mit der konkreten technischen Ausarbeitung beginnen. Hierzu legten wir zunächst ein Github-Repository an, um ein zentralisiertes Speichersystem sowie eine Historie an Änderungen gut verwalten zu können. Der nächste Schritt war nun das initiale technische Layouting der HTML-Datei. Wir überlegten uns also konkret, welche Sektionen die finale Ausarbeitung umfassen sollte und legten diese im Anschluss an.
-Da wir wie erwähnt mit einem 3d-Framework arbeiten, mussten wir dieses zusätzlich richtig einbinden und einige Vorbereitung in diesem Kontext anstellen. Dies umfasst vor allem das Aufsetzen eines Animations-Systems, welches wir selbst geschrieben haben. Dieses wird benötigt, um den einzelnen Objekte Abläufe zuzuschreiben, d.h. jeweils eine Eingangsanimation wenn das Objekt erscheint, eine Idle-Animation beim bloßen Verweilen des Objekts und eine Exit-Animation sobald es wieder verschwindet. Diese lassen sich auch je nach dem, in welcher Sektion sie sich befinden abwandeln. Somit haben wir volle Kontrolle über alle visuellen Geschehnisse, die beim Scrollen über die Website aufkommen. //TODO: Screenshot Animation System
-Nachdem dieses Grundgerüst bestand, machten wir uns an das genauere Ausarbeiten der Inhalte. Dies betraf zum einen die konkreten Inhalt selbst, die wir in die vorher definierten Sektionen, bzw. Abschnitte einfügten, zum anderen jedoch auch das Styling. Dieses wurde durch feste Style-Definitionen per CSS und stets im Bezug zum festgelegten Styleguide realisiert. //TODO: CSS Screenshot
+Da wir wie erwähnt mit einem 3d-Framework arbeiten, mussten wir dieses zusätzlich richtig einbinden und einige Vorbereitung in diesem Kontext anstellen. Dies umfasst vor allem das Aufsetzen eines Animations-Systems, welches wir selbst geschrieben haben. Dieses wird benötigt, um den einzelnen Objekte Abläufe zuzuschreiben, d.h. jeweils eine Eingangsanimation wenn das Objekt erscheint, eine Idle-Animation beim bloßen Verweilen des Objekts und eine Exit-Animation sobald es wieder verschwindet. Diese lassen sich auch je nach dem, in welcher Sektion sie sich befinden abwandeln. Somit haben wir volle Kontrolle über alle visuellen Geschehnisse, die beim Scrollen über die Website aufkommen.
+
+
+#grid(
+  columns: (auto, auto),
+  gutter: 0.5em,
+  align: center + horizon,
+
+  [
+    #figure(
+      image("../assets/archive/Animation System Screenshot.png", width: 100%),
+      caption: [Animations-System],
+    )
+  ],
+
+  [
+    #figure(
+      image("../assets/archive/CSS.png", width: 100%),
+
+      caption: [CSS Rules],
+    )
+  ],
+)
+
+Nachdem dieses Grundgerüst bestand, machten wir uns an das genauere Ausarbeiten der Inhalte. Dies betraf zum einen die konkreten Inhalt selbst, die wir in die vorher definierten Sektionen, bzw. Abschnitte einfügten, zum anderen jedoch auch das Styling. Dieses wurde durch feste Style-Definitionen per CSS und stets im Bezug zum festgelegten Styleguide realisiert.
+
+
 
 === Umfrage
 Um die Umfrage entsprechend unseres erstellten Layouts umzusetzen, mussten wir uns erst einmal auf die Suche nach einer geeigneten Plattform machen. Konkret musste diese vor allem ein Branching-Logik-System, mit dem man konditionelle Abzweigungen je nach Antwort einstellen kann, beinhalten. Dies ist deshalb wichtig, da, wie bereits oben erwähnt, Studierende und Angestellte unterschiedliche Antworten ausfüllen sollen.
-Letztenendes fiel die Wahl auf @tally, da diese Plattform kostenlos nutzbar ist und die gewünschten Features implementiert. Zusätzlich besteht die Möglichkeit, die Umfrage sehr detailliert zu stylen, wodurch wir schließlich auch die Umfrage in unseren Style gestalten konnten. //TODO: Screenshot von Tally-Umfrage
+Letztenendes fiel die Wahl auf @tally, da diese Plattform kostenlos nutzbar ist und die gewünschten Features implementiert. Zusätzlich besteht die Möglichkeit, die Umfrage sehr detailliert zu stylen, wodurch wir schließlich auch die Umfrage in unseren Style gestalten konnten.
+#grid(
+  columns: (auto, auto),
+  gutter: 0.5em,
+  align: center + bottom,
+
+  [
+    #figure(
+      image("../assets/archive/tally.png", width: 100%),
+
+      caption: [Tally Umfrage],
+    )
+  ],
+
+  [
+    #figure(
+      image("../assets/archive/tally insights.png", width: 100%),
+
+      caption: [Tally Ergebnisse],
+    )
+  ],
+)
 Nach dem Übertragen der Frageblöcke auf @tally haben eine Pilot-Durchführung mit einer Person durchgeführt. Diese wies uns auf einige Unschönheiten und Fehler innerhalb des Aufbaus um, sodass wir diese beheben konnten, bevor wir die Umfrage in einem größeren Rahmen ausspielten.
 Nachdem die Ergebnisse letztenendes erhoben wurden, ließen sich diese ganz einfach als @csv Datei ausgeben, was uns die anschließende Auswertung per Excel sehr vereinfachte.
 
 = Ergebnis
+
+#figure(
+  image("../assets/archive/example-screen.png", width: 100%),
+
+  caption: [Example Screenshot],
+)
 
 #outline(target: figure, title: "Bilderverzeichnis") <ListOfFigures>
 #bibliography("Dokumentation.bib", style: "iso-690-numeric")
