@@ -9,7 +9,7 @@
   title: "Climbing Campus - Unsere Post Climb Dokumentation ",
   author: ("Tim Ruland", "Marc Obst"),
   date: date,
-  description: "//TODO: description",
+  description: [Im Zuge unseres Themas "Climbing Campus" haben wir das tägliche „Auf und Ab“ am Campus der THI im Bezug zu Mobilität und Barrierefreiheit untersucht und dies mit objektiven und subjektiven Daten in Form einer SinglePage-Webseite aufgearbeitet und aufbereitet.],
   keywords: (
     "InfoVis",
     "Information",
@@ -86,7 +86,7 @@ Das Thema Treppensteigen war unser Favorit, da die sehr direkte und bildliche As
 
 #figure(image("../assets/archive/InfoVis Ideas.png"), caption: "Bildschirmfoto der Ideen aus FigJam")
 
-Nach genauerer Analyse des Überthemas "Ups and Downs" haben wir uns entschieden das Thema spaßeshalber wörtlich zu nehmen /*TODO: write*/(sagen unseriös sein wollen und so).
+Nach genauerer Analyse des Überthemas "Ups and Downs" haben wir uns entschieden das Thema spaßeshalber wörtlich zu nehmen.
 
 Nach der Besprechung und deswegen haben wir uns für das Treppensteigen als finale Idee entschieden
 
@@ -96,7 +96,6 @@ Nachdem wir uns auf unsere Grundidee geeinigt haben, haben wir angefangen, die L
 
 === Statische Daten
 Statische Daten sind Daten die sich ändern und objektiv aufnehmen lassen.
-// TODO: add Barrierefreiheit wie Aufzüge und Rampen
 In unserem Beispiel sind das die tatsächlichen physikalischen Gebäude, deren Treppenhäuser und Treppenzahl und die Verbindungswege der THI, sowie die festgelegten Stundenpläne, welche sich aus Primuss(-Stundenplan) ziehen lassen.
 
 ==== Treppenzahlen und mehr begehbares
