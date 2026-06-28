@@ -177,10 +177,36 @@ Durch den gezielten Einsatz von Materialien, Licht und Reflexionen unterstützen
 // #pagebreak(weak: true)
 
 == Umsetzung
-Als Grundlage für die konkrete Umsetzung benötigten wir zunächst die grundlegenden Daten, auf denen die Visualisierung später Aufbauen würde. Hierzu entschieden wir uns zunächst, die Umfrage in die uns zugänglichen Verteiler, also diverse WhatsApp-Gruppen, zu schicken. Hierbei galt stets die Bitte, die Umfrage nach der Bearbeitung per Schneeball-System weiterzuleiten. Leider stellte sich dieses Konzept in der Realität mehr als Wunschdenken heraus, da wir nach etwa 2 Wochen lediglich 7 Teilnehmer gesammelt hatten.
-Wir mussten also unsere Strategie anpassen, weshalb wir gezielt auf einzelne Personen zugekommen sind und diese persönlich für unsere Umfrage rekrutiert haben. Dies geschah sowohl mit Stundenten als auch mit Angestellten der THI.\
-Auswertung der Umfrage per @csv\-Export-Funktion von @tally:cap
+Als Grundlage für die konkrete Umsetzung benötigten wir zunächst die grundlegenden Daten, auf denen die Visualisierung später Aufbauen würde. Hierzu entschieden wir uns zunächst, die Umfrage in die uns zugänglichen Verteiler, also diverse WhatsApp-Gruppen, zu schicken. Hierbei galt stets die Bitte, die Umfrage nach der Bearbeitung per Schneeball-System weiterzuleiten.
+Leider stellte sich dieses Konzept in der Realität als Wunschdenken heraus, da wir nach etwa 2 Wochen lediglich 7 Teilnehmer gesammelt hatten.
+Wir mussten also unsere Strategie anpassen, weshalb wir gezielt auf einzelne Personen zugekommen sind und diese persönlich für unsere Umfrage rekrutiert haben. Dies geschah sowohl mit Studenten als auch mit Dozenten bzw. allgemeinen Angestellten der THI.\
 
+=== Umfrage
+Um die Umfrage entsprechend unseres erstellten Layouts umzusetzen, mussten wir uns erst einmal auf die Suche nach einer geeigneten Plattform machen. Konkret musste diese vor allem ein Branching-Logik-System, mit dem man konditionelle Abzweigungen je nach Antwort einstellen kann, beinhalten. Dies ist deshalb wichtig, da, wie bereits oben erwähnt, Studierende und Angestellte unterschiedliche Antworten ausfüllen sollen.
+Letztenendes fiel die Wahl auf @tally, da diese Plattform kostenlos nutzbar ist und die gewünschten Features implementiert. Zusätzlich besteht die Möglichkeit, die Umfrage sehr detailliert zu stylen, wodurch wir schließlich auch die Umfrage in unseren Style gestalten konnten.
+#grid(
+  columns: (auto, auto),
+  gutter: 0.5em,
+  align: center + bottom,
+
+  [
+    #figure(
+      image("../assets/archive/tally.png", width: 100%),
+
+      caption: [Tally Umfrage],
+    )
+  ],
+
+  [
+    #figure(
+      image("../assets/archive/tally insights.png", width: 100%),
+
+      caption: [Tally Ergebnisse],
+    )
+  ],
+)
+Nach dem Übertragen der Frageblöcke auf @tally haben eine Pilot-Durchführung mit einer Person durchgeführt. Diese wies uns auf einige Unschönheiten und Fehler innerhalb des Aufbaus um, sodass wir diese beheben konnten, bevor wir die Umfrage in einem größeren Rahmen ausspielten.
+Nachdem die Ergebnisse letztenendes erhoben wurden, ließen sich diese ganz einfach als @csv Datei ausgeben, was uns die anschließende Auswertung per Excel sehr vereinfachte.
 #figure(
   block(
     fill: purple.darken(95%),
@@ -222,32 +248,6 @@ Nachdem dieses Grundgerüst bestand, machten wir uns an das genauere Ausarbeiten
 
 
 
-=== Umfrage
-Um die Umfrage entsprechend unseres erstellten Layouts umzusetzen, mussten wir uns erst einmal auf die Suche nach einer geeigneten Plattform machen. Konkret musste diese vor allem ein Branching-Logik-System, mit dem man konditionelle Abzweigungen je nach Antwort einstellen kann, beinhalten. Dies ist deshalb wichtig, da, wie bereits oben erwähnt, Studierende und Angestellte unterschiedliche Antworten ausfüllen sollen.
-Letztenendes fiel die Wahl auf @tally, da diese Plattform kostenlos nutzbar ist und die gewünschten Features implementiert. Zusätzlich besteht die Möglichkeit, die Umfrage sehr detailliert zu stylen, wodurch wir schließlich auch die Umfrage in unseren Style gestalten konnten.
-#grid(
-  columns: (auto, auto),
-  gutter: 0.5em,
-  align: center + bottom,
-
-  [
-    #figure(
-      image("../assets/archive/tally.png", width: 100%),
-
-      caption: [Tally Umfrage],
-    )
-  ],
-
-  [
-    #figure(
-      image("../assets/archive/tally insights.png", width: 100%),
-
-      caption: [Tally Ergebnisse],
-    )
-  ],
-)
-Nach dem Übertragen der Frageblöcke auf @tally haben eine Pilot-Durchführung mit einer Person durchgeführt. Diese wies uns auf einige Unschönheiten und Fehler innerhalb des Aufbaus um, sodass wir diese beheben konnten, bevor wir die Umfrage in einem größeren Rahmen ausspielten.
-Nachdem die Ergebnisse letztenendes erhoben wurden, ließen sich diese ganz einfach als @csv Datei ausgeben, was uns die anschließende Auswertung per Excel sehr vereinfachte.
 
 = Ergebnis
 

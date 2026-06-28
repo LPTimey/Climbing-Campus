@@ -11,7 +11,7 @@ export const easing = {
   easeInOutQuad: (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2),
 };
 
-const delta=0.5;
+const delta = 1;
 
 /**
  * @param {SegmentStream} stream
@@ -127,6 +127,9 @@ export function createAnimation({ renderer, camera, scene, animation }) {
 
         object = get;
         scene.add(object);
+        if(anim.state.enum == "activating" || anim.state.enum == "deactivating"){
+          anim.state.startTime = time;
+        }
       }
 
       switch (anim.state.enum) {

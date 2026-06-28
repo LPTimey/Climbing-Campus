@@ -6,6 +6,7 @@ import {
   steps,
   ux
 } from "../sections.mjs";
+import { defaultEntryExitAnimation } from "../animation-system.mjs";
 import * as THREE from "three";
 /**
  * @import {AnimationObject, IdleAnimation} from "../animation-system.mjs"
