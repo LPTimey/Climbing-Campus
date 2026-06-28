@@ -128,7 +128,7 @@ Da die Umfrage sich sowohl an Stundenten als auch Angestelle an der THI richtet,
 )
 
 
-=== Visualisierung
+=== Visuals
 Eine gute Visualisierung lebt von vielen Dingen, Themen, Sachen, und Teilen.
 Dazu gehören Konsistenz, Appeal und Readability.
 Um uns eine klarere Übersicht und gemeinsame Vorstellung zu schaffen, haben wir angefangen ein Moodboard (@Moodboard) zu erstellen.
@@ -177,13 +177,18 @@ Durch den gezielten Einsatz von Materialien, Licht und Reflexionen unterstützen
 // #pagebreak(weak: true)
 
 == Umsetzung
-Als Grundlage für die konkrete Umsetzung benötigten wir zunächst die grundlegenden Daten, auf denen die Visualisierung später Aufbauen würde. Hierzu entschieden wir uns zunächst, die Umfrage in die uns zugänglichen Verteiler, also diverse WhatsApp-Gruppen, zu schicken. Hierbei galt stets die Bitte, die Umfrage nach der Bearbeitung per Schneeball-System weiterzuleiten.
-Leider stellte sich dieses Konzept in der Realität als Wunschdenken heraus, da wir nach etwa 2 Wochen lediglich 7 Teilnehmer gesammelt hatten.
-Wir mussten also unsere Strategie anpassen, weshalb wir gezielt auf einzelne Personen zugekommen sind und diese persönlich für unsere Umfrage rekrutiert haben. Dies geschah sowohl mit Studenten als auch mit Dozenten bzw. allgemeinen Angestellten der THI.\
 
-=== Umfrage
-Um die Umfrage entsprechend unseres erstellten Layouts umzusetzen, mussten wir uns erst einmal auf die Suche nach einer geeigneten Plattform machen. Konkret musste diese vor allem ein Branching-Logik-System, mit dem man konditionelle Abzweigungen je nach Antwort einstellen kann, beinhalten. Dies ist deshalb wichtig, da, wie bereits oben erwähnt, Studierende und Angestellte unterschiedliche Antworten ausfüllen sollen.
-Letztenendes fiel die Wahl auf @tally, da diese Plattform kostenlos nutzbar ist und die gewünschten Features implementiert. Zusätzlich besteht die Möglichkeit, die Umfrage sehr detailliert zu stylen, wodurch wir schließlich auch die Umfrage in unseren Style gestalten konnten.
+
+=== Durchführung der Umfrage
+
+Als Grundlage für die spätere Visualisierung benötigten wir zunächst die entsprechenden Daten. Dafür mussten wir die Umfrage zunächst auf einer geeigneten Plattform umsetzen. Bei der Auswahl war insbesondere ein Branching-Logik-System entscheidend, mit dem sich abhängig von den gegebenen Antworten unterschiedliche Fragepfade definieren lassen. Dies war notwendig, da Studierende und Angestellte unterschiedliche Fragen beantworten sollten. Letztendlich fiel die Wahl auf @tally, da die Plattform kostenlos nutzbar ist, die benötigten Funktionen bietet und darüber hinaus umfangreiche Gestaltungsmöglichkeiten bereitstellt. Dadurch konnten wir die Umfrage auch optisch an unseren gewünschten Stil anpassen.
+
+Nach dem Übertragen der Frageblöcke auf @tally haben eine Pilot-Durchführung mit einer Person durchgeführt. Diese wies uns auf einige Unschönheiten und Fehler innerhalb des Aufbaus um, sodass wir diese beheben konnten, bevor wir die Umfrage in einem größeren Rahmen ausspielten.
+Nachdem die Ergebnisse letztenendes erhoben wurden, ließen sich diese ganz einfach als @csv Datei ausgeben, was uns die anschließende Auswertung per Excel sehr vereinfachte.
+
+
+Anschließend begann die Verteilung der Umfrage. Zunächst verschickten wir sie über die uns zugänglichen Verteiler, insbesondere verschiedene WhatsApp-Gruppen. Dabei baten wir die Teilnehmenden, die Umfrage nach dem Ausfüllen im Sinne eines Schneeball-Systems weiterzuleiten. In der Praxis erwies sich dieses Konzept jedoch als Wunschdenken, da wir nach etwa zwei Wochen lediglich sieben Teilnehmende erreicht hatten. Daher passten wir unsere Strategie an und sprachen gezielt einzelne Personen direkt an, um sie für die Teilnahme zu gewinnen. Dies geschah sowohl bei Studierenden als auch bei Angestellten der THI.
+
 #grid(
   columns: (auto, auto),
   gutter: 0.5em,
@@ -205,23 +210,21 @@ Letztenendes fiel die Wahl auf @tally, da diese Plattform kostenlos nutzbar ist 
     )
   ],
 )
-Nach dem Übertragen der Frageblöcke auf @tally haben eine Pilot-Durchführung mit einer Person durchgeführt. Diese wies uns auf einige Unschönheiten und Fehler innerhalb des Aufbaus um, sodass wir diese beheben konnten, bevor wir die Umfrage in einem größeren Rahmen ausspielten.
-Nachdem die Ergebnisse letztenendes erhoben wurden, ließen sich diese ganz einfach als @csv Datei ausgeben, was uns die anschließende Auswertung per Excel sehr vereinfachte.
+
+=== Programmierung der Visualisierung
+Mit der nun bestehenden konzeptionellen Grundlage konnten wir jetzt schließlich mit der konkreten technischen Ausarbeitung beginnen. Hierzu legten wir zunächst ein Github-Repository an, um ein zentralisiertes Speichersystem sowie eine Historie an Änderungen gut verwalten zu können. Der nächste Schritt war nun das initiale technische Layouting der HTML-Datei. Wir überlegten uns also konkret, welche Sektionen die finale Ausarbeitung umfassen sollte und legten diese im Anschluss an.
+Da wir wie erwähnt mit einem 3d-Framework arbeiten, mussten wir dieses zusätzlich richtig einbinden und einige Vorbereitung in diesem Kontext anstellen. Dies umfasst vor allem das Aufsetzen eines Animations-Systems, welches wir selbst geschrieben haben. Dieses wird benötigt, um den einzelnen Objekte Abläufe zuzuschreiben, d.h. jeweils eine Eingangsanimation wenn das Objekt erscheint, eine Idle-Animation beim bloßen Verweilen des Objekts und eine Exit-Animation sobald es wieder verschwindet. Diese lassen sich auch je nach dem, in welcher Sektion sie sich befinden abwandeln. Somit haben wir volle Kontrolle über alle visuellen Geschehnisse, die beim Scrollen über die Website aufkommen.
+
 #figure(
   block(
     fill: purple.darken(95%),
     inset: 1em,
     width: 100%,
   )[
-    #image("../assets/archive/Storyboard Sketches.png", width: 100%)
+    #image("../assets/archive/Storyboard Sketches.png", width: 90%)
   ],
   caption: [Storyboard Sketches],
 )
-
-=== Visualisierung
-Mit der nun bestehenden konzeptionellen Grundlage konnten wir jetzt schließlich mit der konkreten technischen Ausarbeitung beginnen. Hierzu legten wir zunächst ein Github-Repository an, um ein zentralisiertes Speichersystem sowie eine Historie an Änderungen gut verwalten zu können. Der nächste Schritt war nun das initiale technische Layouting der HTML-Datei. Wir überlegten uns also konkret, welche Sektionen die finale Ausarbeitung umfassen sollte und legten diese im Anschluss an.
-Da wir wie erwähnt mit einem 3d-Framework arbeiten, mussten wir dieses zusätzlich richtig einbinden und einige Vorbereitung in diesem Kontext anstellen. Dies umfasst vor allem das Aufsetzen eines Animations-Systems, welches wir selbst geschrieben haben. Dieses wird benötigt, um den einzelnen Objekte Abläufe zuzuschreiben, d.h. jeweils eine Eingangsanimation wenn das Objekt erscheint, eine Idle-Animation beim bloßen Verweilen des Objekts und eine Exit-Animation sobald es wieder verschwindet. Diese lassen sich auch je nach dem, in welcher Sektion sie sich befinden abwandeln. Somit haben wir volle Kontrolle über alle visuellen Geschehnisse, die beim Scrollen über die Website aufkommen.
-
 
 #grid(
   columns: (auto, auto),
@@ -246,7 +249,18 @@ Da wir wie erwähnt mit einem 3d-Framework arbeiten, mussten wir dieses zusätzl
 
 Nachdem dieses Grundgerüst bestand, machten wir uns an das genauere Ausarbeiten der Inhalte. Dies betraf zum einen die konkreten Inhalt selbst, die wir in die vorher definierten Sektionen, bzw. Abschnitte einfügten, zum anderen jedoch auch das Styling. Dieses wurde durch feste Style-Definitionen per CSS und stets im Bezug zum festgelegten Styleguide realisiert.
 
+==== HTML/CSS
+SPA,\
+CSS Layers\
+native semantic HTML, Command, Popover\
 
+==== 3D
+===== Models
+Blender\
+
+===== JS
+Animationssystem:\
+TODO: das mit Browser-cache + Browser-reload vs -refresh + FloatCmp
 
 
 = Ergebnis
