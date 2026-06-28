@@ -15,15 +15,10 @@ export const clock = {
       ...defaultEntryExitAnimation(
         {
           scale: new THREE.Vector3(0, 0, 0),
-          rotation: new THREE.Quaternion().setFromEuler(
-            new THREE.Euler(0.5, -1, 0.25),
-          ),
         },
         {
-          scale: new THREE.Vector3(0.25, 0.25, 0.25),
-          rotation: new THREE.Quaternion().setFromEuler(
-            new THREE.Euler(0.5, -1, 0.25),
-          ),
+          scale: new THREE.Vector3(0.5, 0.5, 0.5),
+
         },
       ),
       steps: [
@@ -33,7 +28,7 @@ export const clock = {
             return getSectionOffsets(outline).startOffset;
           },
           startTransform: {
-            scale: new THREE.Vector3(0.25, 0.25, 0.25),
+            scale: new THREE.Vector3(0.5, 0.5, 0.5),
             position: new THREE.Vector3(-25, -5, 0),
           },
         },
@@ -45,7 +40,7 @@ export const clock = {
         },
 
         transform: {
-          scale: new THREE.Vector3(0.25, 0.25, 0.25),
+          scale: new THREE.Vector3(0.5, 0.5, 0.5),
           position: new THREE.Vector3(-25, -5, 0),
         },
       },

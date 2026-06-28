@@ -15,15 +15,9 @@ export const wheelchair = {
       ...defaultEntryExitAnimation(
         {
           scale: new THREE.Vector3(0, 0, 0),
-          rotation: new THREE.Quaternion().setFromEuler(
-            new THREE.Euler(0.5, -1, 0.25),
-          ),
         },
         {
           scale: new THREE.Vector3(0.25, 0.25, 0.25),
-          rotation: new THREE.Quaternion().setFromEuler(
-            new THREE.Euler(0.5, -1, 0.25),
-          ),
         },
       ),
       steps: [
@@ -34,7 +28,7 @@ export const wheelchair = {
           },
           startTransform: {
             scale: new THREE.Vector3(0.25, 0.25, 0.25),
-            position: new THREE.Vector3(50, -5, 0),
+            position: new THREE.Vector3(60, -10, 0),
           },
         },
       ],

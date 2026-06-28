@@ -15,15 +15,9 @@ export const smiley = {
       ...defaultEntryExitAnimation(
         {
           scale: new THREE.Vector3(0, 0, 0),
-          rotation: new THREE.Quaternion().setFromEuler(
-            new THREE.Euler(0.5, -1, 0.25),
-          ),
         },
         {
-          scale: new THREE.Vector3(0.25, 0.25, 0.25),
-          rotation: new THREE.Quaternion().setFromEuler(
-            new THREE.Euler(0.5, -1, 0.25),
-          ),
+          scale: new THREE.Vector3(0.5, 0.5, 0.5),
         },
       ),
       steps: [
@@ -33,8 +27,8 @@ export const smiley = {
             return getSectionOffsets(outline).startOffset;
           },
           startTransform: {
-            scale: new THREE.Vector3(0.25, 0.25, 0.25),
-            position: new THREE.Vector3(-50, -5, 0),
+            scale: new THREE.Vector3(0.5, 0.5, 0.5),
+            position: new THREE.Vector3(-60, -5, 0),
           },
         },
       ],
@@ -45,8 +39,8 @@ export const smiley = {
         },
 
         transform: {
-          scale: new THREE.Vector3(0.25, 0.25, 0.25),
-          position: new THREE.Vector3(-50, -5, 0),
+          scale: new THREE.Vector3(0.5, 0.5, 0.5),
+          position: new THREE.Vector3(-60, -5, 0),
         },
       },
     },

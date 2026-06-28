@@ -78,11 +78,11 @@ Diese umfassten folgendes:
 - Analyse der Luftqualität in der Uni
 
 // Erklärung Luftqualität
-Auf das Thema "Luftqualität in der THI" sind wir aufgrund des InfoVis-Zimmers gekommen (K-Gebäude 👎🏻) und sollte das Schwingen der Luftschwüle in relation zu Lüften gegen Aufenthaltsnebel als Ups und Downs darstellen.\
-Dafür hätten wir @hygrometer:cap als statische Datenquelle benutzt und für die Umfrage subjektiv nach Luftqualität pro Gebäude und Zeiteinheit gefragt.
+Auf das Thema "Luftqualität in der THI" sind wir aufgrund des InfoVis-Zimmers gekommen (K-Gebäude 👎🏻) und sollte das extreme Schwingen der Luftschwüle in Relation zum Lüften gegen den "Aufenthaltsnebel" als Ups und Downs darstellen.\
+Dafür hätten wir nach unserem Plan @hygrometer:cap als statische Datenquelle benutzt und für die Umfrage subjektiv nach Luftqualität im Zusammenhang mit Campus-Gebäuden und Zeiteinheiten erfragt.
 
 // Erklärung Treppen
-Das Thema Treppensteigen war unser Favorit, da die sehr direkte und bildliche Assoziation zu Oben und Unten einen doch hochwertigen Reiz auslöst. Die weitergeführte Idee beinhaltet die Stundenpläne und Treppenanzahl als objektive Daten und stellt subjektiv Akzeptanz und Barrierefreiheit zur (Um-)Frage.
+Das Thema Treppensteigen kristallisierte sich schließlich als unser Favorit heraus, da die sehr direkte und bildliche Assoziation zu "Oben und Unten" sich für uns origineller anfühlte. Die weitergeführte Idee beinhaltet die Analyse von Stundenplänen und der Treppenanzahl als objektive Daten und stellt subjektiv Akzeptanz und Barrierefreiheit zur (Um-)Frage.
 
 #figure(image("../assets/archive/InfoVis Ideas.png"), caption: "Bildschirmfoto der Ideen aus FigJam")
 

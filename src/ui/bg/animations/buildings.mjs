@@ -34,7 +34,7 @@ export const buildings = {
           },
           startTransform: {
             scale: new THREE.Vector3(0.25, 0.25, 0.25),
-            position: new THREE.Vector3(25, -5, 0),
+            position: new THREE.Vector3(25, -7.5, 0),
           },
         },
       ],

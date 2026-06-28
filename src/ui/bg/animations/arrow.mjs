@@ -20,7 +20,7 @@ export const arrow = {
           ),
         },
         {
-          scale: new THREE.Vector3(0.25, 0.25, 0.25),
+          scale: new THREE.Vector3(0.2, 0.2, 0.2),
           rotation: new THREE.Quaternion().setFromEuler(
             new THREE.Euler(0.5, -1, 0.25),
           ),
@@ -34,10 +34,11 @@ export const arrow = {
             return getSectionOffsets(outline).startOffset;
           },
           startTransform: {
-            scale: new THREE.Vector3(0.25, 0.25, 0.25),
+            scale: new THREE.Vector3(0.2, 0.2, 0.2),
             rotation: new THREE.Quaternion().setFromEuler(
               new THREE.Euler(0.5, -1, 0.25),
             ),
+            position: new THREE.Vector3(0, -5, 0),
           },
         },
       ],
@@ -48,10 +49,11 @@ export const arrow = {
         },
 
         transform: {
-          scale: new THREE.Vector3(0.25, 0.25, 0.25),
+          scale: new THREE.Vector3(0.2, 0.2, 0.2),
           rotation: new THREE.Quaternion().setFromEuler(
             new THREE.Euler(0.5, -1, 0.25),
           ),
+          position: new THREE.Vector3(0, -5, 0),
         },
       },
     },
