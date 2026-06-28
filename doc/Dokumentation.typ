@@ -86,30 +86,28 @@ Das Thema Treppensteigen kristallisierte sich schließlich als unser Favorit her
 
 #figure(image("../assets/archive/InfoVis Ideas.png"), caption: "Bildschirmfoto der Ideen aus FigJam")
 
-Nach genauerer Analyse des Überthemas "Ups and Downs" haben wir uns entschieden das Thema spaßeshalber wörtlich zu nehmen.
-
-Nach der Besprechung und deswegen haben wir uns für das Treppensteigen als finale Idee entschieden
+Nach genauerer Analyse des Überthemas "Ups and Downs" haben wir uns entschieden, das Thema spaßeshalber wörtlich zu nehmen. Aufgrund dieser humorvollen Spielerei und des zusätzlich positiven Feedbacks aus dem Kurs fiel unsere finale Entscheidung schließlich auf dieses Thema.
 
 = Vorgehen
 == Vorbereitungen
-Nachdem wir uns auf unsere Grundidee geeinigt haben, haben wir angefangen, die Logistik und Planung genauer zu betrachten. Dabei haben wir uns folgende Struktur überlegt: eine Aufteilung in statische Daten, dynamische Daten und die finale Visualisierung.
+Nachdem wir uns auf unsere Grundidee geeinigt haben, fingen wir zunächst damit an, die Logistik und Planung genauer zu betrachten. Dabei haben wir uns folgende Struktur überlegt: Eine Aufteilung in statische Daten, dynamische Daten und die finale Visualisierung.
 
 === Statische Daten
 Statische Daten sind Daten die sich ändern und objektiv aufnehmen lassen.
-In unserem Beispiel sind das die tatsächlichen physikalischen Gebäude, deren Treppenhäuser und Treppenzahl und die Verbindungswege der THI, sowie die festgelegten Stundenpläne, welche sich aus Primuss(-Stundenplan) ziehen lassen.
+In unserem Beispiel sind das konkret die tatsächlichen physikalischen Gebäude, deren Treppenhäuser und Treppenzahl und die Verbindungswege der THI, sowie die festgelegten Stundenpläne, welche sich aus den Primuss-Stundenplänen beziehen lassen.
 
 ==== Treppenzahlen und mehr begehbares
-Um diese Daten zu erheben sind wir alle (Haupt-) Gebäude des und sind alle Treppenhäuser THI Campus' abgegangen. Zur Fehlervermeidung haben wir hierbei beide einzeln unabhängig voneinander die Treppenzählungen durchgeführt und im Anschluss diese miteinander abgeglichen. Zudem haben wir eine Liste aller Gebäudeverbindungen erstellt (@StairSheet).
+Um diese Daten zu erheben sind wir alle (Haupt-) Gebäude und Treppenhäuser des THI Campus' abgegangen. Zur Fehlervermeidung führten wir hierbei beide einzeln unabhängig voneinander die Treppenzählungen durch und verglichen diese im Anschluss miteinander, um Messfehlern entgegenzuwirken. Im Anschluss an diese manuelle Datenerhebung haben wir dann eine Tabelle mit allen Gebäudeverbindungen erstellt (@StairSheet).
 
 
 ==== Stundenplan
-Um Daten zu den Stundenplänen für z.B: übliche Routen zu ziehen, haben wir das Primuss-Stundenplan-System analysiert und herausgefunden, wie die Stundenpläne geladen werden.
+Um Daten zu den Stundenplänen für z.B. übliche Routen zu ziehen, haben wir das Primuss-Stundenplan-System analysiert und herausgefunden, wie die Stundenpläne geladen werden.
 Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten unter Input eines validen @sessiontoken\s aus der Datenbank extrahiert und als @csv\-Datei exportiert.
 
 === Umfrage
 Für schnelles Iterieren haben wir uns dazu entschieden die Umfrage zuerst in FigJam grob auszulegen, da FigJam viele Templates beinhaltet und simples Drag and Drop Editing nutzt (@SurveyDraft).
-Der Plan für die Umfrage umfasst den Start, welcher eine Zustimmung und Demographie-Daten beinhaltet, dem Hauptteil A mit generellen Fragen zur Campus-Gesamterfahrung, B mit Fragen zum Stundenplan, dem Stufen und Infrastruktur Teil C, und als letztes, aber nicht als das letzte, Teile D und E in denen die Barrierefreiheit, Chancengleichheit und generelle Akzeptanz pro Gebäude abgefragt werden.
-Da die Umfrage sich wohl an Stundenten als auch Angestelle an der THI richtet, mussten wir eine Entsprechende Logik innerhalb der Umfrage integrieren, sodass Angestellte etwa nicht die Frage nach dem Studiengang beantworten mussten.
+Der Plan für die Umfrage umfasst den Start, welcher eine Einverständniserklärung und Demographie-Daten beinhaltet, dem Hauptteil A mit generellen Fragen zur Campus-Gesamterfahrung, B mit Fragen zum Stundenplan, dem Stufen und Infrastruktur Teil C, und zuletzt Teile D und E, in denen die Barrierefreiheit, Chancengleichheit und generelle Akzeptanz pro Gebäude abgefragt werden.
+Da die Umfrage sich sowohl an Stundenten als auch Angestelle an der THI richtet, mussten wir eine Entsprechende Schaltlogik innerhalb der Umfrage integrieren, sodass Angestellte etwa nicht die Frage nach dem Studiengang beantworten mussten.
 
 #grid(
   columns: (auto, auto),
@@ -135,12 +133,12 @@ Eine gute Visualisierung lebt von vielen Dingen, Themen, Sachen, und Teilen.
 Dazu gehören Konsistenz, Appeal und Readability.
 Um uns eine klarere Übersicht und gemeinsame Vorstellung zu schaffen, haben wir angefangen ein Moodboard (@Moodboard) zu erstellen.
 Es beinhaltet eine Ansammlung an zum Teil gefundenen und zum Teil selbst gemachten Kacheln, welche versuchen, eine konstante und visuell ansprechende Bildsprache zu definieren.
-// TODO: Better machen
-Genauer soll der Inhalt unseres Moodboard vermitteln, dass wir uns stilistisch stark in einem 3-dimensionalen Raum bewegen, in der Objekte und andere UI-Elemente in einem neumorphistischen Kontext existieren. Zur weiteren Stilisierung soll zudem die Materialität dieser Objekte veranschaulicht werden, welche man als leicht glänzend und glatt (glossy) beschreiben kann.
+Genauer soll der Inhalt unseres Moodboard vermitteln, dass wir uns stilistisch stark in einem 3-dimensionalen Raum bewegen, in der Objekte und andere UI-Elemente in einem neumorphistischen Kontext existieren. Zur weiteren Stilisierung soll zudem die Materialität dieser Objekte veranschaulicht werden, welche sich als leicht glänzend und glatt (glossy) beschreiben lässt.
 
-Insgesamt legten wir beim Moodboard ein besonderes Augenmerk auf Konsistenz, womit dieses Vorgehen stark dem Gestalten eines Brand Styleguides ähnelte. Hierzu definierten wir eine zwar etwas weniger stringente Farbpalette, dafür aber desto mehr festgelegte Typografie, für welche Schriftgrößen und Variableneinstellungen klar einem bestimmten Use Case zugeschrieben wurden.
+Insgesamt legten wir beim Moodboard ein besonderes Augenmerk auf Konsistenz, womit dieses Vorgehen stark dem Gestalten eines Brand Styleguides ähnelte. Hierzu definierten wir eine zwar etwas weniger stringente Farbpalette, dafür aber desto mehr festgelegte Typografie, für welche Schriftgrößen und Variableneinstellungen klar bestimmten Use Cases zugeschrieben wurden. Dieses Branding fand schließlich auch Umsetzung in einem Logo, welcher wir für unsere Visualisierung gestalteten (siehe ganz oben).
+Insgesamt schufen wir somit eine klare Identität, die sich später durch unsere Visualisierung durchziehen würde.
 
-Konkret entschieden wir uns hierbei für 3 Schriftarten --- Coda, Mozilla Text und GoogleSansFlex --- wobei nur die letzten beiden wirklich konstante Anwendung fanden, da Coda nur für das Logo unserer Informationsvisualierung verwendet wurde (@LogoKomponente). Mozilla Text fungierte dahingegen als unsere Font für Inhalte, die im Fokus stehen sollten, beispielsweise Überschriften oder wichtige KPIs, die besonders hervorgehoben werden sollten. Dies soll dann durch Textinhalte in GoogleSansFlex unterstützt werden, die wir in einem dünneren Schriftschnitt sowie einer geringeren Schriftbreite darstellen.
+Konkret entschieden wir uns hierbei für 3 Schriftarten --- Coda, Mozilla Text und GoogleSansFlex --- wobei nur die letzten beiden wirklich konstante Anwendung fanden, da Coda nur für das Logo unserer Informationsvisualisierung verwendet wurde (@LogoKomponente). Mozilla Text fungierte dahingegen als unsere Font für Inhalte, die im Fokus stehen sollten, beispielsweise Überschriften oder wichtige KPIs, die besonders hervorgehoben werden sollten. Dies soll dann durch Textinhalte in GoogleSansFlex unterstützt werden, die wir in einem dünneren Schriftschnitt sowie einer geringeren Schriftbreite darstellen.
 Wir kreierten somit ein einheitliches visuelles Bild und klarere Hierarchien, um den visuellen Flow des Betrachter zu unterstützen.
 
 Zur weiteren Ausarbeitung haben wir 3D Modelle in @blender:cap in diesem zuvor ausgearbeitetem Stil erstellt.

@@ -32,11 +32,11 @@ export function sectionOrErr(id) {
  * @returns
  */
 export function getSectionOffsets(el) {
-  const rect = el.getBoundingClientRect();
-  const scroll = window.scrollY;
+  const { top, bottom } = el.getBoundingClientRect();
+  const scrollY = window.scrollY;
 
   return {
-    startOffset: rect.top + scroll,
-    endOffset: rect.top + scroll + rect.height,
+    startOffset: top + scrollY,
+    endOffset: bottom + scrollY,
   };
 }

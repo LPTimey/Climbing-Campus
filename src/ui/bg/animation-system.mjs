@@ -10,6 +10,9 @@ export const easing = {
   easeOutCubic: (t) => 1 - Math.pow(1 - t, 3),
   easeInOutQuad: (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2),
 };
+
+const delta=0.5;
+
 /**
  * @param {SegmentStream} stream
  * @param {number} scrollY
@@ -25,7 +28,7 @@ function getActiveStep(stream, scrollY) {
         ? resolveOffset(stream.steps[i + 1].offset)
         : resolveOffset(stream.end.offset);
 
-    if (scrollY >= start && scrollY < end) {
+    if (scrollY >= start - delta && scrollY < end - delta) {
       return {
         step,
         index: i,
@@ -118,7 +121,7 @@ export function createAnimation({ renderer, camera, scene, animation }) {
       if (!object) {
         const get = getObject(/** @type {keyof typeof objs} */ (name));
 
-        if (get instanceof Promise) {
+        if (!get) {
           continue;
         }
 
@@ -136,10 +139,8 @@ export function createAnimation({ renderer, camera, scene, animation }) {
           break;
 
         case "activating": {
-          const done = (
-            activeStream?.onEnter ??
-            defaultEntryExit.onEnter
-          )({
+          const fn = activeStream?.onEnter ?? defaultEntryExit.onEnter
+          const done = fn({
             startTime: anim.state.startTime ?? time,
             absTime: time,
             deltaTime,
@@ -153,7 +154,8 @@ export function createAnimation({ renderer, camera, scene, animation }) {
         }
 
         case "deactivating": {
-          const done = (activeStream?.onExit ?? defaultEntryExit.onExit)({
+          const fn = activeStream?.onExit ?? defaultEntryExit.onExit
+          const done = fn({
             startTime: anim.state.startTime ?? time,
             absTime: time,
             deltaTime,
@@ -226,29 +228,43 @@ function lerpTransforms(startTransform, endTransform, object, t) {
   }
 }
 
-/** @satisfies {(startTransform:Partial<Transform>,endTransform:Partial<Transform>)=>{onEnter:SingleAnimation,onExit:SingleAnimation}} */
-export const defaultEntryExitAnimation = (startTransform, endTransform) => ({
-  onEnter: defaultOnEnterAnimation(startTransform, endTransform),
-  onExit: defaultOnExitAnimation(startTransform, endTransform),
-});
+/**
+ * @param {Partial<Transform>} startTransform
+ * @param {Partial<Transform>} endTransform
+ * @return {{onEnter:SingleAnimation,onExit:SingleAnimation}}
+ */
+export function defaultEntryExitAnimation(startTransform, endTransform) {
+  return {
+    onEnter: defaultOnEnterAnimation(startTransform, endTransform),
+    onExit: defaultOnExitAnimation(startTransform, endTransform),
+  };
+}
 
-/** @satisfies {(startTransform:Partial<Transform>,endTransform:Partial<Transform>)=>SingleAnimation} */
-export const defaultOnEnterAnimation = (startTransform, endTransform) =>
-  function ({ startTime, absTime, object }) {
+/**
+ * @param {Partial<Transform>} startTransform
+ * @param {Partial<Transform>} endTransform
+ * @return {SingleAnimation}
+ */
+export function defaultOnEnterAnimation(startTransform, endTransform) {
+  return function ({ startTime, absTime, object }) {
     const durationSecs = 0.25 * 1000;
     const t = THREE.MathUtils.clamp((absTime - startTime) / durationSecs, 0, 1);
 
     if (startTransform.scale && endTransform.scale) {
-      const scale = startTransform.scale.lerp(endTransform.scale, t);
-      object.scale.copy(scale);
+      const scale = startTransform.scale.clone().lerp(endTransform.scale, t);
+      object.scale.set(scale.x, scale.y, scale.z);
     } else if (startTransform.scale) {
-      object.scale.copy(startTransform.scale);
+      const scale = startTransform.scale;
+      object.scale.set(scale.x, scale.y, scale.z);
     } else if (endTransform.scale) {
-      object.scale.copy(endTransform.scale);
+      const scale = endTransform.scale;
+      object.scale.set(scale.x, scale.y, scale.z);
     }
 
     if (startTransform.rotation && endTransform.rotation) {
-      const rotation = startTransform.rotation.slerp(endTransform.rotation, t);
+      const rotation = startTransform.rotation
+        .clone()
+        .slerp(endTransform.rotation, t);
       object.rotation.setFromQuaternion(rotation);
     } else if (startTransform.rotation) {
       object.rotation.setFromQuaternion(startTransform.rotation);
@@ -257,34 +273,47 @@ export const defaultOnEnterAnimation = (startTransform, endTransform) =>
     }
 
     if (startTransform.position && endTransform.position) {
-      const position = startTransform.position.lerp(endTransform.position, t);
-      object.position.copy(position);
+      const position = startTransform.position
+        .clone()
+        .lerp(endTransform.position, t);
+      object.position.set(position.x, position.y, position.z);
     } else if (startTransform.position) {
-      object.position.copy(startTransform.position);
+      const position = startTransform.position;
+      object.position.set(position.x, position.y, position.z);
     } else if (endTransform.position) {
-      object.position.copy(endTransform.position);
+      const position = endTransform.position;
+      object.position.set(position.x, position.y, position.z);
     }
 
     return t >= 1;
   };
+}
 
-/** @satisfies {(startTransform:Partial<Transform>,endTransform:Partial<Transform>)=>SingleAnimation} */
-export const defaultOnExitAnimation = (startTransform, endTransform) =>
-  function ({ startTime, absTime, object }) {
+/**
+ * @param {Partial<Transform>} startTransform
+ * @param {Partial<Transform>} endTransform
+ * @return {SingleAnimation}
+ */
+export function defaultOnExitAnimation(startTransform, endTransform) {
+  return function ({ startTime, absTime, object }) {
     const durationSecs = 0.25 * 1000;
     const t = THREE.MathUtils.clamp((absTime - startTime) / durationSecs, 0, 1);
 
     if (startTransform.scale && endTransform.scale) {
-      const scale = endTransform.scale.lerp(startTransform.scale, t);
-      object.scale.copy(scale);
+      const scale = endTransform.scale.clone().lerp(startTransform.scale, t);
+      object.scale.set(scale.x, scale.y, scale.z);
     } else if (startTransform.scale) {
-      object.scale.copy(startTransform.scale);
+      const scale = startTransform.scale;
+      object.scale.set(scale.x, scale.y, scale.z);
     } else if (endTransform.scale) {
-      object.scale.copy(endTransform.scale);
+      const scale = endTransform.scale;
+      object.scale.set(scale.x, scale.y, scale.z);
     }
 
     if (startTransform.rotation && endTransform.rotation) {
-      const rotation = endTransform.rotation.slerp(startTransform.rotation, t);
+      const rotation = endTransform.rotation
+        .clone()
+        .slerp(startTransform.rotation, t);
       object.rotation.setFromQuaternion(rotation);
     } else if (startTransform.rotation) {
       object.rotation.setFromQuaternion(startTransform.rotation);
@@ -293,16 +322,21 @@ export const defaultOnExitAnimation = (startTransform, endTransform) =>
     }
 
     if (startTransform.position && endTransform.position) {
-      const position = endTransform.position.lerp(startTransform.position, t);
-      object.position.copy(position);
+      const position = endTransform.position
+        .clone()
+        .lerp(startTransform.position, t);
+      object.position.set(position.x, position.y, position.z);
     } else if (startTransform.position) {
-      object.position.copy(startTransform.position);
+      const position = startTransform.position;
+      object.position.set(position.x, position.y, position.z);
     } else if (endTransform.position) {
-      object.position.copy(endTransform.position);
+      const position = endTransform.position;
+      object.position.set(position.x, position.y, position.z);
     }
 
     return t >= 1;
   };
+}
 
 export const defaultEntryExit = defaultEntryExitAnimation(
   { scale: new THREE.Vector3(0, 0, 0) },
