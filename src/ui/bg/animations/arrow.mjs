@@ -1,5 +1,5 @@
 import { getSectionOffsets, outline } from "../sections.mjs";
-import { defaultOnEnter, defaultOnExit } from "../animation-system.mjs";
+import { defaultEntryExitAnimation } from "../animation-system.mjs";
 import * as THREE from "three";
 /**
  * @import {AnimationObject, IdleAnimation} from "../animation-system.mjs"
@@ -12,7 +12,7 @@ const idleAnimation = ({ deltaTime, object }) => {};
 export const arrow = {
   segments: [
     {
-      onEnter: defaultOnEnter(
+      ...defaultEntryExitAnimation(
         {
           scale: new THREE.Vector3(0, 0, 0),
           rotation: new THREE.Quaternion().setFromEuler(
@@ -26,20 +26,7 @@ export const arrow = {
           ),
         },
       ),
-      onExit: defaultOnExit(
-        {
-          scale: new THREE.Vector3(0, 0, 0),
-          rotation: new THREE.Quaternion().setFromEuler(
-            new THREE.Euler(0.5, -1, 0.25),
-          ),
-        },
-        {
-          scale: new THREE.Vector3(0.25, 0.25, 0.25),
-          rotation: new THREE.Quaternion().setFromEuler(
-            new THREE.Euler(0.5, -1, 0.25),
-          ),
-        },
-      ),
+
       steps: [
         {
           idleAnimation,

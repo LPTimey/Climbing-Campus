@@ -138,10 +138,7 @@ export function createAnimation({ renderer, camera, scene, animation }) {
         case "activating": {
           const done = (
             activeStream?.onEnter ??
-            defaultOnEnter(
-              { scale: new THREE.Vector3(0, 0, 0) },
-              { scale: new THREE.Vector3(1, 1, 1) },
-            )
+            defaultEntryExit.onEnter
           )({
             startTime: anim.state.startTime ?? time,
             absTime: time,
@@ -156,13 +153,7 @@ export function createAnimation({ renderer, camera, scene, animation }) {
         }
 
         case "deactivating": {
-          const done = (
-            activeStream?.onExit ??
-            defaultOnExit(
-              { scale: new THREE.Vector3(0, 0, 0) },
-              { scale: new THREE.Vector3(1, 1, 1) },
-            )
-          )({
+          const done = (activeStream?.onExit ?? defaultEntryExit.onExit)({
             startTime: anim.state.startTime ?? time,
             absTime: time,
             deltaTime,
@@ -235,8 +226,14 @@ function lerpTransforms(startTransform, endTransform, object, t) {
   }
 }
 
+/** @satisfies {(startTransform:Partial<Transform>,endTransform:Partial<Transform>)=>{onEnter:SingleAnimation,onExit:SingleAnimation}} */
+export const defaultEntryExitAnimation = (startTransform, endTransform) => ({
+  onEnter: defaultOnEnterAnimation(startTransform, endTransform),
+  onExit: defaultOnExitAnimation(startTransform, endTransform),
+});
+
 /** @satisfies {(startTransform:Partial<Transform>,endTransform:Partial<Transform>)=>SingleAnimation} */
-export const defaultOnEnter = (startTransform, endTransform) =>
+export const defaultOnEnterAnimation = (startTransform, endTransform) =>
   function ({ startTime, absTime, object }) {
     const durationSecs = 0.25 * 1000;
     const t = THREE.MathUtils.clamp((absTime - startTime) / durationSecs, 0, 1);
@@ -272,7 +269,7 @@ export const defaultOnEnter = (startTransform, endTransform) =>
   };
 
 /** @satisfies {(startTransform:Partial<Transform>,endTransform:Partial<Transform>)=>SingleAnimation} */
-export const defaultOnExit = (startTransform, endTransform) =>
+export const defaultOnExitAnimation = (startTransform, endTransform) =>
   function ({ startTime, absTime, object }) {
     const durationSecs = 0.25 * 1000;
     const t = THREE.MathUtils.clamp((absTime - startTime) / durationSecs, 0, 1);
@@ -306,6 +303,11 @@ export const defaultOnExit = (startTransform, endTransform) =>
 
     return t >= 1;
   };
+
+export const defaultEntryExit = defaultEntryExitAnimation(
+  { scale: new THREE.Vector3(0, 0, 0) },
+  { scale: new THREE.Vector3(1, 1, 1) },
+);
 
 /**
  * @param {number | (() => number)} value
