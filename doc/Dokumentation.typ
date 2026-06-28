@@ -47,7 +47,7 @@
 
 #set heading(numbering: none)
 = Abstrakt
-Im Zuge unseres Themas "Climbing Campus" haben wir das tägliche „Auf und Ab“ am Campus der THI im Bezug zu Mobilität und Barrierefreiheit untersucht und dies mit objektiven und subjektiven Daten in Form einer SinglePage-Webseite aufgearbeitet und aufbereitet.
+Im Zuge unseres Themas "Climbing Campus" haben wir das tägliche „Auf und Ab“ am Campus der THI im Bezug zu Mobilität und Barrierefreiheit untersucht und dies mit objektiven und subjektiven Daten in Form einer Single-Page-Webseite aufgearbeitet und aufbereitet.
 
 #outline(depth: 3)
 #pagebreak(weak: true)
@@ -62,18 +62,18 @@ Im Zuge unseres Themas "Climbing Campus" haben wir das tägliche „Auf und Ab�
 
 = Aufgabe <Aufgabe>
 Für das Wahlpflichtfach Informationsvisualisierung sollten wir zum Semester-Thema „Ups and Downs“ ein visuelles Konzept gestalten, präsentieren und dokumentieren.
-Genauer heißt dass, eine Visualisierung im Medium unserer Wahl, eine ca. 10 minütige Presentation und diese Dokumentation.
+Genauer umfasste dies eine Visualisierung im Medium unserer Wahl sowie eine ca. 10-minütige Presentation und diese Dokumentation.
 
-Wie das Inhaltsverzeichnis bereits gespoilert hat befinden sich in diesem DIN ISO A4 Dokument #context [#{ counter(page).at(label("ListOfFigures")).at(0) - counter(page).at(label("Aufgabe")).at(0) }] der verlangten 8-12 Inhaltsseiten, welche unsere Gedankengänge und Zwischenergebnisse (hoffentlich) logisch und intuitiv darstellen
+Wie das Inhaltsverzeichnis bereits vorweggenommen hat, befinden sich in diesem DIN ISO A4 Dokument #context [#{ counter(page).at(label("ListOfFigures")).at(0) - counter(page).at(label("Aufgabe")).at(0) }] der verlangten 8-12 Inhaltsseiten, welche unsere Gedankengänge und Zwischenergebnisse (hoffentlich) logisch und intuitiv darstellen.
 // HAHA hab's jetzt raus-gerechnet, aber auch abzurechnende Titel und andere Post-/Preamble beinhalten
 .
 
 // #figure(image("../Aufgabe/Folie mit Aufgabe.png"), caption: "Aufgabenstellung 24.März")
 
 = Idee
-Als Exploration sind uns 2 vorstellbare Ideen gekommen.
+Bei unserer anfänglichen Exploration sind uns 2 vorstellbare Ideen gekommen.
 
-Die Ideen umfassten folgendes:
+Diese umfassten folgendes:
 - Analyse der Wegstrecken in der Uni (Treppen)
 - Analyse der Luftqualität in der Uni
 

@@ -11,7 +11,6 @@ export const accessibility = sectionOrErr("Accessibility");
 export const map = sectionOrErr("Map");
 export const charts = sectionOrErr("Charts");
 export const explanation = sectionOrErr("Explanation");
-export const testSect = sectionOrErr("Test");
 
 /**
  * @param {string} id
