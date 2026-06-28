@@ -72,10 +72,12 @@ Wie das Inhaltsverzeichnis bereits vorweggenommen hat, befinden sich in diesem D
 
 = Idee
 Bei unserer anfänglichen Exploration sind uns 2 vorstellbare Ideen gekommen.
-
 Diese umfassten folgendes:
-- Analyse der Wegstrecken in der Uni (Treppen)
-- Analyse der Luftqualität in der Uni
+#enum(indent: 10pt)[
+  Analyse der Wegstrecken in der Uni (Treppen)
+][
+  Analyse der Luftqualität in der Uni
+]
 
 // Erklärung Luftqualität
 Auf das Thema "Luftqualität in der THI" sind wir aufgrund des InfoVis-Zimmers gekommen (K-Gebäude 👎🏻) und sollte das extreme Schwingen der Luftschwüle in Relation zum Lüften gegen den "Aufenthaltsnebel" als Ups und Downs darstellen.\
@@ -93,21 +95,34 @@ Nach genauerer Analyse des Überthemas "Ups and Downs" haben wir uns entschieden
 Nachdem wir uns auf unsere Grundidee geeinigt haben, fingen wir zunächst damit an, die Logistik und Planung genauer zu betrachten. Dabei haben wir uns folgende Struktur überlegt: Eine Aufteilung in statische Daten, dynamische Daten und die finale Visualisierung.
 
 === Statische Daten
-Statische Daten sind Daten die sich ändern und objektiv aufnehmen lassen.
-In unserem Beispiel sind das konkret die tatsächlichen physikalischen Gebäude, deren Treppenhäuser und Treppenzahl und die Verbindungswege der THI, sowie die festgelegten Stundenpläne, welche sich aus den Primuss-Stundenplänen beziehen lassen.
+Mit statischen Daten meinen wir Daten die sich ändern und objektiv aufnehmen lassen.
+In unserem Beispiel sind das konkret die tatsächlichen physikalischen Gebäude, deren Treppenhäuser und Treppenzahl, die Verbindungswege der THI sowie die festgelegten Stundenpläne, welche sich auf der Primuss-Stundenplanplattform befinden.
 
 ==== Treppenzahlen und mehr begehbares
-Um diese Daten zu erheben sind wir alle (Haupt-) Gebäude und Treppenhäuser des THI Campus' abgegangen. Zur Fehlervermeidung führten wir hierbei beide einzeln unabhängig voneinander die Treppenzählungen durch und verglichen diese im Anschluss miteinander, um Messfehlern entgegenzuwirken. Im Anschluss an diese manuelle Datenerhebung haben wir dann eine Tabelle mit allen Gebäudeverbindungen erstellt (@StairSheet).
+Da es logischerweise keine einsichtbare Übersicht über die Stufenanzahlen und Distanzen innerhalb und zwischen den Gebäuden an der THI gibt, mussten wir selbst Hand anpacken. Deshalb sind wir alle (Haupt-) Gebäude und Treppenhäuser des THI Campus' abgegangen, um Stufen und Distanzen manuell abzuzählen und -messen. Zur Fehlervermeidung führten wir hierbei beide einzeln unabhängig voneinander individuelle Zählungen durch und verglichen diese im Anschluss miteinander, um Messfehlern entgegenzuwirken. Im Anschluss an diese manuelle Datenerhebung haben wir dann die gewonnen Werte in einer Tabelle festgehalten. (@StairSheet).
 
 
 ==== Stundenplan
-Um Daten zu den Stundenplänen für z.B. übliche Routen zu ziehen, haben wir das Primuss-Stundenplan-System analysiert und herausgefunden, wie die Stundenpläne geladen werden.
-Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten unter Input eines validen @sessiontoken\s aus der Datenbank extrahiert und als @csv\-Datei exportiert.
+Um Daten innerhalb der Stundenpläne z.B. über übliche Routen zu erhalten, haben wir das Primuss-Stundenplan-System analysiert und herausgefunden, wie die Stundenpläne geladen werden.
+Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten unter Input eines validen @sessiontoken\s aus der Datenbank extrahiert und als @csv\-Datei exportiert. Somit konnten wir die Stundenpläne in einem maschinenlesbaren Format erhalten, um diese später für unsere Visualisierung zu nutzen.
 
 === Umfrage
-Für schnelles Iterieren haben wir uns dazu entschieden die Umfrage zuerst in FigJam grob auszulegen, da FigJam viele Templates beinhaltet und simples Drag and Drop Editing nutzt (@SurveyDraft).
-Der Plan für die Umfrage umfasst den Start, welcher eine Einverständniserklärung und Demographie-Daten beinhaltet, dem Hauptteil A mit generellen Fragen zur Campus-Gesamterfahrung, B mit Fragen zum Stundenplan, dem Stufen und Infrastruktur Teil C, und zuletzt Teile D und E, in denen die Barrierefreiheit, Chancengleichheit und generelle Akzeptanz pro Gebäude abgefragt werden.
-Da die Umfrage sich sowohl an Stundenten als auch Angestelle an der THI richtet, mussten wir eine Entsprechende Schaltlogik innerhalb der Umfrage integrieren, sodass Angestellte etwa nicht die Frage nach dem Studiengang beantworten mussten.
+Da uns bewusst war, dass unsere Umfrage etwas umfangreicher sein würde, haben wir uns dazu entschieden die Umfrage zuerst in FigJam grob auszulegen, um schnelles Abändern des Umfragelayouts unkompliziert zu ermöglichen. FigJam eignet sich hierfür perfekt, da es viele Templates beinhaltet und simples Drag and Drop Editing nutzt (@SurveyDraft).
+Unser finales Layout umfasste schließlich folgendes:
+
+#enum(indent: 10pt)[
+  Einen Startteil, welcher eine Einverständniserklärung und Demographie-Daten abfrägt
+][
+  einen Hauptteil A mit generellen Fragen zur Gesamterfahrung am Campus der THI
+][
+  Hauptteil B mit Fragen zur Einschätzung des eigenen Stundenplans sowie dessen subjektiven Wahrnehmung
+][
+  Hauptteil C über die Emotionale Komponente der Bewältigung von Stufen und gegenüber der allgemeinen Infrastruktur am Campus
+][
+  Und Teile D und E, in denen die Barrierefreiheit, Chancengleichheit und generelle Akzeptanz pro Gebäude abgefragt werden
+]
+
+Mit dieser konzipierten Grundstruktur galt es nun, eine geeignete Plattform für deren Umsetzung zu finden. Dabei war insbesondere ein Branching-Logik-System entscheidend, mit dem sich abhängig von den gegebenen Antworten unterschiedliche Fragepfade definieren lassen. Dies war notwendig, da Studierende und Angestellte unterschiedliche Fragen beantworten sollten. Letztendlich fiel unsere Wahl auf @tally:cap, da die Plattform kostenlos nutzbar ist, die benötigten Funktionen bietet und darüber hinaus umfangreiche Gestaltungsmöglichkeiten bereitstellt. Dadurch konnten wir die Umfrage auch optisch an unseren gewünschten Stil anpassen.
 
 #grid(
   columns: (auto, auto),
@@ -122,33 +137,40 @@ Da die Umfrage sich sowohl an Stundenten als auch Angestelle an der THI richtet,
   [
     #figure(
       image("../assets/archive/Umfrage Draft.png"),
-      caption: "Screenshot des Drafts der Umfrage aus FigJam",
+      caption: "Screenshot des FigJam-Umfragelayouts",
     )<SurveyDraft>
   ],
 )
 
 
 === Visuals
-Eine gute Visualisierung lebt von vielen Dingen, Themen, Sachen, und Teilen.
-Dazu gehören Konsistenz, Appeal und Readability.
-Um uns eine klarere Übersicht und gemeinsame Vorstellung zu schaffen, haben wir angefangen ein Moodboard (@Moodboard) zu erstellen.
-Es beinhaltet eine Ansammlung an zum Teil gefundenen und zum Teil selbst gemachten Kacheln, welche versuchen, eine konstante und visuell ansprechende Bildsprache zu definieren.
+Als wichtigste Frage vor dem Start der eigentlichen Ausarbeitung der Visualisierung, versuchten wir zu identifizierten, was die Hauptfaktoren für eine gelungene Visualisierung sind. Schließlich identifizierten wir nach einem kurzen Brainstorming Konsistenz, Ästhetik und Readability.
+Um uns diesem Idealzustand in einem einheitlichen Konzept anzunähern und dieses visuell festzuhalten, entschlossen wir uns, ein Moodboard (@Moodboard) zu erstellen, welches später zusätzlich Wiederverwendung in der Präsentation der Zwischenergebnisse fand.
+Es beinhaltet eine Ansammlung an zum Teil gefundenen und zum Teil selbst erstellten Kacheln, welche versuchen, eine konstante und visuell ansprechende Bildsprache zu definieren.
 Genauer soll der Inhalt unseres Moodboard vermitteln, dass wir uns stilistisch stark in einem 3-dimensionalen Raum bewegen, in der Objekte und andere UI-Elemente in einem neumorphistischen Kontext existieren. Zur weiteren Stilisierung soll zudem die Materialität dieser Objekte veranschaulicht werden, welche sich als leicht glänzend und glatt (glossy) beschreiben lässt.
 
-Insgesamt legten wir beim Moodboard ein besonderes Augenmerk auf Konsistenz, womit dieses Vorgehen stark dem Gestalten eines Brand Styleguides ähnelte. Hierzu definierten wir eine zwar etwas weniger stringente Farbpalette, dafür aber desto mehr festgelegte Typografie, für welche Schriftgrößen und Variableneinstellungen klar bestimmten Use Cases zugeschrieben wurden. Dieses Branding fand schließlich auch Umsetzung in einem Logo, welcher wir für unsere Visualisierung gestalteten (siehe ganz oben).
-Insgesamt schufen wir somit eine klare Identität, die sich später durch unsere Visualisierung durchziehen würde.
-
-Konkret entschieden wir uns hierbei für 3 Schriftarten --- Coda, Mozilla Text und GoogleSansFlex --- wobei nur die letzten beiden wirklich konstante Anwendung fanden, da Coda nur für das Logo unserer Informationsvisualisierung verwendet wurde (@LogoKomponente). Mozilla Text fungierte dahingegen als unsere Font für Inhalte, die im Fokus stehen sollten, beispielsweise Überschriften oder wichtige KPIs, die besonders hervorgehoben werden sollten. Dies soll dann durch Textinhalte in GoogleSansFlex unterstützt werden, die wir in einem dünneren Schriftschnitt sowie einer geringeren Schriftbreite darstellen.
-Wir kreierten somit ein einheitliches visuelles Bild und klarere Hierarchien, um den visuellen Flow des Betrachter zu unterstützen.
-
-Zur weiteren Ausarbeitung haben wir 3D Modelle in @blender:cap in diesem zuvor ausgearbeitetem Stil erstellt.
-Diese folgen zusätzlich / genauer einem Hard-Surface-Ansatz mit klar definierten Kanten und präzisen, technischen Formen, um den stark geometrischen Charakter noch einmal zusätzlich zu verstärken.
-Durch den gezielten Einsatz von Materialien, Licht und Reflexionen unterstützen sie die angestrebte visuelle Wirkung und verstärken die im Moodboard definierte Gloss- und Specular-Ästhetik (@BlenderRender).
-
 #figure(
-  image("../assets/Moodboard_ Bild- & Grafikstil und Farben.png", height: 10cm),
+  image("../assets/Moodboard_ Bild- & Grafikstil und Farben.png", width: 100%),
   caption: "Moodboard",
 )<Moodboard>
+#pagebreak(weak: true)
+Insgesamt legten wir beim Moodboard ein besonderes Augenmerk auf Konsistenz, wodurch dieses Vorgehen stark dem Gestalten eines Brand-Styleguides ähnelte. Hierzu definierten wir eine zwar etwas weniger strikte Farbpalette, dafür aber desto mehr festgelegte Typografie, für welche Schriftgrößen und Variableneinstellungen eindeutig bestimmten Use Cases zugeschrieben wurden.
+Konkret entschieden wir uns hierbei für zwei primäre Schriftarten:
+
+#enum(indent: 10pt)[
+  _Mozilla Text_: Für Überschriften, bzw. allgemeine Textinhalte im Fokus sowie wichtige KPIs
+][
+  _Google Sans Flex_: Für Textinhalte im Hintergrund, die textlich unterstützend fungieren sollen und deshalb eine geringere Schriftbreite und einen dünneren Schriftschnitt aufweisen
+]
+Zudem gibt es eine weitere Schriftart, _Coda_, welche jedoch ausschließlich Anwendung in der Wortmarke "_Climbing Campus_" unseres eigens erstellten Logos (@LogoKomponente) findet.
+Dieses wird mit einer Bildmarke kombiniert, welche eine abstrakte Treppe darstellt und absichtlich visuell 2-dimensional und flach wirkt, um sich vom restlichen Inhalt der Visualisierung zu unterscheiden. Damit sollte später als zentrales Erkennungsmerkmal in der Visualisierung auftauchen und die Identität des Projekts weiter stärken.
+Insgesamt schufen wir somit eine klare Identität, die sich später durch unsere Visualisierung durchziehen würde.
+
+
+Zur weiteren Ausarbeitung haben wir 3D Modelle in @blender:cap in dem zuvor im Moodboard ausgearbeitetem Stil erstellt.
+Diese folgen genauer einem Hard-Surface-Ansatz mit klar definierten Kanten und präzisen, technischen Formen, um den stark geometrischen Charakter noch einmal zusätzlich zu verstärken.
+Durch den gezielten Einsatz von Materialien, Licht und Reflexionen unterstützen sie die angestrebte visuelle Wirkung und verstärken die im Moodboard definierte Gloss- und Specular-Ästhetik (@BlenderRender).
+
 
 #grid(
   columns: (auto, auto),
@@ -174,16 +196,16 @@ Durch den gezielten Einsatz von Materialien, Licht und Reflexionen unterstützen
     )<BlenderRender>
   ],
 )
-// #pagebreak(weak: true)
+#pagebreak(weak: true)
 
 == Umsetzung
 
 
 === Durchführung der Umfrage
 
-Als Grundlage für die spätere Visualisierung benötigten wir zunächst die entsprechenden Daten. Dafür mussten wir die Umfrage zunächst auf einer geeigneten Plattform umsetzen. Bei der Auswahl war insbesondere ein Branching-Logik-System entscheidend, mit dem sich abhängig von den gegebenen Antworten unterschiedliche Fragepfade definieren lassen. Dies war notwendig, da Studierende und Angestellte unterschiedliche Fragen beantworten sollten. Letztendlich fiel die Wahl auf @tally, da die Plattform kostenlos nutzbar ist, die benötigten Funktionen bietet und darüber hinaus umfangreiche Gestaltungsmöglichkeiten bereitstellt. Dadurch konnten wir die Umfrage auch optisch an unseren gewünschten Stil anpassen.
+Als Grundlage für die spätere Visualisierung benötigten wir zunächst die entsprechenden Daten. Dafür mussten wir die Umfrage zunächst auf einer geeigneten Plattform umsetzen. Bei der Auswahl war insbesondere ein Branching-Logik-System entscheidend, mit dem sich abhängig von den gegebenen Antworten unterschiedliche Fragepfade definieren lassen. Dies war notwendig, da Studierende und Angestellte unterschiedliche Fragen beantworten sollten. Letztendlich fiel die Wahl auf @tally:cap, da die Plattform kostenlos nutzbar ist, die benötigten Funktionen bietet und darüber hinaus umfangreiche Gestaltungsmöglichkeiten bereitstellt. Dadurch konnten wir die Umfrage auch optisch an unseren gewünschten Stil anpassen.
 
-Nach dem Übertragen der Frageblöcke auf @tally haben eine Pilot-Durchführung mit einer Person durchgeführt. Diese wies uns auf einige Unschönheiten und Fehler innerhalb des Aufbaus um, sodass wir diese beheben konnten, bevor wir die Umfrage in einem größeren Rahmen ausspielten.
+Nach dem Übertragen der Frageblöcke auf @tally:cap haben eine Pilot-Durchführung mit einer Person durchgeführt. Diese wies uns auf einige Unschönheiten und Fehler innerhalb des Aufbaus um, sodass wir diese beheben konnten, bevor wir die Umfrage in einem größeren Rahmen ausspielten.
 Nachdem die Ergebnisse letztenendes erhoben wurden, ließen sich diese ganz einfach als @csv Datei ausgeben, was uns die anschließende Auswertung per Excel sehr vereinfachte.
 
 
