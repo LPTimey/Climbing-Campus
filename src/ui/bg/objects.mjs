@@ -183,7 +183,7 @@ export const objs = Object.freeze(
     wheelchair: {
       type: "gltf",
       path: "./assets/Blender Output/3D/wheelchair.glb",
-      initialScale: 2,
+      initialScale: 10,
       cache: null,
     },
   },
