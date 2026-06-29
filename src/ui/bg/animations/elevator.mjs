@@ -15,8 +15,8 @@ const idleAnimation = ({ object, deltaTime, absTime }) => {
   const doorL = object.children[0].children[1];
   const doorR = object.children[0].children[2];
 
-  const mouseTop=window.innerHeight*0.35
-  const mouseBottom=window.innerHeight*0.60
+  const mouseTop=window.innerHeight*0.38
+  const mouseBottom=window.innerHeight*0.65
   const shift = (
     0.23
     +THREE.MathUtils.mapLinear(

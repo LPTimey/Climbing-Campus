@@ -66,7 +66,7 @@ export const arrow = {
         },
 
         transform: {
-          position: new THREE.Vector3(-100, 100, -25),
+          position: new THREE.Vector3(0, 100, -25),
           scale: new THREE.Vector3(0.5, 0.5, 0.5),
           rotation: new THREE.Quaternion().setFromEuler(
             new THREE.Euler(THREE.MathUtils.DEG2RAD*15, THREE.MathUtils.DEG2RAD*-45, THREE.MathUtils.DEG2RAD*5)

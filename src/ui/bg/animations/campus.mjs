@@ -13,8 +13,6 @@ import * as THREE from "three";
  * @import {AnimationObject,IdleAnimation} from "../animation-system.mjs"
  */
 
-
-
 const PopA = sectionOrErr("part_A");
 const PopB = sectionOrErr("part_B");
 const PopC = sectionOrErr("part_C");
@@ -23,6 +21,8 @@ const PopE = sectionOrErr("part_E");
 const PopG = sectionOrErr("part_G");
 const PopJ = sectionOrErr("part_J");
 const PopK = sectionOrErr("part_K");
+
+/** @type {[HTMLElement,string][]} */
 const popMap = [
   [PopA, "empty_A"],
   [PopB, "empty_B"],
@@ -34,15 +34,43 @@ const popMap = [
   [PopK, "empty_K"],
 ];
 
-
+/** @type {{position:THREE.Vector3,scale:THREE.Vector3}|null} */
+let original = null
+let emptyOffset = new THREE.Vector3(0,2,0);
 
 /** @type {IdleAnimation} */
 const idleAnimation = ({ object, deltaTime }) => {
+  const root = object.children[0];
+
+  if (!original) {
+    original = {
+      position:root.position.clone(),
+      scale:root.scale.clone(),
+    };
+  }
+
+  let targetEmpty = null;
+
+  for (const [popover, emptyName] of popMap) {
+    if (popover.matches(":popover-open")) {
+      targetEmpty = root.children.find(o => o.name === emptyName);
+      break;
+    }
+  }
+
+  if (targetEmpty) {
+    // Root so verschieben, dass der Empty auf dem Ursprung landet
+    root.position.copy(original.position).sub(targetEmpty.position.clone().sub(emptyOffset));
+    root.scale.setScalar(2)
+  } else {
+    // Zur Ausgangsposition zurück
+    root.position.copy(original.position);
+    root.scale.copy(original.scale);
+  }
 
   // subtle idle rotation
   object.rotateY(0.0001 * deltaTime);
 };
-
 
 /** @satisfies {AnimationObject} */
 export const campus = {
