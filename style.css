@@ -279,8 +279,6 @@ html {
         position: relative;
 
         [popover] {
-
-
             inset: 15% 5% 10% 50%;
             width: auto;
             height: auto;
@@ -310,7 +308,10 @@ html {
             }
 
             >[command="hide-popover"] {
-                margin-left: auto;
+                position: absolute;
+                top: 1.2rem;
+                right: 1.25rem;
+                font-size: 2rem;
             }
 
             .popover-content {}

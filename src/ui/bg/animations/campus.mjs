@@ -8,6 +8,7 @@ import {
   buildings,
   sectionOrErr,
 } from "../sections.mjs";
+import { createAxesHelper } from "@/lib/three_utils.mjs";
 import * as THREE from "three";
 /**
  * @import {AnimationObject,IdleAnimation} from "../animation-system.mjs"
@@ -36,7 +37,7 @@ const popMap = [
 
 /** @type {{position:THREE.Vector3,scale:THREE.Vector3}|null} */
 let original = null
-let emptyOffset = new THREE.Vector3(0,2,0);
+let emptyOffset = new THREE.Vector3(0,30,0);
 const zoomFactor = 2
 
 /** @type {IdleAnimation} */
@@ -48,6 +49,10 @@ const idleAnimation = ({ object, deltaTime }) => {
       position:root.position.clone(),
       scale:root.scale.clone(),
     };
+    // let root_helper = createAxesHelper(50)
+    // root.add(root_helper);
+    // let obj_helper = createAxesHelper(100)
+    // object.add(obj_helper);
   }
 
   let targetEmpty = null;
@@ -59,14 +64,25 @@ const idleAnimation = ({ object, deltaTime }) => {
     }
   }
 
+  const t = Math.min(deltaTime * 0.01, 1); // Geschwindigkeit anpassen
+
   if (targetEmpty) {
-    // Root so verschieben, dass der Empty auf dem Ursprung landet
-    root.position.copy(original.position).sub(targetEmpty.position.clone().sub(emptyOffset));
-    root.scale.setScalar(zoomFactor)
+    const targetPosition = original.position
+      .clone()
+      .sub(targetEmpty.position.clone().multiplyScalar(zoomFactor).sub(emptyOffset));
+
+    root.position.lerp(targetPosition, t);
+
+    const targetScale = new THREE.Vector3(
+      zoomFactor,
+      zoomFactor,
+      zoomFactor
+    );
+
+    root.scale.lerp(targetScale, t);
   } else {
-    // Zur Ausgangsposition zurück
-    root.position.copy(original.position);
-    root.scale.copy(original.scale);
+    root.position.lerp(original.position, t);
+    root.scale.lerp(original.scale, t);
   }
 
   // subtle idle rotation

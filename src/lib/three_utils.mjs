@@ -90,3 +90,26 @@ export function resizeIfNeeded(renderer, camera) {
   resize(renderer, camera);
   return true;
 }
+
+
+export function createAxesHelper(size = 1) {
+  const group = new THREE.Group();
+
+  const materialX = new THREE.LineBasicMaterial({ color: 0xff0000 });
+  const materialY = new THREE.LineBasicMaterial({ color: 0x00ff00 });
+  const materialZ = new THREE.LineBasicMaterial({ color: 0x0000ff });
+
+  const makeAxis = (to, material) => {
+    const geometry = new THREE.BufferGeometry().setFromPoints([
+      new THREE.Vector3(0, 0, 0),
+      to,
+    ]);
+    return new THREE.Line(geometry, material);
+  };
+
+  group.add(makeAxis(new THREE.Vector3(size, 0, 0), materialX));
+  group.add(makeAxis(new THREE.Vector3(0, size, 0), materialY));
+  group.add(makeAxis(new THREE.Vector3(0, 0, size), materialZ));
+
+  return group;
+}

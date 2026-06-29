@@ -101,6 +101,11 @@ export function createAnimation({ renderer, camera, scene, animation }) {
           case "inactive":
             anim.state.enum = "activating";
             anim.state.startTime = time;
+            (activeStream?.beforeEnter ?? defaultEntryExit.beforeEnter)?.({
+              startTime: time,
+              absTime: time,
+              deltaTime,
+            });
             break;
 
           default:
@@ -111,6 +116,11 @@ export function createAnimation({ renderer, camera, scene, animation }) {
           case "active":
             anim.state.enum = "deactivating";
             anim.state.startTime = time;
+            (activeStream?.beforeExit ?? defaultEntryExit.beforeExit)?.({
+              startTime: time,
+              absTime: time,
+              deltaTime,
+            });
             break;
 
           default:
@@ -148,7 +158,7 @@ export function createAnimation({ renderer, camera, scene, animation }) {
           break;
 
         case "activating": {
-          const fn = activeStream?.onEnter ?? defaultEntryExit.onEnter
+          const fn = activeStream?.onEnter ?? defaultEntryExit.onEnter;
           const done = fn({
             startTime: anim.state.startTime ?? time,
             absTime: time,
@@ -157,13 +167,20 @@ export function createAnimation({ renderer, camera, scene, animation }) {
           });
 
           if (done) {
+            (activeStream?.afterEnter ?? defaultEntryExit.afterEnter)?.({
+              startTime: anim.state.startTime ?? time,
+              absTime: time,
+              deltaTime,
+              object,
+            });
+
             anim.state.enum = "active";
           }
           break;
         }
 
         case "deactivating": {
-          const fn = activeStream?.onExit ?? defaultEntryExit.onExit
+          const fn = activeStream?.onExit ?? defaultEntryExit.onExit;
           const done = fn({
             startTime: anim.state.startTime ?? time,
             absTime: time,
@@ -172,6 +189,13 @@ export function createAnimation({ renderer, camera, scene, animation }) {
           });
 
           if (done) {
+            (activeStream?.afterExit ?? defaultEntryExit.afterExit)?.({
+              startTime: anim.state.startTime ?? time,
+              absTime: time,
+              deltaTime,
+              object,
+            });
+
             anim.state.enum = "inactive";
           }
           break;
@@ -240,12 +264,27 @@ function lerpTransforms(startTransform, endTransform, object, t) {
 /**
  * @param {Partial<Transform>} startTransform
  * @param {Partial<Transform>} endTransform
- * @return {{onEnter:SingleAnimation,onExit:SingleAnimation}}
+ * @param {PreSingleAnimation} [beforeEnter]
+ * @param {SingleAnimation} [afterEnter]
+ * @param {PreSingleAnimation} [beforeExit]
+ * @param {SingleAnimation} [afterExit]
+ * @return {{
+ *    beforeEnter:PreSingleAnimation,
+ *    onEnter:SingleAnimation,
+ *    afterEnter:SingleAnimation,
+ *    beforeExit:PreSingleAnimation,
+ *    onExit:SingleAnimation,
+ *    afterExit:SingleAnimation
+ * }}
  */
-export function defaultEntryExitAnimation(startTransform, endTransform) {
+export function defaultEntryExitAnimation(startTransform, endTransform, beforeEnter=()=>{},afterEnter=()=>{},beforeExit=()=>{},afterExit=()=>{}) {
   return {
     onEnter: defaultOnEnterAnimation(startTransform, endTransform),
     onExit: defaultOnExitAnimation(startTransform, endTransform),
+    beforeEnter,
+    afterEnter,
+    beforeExit,
+    afterExit,
   };
 }
 
@@ -383,6 +422,14 @@ function resolveOffset(value) {
  *   object: THREE.Object3D
  * }) => boolean} SingleAnimation
  */
+/**
+ * return true when finished
+ * @typedef {(params:{
+ *   startTime:number,
+ *   absTime:number,
+ *   deltaTime:number
+ * }) => boolean} PreSingleAnimation
+ */
 
 /** @typedef {number | (() => number)} Offset */
 
@@ -392,8 +439,12 @@ function resolveOffset(value) {
  * @property {Object} end
  * @property {Offset} end.offset
  * @property {Partial<Transform>} end.transform
+ * @property {PreSingleAnimation} [beforeEnter]
  * @property {SingleAnimation} [onEnter]
+ * @property {SingleAnimation} [afterEnter]
+ * @property {PreSingleAnimation} [beforeExit]
  * @property {SingleAnimation} [onExit]
+ * @property {SingleAnimation} [afterExit]
  */
 /**
  * @typedef {Object} SegmentStreamStep

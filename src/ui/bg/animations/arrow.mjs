@@ -12,13 +12,42 @@ import * as THREE from "three";
  * @import {AnimationObject, IdleAnimation} from "../animation-system.mjs"
  */
 
+/** @type {THREE.Vector3|null} */
+let originalPosition1 = null;
+/** @type {THREE.Vector3|null} */
+let originalPosition2 = null;
+
 /** @type {IdleAnimation} */
-const idleAnimation1 = ({ object, deltaTime, absTime }) => {
-  object.children[0].position.add(new THREE.Vector3(0,0,Math.sin(absTime/200)/50))
+const idleAnimation1 = ({ object, absTime }) => {
+  const child = object.children[0];
+
+  if (!originalPosition1) {
+    originalPosition1 = child.position.clone();
+  }
+
+  const offset = Math.sin(absTime / 200) / 5;
+
+  child.position.set(
+    originalPosition1.x,
+    originalPosition1.y,
+    originalPosition1.z + offset
+  );
 };
 /** @type {IdleAnimation} */
-const idleAnimation2 = ({ object, deltaTime, absTime }) => {
-  object.children[0].position.add(new THREE.Vector3(0,0,Math.sin(absTime/200)/50))
+const idleAnimation2 = ({ object, absTime }) => {
+  const child = object.children[0];
+
+  if (!originalPosition2) {
+    originalPosition2 = child.position.clone();
+  }
+
+  const offset = Math.sin(absTime / 200) / 5;
+
+  child.position.set(
+    originalPosition2.x,
+    originalPosition2.y,
+    originalPosition2.z + offset
+  );
 };
 
 /** @satisfies {AnimationObject} */
@@ -27,7 +56,7 @@ export const arrow = {
     {
 
       ...defaultEntryExitAnimation(
-        { 
+        {
           scale: new THREE.Vector3(0, 0, 0),
           rotation: new THREE.Quaternion().setFromEuler(
               new THREE.Euler(THREE.MathUtils.DEG2RAD*15, THREE.MathUtils.DEG2RAD*-50, THREE.MathUtils.DEG2RAD*5)
@@ -38,7 +67,7 @@ export const arrow = {
           rotation: new THREE.Quaternion().setFromEuler(
             new THREE.Euler(THREE.MathUtils.DEG2RAD*15, THREE.MathUtils.DEG2RAD*-50, THREE.MathUtils.DEG2RAD*5)
           )
-        },
+        }
       ),
       steps: [
         {
@@ -79,13 +108,13 @@ export const arrow = {
         { 
           scale: new THREE.Vector3(0, 0, 0),
           rotation: new THREE.Quaternion().setFromEuler(
-              new THREE.Euler(0, Math.PI/2, 0)
+              new THREE.Euler(Math.PI/16, Math.PI/2, 0)
             )
         },
         {
           scale: new THREE.Vector3(1.5, 1.5, 1.5),
           rotation: new THREE.Quaternion().setFromEuler(
-            new THREE.Euler(0, Math.PI/2, 0)
+            new THREE.Euler(Math.PI/16, Math.PI/2, 0)
           )
         },
       ),
@@ -100,7 +129,7 @@ export const arrow = {
             position: new THREE.Vector3(6.5, -3, 5),
             scale: new THREE.Vector3(1.5, 1.5, 1.5),
             rotation: new THREE.Quaternion().setFromEuler(
-              new THREE.Euler(0, Math.PI/2, 0)
+              new THREE.Euler(Math.PI/16, Math.PI/2, 0)
             )
           },
           idleAnimation: idleAnimation2,
