@@ -99,12 +99,19 @@ Mit statischen Daten meinen wir Daten die sich ändern und objektiv aufnehmen la
 In unserem Beispiel sind das konkret die tatsächlichen physikalischen Gebäude, deren Treppenhäuser und Treppenzahl, die Verbindungswege der THI sowie die festgelegten Stundenpläne, welche sich auf der Primuss-Stundenplanplattform befinden.
 
 ==== Treppenzahlen und mehr begehbares
-Da es logischerweise keine einsichtbare Übersicht über die Stufenanzahlen und Distanzen innerhalb und zwischen den Gebäuden an der THI gibt, mussten wir selbst Hand anpacken. Deshalb sind wir alle (Haupt-) Gebäude und Treppenhäuser des THI Campus' abgegangen, um Stufen und Distanzen manuell abzuzählen und -messen. Zur Fehlervermeidung führten wir hierbei beide einzeln unabhängig voneinander individuelle Zählungen durch und verglichen diese im Anschluss miteinander, um Messfehlern entgegenzuwirken. Im Anschluss an diese manuelle Datenerhebung haben wir dann die gewonnen Werte in einer Tabelle festgehalten. (@StairSheet).
+Da es logischerweise keine einsichtbare Übersicht über die Stufenanzahlen und Distanzen innerhalb und zwischen den Gebäuden an der THI gibt, mussten wir selbst Hand anpacken. Deshalb sind wir alle (Haupt-) Gebäude und Treppenhäuser des THI Campus' abgegangen, um Stufen und Distanzen manuell abzuzählen und -messen. Zur Fehlervermeidung führten wir hierbei beide einzeln unabhängig voneinander individuelle Zählungen durch und verglichen diese im Anschluss miteinander, um Messfehlern entgegenzuwirken. Im Anschluss an diese manuelle Datenerhebung haben wir dann die gewonnen Werte in einer Tabelle festgehalten.
+
+#figure(
+  image("../assets/archive/sheets/Stufen - Treppenstufen nach Gebäude - Google Sheets.png"),
+  caption: "Tabelle mit gesammelten Daten zu Stufen und Strecken",
+)
 
 
 ==== Stundenplan
 Um Daten innerhalb der Stundenpläne z.B. über übliche Routen zu erhalten, haben wir das Primuss-Stundenplan-System analysiert und herausgefunden, wie die Stundenpläne geladen werden.
 Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten unter Input eines validen @sessiontoken\s aus der Datenbank extrahiert und als @csv\-Datei exportiert. Somit konnten wir die Stundenpläne in einem maschinenlesbaren Format erhalten, um diese später für unsere Visualisierung zu nutzen.
+
+#pagebreak(weak: true)
 
 === Umfrage
 Da uns bewusst war, dass unsere Umfrage etwas umfangreicher sein würde, haben wir uns dazu entschieden die Umfrage zuerst in FigJam grob auszulegen, um schnelles Abändern des Umfragelayouts unkompliziert zu ermöglichen. FigJam eignet sich hierfür perfekt, da es viele Templates beinhaltet und simples Drag and Drop Editing nutzt (@SurveyDraft).
@@ -130,18 +137,19 @@ Mit dieser konzipierten Grundstruktur galt es nun, eine geeignete Plattform für
   align: center + bottom,
   [
     #figure(
-      image("../assets/archive/sheets/Stufen - Treppenstufen nach Gebäude - Google Sheets.png"),
-      caption: "Screenshot der Google Sheets Datei",
-    )<StairSheet>
-  ],
-  [
-    #figure(
       image("../assets/archive/Umfrage Draft.png"),
       caption: "Screenshot des FigJam-Umfragelayouts",
     )<SurveyDraft>
   ],
+  [
+    #figure(
+      image("../assets/archive/tally.png"),
+      caption: "Screenshot der Umfrage auf Tally",
+    )<StairSheet>
+  ],
 )
 
+#pagebreak(weak: true)
 
 === Visuals
 Als wichtigste Frage vor dem Start der eigentlichen Ausarbeitung der Visualisierung, versuchten wir zu identifizierten, was die Hauptfaktoren für eine gelungene Visualisierung sind. Schließlich identifizierten wir nach einem kurzen Brainstorming Konsistenz, Ästhetik und Readability.
@@ -158,9 +166,9 @@ Insgesamt legten wir beim Moodboard ein besonderes Augenmerk auf Konsistenz, wod
 Konkret entschieden wir uns hierbei für zwei primäre Schriftarten:
 
 #enum(indent: 10pt)[
-  _Mozilla Text_: Für Überschriften, bzw. allgemeine Textinhalte im Fokus sowie wichtige KPIs
+  #link("https://fonts.google.com/specimen/Mozilla+Text?preview.script=Latn", "Mozilla Text"): Für Überschriften, bzw. allgemeine Textinhalte im Fokus sowie wichtige KPIs
 ][
-  _Google Sans Flex_: Für Textinhalte im Hintergrund, die textlich unterstützend fungieren sollen und deshalb eine geringere Schriftbreite und einen dünneren Schriftschnitt aufweisen
+  #link("https://fonts.google.com/specimen/Google+Sans+Flex?preview.script=Latn", "Google Sans Flex"): Für Textinhalte im Hintergrund, die textlich unterstützend fungieren sollen und deshalb eine geringere Schriftbreite und einen dünneren Schriftschnitt aufweisen
 ]
 Zudem gibt es eine weitere Schriftart, _Coda_, welche jedoch ausschließlich Anwendung in der Wortmarke "_Climbing Campus_" unseres eigens erstellten Logos (@LogoKomponente) findet.
 Dieses wird mit einer Bildmarke kombiniert, welche eine abstrakte Treppe darstellt und absichtlich visuell 2-dimensional und flach wirkt, um sich vom restlichen Inhalt der Visualisierung zu unterscheiden. Damit sollte später als zentrales Erkennungsmerkmal in der Visualisierung auftauchen und die Identität des Projekts weiter stärken.
@@ -211,27 +219,15 @@ Nachdem die Ergebnisse letztenendes erhoben wurden, ließen sich diese ganz einf
 
 Anschließend begann die Verteilung der Umfrage. Zunächst verschickten wir sie über die uns zugänglichen Verteiler, insbesondere verschiedene WhatsApp-Gruppen. Dabei baten wir die Teilnehmenden, die Umfrage nach dem Ausfüllen im Sinne eines Schneeball-Systems weiterzuleiten. In der Praxis erwies sich dieses Konzept jedoch als Wunschdenken, da wir nach etwa zwei Wochen lediglich sieben Teilnehmende erreicht hatten. Daher passten wir unsere Strategie an und sprachen gezielt einzelne Personen direkt an, um sie für die Teilnahme zu gewinnen. Dies geschah sowohl bei Studierenden als auch bei Angestellten der THI.
 
-#grid(
-  columns: (auto, auto),
-  gutter: 0.5em,
-  align: center + bottom,
 
-  [
-    #figure(
-      image("../assets/archive/tally.png", width: 100%),
 
-      caption: [Tally Umfrage],
-    )
-  ],
 
-  [
-    #figure(
-      image("../assets/archive/tally insights.png", width: 100%),
+#figure(
+  image("../assets/archive/tally insights.png", width: 100%),
 
-      caption: [Tally Ergebnisse],
-    )
-  ],
+  caption: [Tally Ergebnisse],
 )
+
 
 === Programmierung der Visualisierung
 Mit der nun bestehenden konzeptionellen Grundlage konnten wir jetzt schließlich mit der konkreten technischen Ausarbeitung beginnen. Hierzu legten wir zunächst ein Github-Repository an, um ein zentralisiertes Speichersystem sowie eine Historie an Änderungen gut verwalten zu können. Der nächste Schritt war nun das initiale technische Layouting der HTML-Datei. Wir überlegten uns also konkret, welche Sektionen die finale Ausarbeitung umfassen sollte und legten diese im Anschluss an.
@@ -281,8 +277,11 @@ native semantic HTML, Command, Popover\
 Blender\
 
 ===== JS
+
+Da wir unsere 3d-Objekte nicht nur schlicht ein- und ausblenden, sondern im Sinne einer visuell ansprechenden Darstellung dynamisch im Raum animieren wollten, mussten wir uns um ein Animationssystem kümmern. Wir entschieden uns hierbei, dieses selbst mittels JavaScript zu schreiben, um bessere Kontrolle über die Animationen zu haben und es im Allgemeinen an unseren Use Case anpassen zu können. Somit konnten wir für jedes importierte 3d-Objekt festlegen, wie es sich beim Erscheinen, Verweilen und schließlich beim Verschwinden animationstechnisch verhält. Dafür legten wir bestimmte Transformationen wie Skalierung, Translation und Rotation für das jeweilige Verhalten fest.
+Um die Objekte einer bestimmten Sektion innerhalb der Single Page Application zuzuweisen zu können, mussten wir die vertikale Scroll-Position des Nutzers mit Anfang und Ende der jeweiligen Abschnitte abgleichen, um bei Übereinstimmung die Animationen starten zu können. Leider gab es hier eine größere Limitation, da wir zunächst diese vertikale Positionen mit Gleitkommazahlen (floats) verglichen haben. Diese besitzen ihre Eigenheiten und sind nicht gut für direktes Vergleichen geeignet, wodurch bestimmte Animationen gar nicht oder im falschen Abschnitt geschahen. Dieses Problem lösten wir schließlich, indem wir nur die Ganzzahl vor den Nullstellen verglichen, um sicherzustellen, dass alles korrekt abläuft.
 Animationssystem:\
-TODO: das mit Browser-cache + Browser-reload vs -refresh + FloatCmp
+TODO: das mit Browser-cache + Browser-reload vs -refresh in diesem Text ergänzen
 
 
 = Ergebnis
