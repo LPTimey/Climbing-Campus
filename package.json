@@ -18,8 +18,6 @@
   },
   "dependencies": {
     "@types/three": "0.184.0",
-    "cheerio": "^1.2.0",
-    "echarts": "6.1.0",
     "three": "0.184.0"
   },
   "devDependencies": {
