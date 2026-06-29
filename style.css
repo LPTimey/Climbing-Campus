@@ -277,6 +277,28 @@ html {
 
     #Buildings {
         position: relative;
+        gap: 5rem;
+
+        >div>ul{
+            translate: 350% 0;
+            >li>button {
+            margin-block: 0.25rem;
+            padding: .5rem 2rem;
+            border: 1px solid transparent;
+            border-radius: 1rem;
+            font-weight: 700;
+            background:
+                /* content gradient */
+                linear-gradient(to bottom,
+                    color-mix(in oklch, var(--violet-light) 75%, var(--violet-dark) 90%),
+                    color-mix(in oklch, var(--violet-light) 50%, var(--violet-dark) 10%)) padding-box,
+
+                /* border gradient */
+                linear-gradient(to right,
+                    color-mix(in oklch, color-mix(in oklch, var(--violet-light) 75%, var(--violet-dark)) 75%, var(--purple-light)),
+                    oklch(65.33% 0.23148 304.428),
+                    oklch(40.517% 0.22149 293.865)) border-box;
+        }}
 
         [popover] {
             inset: 15% 5% 10% 50%;
@@ -304,7 +326,9 @@ html {
             &:popover-open {
                 display: flex;
                 flex-direction: column;
+                justify-content: center;
                 gap: var(--gap);
+                gap: 5rem;
             }
 
             >[command="hide-popover"] {
