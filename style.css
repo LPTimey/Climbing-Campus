@@ -340,11 +340,13 @@ html {
                 padding: 2rem;
 
                 progress {
-                    background: oklch(32% 0.04 290 / 0.5);
-                    border: none;
+                    background: color-mix(var(--light), transparent 95%);
+                    border-radius: 100dvw;
+                    border: 2px solid color-mix(var(--light), transparent 95%);
 
                     &::-moz-progress-bar {
-                        background: var(--purple-light);
+                        background: linear-gradient(to right, color-mix(var(--light), transparent 10%),color-mix(var(--light) 30%, var(--purple-light) 50%, transparent 50%));
+                        border-radius: 1rem;
                     }
                 }
             }
