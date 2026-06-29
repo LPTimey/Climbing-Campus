@@ -29,6 +29,7 @@
       lang: "de",
       region: "DE",
       number-width: "tabular",
+      // slashed-zero: false,
       slashed-zero: true,
       overhang: true,
       font: "Mozilla Text",

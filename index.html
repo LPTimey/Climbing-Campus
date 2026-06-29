@@ -37,11 +37,18 @@
 
   <body>
     <header>
-      <nav aria-label="Main navigation">
+      <nav aria-label="Main navigation" style="anchor-name: --menu">
         <a href="#Intro">Start</a>
-        <a href="#MetaOutline">Results</a>
-        <a href="#Charts">Graphs</a>
+        <button popovertarget="resultsNav" popovertargetaction="toggle">Results</button>
         <a href="#Infra">Explanations</a>
+      </nav>
+      <nav id="resultsNav" popover="auto">
+        <a href="#MetaOutline">Topics</a>
+        <a href="#UX">User eXperience</a>
+        <a href="#Time">Timetables</a>
+        <a href="#Infra">Infrastructure</a>
+        <a href="#Buildings">Campus</a>
+        <a href="#Accessibility">Accessibility</a>
       </nav>
     </header>
     <main>
@@ -115,7 +122,7 @@
       </section>
       <section id="MetaOutline">
         <div class="grid">
-          <hgroup>
+          <hgroup class="max-w-wrapper">
             <h2 class="fs-h1 fw-700">…About</h2>
           </hgroup>
           <div>
@@ -189,26 +196,26 @@
           </p>
         </hgroup>
         <div id="word-cloud">
-          <p class="weight_1;">plants</p>
-          <p class="weight_1;">decoration</p>
-          <p class="weight_1;">resting areas</p>
-          <p class="weight_1;">social spaces</p>
+          <p class="weight-1">plants</p>
+          <p class="weight-3">ventilation</p>
+          <p class="weight-2">workstations</p>
+          <p class="weight-1">social spaces</p>
+          
+          <p class="weight-3">outlets</p>
+          <p class="weight-2">study spaces</p>
+          <p class="weight-3">paths</p>
+          <p class="weight-2-5">wayfinding</p>
+          <p class="weight-1">decoration</p>
+          <p class="weight-2-5">campus movement</p>
+          <p class="weight-2">classroom technology</p>
 
-          <p class="weight_2;">study spaces</p>
-          <p class="weight_2;">workstations</p>
-          <p class="weight_2;">classroom technology</p>
+          <p class="weight-2-5">accessibility</p>
 
-          <p class="weight_2.5;">accessibility</p>
-          <p class="weight_2.5;">wayfinding</p>
-          <p class="weight_2.5;">campus movement</p>
-          <p class="weight_2.5;">barrier-free access</p>
-
-          <p class="weight_3;">buildings</p>
-          <p class="weight_3;">maintenance</p>
-          <p class="weight_3;">paths</p>
-          <p class="weight_3;">ventilation</p>
-          <p class="weight_3;">outlets</p>
-          <p class="weight_3;">construction impacts</p>
+          <p class="weight-3">construction impacts</p>
+          <p class="weight-2-5">barrier-free access</p>
+          <p class="weight-3">buildings</p>
+          <p class="weight-3">maintenance</p>
+          <p class="weight-1">resting areas</p>
         </div>
       </section>
       <section id="Buildings">
