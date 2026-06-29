@@ -8,6 +8,7 @@ import { steps3D } from "./animations/steps.mjs";
 import { buildings } from "./animations/buildings.mjs";
 import { clock } from "./animations/clock.mjs";
 import { smiley } from "./animations/smiley.mjs";
+import { stress } from "./animations/stress.mjs";
 import { wheelchair } from "./animations/wheelchair.mjs";
 
 /**
@@ -24,5 +25,6 @@ export const animations = {
   questionMark,
   smiley,
   stairs: steps3D,
+  stress,
   wheelchair,
 };

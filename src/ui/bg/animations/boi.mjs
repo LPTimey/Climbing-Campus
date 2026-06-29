@@ -32,7 +32,7 @@ export const accessibilityBoy = {
             return getSectionOffsets(intro).startOffset;
           },
           startTransform: {
-            position: new THREE.Vector3(100, -50, -50),
+            position: new THREE.Vector3(85, -45, -75),
             scale: new THREE.Vector3(2, 2, 2),
           },
           idleAnimation,
@@ -42,8 +42,8 @@ export const accessibilityBoy = {
             return getSectionOffsets(attendees).startOffset;
           },
           startTransform: {
-            position: new THREE.Vector3(-45, 0, -5),
-            scale: new THREE.Vector3(3.5, 3.5, 3.5),
+            position: new THREE.Vector3(-25, 0, -5),
+            scale: new THREE.Vector3(3, 3, 3),
           },
           idleAnimation,
         },
@@ -52,8 +52,8 @@ export const accessibilityBoy = {
             return getSectionOffsets(steps).startOffset;
           },
           startTransform: {
-            position: new THREE.Vector3(-150, 75, -75),
-            scale: new THREE.Vector3(2, 2, 2),
+            position: new THREE.Vector3(-150, 70, -150),
+            scale: new THREE.Vector3(1.5, 1.5, 1.5),
           },
           idleAnimation,
         },
@@ -65,8 +65,8 @@ export const accessibilityBoy = {
         },
 
         transform: {
-          position: new THREE.Vector3(-200, 50, -25),
-          scale: new THREE.Vector3(0.5, 0.5, 0.5),
+          position: new THREE.Vector3(-300, 70, -150),
+          scale: new THREE.Vector3(2, 2, 2),
         },
       },
     },

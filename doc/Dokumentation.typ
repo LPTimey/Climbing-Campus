@@ -267,22 +267,48 @@ Da wir wie erwähnt mit einem 3d-Framework arbeiten, mussten wir dieses zusätzl
 
 Nachdem dieses Grundgerüst bestand, machten wir uns an das genauere Ausarbeiten der Inhalte. Dies betraf zum einen die konkreten Inhalt selbst, die wir in die vorher definierten Sektionen, bzw. Abschnitte einfügten, zum anderen jedoch auch das Styling. Dieses wurde durch feste Style-Definitionen per CSS und stets im Bezug zum festgelegten Styleguide realisiert.
 
-==== HTML/CSS
-SPA,\
-CSS Layers\
-native semantic HTML, Command, Popover\
-
-==== 3D
 ===== Models
 Blender\
 
 ===== JS
 
 Da wir unsere 3d-Objekte nicht nur schlicht ein- und ausblenden, sondern im Sinne einer visuell ansprechenden Darstellung dynamisch im Raum animieren wollten, mussten wir uns um ein Animationssystem kümmern. Wir entschieden uns hierbei, dieses selbst mittels JavaScript zu schreiben, um bessere Kontrolle über die Animationen zu haben und es im Allgemeinen an unseren Use Case anpassen zu können. Somit konnten wir für jedes importierte 3d-Objekt festlegen, wie es sich beim Erscheinen, Verweilen und schließlich beim Verschwinden animationstechnisch verhält. Dafür legten wir bestimmte Transformationen wie Skalierung, Translation und Rotation für das jeweilige Verhalten fest.
-Um die Objekte einer bestimmten Sektion innerhalb der Single Page Application zuzuweisen zu können, mussten wir die vertikale Scroll-Position des Nutzers mit Anfang und Ende der jeweiligen Abschnitte abgleichen, um bei Übereinstimmung die Animationen starten zu können. Leider gab es hier eine größere Limitation, da wir zunächst diese vertikale Positionen mit Gleitkommazahlen (floats) verglichen haben. Diese besitzen ihre Eigenheiten und sind nicht gut für direktes Vergleichen geeignet, wodurch bestimmte Animationen gar nicht oder im falschen Abschnitt geschahen. Dieses Problem lösten wir schließlich, indem wir nur die Ganzzahl vor den Nullstellen verglichen, um sicherzustellen, dass alles korrekt abläuft.
-Animationssystem:\
-TODO: das mit Browser-cache + Browser-reload vs -refresh in diesem Text ergänzen
+Um die Objekte einer bestimmten Sektion innerhalb der Single Page Application zuzuweisen zu können, mussten wir die vertikale Scroll-Position des Nutzers mit Anfang und Ende der jeweiligen Abschnitte abgleichen, um bei Übereinstimmung die Animationen starten zu können. Leider gab es hier eine größere Limitation, da wir zunächst diese vertikale Positionen mit Gleitkommazahlen (floats) verglichen haben. Diese besitzen ihre Eigenheiten und sind nicht gut für direktes Vergleichen geeignet (Partial Order), was in Kombination mit Scroll Snapping dazu führte, dass bestimmte Animationen gar nicht oder im falschen Abschnitt geschahen. Dieses Problem lösten wir schließlich, indem wir quasi nur die Ganzzahl vor den Nullstellen verglichen (delta von 1), um sicherzustellen, dass alles korrekt abläuft.
 
+TODO: das mit Browser-cache + Browser-reload vs -refresh in diesem Text ergänzen
+Animationssystem:\
+
+=== Gestaltung der Access Points
+
+Da wir eine rein digitale Informationsvisualisierung entwickeln, stoßen wir automatisch auf die Frage, wie man für den Betrachter sichtbar wird. Hierbei entschieden wir uns, eine Vielzahl an Stickern als Access Point zu gestalten. Diese zeigen eine leicht provokative, und folglich anregende Headline sowie einen kleinen Teaser-Text mit passendem 3d-Objekt. Zusätzlich, und von zentraler Wichtigkeit, befindet sich ganz links ein QR-Code, welcher auf unsere Website verlinkt.
+Für diese Sticker entwarfen wir mehrere Designs, um genug Abwechslung zu schaffen.
+
+#pad(top: 1cm, grid(
+  columns: (auto, auto),
+  rows: 6cm,
+  gutter: 0.5em,
+  align: center + horizon,
+  [
+    #figure(
+      image("../assets/archive/stickers.png", width: 100%),
+      caption: [Screenshot der Sticker aus Figma],
+    )
+  ],
+
+  [
+    #figure(
+      block(
+        fill: gradient.linear(rgb("#e3e9ee"),rgb("#c0b0cd"), angle: 90deg),
+        inset: 1em,
+        height: 100%,
+      )[
+        #image("../assets/archive/sticker-on-stairs.png", width: 90%)
+      ],
+      caption: [Storyboard Sketches],
+    )],
+))
+
+#pagebreak(weak: true)
 
 = Ergebnis
 

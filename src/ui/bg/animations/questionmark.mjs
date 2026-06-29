@@ -44,8 +44,8 @@ export const questionMark = {
             );
           },
           startTransform: {
-            position: new THREE.Vector3(-150, -75, -75),
-            scale: new THREE.Vector3(2, 2, 2),
+            position: new THREE.Vector3(-95,-50,-75),
+            scale: new THREE.Vector3(1, 1, 1),
           },
           idleAnimation,
         },
@@ -56,8 +56,8 @@ export const questionMark = {
             );
           },
           startTransform: {
-            position: new THREE.Vector3(-40, 0, -5),
-            scale: new THREE.Vector3(6, 6, 6),
+            position: new THREE.Vector3(-25, -1.5, 0),
+            scale: new THREE.Vector3(4, 4, 4),
           },
           idleAnimation,
         },

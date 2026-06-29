@@ -64,7 +64,7 @@ export const clock = {
     {
       ...defaultEntryExitAnimation(
         { scale: new THREE.Vector3(0, 0, 0) },
-        { scale: new THREE.Vector3(7, 7, 7) },
+        { scale: new THREE.Vector3(6, 6, 6) },
       ),
       steps: [
         {
@@ -72,8 +72,8 @@ export const clock = {
             return getSectionOffsets(outline).startOffset;
           },
           startTransform: {
-            position: new THREE.Vector3(-30, -5, -5),
-            scale: new THREE.Vector3(7, 7, 7),
+            position: new THREE.Vector3(-16.5, -5, -5),
+            scale: new THREE.Vector3(6, 6, 6),
           },
           idleAnimation:idleAnimation1,
         },

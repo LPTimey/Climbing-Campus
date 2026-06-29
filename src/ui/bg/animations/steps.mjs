@@ -24,7 +24,7 @@ export const steps3D = {
     {
       ...defaultEntryExitAnimation(
         { scale: new THREE.Vector3(0, 0, 0) },
-        { scale: new THREE.Vector3(3, 3, 3) },
+        { scale: new THREE.Vector3(2, 2, 2) },
       ),
       steps: [
         {
@@ -32,8 +32,8 @@ export const steps3D = {
             return getSectionOffsets(intro).startOffset;
           },
           startTransform: {
-            position: new THREE.Vector3(-55, 15, 10),
-            scale: new THREE.Vector3(3, 3, 3),
+            position: new THREE.Vector3(-25, 10, 15),
+            scale: new THREE.Vector3(2, 2, 2),
           },
           idleAnimation,
         },
@@ -42,8 +42,8 @@ export const steps3D = {
             return getSectionOffsets(attendees).startOffset;
           },
           startTransform: {
-            position: new THREE.Vector3(-150, -75, -75),
-            scale: new THREE.Vector3(2, 2, 2),
+            position: new THREE.Vector3(-95,-50,-75),
+            scale: new THREE.Vector3(1.5, 1.5, 1.5),
           },
           idleAnimation,
         },
@@ -52,8 +52,8 @@ export const steps3D = {
             return getSectionOffsets(steps).startOffset;
           },
           startTransform: {
-            position: new THREE.Vector3(-40, 0, -5),
-            scale: new THREE.Vector3(6, 6, 6),
+            position: new THREE.Vector3(-25, 0, 0),
+            scale: new THREE.Vector3(4, 4, 4),
           },
           idleAnimation,
         },
@@ -62,8 +62,8 @@ export const steps3D = {
             return getSectionOffsets(feelings).startOffset;
           },
           startTransform: {
-            position: new THREE.Vector3(-150, 75, -75),
-            scale: new THREE.Vector3(2, 2, 2),
+            position: new THREE.Vector3(-150, 70, -150),
+            scale: new THREE.Vector3(1.5, 1.5, 1.5),
           },
           idleAnimation,
         },
@@ -75,8 +75,8 @@ export const steps3D = {
         },
 
         transform: {
-          position: new THREE.Vector3(-200, 50, -25),
-          scale: new THREE.Vector3(0.5, 0.5, 0.5),
+          position: new THREE.Vector3(-300, 70, -150),
+          scale: new THREE.Vector3(1.5, 1.5, 1.5),
         },
       },
     },

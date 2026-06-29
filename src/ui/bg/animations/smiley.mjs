@@ -19,35 +19,5 @@ const idleAnimation = ({ object, deltaTime }) => {
 
 /** @satisfies {AnimationObject} */
 export const smiley = {
-  segments: [
-    {
-      steps: [
-        {
-          get offset() {
-            return (
-              getSectionOffsets(outline).startOffset
-            );
-          },
-          startTransform: {
-            position: new THREE.Vector3(-45, -5, -5),
-            scale: new THREE.Vector3(1.5, 1.5, 1.5),
-          },
-          idleAnimation,
-        },
-      ],
-
-      end: {
-        get offset() {
-          return (
-            getSectionOffsets(ux).startOffset
-          );
-        },
-
-        transform: {
-          position: new THREE.Vector3(-100, 100, -25),
-          scale: new THREE.Vector3(0.5, 0.5, 0.5),
-        },
-      },
-    },
-  ],
+  segments: [],
 };
