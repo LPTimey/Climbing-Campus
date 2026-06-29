@@ -239,7 +239,14 @@ html {
             width: auto;
             height: auto;
             border: 1px solid red;
+            &:popover-open{
+                
+            }
         }
+    }
+
+    .building-content {
+        display: flex;
     }
 
 
