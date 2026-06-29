@@ -319,5 +319,27 @@ Für diese Sticker entwarfen wir mehrere Designs, um genug Abwechslung zu schaff
   caption: [Example Screenshot],
 )
 
+
+Zum Abschluss haben wir eine Single-Page-Website entwickelt, die mithilfe von Three.js 3D-Modelle zur Datenvisualisierung der Treppen und Stundenpläne an der THI integriert.
+
+Der finale Aufbau beginnt mit unserem Branddesign und den zentralen 3D-Objekten. Anschließend werden allgemeine Informationen über Studierende und Mitarbeitende an der THI präsentiert, darunter die Gesamtanzahl der Personen sowie die Anzahl der Treppenstufen, die sich auf dem Campus „verstecken“ --- zumindest im Rahmen der Zählung und innerhalb für Studierende zugänglicher Bereiche wie Treppenhäusern.
+
+Im Hauptteil folgt eine teaserartige Gliederung, die die im Rahmen der Studie aufbereiteten Daten strukturiert zusammenfasst:
+
+== User Experience am Campus
+Kurze Zusammenfassung der wichtigsten Erkenntnisse zur Nutzung des Campus im Alltag. Dabei wird deutlich, wie sich Studierende in den Gebäuden bewegen, welche Wege bevorzugt werden und wo häufige Orientierungspunkte oder Probleme entstehen.
+
+== Terminkalender der UXD
+Eine Übersicht über typische Tages- und Wochenabläufe im UX-Design-Studium. Hier werden Vorlesungen, Projektzeiten und Arbeitsphasen gegenübergestellt, um typische Belastungs- und Nutzungsdauern des Campus sichtbar zu machen.
+
+== Wünsche an den Campus
+Zusammenfassung der häufigsten Verbesserungsvorschläge von Studierenden und Mitarbeitenden as Wordcloud.
+
+== Bewertung der Gebäude
+Darstellung der unterschiedlichen Campusgebäude anhand von Feedback und Nutzungsdaten. Dabei werden Aspekte wie Atmosphäre, Funktionalität und Orientierung bewertet und miteinander verglichen.
+
+== Barrierefreiheit am Campus
+Analyse der Zugänglichkeit der Gebäude für alle Nutzergruppen. Im Fokus stehen Aufzüge, Rampen, Beschilderung und mögliche Hürden im Alltag von Menschen mit eingeschränkter Mobilität.
+
 #outline(target: figure, title: "Bilderverzeichnis") <ListOfFigures>
 #bibliography("Dokumentation.bib", style: "iso-690-numeric")

@@ -105,6 +105,45 @@ html {
 
 @layer content {
 
+    #UX {
+        gap: 2rem;
+        position: relative;
+    }
+
+    #likert {
+        isolation: isolate;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap);
+        align-items: end;
+        translate: -7.5rem;
+
+        .purple {
+            color: var(--purple-light);
+        }
+
+        &::after{
+            z-index: -1;
+            content: "";
+            position: absolute;
+            right: 0px;
+            top: 57%;
+            translate: 45% 0;
+            width:  25%;
+            height: 1px;
+            /* box-shadow: 0 0 .5rem .5rem color-mix(var(--light), transparent 75%); */
+            
+            border-radius: 100dvh;
+            border: color-mix(var(--light), transparent 50%) 1.5px dashed;
+        }
+    }
+    #AVGScore{
+        position: absolute;
+        left:68%;
+        top: 55.55%;
+    }
+
     #Time {
         position: relative;
     }
@@ -169,13 +208,14 @@ html {
         --index: 4;
     }
 
-    #Infra{
+    #Infra {
         display: grid;
         align-content: center;
         align-items: center;
         justify-content: center;
         gap: 3rem;
-        hgroup{
+
+        hgroup {
             text-align: center;
         }
     }
@@ -190,10 +230,11 @@ html {
         margin: auto;
 
         &:has(p:hover) {
-            p:hover{
+            p:hover {
                 opacity: 1;
             }
-            p:not(:hover){
+
+            p:not(:hover) {
                 opacity: 0.25;
             }
         }
@@ -204,23 +245,25 @@ html {
         cursor: default;
         transition: transform .2s ease, opacity .4s ease-in-out;
         user-select: none;
-    
+
         &.weight-1 {
             font-size: calc(1rem * pow(var(--ratio), var(--step)));
             font-weight: 400;
             opacity: .4;
         }
-    
+
         &.weight-2 {
             font-size: calc(2rem * pow(var(--ratio), var(--step)));
             font-weight: 500;
             opacity: .6;
         }
+
         &.weight-2-5 {
             font-size: calc(2.25rem * pow(var(--ratio), var(--step)));
             font-weight: 600;
             opacity: .8;
         }
+
         &.weight-3 {
             font-size: calc(3.5rem * pow(var(--ratio), var(--step)));
             font-weight: 700;
@@ -232,15 +275,78 @@ html {
         transform: scale(1.1);
     }
 
-    #Buildings{
-        position:relative;
-        [popover]{
+    #Buildings {
+        position: relative;
+
+        [popover] {
+
+
             inset: 15% 5% 10% 50%;
             width: auto;
             height: auto;
-            border: 1px solid red;
-            &:popover-open{
-                
+            border: 1px solid transparent;
+            background:
+                /* content gradient */
+                linear-gradient(to bottom,
+                    color-mix(in oklch, var(--violet-light) 75%, var(--violet-dark) 90%),
+                    color-mix(in oklch, var(--violet-light) 50%, var(--violet-dark) 10%)) padding-box,
+
+                /* border gradient */
+                linear-gradient(to right,
+                    color-mix(in oklch, color-mix(in oklch, var(--violet-light) 75%, var(--violet-dark)) 75%, var(--purple-light)),
+                    oklch(65.33% 0.23148 304.428),
+                    oklch(40.517% 0.22149 293.865)) border-box;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+
+            box-shadow:
+                8px 8px 18px oklch(8% 0.03 290 / 0.6);
+
+
+            &:popover-open {
+                display: flex;
+                flex-direction: column;
+                gap: var(--gap);
+            }
+
+            >[command="hide-popover"] {
+                margin-left: auto;
+            }
+
+            .popover-content {}
+        }
+
+        .building-content {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .bar {
+            display: flex;
+            width: 100%;
+            height: 55px;
+
+            label {
+                display: flex;
+
+                text-align: right;
+                width: 100%;
+
+                justify-content: space-between;
+                align-items: center;
+
+                gap: var(--gap);
+                padding: 2rem;
+
+                progress {
+                    background: oklch(32% 0.04 290 / 0.5);
+                    border: none;
+
+                    &::-moz-progress-bar {
+                        background: var(--purple-light);
+                    }
+                }
             }
         }
     }
@@ -283,7 +389,7 @@ html {
         scale: 1.25;
     }
 
-    
+
 }
 
 
@@ -376,13 +482,15 @@ html {
             }
         }
     }
+
     #resultsNav {
         position-anchor: --menu;
         position: fixed;
         top: calc(anchor(bottom) + 0.75rem);
         margin-inline: auto;
         min-width: anchor-size();
-        &:not(&:popover-open){
+
+        &:not(&:popover-open) {
             display: none;
         }
     }
