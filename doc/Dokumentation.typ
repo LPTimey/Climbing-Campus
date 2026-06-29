@@ -299,7 +299,7 @@ Für diese Sticker entwarfen wir mehrere Designs, um genug Abwechslung zu schaff
   [
     #figure(
       block(
-        fill: gradient.linear(rgb("#e3e9ee"),rgb("#c0b0cd"), angle: 90deg),
+        fill: gradient.linear(rgb("#e3e9ee"), rgb("#c0b0cd"), angle: 90deg),
         inset: 1em,
         height: 100%,
       )[
@@ -318,6 +318,7 @@ Für diese Sticker entwarfen wir mehrere Designs, um genug Abwechslung zu schaff
 
   caption: [Example Screenshot],
 )
+https://lptimey.github.io/Climbing-Campus/
 
 
 Zum Abschluss haben wir eine Single-Page-Website entwickelt, die mithilfe von Three.js 3D-Modelle zur Datenvisualisierung der Treppen und Stundenpläne an der THI integriert.
@@ -327,19 +328,19 @@ Der finale Aufbau beginnt mit unserem Branddesign und den zentralen 3D-Objekten.
 Im Hauptteil folgt eine teaserartige Gliederung, die die im Rahmen der Studie aufbereiteten Daten strukturiert zusammenfasst:
 
 == User Experience am Campus
-Kurze Zusammenfassung der wichtigsten Erkenntnisse zur Nutzung des Campus im Alltag. Dabei wird deutlich, wie sich Studierende in den Gebäuden bewegen, welche Wege bevorzugt werden und wo häufige Orientierungspunkte oder Probleme entstehen.
+Die allgemeine Nutzererfahrung am Campus der THI wurde mit einer gemittelten Bewertung von 2.9 bewertet, welche damit leicht unter dem akzeptablen Wert liegt. Wir haben dies über eine ähnliche Skala visualisiert wie dieser Wert auch in unserer Umfrage abgefragt wurde.
 
 == Terminkalender der UXD
-Eine Übersicht über typische Tages- und Wochenabläufe im UX-Design-Studium. Hier werden Vorlesungen, Projektzeiten und Arbeitsphasen gegenübergestellt, um typische Belastungs- und Nutzungsdauern des Campus sichtbar zu machen.
+Da wir sehr schlecht die komplexen Terminkalender, bzw. Stundenpläne ohne große Komplexität abbilden können, entschlossen wir uns, das genaue Gegenteil zu tun. Wir stellten also nur das Wichtigste dar: Die absoluten Zeiten, welche die einzelnen User Experience Studiengänge wöchentlich bewältigen. Dies unterstrichen wir durch Einbindung einer 3d-Uhr, wessen Zeiger dynamisch der Maus folgt und die einzelnen Datenpunkte weiter betont.
 
 == Wünsche an den Campus
-Zusammenfassung der häufigsten Verbesserungsvorschläge von Studierenden und Mitarbeitenden as Wordcloud.
+Da Wünsche an sich schwer numerisch darzustellen sind, entschieden wir uns, die genannten Maßnahmen zur Verbesserung der Infrastruktur an der THI mit rein qualitativ kodierten Daten in Form einer Word Cloud darzustellen. Diese veranschaulicht die Relationen bzgl. der Häufigkeit an Nennungen der einzelnen Aspekte, während hier besonders auch unsere Typografie im Vordergrund steht und eine Bühne bekommt.
 
 == Bewertung der Gebäude
-Darstellung der unterschiedlichen Campusgebäude anhand von Feedback und Nutzungsdaten. Dabei werden Aspekte wie Atmosphäre, Funktionalität und Orientierung bewertet und miteinander verglichen.
+Die sehr komplexen Zahlenwerte der Gebäudewertungen am Campus war ein besonders schwieriger Punkte, da wir viele verschiedene Daten auf einmal darstellen mussten. Dies lösten wir, indem wir die Daten filterten und nur ein Gebäude und dessen Datenpunkte auf einmal anzeigen ließen. Somit wurde Übersicht und Verständnis dieses Visualisierungsabschnitts bewahrt.
 
 == Barrierefreiheit am Campus
-Analyse der Zugänglichkeit der Gebäude für alle Nutzergruppen. Im Fokus stehen Aufzüge, Rampen, Beschilderung und mögliche Hürden im Alltag von Menschen mit eingeschränkter Mobilität.
+Die abgefragten Problempunkte bezüglich der Barrierefreiheit und Inklusion an der THI sollte ausschließlich Kategorien und deren Häufigkeit an Nennung darstellen. Zwar hätte sich auch hier eine Word Cloud angeboten, jedoch wollten wir solch eine Dopplung innerhalb unserer Informationsvisualisierung vermeiden. Wir entschieden und also, die Reihenfolge anders darzustellen und nutzten das eingebundene 3d-Objekt, einen Fahrstuhl, wessen Türen sicher mit jedem Datenpunkt mehr oder weniger öffnen. Somit lassen sich die Unterschiede gut nachvollziehen, was zusätzlich durch eine Nummerierung der Liste unterstützt wird.
 
 #outline(target: figure, title: "Bilderverzeichnis") <ListOfFigures>
 #bibliography("Dokumentation.bib", style: "iso-690-numeric")

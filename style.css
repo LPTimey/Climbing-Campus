@@ -338,7 +338,23 @@ html {
                 font-size: 2rem;
             }
 
-            .popover-content {}
+            .popover-body {
+                height: 100%;
+
+                label {
+                    font-size: 1.25rem;
+                }
+
+                >p {
+                    border-top: 2px solid color-mix(var(--light), transparent 75%);
+                    margin-top: 2rem;
+                    padding-top: 1rem;
+                }
+
+                .KPI {
+                    width: 100%
+                }
+            }
         }
 
         .building-content {
