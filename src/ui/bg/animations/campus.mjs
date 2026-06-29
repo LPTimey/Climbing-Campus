@@ -37,6 +37,7 @@ const popMap = [
 /** @type {{position:THREE.Vector3,scale:THREE.Vector3}|null} */
 let original = null
 let emptyOffset = new THREE.Vector3(0,2,0);
+const zoomFactor = 2
 
 /** @type {IdleAnimation} */
 const idleAnimation = ({ object, deltaTime }) => {
@@ -61,7 +62,7 @@ const idleAnimation = ({ object, deltaTime }) => {
   if (targetEmpty) {
     // Root so verschieben, dass der Empty auf dem Ursprung landet
     root.position.copy(original.position).sub(targetEmpty.position.clone().sub(emptyOffset));
-    root.scale.setScalar(2)
+    root.scale.setScalar(zoomFactor)
   } else {
     // Zur Ausgangsposition zurück
     root.position.copy(original.position);
