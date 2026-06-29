@@ -2,7 +2,10 @@
   "monday": {
     "slots": [
       {
-        "name": "Bild- & Video-Generierungstools im Praxisvergleich",
+        "courseName": "Bild- & Video-Generierungstools im Praxisvergleich",
+        "date": "2026-03-15T23:00:00.000Z",
+        "start": "09.00",
+        "end": "12.20",
         "rooms": [
           {
             "building": "K",
@@ -12,7 +15,76 @@
         ]
       },
       {
-        "name": "Digitalfotografie- von der Idee zum produktionsfähigen Bild",
+        "courseName": "Digitalfotografie- von der Idee zum produktionsfähigen Bild",
+        "date": "2026-03-15T23:00:00.000Z",
+        "start": "09.55",
+        "end": "13.05",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 12
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "courseName": "Digitalfotografie- von der Idee zum produktionsfähigen Bild",
+        "date": "2026-03-22T23:00:00.000Z",
+        "start": "09.55",
+        "end": "20.40",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 12
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "courseName": "Digitalfotografie- von der Idee zum produktionsfähigen Bild",
+        "date": "2026-04-12T22:00:00.000Z",
+        "start": "18.30",
+        "end": "21.30",
         "rooms": [
           {
             "building": "D",
@@ -46,7 +118,10 @@
   "tuesday": {
     "slots": [
       {
-        "name": "Informationsvisualisierung",
+        "courseName": "Informationsvisualisierung",
+        "date": "2026-06-29T22:00:00.000Z",
+        "start": "09.30",
+        "end": "12.30",
         "rooms": [
           {
             "building": "D",
@@ -71,7 +146,66 @@
         ]
       },
       {
-        "name": "eTHIcs_basic",
+        "courseName": "Informationsvisualisierung",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "09.55",
+        "end": "11.30",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 2,
+            "number": 2
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 10
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "courseName": "Informationsvisualisierung",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "11.30",
+        "end": "13.05",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 2,
+            "number": 2
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 10
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "courseName": "eTHIcs_basic",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "15.40",
+        "end": "17.20",
         "rooms": [
           {
             "building": "D",
@@ -90,7 +224,10 @@
   "wednesday": {
     "slots": [
       {
-        "name": "eTHIcs_basic",
+        "courseName": "eTHIcs_basic",
+        "date": "2026-04-07T22:00:00.000Z",
+        "start": "16.35",
+        "end": "18.05",
         "rooms": [
           {
             "building": "D",
@@ -109,7 +246,10 @@
   "thursday": {
     "slots": [
       {
-        "name": "eTHIcs_basic",
+        "courseName": "eTHIcs_basic",
+        "date": "2026-03-25T23:00:00.000Z",
+        "start": "12.20",
+        "end": "14.00",
         "rooms": [
           {
             "building": "D",
@@ -128,7 +268,10 @@
   "friday": {
     "slots": [
       {
-        "name": "Introduction to Vibe Coding for User Experience Designers",
+        "courseName": "Introduction to Vibe Coding for User Experience Designers",
+        "date": "2026-06-04T22:00:00.000Z",
+        "start": "08.00",
+        "end": "12.00",
         "rooms": [
           {
             "building": "G",
@@ -148,7 +291,33 @@
         ]
       },
       {
-        "name": "Medienpsychologie - Effekte digitaler Medien auf Individuum und Gesellschaft",
+        "courseName": "Introduction to Vibe Coding for User Experience Designers",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "09.00",
+        "end": "12.20",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 12
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 14
+          }
+        ]
+      },
+      {
+        "courseName": "Medienpsychologie - Effekte digitaler Medien auf Individuum und Gesellschaft",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "09.00",
+        "end": "16.25",
         "rooms": [
           {
             "building": "G",
@@ -163,7 +332,36 @@
         ]
       },
       {
-        "name": "Brand Design Development",
+        "courseName": "Brand Design Development",
+        "date": "2026-06-11T22:00:00.000Z",
+        "start": "09.00",
+        "end": "16.25",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "courseName": "Brand Design Development",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "10.40",
+        "end": "18.05",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "courseName": "Brand Design Development",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "13.15",
+        "end": "18.05",
         "rooms": [
           {
             "building": "D",

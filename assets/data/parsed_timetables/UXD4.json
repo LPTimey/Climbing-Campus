@@ -2,7 +2,10 @@
   "monday": {
     "slots": [
       {
-        "name": "Übung zu Webdesign und Webusability",
+        "courseName": "Übung zu Webdesign und Webusability",
+        "date": "2026-03-15T23:00:00.000Z",
+        "start": "09.55",
+        "end": "13.05",
         "rooms": [
           {
             "building": "D",
@@ -17,7 +20,23 @@
         ]
       },
       {
-        "name": "Übung zu Webdesign und Webusability",
+        "courseName": "Übung zu Webdesign und Webusability",
+        "date": "2026-03-22T23:00:00.000Z",
+        "start": "09.55",
+        "end": "13.05",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "courseName": "Übung zu Webdesign und Webusability",
+        "date": "2026-06-28T22:00:00.000Z",
+        "start": "14.00",
+        "end": "17.00",
         "rooms": [
           {
             "building": "D",
@@ -32,7 +51,10 @@
         ]
       },
       {
-        "name": "Webdesign und Webusability",
+        "courseName": "Webdesign und Webusability",
+        "date": "2026-06-07T22:00:00.000Z",
+        "start": "14.00",
+        "end": "15.40",
         "rooms": [
           {
             "building": "D",
@@ -47,7 +69,10 @@
         ]
       },
       {
-        "name": "Computergrafik/3D-Design",
+        "courseName": "Computergrafik/3D-Design",
+        "date": "2026-06-14T22:00:00.000Z",
+        "start": "14.00",
+        "end": "17.00",
         "rooms": [
           {
             "building": "D",
@@ -62,7 +87,10 @@
         ]
       },
       {
-        "name": "Projektmanagement",
+        "courseName": "Projektmanagement",
+        "date": "2026-04-19T22:00:00.000Z",
+        "start": "15.40",
+        "end": "17.20",
         "rooms": [
           {
             "building": "B",
@@ -87,7 +115,10 @@
         ]
       },
       {
-        "name": "Praktikum Computergrafik/3D-Design",
+        "courseName": "Praktikum Computergrafik/3D-Design",
+        "date": "2026-06-14T22:00:00.000Z",
+        "start": "17.00",
+        "end": "18.30",
         "rooms": [
           {
             "building": "C",
@@ -107,7 +138,10 @@
         ]
       },
       {
-        "name": "Produktdesign",
+        "courseName": "Produktdesign",
+        "date": "2026-03-15T23:00:00.000Z",
+        "start": "18.15",
+        "end": "19.15",
         "rooms": [
           {
             "building": "D",
@@ -121,7 +155,10 @@
   "tuesday": {
     "slots": [
       {
-        "name": "Produktdesign",
+        "courseName": "Praktikum Prinzipien der Mensch-Maschine Interaktion",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "09.00",
+        "end": "10.40",
         "rooms": [
           {
             "building": "D",
@@ -131,7 +168,10 @@
         ]
       },
       {
-        "name": "Praktikum Prinzipien der Mensch-Maschine Interaktion",
+        "courseName": "Produktdesign",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "10.40",
+        "end": "13.05",
         "rooms": [
           {
             "building": "D",
@@ -141,7 +181,10 @@
         ]
       },
       {
-        "name": "Grundlagen der Betriebswirtschaft und des Gründertums",
+        "courseName": "Grundlagen der Betriebswirtschaft und des Gründertums",
+        "date": "2026-04-13T22:00:00.000Z",
+        "start": "12.20",
+        "end": "15.40",
         "rooms": [
           {
             "building": "D",
@@ -156,7 +199,10 @@
         ]
       },
       {
-        "name": "fiktiv für Raumbelegung I",
+        "courseName": "fiktiv für Raumbelegung I",
+        "date": "2026-03-30T22:00:00.000Z",
+        "start": "13.15",
+        "end": "14.00",
         "rooms": [
           {
             "building": "G",
@@ -166,13 +212,29 @@
         ]
       },
       {
-        "name": "Praktikum Computergrafik/3D-Design",
+        "courseName": "Praktikum Computergrafik/3D-Design",
+        "date": "2026-05-11T22:00:00.000Z",
+        "start": "14.00",
+        "end": "17.20",
         "rooms": [
           {
-            "building": "C",
-            "level": 2,
-            "number": 4
+            "building": "G",
+            "level": 0,
+            "number": 6
           },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "courseName": "Praktikum Computergrafik/3D-Design",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "15.40",
+        "end": "17.20",
+        "rooms": [
           {
             "building": "G",
             "level": 0,
@@ -190,38 +252,11 @@
   "wednesday": {
     "slots": [
       {
-        "name": "Webdesign und Webusability",
+        "courseName": "Praktikum Prinzipien der Mensch-Maschine Interaktion",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "09.00",
+        "end": "10.40",
         "rooms": [
-          {
-            "building": "D",
-            "level": 1,
-            "number": 15
-          },
-          {
-            "building": "G",
-            "level": 2,
-            "number": 15
-          }
-        ]
-      },
-      {
-        "name": "Projektmanagement",
-        "rooms": [
-          {
-            "building": "B",
-            "level": 1,
-            "number": 11
-          },
-          {
-            "building": "D",
-            "level": 1,
-            "number": 14
-          },
-          {
-            "building": "D",
-            "level": 1,
-            "number": 15
-          },
           {
             "building": "D",
             "level": 1,
@@ -230,7 +265,10 @@
         ]
       },
       {
-        "name": "Grundlagen der Betriebswirtschaft und des Gründertums",
+        "courseName": "Grundlagen der Betriebswirtschaft und des Gründertums",
+        "date": "2026-06-16T22:00:00.000Z",
+        "start": "10.40",
+        "end": "14.45",
         "rooms": [
           {
             "building": "D",
@@ -245,7 +283,10 @@
         ]
       },
       {
-        "name": "Praktikum Prinzipien der Mensch-Maschine Interaktion",
+        "courseName": "Praktikum Prinzipien der Mensch-Maschine Interaktion",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "10.40",
+        "end": "12.20",
         "rooms": [
           {
             "building": "D",
@@ -255,8 +296,62 @@
         ]
       },
       {
-        "name": "Praktikum Prinzipien der Mensch-Maschine Interaktion",
+        "courseName": "Grundlagen der Betriebswirtschaft und des Gründertums",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "11.35",
+        "end": "14.45",
         "rooms": [
+          {
+            "building": "D",
+            "level": 3,
+            "number": 15
+          },
+          {
+            "building": "G",
+            "level": 1,
+            "number": 5
+          }
+        ]
+      },
+      {
+        "courseName": "Webdesign und Webusability",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "12.20",
+        "end": "14.00",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 15
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "courseName": "Projektmanagement",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "15.40",
+        "end": "17.20",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 14
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 15
+          },
           {
             "building": "D",
             "level": 1,
@@ -269,7 +364,23 @@
   "thursday": {
     "slots": [
       {
-        "name": "Projektmanagement",
+        "courseName": "Informations- und Medienkompetenz (PLV3)",
+        "date": "2026-04-15T22:00:00.000Z",
+        "start": "08.15",
+        "end": "09.45",
+        "rooms": [
+          {
+            "building": "A",
+            "level": 0,
+            "number": 0
+          }
+        ]
+      },
+      {
+        "courseName": "Projektmanagement",
+        "date": "2026-03-18T23:00:00.000Z",
+        "start": "09.00",
+        "end": "10.40",
         "rooms": [
           {
             "building": "B",
@@ -294,27 +405,10 @@
         ]
       },
       {
-        "name": "Informations- und Medienkompetenz (PLV3)",
-        "rooms": [
-          {
-            "building": "A",
-            "level": 0,
-            "number": 0
-          }
-        ]
-      },
-      {
-        "name": "Informations- und Medienkompetenz (PLV3)",
-        "rooms": [
-          {
-            "building": "A",
-            "level": 0,
-            "number": 0
-          }
-        ]
-      },
-      {
-        "name": "Prinzipien der Mensch-Maschine Interaktion",
+        "courseName": "Prinzipien der Mensch-Maschine Interaktion",
+        "date": "2026-03-18T23:00:00.000Z",
+        "start": "11.35",
+        "end": "14.45",
         "rooms": [
           {
             "building": "D",
@@ -334,17 +428,15 @@
         ]
       },
       {
-        "name": "Praktikum Computergrafik/3D-Design",
+        "courseName": "Praktikum Computergrafik/3D-Design",
+        "date": "2026-03-18T23:00:00.000Z",
+        "start": "15.40",
+        "end": "17.20",
         "rooms": [
           {
-            "building": "C",
-            "level": 2,
-            "number": 4
-          },
-          {
             "building": "G",
-            "level": 0,
-            "number": 6
+            "level": 1,
+            "number": 11
           },
           {
             "building": "G",
@@ -358,7 +450,10 @@
   "friday": {
     "slots": [
       {
-        "name": "Computergrafik/3D-Design",
+        "courseName": "Computergrafik/3D-Design",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "09.55",
+        "end": "13.05",
         "rooms": [
           {
             "building": "D",
@@ -373,7 +468,10 @@
         ]
       },
       {
-        "name": "Praktikum Computergrafik/3D-Design",
+        "courseName": "Praktikum Computergrafik/3D-Design",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "14.00",
+        "end": "15.40",
         "rooms": [
           {
             "building": "C",
@@ -393,13 +491,11 @@
         ]
       },
       {
-        "name": "Praktikum Computergrafik/3D-Design",
+        "courseName": "Praktikum Computergrafik/3D-Design",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "14.00",
+        "end": "15.40",
         "rooms": [
-          {
-            "building": "C",
-            "level": 2,
-            "number": 4
-          },
           {
             "building": "G",
             "level": 0,
@@ -413,17 +509,15 @@
         ]
       },
       {
-        "name": "Praktikum Computergrafik/3D-Design",
+        "courseName": "Praktikum Computergrafik/3D-Design",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "14.00",
+        "end": "15.40",
         "rooms": [
           {
-            "building": "C",
-            "level": 2,
-            "number": 4
-          },
-          {
             "building": "G",
-            "level": 0,
-            "number": 6
+            "level": 1,
+            "number": 11
           },
           {
             "building": "G",

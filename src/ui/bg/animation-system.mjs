@@ -11,6 +11,12 @@ export const easing = {
   easeInOutQuad: (t) => (t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2),
 };
 
+export const mouse = new THREE.Vector2();
+
+window.addEventListener("pointermove", (event) => {
+  mouse.set(event.clientX, event.clientY);
+});
+
 const delta = 1;
 
 /**

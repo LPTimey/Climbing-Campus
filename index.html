@@ -31,6 +31,7 @@
     <script type="module" src="./src/ui/dash.mjs"></script>
     <script type="module" src="./src/ui/game/element.mjs"></script>
     <script type="module" src="./src/ui/bg/main.mjs"></script>
+    <script type="module" src="./src/ui/wordcloud/main.mjs"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -38,10 +39,9 @@
     <header>
       <nav aria-label="Main navigation">
         <a href="#Intro">Start</a>
-        <a href="#Attendees">Results</a>
-        <a href="#Map">Map</a>
+        <a href="#MetaOutline">Results</a>
         <a href="#Charts">Graphs</a>
-        <a href="#Explanation">Explanations</a>
+        <a href="#Infra">Explanations</a>
       </nav>
     </header>
     <main>
@@ -119,19 +119,19 @@
             <h2 class="fs-h1 fw-700">…About</h2>
           </hgroup>
           <div>
-            <h3 class="fs-h5 fw-700" aria-describedby="UX">
+            <h3 class="fs-h5 subtitle" aria-describedby="UX">
               The general campus experience
             </h3>
-            <h3 class="fs-h5 fw-700" aria-describedby="Time">
+            <h3 class="fs-h5 subtitle" aria-describedby="Time">
               Their timetable
             </h3>
-            <h3 class="fs-h5 fw-700" aria-describedby="Infra">
+            <h3 class="fs-h5 subtitle" aria-describedby="Infra">
               Campus infrastructure
             </h3>
-            <h3 class="fs-h5 fw-700" aria-describedby="Buildings">
+            <h3 class="fs-h5 subtitle" aria-describedby="Buildings">
               Campus buildings
             </h3>
-            <h3 class="fs-h5 fw-700" aria-describedby="Accessibility">
+            <h3 class="fs-h5 subtitle" aria-describedby="Accessibility">
               Accessibility & equality
             </h3>
           </div>
@@ -150,21 +150,66 @@
         <hgroup>
           <h2 class="fs-h2 fw-700">Timetables</h2>
         </hgroup>
-        <div id="Bach_BMI">BMI_B</div>
-        <div id="Bach_CAI">CAI_B</div>
-        <div id="Bach_CLS">CLS_B</div>
-        <div id="Bach_CSI">CSI_B</div>
-        <div id="Bach_FFI">FFI_B</div>
-        <div id="Bach_INF">INF_B</div>
-        <div id="Bach_KI">KI_B</div>
-        <div id="Bach_UXD">UXD_B</div>
-        <div id="Bach_WINF">WINF_B</div>
+        <div id="UXD_FW">
+          <div class="content">
+            <p class="fs-h4 fw-700">UXD_FW</p>
+            <p class="subtitle col-gray">31 hours a week<span>*</span></p>
+          </div>
+        </div>
+        <div id="UXD2">
+          <div class="content">
+            <p class="fs-h4 fw-700">UXD2</p>
+            <p class="subtitle col-gray">36 hours a week</p>
+          </div>
+        </div>
+        <div id="UXD4">
+          <div class="content">
+            <p class="fs-h4 fw-700">UXD4</p>
+            <p class="subtitle col-gray">36 hours a week</p>
+          </div>
+        </div>
+        <div id="UXD6">
+          <div class="content">
+            <p class="fs-h4 fw-700">UXD6</p>
+            <p class="subtitle col-gray">max. 50 hours a week<span>*</span></p>
+          </div>
+        </div>
+        <div id="UXD7">
+          <div class="content">
+            <p class="fs-h4 fw-700">UXD7</p>
+            <p class="subtitle col-gray">2 hours a week</p>
+          </div>
+        </div>
       </section>
       <section id="Infra">
         <hgroup>
-          <h2  class="fs-h2 fw-700">Infrastructure</h2>
+          <h2 class="fs-h2 fw-700">Infrastructure</h2>
+          <p class="fs-h5 col-gray subtitle">
+            We asked UXD students and personnel what's missing
+          </p>
         </hgroup>
-        <div>*Word-cloud</div>
+        <div id="word-cloud">
+          <p class="weight_1;">plants</p>
+          <p class="weight_1;">decoration</p>
+          <p class="weight_1;">resting areas</p>
+          <p class="weight_1;">social spaces</p>
+
+          <p class="weight_2;">study spaces</p>
+          <p class="weight_2;">workstations</p>
+          <p class="weight_2;">classroom technology</p>
+
+          <p class="weight_2.5;">accessibility</p>
+          <p class="weight_2.5;">wayfinding</p>
+          <p class="weight_2.5;">campus movement</p>
+          <p class="weight_2.5;">barrier-free access</p>
+
+          <p class="weight_3;">buildings</p>
+          <p class="weight_3;">maintenance</p>
+          <p class="weight_3;">paths</p>
+          <p class="weight_3;">ventilation</p>
+          <p class="weight_3;">outlets</p>
+          <p class="weight_3;">construction impacts</p>
+        </div>
       </section>
       <section id="Buildings">
         <hgroup>
@@ -227,25 +272,29 @@
         <hgroup>
           <h2 class="fs-h2 fw-700">Accessibility & Equality</h2>
         </hgroup>
-        <p>The biggest concerns are:</p>
+        <p class="fs-h5 subtitle col-gray">The biggest concerns are:</p>
         <ol>
-          <li>Time-related disadvantages</li>
-          <li>Missing accessibility regarding impairments</li>
-          <li>Digital hurdles (e.g. WIFI, devices, plugs, ...)</li>
-          <li>Unequal distribution of in-person classes</li>
-          <li>Gender-specific & culture-related disadvantages</li>
+          <li class="fs-h6 hoverable pvt-l">
+            Missing accessibility regarding impairments
+          </li>
+          <li class="fs-h6 hoverable pvt-l">Time-related disadvantages</li>
+          <li class="fs-h6 hoverable pvt-l">
+            Digital hurdles (e.g. WiFi, devices, plugs, ...)
+          </li>
+          <li class="fs-h6 hoverable pvt-l">
+            Unequal distribution of in-person classes
+          </li>
+          <li class="fs-h6 hoverable pvt-l">
+            Gender-specific & culture-related disadvantages
+          </li>
         </ol>
-        <div></div>
-      </section>
-      <section id="Map">
-        <article class="max-w-wrapper"></article>
-      </section>
-      <section id="Charts">
-        <div class="max-w-wrapper" data-center>
-          <dash-board />
+        <div id="accessibility-percentage">
+          <p class="fs-h5">
+            ... with 100% of survey participants thinking that there are
+            disadvantages students.
+          </p>
         </div>
       </section>
-      <section id="Explanation"><div></div></section>
     </main>
     <canvas id="SiteBG"></canvas>
     <footer>

@@ -104,9 +104,125 @@ html {
 }
 
 @layer content {
-    hgroup p {}
 
-    hgroup h2 {}
+    #Time {
+        position: relative;
+    }
+
+    #Time>hgroup {
+        position: absolute;
+        top: 15%;
+    }
+
+    #Time>div {
+        position: absolute;
+
+        --count: 5;
+        --radius: 23rem;
+        --arc: 210deg;
+        --start: calc(((360deg - var(--arc)) / 2) - 90deg);
+        --step: calc(var(--arc) / (var(--count) - 1));
+        --angle: calc(var(--start) + var(--index) * var(--step));
+
+        left: 50%;
+        top: 50%;
+
+        transform:
+            translate(-50%, -50%) rotate(var(--angle)) translateX(var(--radius)) rotate(calc(-1 * var(--angle)));
+
+        & .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            opacity: 0.25;
+            transition:
+                opacity 0.25s ease-in-out,
+                scale 0.25s ease-in-out;
+            padding: 5rem 2rem;
+        }
+
+        &>.content:hover {
+            opacity: 1;
+            scale: 1.25;
+        }
+    }
+    
+    #UXD2 {
+        --index: 0;
+    }
+    
+    #UXD4 {
+        --index: 1;
+    }
+    
+    #UXD6 {
+        --index: 2;
+    }
+    
+    #UXD7 {
+        --index: 3;
+    }
+    
+    #UXD_FW {
+        --index: 4;
+    }
+
+    #word-cloud {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    #word-cloud p {
+        margin: 0;
+        cursor: default;
+        transition: transform .2s ease;
+        user-select: none;
+    }
+
+    #word-cloud p:hover {
+        transform: scale(1.1);
+    }
+
+
+    #Accessibility {
+        align-items: start;
+        padding-left: 15rem;
+    }
+
+    #Accessibility ol {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        padding-left: 3ch;
+        padding-top: 3ch;
+        margin-top: 2rem;
+    }
+
+    #accessibility-percentage {
+        margin-top: 10rem;
+    }
+
+    .hoverable {
+        opacity: .25;
+        transition: opacity .25s ease-in-out,
+            scale .25s ease-in-out;
+
+        & .pvt-l {
+            transform-origin: left center;
+        }
+    }
+
+    .hoverable:hover {
+        opacity: 1;
+        scale: 1.25;
+    }
 }
 
 @layer layout {
@@ -129,16 +245,35 @@ html {
         top: 1rem;
 
         nav {
+            position: relative;
             gap: calc(var(--gap) / 2);
             display: flex;
-            padding: calc(var(--gap) / 2) var(--gap);
+            padding: calc(var(--gap) / 2) calc(var(--gap)*2);
             border-radius: max(100vh, 100vw);
-            background: color-mix(in oklch, var(--violet-light) 75%, var(--violet-dark));
+            background:
+                /* content gradient */
+                linear-gradient(
+                to bottom,
+                color-mix(in oklch, var(--violet-light) 75%, var(--violet-dark) 50%),
+                color-mix(in oklch, var(--violet-light) 50%, var(--violet-dark) 50%)
+                ) padding-box,
+
+                /* border gradient */
+                linear-gradient(
+                to right,
+                color-mix(in oklch, color-mix(in oklch, var(--violet-light) 75%, var(--violet-dark)) 75%, var(--purple-light)),
+                oklch(65.33% 0.23148 304.428),
+                oklch(40.517% 0.22149 293.865)
+                ) border-box;
+
+            background-clip: padding-box, border-box;
             box-shadow:
                 8px 8px 18px oklch(8% 0.03 290 / 0.6),
                 -6px -6px 16px oklch(28% 0.04 290 / 0.45);
             border:
-                1px solid oklch(100% 0 0 / 0.04);
+                2px solid transparent;
+
+
             transition:
                 box-shadow 180ms ease,
                 transform 180ms ease,
@@ -152,19 +287,23 @@ html {
 
             a {
                 color: var(--light);
+                font-weight: 600;
                 text-decoration: none;
                 padding: 0.8rem 1.2rem;
+                border: 2px solid transparent;
                 border-radius: max(100vh, 100vw);
                 transition:
                     box-shadow 180ms ease,
-                    transform 180ms ease,
-                    background 180ms ease;
+                    transform 360ms ease,
+                    background 360ms ease;
 
                 &:hover {
-                    box-shadow:
+                    /* box-shadow:
                         inset 3px 3px 6px oklch(10% 0.03 290 / 0.7),
-                        inset -2px -2px 5px oklch(30% 0.04 290 / 0.3);
-                    transform: translateY(1px);
+                        inset -2px -2px 5px oklch(30% 0.04 290 / 0.3); */
+                    background: oklch(100% 0.00011 271.152 / 0.145);
+                    border: 2px solid oklch(100% 0.00011 271.152 / 0.145);
+                    transform: translateY(3px);
                 }
 
                 &:active,
@@ -204,7 +343,7 @@ html {
         height: 100dvh;
     }
 
-    #MetaOutline > .grid {
+    #MetaOutline>.grid {
         width: 90%;
         display: grid;
         row-gap: 45vh;
@@ -224,16 +363,18 @@ html {
             justify-self: center;
             grid-auto-flow: column;
             grid-auto-columns: 1fr;
-            align-items:start;
+            align-items: start;
             justify-content: center;
-            
-            h3{
+
+            h3 {
                 text-align: center;
             }
-            & h3:first-child{
+
+            & h3:first-child {
                 text-align: left;
             }
-            & h3:last-child{
+
+            & h3:last-child {
                 text-align: right;
             }
         }

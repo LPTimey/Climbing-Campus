@@ -2,7 +2,10 @@
   "monday": {
     "slots": [
       {
-        "name": "Nachbereitendes Praxisseminar (PLV 2)",
+        "courseName": "Nachbereitendes Praxisseminar (PLV 2)",
+        "date": "2026-07-26T22:00:00.000Z",
+        "start": "08.00",
+        "end": "17.00",
         "rooms": [
           {
             "building": "G",
@@ -12,7 +15,10 @@
         ]
       },
       {
-        "name": "Projekt",
+        "courseName": "Projekt",
+        "date": "2026-05-31T22:00:00.000Z",
+        "start": "08.15",
+        "end": "19.00",
         "rooms": [
           {
             "building": "B",
@@ -22,7 +28,10 @@
         ]
       },
       {
-        "name": "Digitalfotografie",
+        "courseName": "Digitalfotografie",
+        "date": "2026-03-15T23:00:00.000Z",
+        "start": "09.55",
+        "end": "13.05",
         "rooms": [
           {
             "building": "D",
@@ -52,7 +61,43 @@
         ]
       },
       {
-        "name": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "courseName": "Digitalfotografie",
+        "date": "2026-03-22T23:00:00.000Z",
+        "start": "09.55",
+        "end": "20.40",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 12
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "courseName": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "date": "2026-07-05T22:00:00.000Z",
+        "start": "10.00",
+        "end": "11.30",
         "rooms": [
           {
             "building": "B",
@@ -78,17 +123,197 @@
             "building": "G",
             "level": 3,
             "number": 4
-          },
-          null
+          }
         ]
       },
       {
-        "name": "Projekt",
+        "courseName": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "date": "2026-07-05T22:00:00.000Z",
+        "start": "10.00",
+        "end": "12.00",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 4
+          }
+        ]
+      },
+      {
+        "courseName": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "date": "2026-06-21T22:00:00.000Z",
+        "start": "13.15",
+        "end": "16.25",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 4
+          }
+        ]
+      },
+      {
+        "courseName": "Projekt",
+        "date": "2026-03-15T23:00:00.000Z",
+        "start": "13.15",
+        "end": "16.25",
+        "rooms": [
+          {
+            "building": "K",
+            "level": 1,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "courseName": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "date": "2026-04-19T22:00:00.000Z",
+        "start": "14.00",
+        "end": "15.40",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 4
+          }
+        ]
+      },
+      {
+        "courseName": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "date": "2026-06-07T22:00:00.000Z",
+        "start": "14.00",
+        "end": "15.30",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 4
+          }
+        ]
+      },
+      {
+        "courseName": "Projekt",
+        "date": "2026-03-15T23:00:00.000Z",
+        "start": "17.30",
+        "end": "19.00",
         "rooms": [
           {
             "building": "B",
             "level": 2,
             "number": 1
+          }
+        ]
+      },
+      {
+        "courseName": "Digitalfotografie",
+        "date": "2026-04-12T22:00:00.000Z",
+        "start": "18.30",
+        "end": "21.30",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 12
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 15
           }
         ]
       }
@@ -97,7 +322,10 @@
   "tuesday": {
     "slots": [
       {
-        "name": "Nachbereitendes Praxisseminar (PLV 2)",
+        "courseName": "Nachbereitendes Praxisseminar (PLV 2)",
+        "date": "2026-07-27T22:00:00.000Z",
+        "start": "08.00",
+        "end": "14.00",
         "rooms": [
           {
             "building": "G",
@@ -107,7 +335,10 @@
         ]
       },
       {
-        "name": "Projekt",
+        "courseName": "Projekt",
+        "date": "2026-06-01T22:00:00.000Z",
+        "start": "08.15",
+        "end": "19.00",
         "rooms": [
           {
             "building": "B",
@@ -117,38 +348,10 @@
         ]
       },
       {
-        "name": "Sicherheit von mobilen und webbasierten Anwendungen",
-        "rooms": [
-          {
-            "building": "B",
-            "level": 1,
-            "number": 11
-          },
-          {
-            "building": "D",
-            "level": 1,
-            "number": 13
-          },
-          {
-            "building": "D",
-            "level": 1,
-            "number": 16
-          },
-          {
-            "building": "G",
-            "level": 3,
-            "number": 3
-          },
-          {
-            "building": "G",
-            "level": 3,
-            "number": 4
-          },
-          null
-        ]
-      },
-      {
-        "name": "Praktikum Virtual und Augmented Reality",
+        "courseName": "Praktikum Virtual und Augmented Reality",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "08.15",
+        "end": "09.45",
         "rooms": [
           {
             "building": "G",
@@ -158,7 +361,10 @@
         ]
       },
       {
-        "name": "Informationsvisualisierung",
+        "courseName": "Informationsvisualisierung",
+        "date": "2026-06-29T22:00:00.000Z",
+        "start": "09.30",
+        "end": "12.30",
         "rooms": [
           {
             "building": "D",
@@ -183,7 +389,38 @@
         ]
       },
       {
-        "name": "Projekt",
+        "courseName": "Informationsvisualisierung",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "09.55",
+        "end": "11.30",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 2,
+            "number": 2
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 10
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "courseName": "Projekt",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "09.55",
+        "end": "11.25",
         "rooms": [
           {
             "building": "K",
@@ -193,51 +430,10 @@
         ]
       },
       {
-        "name": "Projekt",
-        "rooms": [
-          {
-            "building": "B",
-            "level": 2,
-            "number": 1
-          }
-        ]
-      },
-      {
-        "name": "Projekt",
-        "rooms": [
-          {
-            "building": "B",
-            "level": 2,
-            "number": 1
-          }
-        ]
-      },
-      {
-        "name": "fiktiv für Raumbelegung I",
-        "rooms": [
-          {
-            "building": "G",
-            "level": 2,
-            "number": 1
-          }
-        ]
-      }
-    ]
-  },
-  "wednesday": {
-    "slots": [
-      {
-        "name": "Projekt",
-        "rooms": [
-          {
-            "building": "B",
-            "level": 2,
-            "number": 1
-          }
-        ]
-      },
-      {
-        "name": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "courseName": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "date": "2026-07-06T22:00:00.000Z",
+        "start": "10.00",
+        "end": "12.00",
         "rooms": [
           {
             "building": "B",
@@ -263,12 +459,98 @@
             "building": "G",
             "level": 3,
             "number": 4
-          },
-          null
+          }
         ]
       },
       {
-        "name": "Praktikum Virtual und Augmented Reality",
+        "courseName": "Informationsvisualisierung",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "11.30",
+        "end": "13.05",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 2,
+            "number": 2
+          },
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 10
+          },
+          {
+            "building": "K",
+            "level": 1,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "courseName": "Projekt",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "14.00",
+        "end": "17.20",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 2,
+            "number": 10
+          }
+        ]
+      },
+      {
+        "courseName": "Projekt",
+        "date": "2026-03-16T23:00:00.000Z",
+        "start": "14.00",
+        "end": "17.20",
+        "rooms": [
+          {
+            "building": "K",
+            "level": 0,
+            "number": 13
+          }
+        ]
+      },
+      {
+        "courseName": "fiktiv für Raumbelegung I",
+        "date": "2026-05-18T22:00:00.000Z",
+        "start": "18.00",
+        "end": "20.00",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      }
+    ]
+  },
+  "wednesday": {
+    "slots": [
+      {
+        "courseName": "Projekt",
+        "date": "2026-05-26T22:00:00.000Z",
+        "start": "08.15",
+        "end": "19.00",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      },
+      {
+        "courseName": "Praktikum Virtual und Augmented Reality",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "09.55",
+        "end": "11.25",
         "rooms": [
           {
             "building": "G",
@@ -278,7 +560,43 @@
         ]
       },
       {
-        "name": "Studiendesign und Durchführung von UX Tests",
+        "courseName": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "11.35",
+        "end": "13.05",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 1,
+            "number": 11
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 13
+          },
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 3
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 4
+          }
+        ]
+      },
+      {
+        "courseName": "Studiendesign und Durchführung von UX Tests",
+        "date": "2026-04-07T22:00:00.000Z",
+        "start": "13.30",
+        "end": "18.30",
         "rooms": [
           {
             "building": "G",
@@ -303,7 +621,10 @@
         ]
       },
       {
-        "name": "Fachwissenschaftliches Seminar",
+        "courseName": "Fachwissenschaftliches Seminar",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "14.00",
+        "end": "15.40",
         "rooms": [
           {
             "building": "G",
@@ -313,8 +634,52 @@
         ]
       },
       {
-        "name": "Fachwissenschaftliches Seminar",
+        "courseName": "Fachwissenschaftliches Seminar",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "14.00",
+        "end": "15.40",
         "rooms": [
+          {
+            "building": "G",
+            "level": 2,
+            "number": 2
+          }
+        ]
+      },
+      {
+        "courseName": "Fachwissenschaftliches Seminar",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "14.00",
+        "end": "15.40",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      },
+      {
+        "courseName": "Studiendesign und Durchführung von UX Tests",
+        "date": "2026-03-31T22:00:00.000Z",
+        "start": "15.30",
+        "end": "17.20",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 5
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 2
+          },
           {
             "building": "G",
             "level": 2,
@@ -323,8 +688,26 @@
         ]
       },
       {
-        "name": "Fachwissenschaftliches Seminar",
+        "courseName": "Studiendesign und Durchführung von UX Tests",
+        "date": "2026-03-17T23:00:00.000Z",
+        "start": "15.40",
+        "end": "17.20",
         "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 5
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 1
+          },
+          {
+            "building": "G",
+            "level": 2,
+            "number": 2
+          },
           {
             "building": "G",
             "level": 2,
@@ -337,7 +720,10 @@
   "thursday": {
     "slots": [
       {
-        "name": "Projekt",
+        "courseName": "Projekt",
+        "date": "2026-05-27T22:00:00.000Z",
+        "start": "08.15",
+        "end": "19.00",
         "rooms": [
           {
             "building": "B",
@@ -347,7 +733,49 @@
         ]
       },
       {
-        "name": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "courseName": "Informations- und Medienkompetenz (PLV3)",
+        "date": "2026-04-15T22:00:00.000Z",
+        "start": "08.15",
+        "end": "09.45",
+        "rooms": [
+          {
+            "building": "A",
+            "level": 0,
+            "number": 0
+          }
+        ]
+      },
+      {
+        "courseName": "Virtual und Augmented Reality",
+        "date": "2026-03-18T23:00:00.000Z",
+        "start": "09.55",
+        "end": "13.05",
+        "rooms": [
+          {
+            "building": "K",
+            "level": 0,
+            "number": 15
+          }
+        ]
+      },
+      {
+        "courseName": "Praktikum Virtual und Augmented Reality",
+        "date": "2026-03-18T23:00:00.000Z",
+        "start": "14.00",
+        "end": "15.40",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 0,
+            "number": 6
+          }
+        ]
+      },
+      {
+        "courseName": "Sicherheit von mobilen und webbasierten Anwendungen",
+        "date": "2026-03-18T23:00:00.000Z",
+        "start": "15.40",
+        "end": "17.20",
         "rooms": [
           {
             "building": "B",
@@ -373,47 +801,6 @@
             "building": "G",
             "level": 3,
             "number": 4
-          },
-          null
-        ]
-      },
-      {
-        "name": "Informations- und Medienkompetenz (PLV3)",
-        "rooms": [
-          {
-            "building": "A",
-            "level": 0,
-            "number": 0
-          }
-        ]
-      },
-      {
-        "name": "Informations- und Medienkompetenz (PLV3)",
-        "rooms": [
-          {
-            "building": "A",
-            "level": 0,
-            "number": 0
-          }
-        ]
-      },
-      {
-        "name": "Virtual und Augmented Reality",
-        "rooms": [
-          {
-            "building": "K",
-            "level": 0,
-            "number": 15
-          }
-        ]
-      },
-      {
-        "name": "Praktikum Virtual und Augmented Reality",
-        "rooms": [
-          {
-            "building": "G",
-            "level": 0,
-            "number": 6
           }
         ]
       }
@@ -422,17 +809,10 @@
   "friday": {
     "slots": [
       {
-        "name": "Projekt",
-        "rooms": [
-          {
-            "building": "B",
-            "level": 2,
-            "number": 1
-          }
-        ]
-      },
-      {
-        "name": "Introduction to Vibe Coding for User Experience Designers",
+        "courseName": "Introduction to Vibe Coding for User Experience Designers",
+        "date": "2026-06-04T22:00:00.000Z",
+        "start": "08.00",
+        "end": "12.00",
         "rooms": [
           {
             "building": "G",
@@ -452,7 +832,46 @@
         ]
       },
       {
-        "name": "Medienpsychologie - Effekte digitaler Medien auf Individuum und Gesellschaft",
+        "courseName": "Projekt",
+        "date": "2026-05-28T22:00:00.000Z",
+        "start": "08.15",
+        "end": "19.00",
+        "rooms": [
+          {
+            "building": "B",
+            "level": 2,
+            "number": 1
+          }
+        ]
+      },
+      {
+        "courseName": "Introduction to Vibe Coding for User Experience Designers",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "09.00",
+        "end": "12.20",
+        "rooms": [
+          {
+            "building": "G",
+            "level": 1,
+            "number": 16
+          },
+          {
+            "building": "G",
+            "level": 3,
+            "number": 12
+          },
+          {
+            "building": "K",
+            "level": 0,
+            "number": 14
+          }
+        ]
+      },
+      {
+        "courseName": "Medienpsychologie - Effekte digitaler Medien auf Individuum und Gesellschaft",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "09.00",
+        "end": "16.25",
         "rooms": [
           {
             "building": "G",
@@ -467,7 +886,36 @@
         ]
       },
       {
-        "name": "Brand Design Development",
+        "courseName": "Brand Design Development",
+        "date": "2026-06-11T22:00:00.000Z",
+        "start": "09.00",
+        "end": "16.25",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "courseName": "Brand Design Development",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "10.40",
+        "end": "18.05",
+        "rooms": [
+          {
+            "building": "D",
+            "level": 1,
+            "number": 16
+          }
+        ]
+      },
+      {
+        "courseName": "Brand Design Development",
+        "date": "2026-03-19T23:00:00.000Z",
+        "start": "13.15",
+        "end": "18.05",
         "rooms": [
           {
             "building": "D",

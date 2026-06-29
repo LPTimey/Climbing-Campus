@@ -8,7 +8,7 @@ import {
   time,
   infra,
 } from "../sections.mjs";
-import { defaultEntryExitAnimation } from "../animation-system.mjs";
+import { defaultEntryExitAnimation, mouse } from "../animation-system.mjs";
 import * as THREE from "three";
 /**
  * @import {AnimationObject, IdleAnimation} from "../animation-system.mjs"
@@ -18,11 +18,7 @@ import * as THREE from "three";
 
 const targetQuat = new THREE.Quaternion();
 const targetEuler = new THREE.Euler();
-const mouse = new THREE.Vector2();
 
-window.addEventListener("pointermove", (event) => {
-  mouse.set(event.clientX, event.clientY);
-});
 
 
 
@@ -72,7 +68,7 @@ export const clock = {
             return getSectionOffsets(outline).startOffset;
           },
           startTransform: {
-            position: new THREE.Vector3(-16.5, -5, -5),
+            position: new THREE.Vector3(-16.5, -4.75, -5),
             scale: new THREE.Vector3(6, 6, 6),
           },
           idleAnimation:idleAnimation1,
@@ -93,7 +89,7 @@ export const clock = {
     {
       ...defaultEntryExitAnimation(
         { scale: new THREE.Vector3(0, 0, 0) },
-        { scale: new THREE.Vector3(11, 11, 11) },
+        { scale: new THREE.Vector3(9, 9, 9) },
       ),
       steps: [
         {
@@ -102,7 +98,7 @@ export const clock = {
           },
           startTransform: {
             position: new THREE.Vector3(0,0,0),
-            scale: new THREE.Vector3(11, 11, 11),
+            scale: new THREE.Vector3(9, 9, 9),
           },
           idleAnimation:idleAnimation2,
         },

@@ -8,9 +8,7 @@ export const time = sectionOrErr("Time");
 export const infra = sectionOrErr("Infra");
 export const buildings = sectionOrErr("Buildings");
 export const accessibility = sectionOrErr("Accessibility");
-export const map = sectionOrErr("Map");
-export const charts = sectionOrErr("Charts");
-export const explanation = sectionOrErr("Explanation");
+
 
 /**
  * @param {string} id

@@ -3,6 +3,7 @@
 import { arrow } from "./animations/arrow.mjs";
 import { accessibilityBoy } from "./animations/boi.mjs";
 import { campus } from "./animations/campus.mjs";
+import { elevator } from "./animations/elevator.mjs";
 import { questionMark } from "./animations/questionmark.mjs";
 import { steps3D } from "./animations/steps.mjs";
 import { buildings } from "./animations/buildings.mjs";
@@ -22,6 +23,7 @@ export const animations = {
   buildings,
   campus,
   clock,
+  elevator,
   questionMark,
   smiley,
   stairs: steps3D,

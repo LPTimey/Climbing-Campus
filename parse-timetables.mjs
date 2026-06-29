@@ -130,13 +130,14 @@ async function main() {
   //#region PROCESS + OUTPUT
 
   await mkdir(options.output, { recursive: true });
+  console.log("start")
 
   const timetables = [];
 
   for (const file of files) {
     const jsonStr = await readFile(file, "utf-8");
     const api = JSON.parse(jsonStr);
-
+    
     const timetable = TimeTable.fromAPI(api);
     timetables.push(timetable);
 
@@ -146,7 +147,7 @@ async function main() {
     await writeFile(outPath, JSON.stringify(timetable, null, 2), "utf-8");
   }
 
-  console.dir(timetables, { depth: 8 });
+  // console.dir(timetables, { depth: 8 });
 
   //#endregion PROCESS + OUTPUT
 }

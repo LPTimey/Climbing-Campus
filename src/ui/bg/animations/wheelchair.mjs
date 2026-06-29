@@ -13,8 +13,10 @@ import * as THREE from "three";
  */
 
 /** @type {IdleAnimation} */
-const idleAnimation = ({ object, deltaTime }) => {
-  object.rotateY(0.0015 * deltaTime);
+const idleAnimation = ({ object, deltaTime,absTime }) => {
+  object.children[0].position.x=1
+
+  object.rotation.set(0,Math.PI,(Math.sin(absTime/500)/7)+THREE.MathUtils.DEG2RAD*15)
 };
 
 /** @satisfies {AnimationObject} */
@@ -29,8 +31,8 @@ export const wheelchair = {
             );
           },
           startTransform: {
-            position: new THREE.Vector3(-45, -5, -5),
-            scale: new THREE.Vector3(1.5, 1.5, 1.5),
+            position: new THREE.Vector3(30, -7.75, 0),
+            scale: new THREE.Vector3(2, 2, 2),
           },
           idleAnimation,
         },

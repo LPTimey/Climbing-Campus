@@ -14,7 +14,7 @@ import * as THREE from "three";
 
 /** @type {IdleAnimation} */
 const idleAnimation = ({ object, deltaTime }) => {
-  object.rotateY(0.0015 * deltaTime);
+  // object.rotateY(0.0015 * deltaTime);
 };
 
 /** @satisfies {AnimationObject} */
@@ -29,8 +29,8 @@ export const buildings = {
             );
           },
           startTransform: {
-            position: new THREE.Vector3(-45, -5, -5),
-            scale: new THREE.Vector3(1.5, 1.5, 1.5),
+            position: new THREE.Vector3(15, -6, 0),
+            scale: new THREE.Vector3(2, 2, 2),
           },
           idleAnimation,
         },

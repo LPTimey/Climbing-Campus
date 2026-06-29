@@ -12,11 +12,9 @@ import * as THREE from "three";
  * @import {AnimationObject, IdleAnimation} from "../animation-system.mjs"
  */
 
-const axis = new THREE.Vector3(1, 1, 1).normalize();
-
 /** @type {IdleAnimation} */
-const idleAnimation = ({ object, deltaTime,absTime }) => {
-    object.children[0].children[0].rotateOnAxis(axis, (deltaTime * THREE.MathUtils.DEG2RAD);
+const idleAnimation = ({ object, deltaTime, absTime }) => {
+  object.children[0].children[0].rotation.set(0,THREE.MathUtils.DEG2RAD*(absTime/7)%360,0)
 };
 
 /** @satisfies {AnimationObject} */
@@ -34,6 +32,9 @@ export const stress = {
             // position: new THREE.Vector3(0,0,0),
             position: new THREE.Vector3(-32, -4.5, 0),
             scale: new THREE.Vector3(2.5, 2.5, 2.5),
+            rotation: new THREE.Quaternion().setFromEuler(new THREE.Euler(
+              THREE.MathUtils.DEG2RAD * 27.4, THREE.MathUtils.DEG2RAD*130, THREE.MathUtils.DEG2RAD*41.8
+            ))
           },
           idleAnimation,
         },
@@ -49,6 +50,9 @@ export const stress = {
         transform: {
           position: new THREE.Vector3(-100, 100, -25),
           scale: new THREE.Vector3(0.5, 0.5, 0.5),
+          rotation: new THREE.Quaternion().setFromEuler(new THREE.Euler(
+            THREE.MathUtils.DEG2RAD * 27.4, THREE.MathUtils.DEG2RAD*130, THREE.MathUtils.DEG2RAD*41.8
+          ))
         },
       },
     },
