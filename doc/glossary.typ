@@ -12,47 +12,45 @@
   hard_surf: (
     short: "Hard Surf",
     long: "Hard Surface Model(ling)",
-    description: [
-    
-    ],
+    description: "Das Modellieren von harten, rigiden Oberflächen, die in ihrer Beschaffenheit konstant sind, gegenteilig zu organischen Oberflächen",
   ),
   spa: (
     short: "SPA",
     long: "Single Page Application",
-    description: "Eine Art Webseite, welche ihren ganzen Inhalt auf einer Page hat und nicht mit Hyperlinks in andere Pfaded navigiert.",
+    description: "Eine Art von Webseite, welche ihren ganzen Inhalt auf einer Page hat und nicht mit Hyperlinks in andere Pfade navigiert.",
     group: "Web",
   ),
   html: (
     short: "HTML",
     long: "Hypertext Markup Language",
-    description: "A standard language for creating web pages",
+    description: "Eine Standardsprache zur Erstellung von Webseiten",
     group: "Web",
   ),
   css: (
     short: "CSS",
     long: "Cascading Style Sheets",
-    description: "A stylesheet language used for describing the presentation of a document",
+    description: "Eine Stylesheet-Sprache, die genutzt wird, um die Präsentation von Dokumenten zu editieren",
     group: "Web",
   ),
   js: (
     short: "JS",
     long: "JavaScript",
-    description: "todo",
+    description: "Eine Sprache, um Programmlogik zu definieren, oft im Kontext vom Webanwendungen",
     group: "Web",
   ),
   nodejs: (
     short: "node",
     long: "nodeJs",
     description: [
-      Ein spezielles Programm, welches Javascript Programmcode außerhalb eines Browsers direkt auf dem System ausführt.
-      // TODO: npm und so ja auch
+      Ein spezielles Programm, welches Javascript Programmcode außerhalb eines Browsers direkt auf dem System ausführt
+
     ],
     group: "Werkzeug",
   ),
   sessiontoken: (
     short: "Session Token",
     description: [
-      Ein eindeutiger Wert, der nach einer erfolgreichen Anmeldung erzeugt wird und einen Benutzer während einer Sitzung identifiziert. Der Token wird typischerweise vom Client gespeichert und bei weiteren Anfragen an den Server übermittelt, sodass der Benutzer nicht bei jeder Anfrage erneut seine Anmeldedaten angeben muss.
+      Ein eindeutiger Wert, der nach einer erfolgreichen Anmeldung erzeugt wird und einen Benutzer während einer Sitzung identifiziert. Der Token wird typischerweise vom Client gespeichert und bei weiteren Anfragen an den Server übermittelt, sodass der Benutzer nicht bei jeder Anfrage erneut seine Anmeldedaten angeben muss
     ],
     group: "Web",
   ),
@@ -66,7 +64,7 @@
   hygrometer: (
     short: "hygrometer",
     description: quote()[
-      Das Hygrometer (von altgriechisch ὑγρός hygrós ‚feucht‘, ‚nass‘ und μέτρον métron ‚Maß‘, ‚Maßstab‘) ist ein Messinstrument zur Bestimmung der relativen Luftfeuchtigkeit. Mit der Lufttemperatur kann man aus der Luftfeuchtigkeit den Wasserdampfgehalt der Luft bestimmen.
+      Das Hygrometer (von altgriechisch ὑγρός hygrós ‚feucht‘, ‚nass‘ und μέτρον métron ‚Maß‘, ‚Maßstab‘) ist ein Messinstrument zur Bestimmung der relativen Luftfeuchtigkeit. Mit der Lufttemperatur kann man aus der Luftfeuchtigkeit den Wasserdampfgehalt der Luft bestimmen
     ],
     reference: (
       key: "hygrometer_wiki",
@@ -94,8 +92,8 @@
     ],
     group: "Data",
   ),
-  glb:(
-    short:"GLTF Binary",
+  glb: (
+    short: "GLTF Binary",
     long: "Graphics Library Transmission Format Binary",
     description: [],
     group: "Data",
@@ -104,7 +102,7 @@
     short: "Primuss",
     long: "Primuss-Studienverwaltung",
     description: [
-      Ein Verwaltungstool welches von der Hochschule benutzt wird um z.B. (für uns wichtig) die Stundenpläne an die Studenten zu verteilen.
+      Ein Verwaltungstool, welches von der Hochschule benutzt wird um z.B. (für uns wichtig) die Stundenpläne an die Studenten zu verteilen.
     ],
     group: "Werkzeug",
   ),
@@ -126,21 +124,24 @@
   figma: (
     short: "Figma",
     description: [
+      Ein Programm mit Funktionen bzgl. Planung, Gestaltung, Prototyping und Präsentation von digitalen Inhalten
     ],
     group: "Werkzeug",
   ),
   figjam: (
     short: "FigJam",
     long: "Figma Jamboard",
-    description: [
+    description: [ Eine Unterfunktion in @figma, die zur Planung dient, visuell ähnlich einem Whiteboard
     ],
     group: "Werkzeug",
   ),
-  github:(
+  github: (
     short: "GitHub",
-    description: [],
-    group: "Werkzeug"
-  )
+    description: [
+      Eine Plattform zum Pflegen einer Versionshistorie eines Dateisystems mit zusätzlichen Webhosting-Funktionen
+    ],
+    group: "Werkzeug",
+  ),
   // tps: (
   //   short: "TPS",
   //   long: "test procedure specification",
