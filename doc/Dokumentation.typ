@@ -61,10 +61,10 @@ Im Zuge unseres Themas "Climbing Campus" haben wir das tägliche „Auf und Ab�
 #pagebreak(weak: true)
 
 = Aufgabe <Aufgabe>
-Für das Wahlpflichtfach Informationsvisualisierung sollten wir zum Semester-Thema „Ups and Downs“ ein visuelles Konzept gestalten, präsentieren und dokumentieren.
-Genauer umfasste dies eine Visualisierung im Medium unserer Wahl sowie eine ca. 10-minütige Presentation und diese Dokumentation.
+Für das Wahlpflichtfach Informationsvisualisierung sollten wir zum Semesterthema „Ups and Downs“ ein visuelles Konzept gestalten, präsentieren und dokumentieren.
+Genauer umfasste dies eine Visualisierung im Medium unserer Wahl sowie eine ca. 10- bis 15-minütige Präsentation und diese Dokumentation.
 
-Wie das Inhaltsverzeichnis bereits vorweggenommen hat, befinden sich in diesem DIN ISO A4 Dokument #context [#{ counter(page).at(label("ListOfFigures")).at(0) - counter(page).at(label("Aufgabe")).at(0) }] der verlangten 8-12 Inhaltsseiten, welche unsere Gedankengänge und Zwischenergebnisse (hoffentlich) logisch und intuitiv darstellen.
+Wie das Inhaltsverzeichnis bereits vorweggenommen hat, befinden sich in diesem DIN ISO A4 Dokument #context [#{ counter(page).at(label("ListOfFigures")).at(0) - counter(page).at(label("Aufgabe")).at(0) }]  von 8-12 im Richtwert beschriebenen Inhaltsseiten, welche unsere Gedankengänge und Zwischenergebnisse (hoffentlich) logisch und intuitiv darstellen.
 // HAHA hab's jetzt raus-gerechnet, aber auch abzurechnende Titel und andere Post-/Preamble beinhalten
 .
 
@@ -74,32 +74,33 @@ Wie das Inhaltsverzeichnis bereits vorweggenommen hat, befinden sich in diesem D
 Bei unserer anfänglichen Exploration sind uns 2 vorstellbare Ideen gekommen.
 Diese umfassten folgendes:
 #enum(indent: 10pt)[
-  Analyse der Wegstrecken in der Uni (Treppen)
-][
   Analyse der Luftqualität in der Uni
+][
+  Analyse der Mobilität am Campus in der Uni
 ]
 
 // Erklärung Luftqualität
-Auf das Thema "Luftqualität in der THI" sind wir aufgrund des InfoVis-Zimmers gekommen (K-Gebäude 👎🏻) und sollte das extreme Schwingen der Luftschwüle in Relation zum Lüften gegen den "Aufenthaltsnebel" als Ups und Downs darstellen.\
+Zum Thema "Luftqualität in der THI" hat uns unser InfoVis-Zimmers - leider negativ - inspiriert (K-Gebäude 👎🏻). Die Idee war hier, das extreme Schwingen der Luftschwüle in Relation zum Lüften gegen den "Aufenthaltsnebel" als Ups und Downs darzustellen.\
 Dafür hätten wir nach unserem Plan @hygrometer:cap als statische Datenquelle benutzt und für die Umfrage subjektiv nach Luftqualität im Zusammenhang mit Campus-Gebäuden und Zeiteinheiten erfragt.
 
 // Erklärung Treppen
-Das Thema Treppensteigen kristallisierte sich schließlich als unser Favorit heraus, da die sehr direkte und bildliche Assoziation zu "Oben und Unten" sich für uns origineller anfühlte. Die weitergeführte Idee beinhaltet die Analyse von Stundenplänen und der Treppenanzahl als objektive Daten und stellt subjektiv Akzeptanz und Barrierefreiheit zur (Um-)Frage.
+Das Thema der Mobilität und des Treppensteigens am Campus der THI ist von der Idee her sehr ähnlich, beleuchtet jedoch einen anderen Aspekt des Aufenthalts an der THI. Genauer handelte diese Idee von den Wegstrecken, Treppen und Inklusionshürden, die man an der THI bewältigen muss. Diese sollten auch hier erst statisch gemessen und schließlich mit subjektiven Daten gegenübergestellt werden.
+
+Dieses Thema kristallisierte sich schließlich als unser Favorit heraus, da die sehr direkte und bildliche Assoziation zu "Oben und Unten" sich für uns origineller anfühlte. Die weitergeführte Idee beinhaltet detaillierter die Analyse von Stundenplänen der Studierenden des Studiengangs User Experience Design sowie der Treppenanzahl als objektive Daten,um diese subjektiver Akzeptanz und Barrierefreiheit gegenüberzustellen. Da das Feedback aus dem Kurs gegenüber dieses Themas zusätzlich sehr gut ausfiel, fiel unsere finale Themenwahl schließlich hierauf.
 
 #figure(image("../assets/archive/InfoVis Ideas.png"), caption: "Bildschirmfoto der Ideen aus FigJam")
 
-Nach genauerer Analyse des Überthemas "Ups and Downs" haben wir uns entschieden, das Thema spaßeshalber wörtlich zu nehmen. Aufgrund dieser humorvollen Spielerei und des zusätzlich positiven Feedbacks aus dem Kurs fiel unsere finale Entscheidung schließlich auf dieses Thema.
 
 = Vorgehen
 == Vorbereitungen
-Nachdem wir uns auf unsere Grundidee geeinigt haben, fingen wir zunächst damit an, die Logistik und Planung genauer zu betrachten. Dabei haben wir uns folgende Struktur überlegt: Eine Aufteilung in statische Daten, dynamische Daten und die finale Visualisierung.
+Nachdem wir uns nun auf unsere Grundidee geeinigt hatten, fingen wir zunächst damit an, die Logistik und Planung genauer zu betrachten. Dabei haben wir uns folgende Struktur überlegt: Eine Aufteilung in statische Daten, dynamische Daten und die finale Visualisierung.
 
 === Statische Daten
-Mit statischen Daten meinen wir Daten die sich ändern und objektiv aufnehmen lassen.
+Mit statischen Daten meinen wir Daten, die sich ändern und objektiv aufnehmen lassen.
 In unserem Beispiel sind das konkret die tatsächlichen physikalischen Gebäude, deren Treppenhäuser und Treppenzahl, die Verbindungswege der THI sowie die festgelegten Stundenpläne, welche sich auf der Primuss-Stundenplanplattform befinden.
 
 ==== Treppenzahlen und mehr begehbares
-Da es logischerweise keine einsichtbare Übersicht über die Stufenanzahlen und Distanzen innerhalb und zwischen den Gebäuden an der THI gibt, mussten wir selbst Hand anpacken. Deshalb sind wir alle (Haupt-) Gebäude und Treppenhäuser des THI Campus' abgegangen, um Stufen und Distanzen manuell abzuzählen und -messen. Zur Fehlervermeidung führten wir hierbei beide einzeln unabhängig voneinander individuelle Zählungen durch und verglichen diese im Anschluss miteinander, um Messfehlern entgegenzuwirken. Im Anschluss an diese manuelle Datenerhebung haben wir dann die gewonnen Werte in einer Tabelle festgehalten.
+Da es logischerweise keine einsichtbare Übersicht über die Stufenanzahlen und Distanzen innerhalb und zwischen den Gebäuden an der THI gibt, mussten wir diesbezüglich selbst Hand anpacken. Konkreter sind wir alle (Haupt-) Gebäude und Treppenhäuser des THI Campus' abgegangen, um Stufen und Distanzen manuell abzuzählen und abzumessen. Zur Fehlervermeidung führten wir hierbei beide einzeln unabhängig voneinander individuelle Zählungen durch und verglichen diese im Anschluss miteinander, um Messfehlern entgegenzuwirken. Nachdem wir somit alle Daten manuell erhoben hatten, haben wir dann die gewonnen Werte in einer Tabelle festgehalten.
 
 #figure(
   image("../assets/archive/sheets/Stufen - Treppenstufen nach Gebäude - Google Sheets.png"),
@@ -108,17 +109,17 @@ Da es logischerweise keine einsichtbare Übersicht über die Stufenanzahlen und 
 
 
 ==== Stundenplan
-Um Daten innerhalb der Stundenpläne z.B. über übliche Routen zu erhalten, haben wir das Primuss-Stundenplan-System analysiert und herausgefunden, wie die Stundenpläne geladen werden.
+Um Daten innerhalb der Stundenpläne z.B. über übliche Routen zu erhalten, haben wir das @primuss:cap\-Stundenplan-System analysiert und herausgefunden, wie die Stundenpläne dort geladen werden.
 Mit diesem Wissen haben wir ein @nodejs:long:cap\-Skript geschrieben, welches diese Daten unter Input eines validen @sessiontoken\s aus der Datenbank extrahiert und als @csv\-Datei exportiert. Somit konnten wir die Stundenpläne in einem maschinenlesbaren Format erhalten, um diese später für unsere Visualisierung zu nutzen.
 
 #pagebreak(weak: true)
 
 === Umfrage
-Da uns bewusst war, dass unsere Umfrage etwas umfangreicher sein würde, haben wir uns dazu entschieden die Umfrage zuerst in FigJam grob auszulegen, um schnelles Abändern des Umfragelayouts unkompliziert zu ermöglichen. FigJam eignet sich hierfür perfekt, da es viele Templates beinhaltet und simples Drag and Drop Editing nutzt (@SurveyDraft).
+Da uns bewusst war, dass unsere Umfrage etwas umfangreicher sein würde, haben wir uns dazu entschieden, die Umfrage zuerst in @FigJam grob auszulegen, um schnelles Abändern des Umfragelayouts unkompliziert zu ermöglichen. @FigJam eignet sich hierfür perfekt, da es viele Templates beinhaltet und simples Drag and Drop Editing nutzt (@SurveyDraft).
 Unser finales Layout umfasste schließlich folgendes:
 
 #enum(indent: 10pt)[
-  Einen Startteil, welcher eine Einverständniserklärung und Demographie-Daten abfrägt
+  Einen Startteil, welcher eine Einverständniserklärung und Demographie-Daten abfragt
 ][
   einen Hauptteil A mit generellen Fragen zur Gesamterfahrung am Campus der THI
 ][
@@ -155,7 +156,7 @@ Mit dieser konzipierten Grundstruktur galt es nun, eine geeignete Plattform für
 Als wichtigste Frage vor dem Start der eigentlichen Ausarbeitung der Visualisierung, versuchten wir zu identifizierten, was die Hauptfaktoren für eine gelungene Visualisierung sind. Schließlich identifizierten wir nach einem kurzen Brainstorming Konsistenz, Ästhetik und Readability.
 Um uns diesem Idealzustand in einem einheitlichen Konzept anzunähern und dieses visuell festzuhalten, entschlossen wir uns, ein Moodboard (@Moodboard) zu erstellen, welches später zusätzlich Wiederverwendung in der Präsentation der Zwischenergebnisse fand.
 Es beinhaltet eine Ansammlung an zum Teil gefundenen und zum Teil selbst erstellten Kacheln, welche versuchen, eine konstante und visuell ansprechende Bildsprache zu definieren.
-Genauer soll der Inhalt unseres Moodboard vermitteln, dass wir uns stilistisch stark in einem 3-dimensionalen Raum bewegen, in der Objekte und andere UI-Elemente in einem neumorphistischen Kontext existieren. Zur weiteren Stilisierung soll zudem die Materialität dieser Objekte veranschaulicht werden, welche sich als leicht glänzend und glatt (glossy) beschreiben lässt.
+Genauer soll der Inhalt unseres Moodboard vermitteln, dass wir uns stilistisch stark in einem 3-dimensionalen Raum bewegen, in der Objekte und andere @UI\-Elemente in einem neumorphistischen Kontext existieren. Zur weiteren Stilisierung soll zudem die Materialität dieser Objekte veranschaulicht werden, welche sich als leicht glänzend und glatt (glossy) beschreiben lässt.
 
 #figure(
   image("../assets/Moodboard_ Bild- & Grafikstil und Farben.png", width: 100%),
@@ -176,7 +177,7 @@ Insgesamt schufen wir somit eine klare Identität, die sich später durch unsere
 
 
 Zur weiteren Ausarbeitung haben wir 3D Modelle in @blender:cap in dem zuvor im Moodboard ausgearbeitetem Stil erstellt.
-Diese folgen genauer einem Hard-Surface-Ansatz mit klar definierten Kanten und präzisen, technischen Formen, um den stark geometrischen Charakter noch einmal zusätzlich zu verstärken.
+Diese folgen genauer einem @Hard-Surface\-Ansatz mit klar definierten Kanten und präzisen, technischen Formen, um den stark geometrischen Charakter noch einmal zusätzlich zu verstärken.
 Durch den gezielten Einsatz von Materialien, Licht und Reflexionen unterstützen sie die angestrebte visuelle Wirkung und verstärken die im Moodboard definierte Gloss- und Specular-Ästhetik (@BlenderRender).
 
 
