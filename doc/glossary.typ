@@ -7,6 +7,21 @@
 */
 
 #let myGlossary = (
+  UI: "User Interface",
+  WWW: "World Wide Web", // concise entry with only short: long
+  hard_surf: (
+    short: "Hard Surf",
+    long: "Hard Surface Model(ling)",
+    description: [
+    
+    ],
+  ),
+  spa: (
+    short: "SPA",
+    long: "Single Page Application",
+    description: "Eine Art Webseite, welche ihren ganzen Inhalt auf einer Page hat und nicht mit Hyperlinks in andere Pfaded navigiert.",
+    group: "Web",
+  ),
   html: (
     short: "HTML",
     long: "Hypertext Markup Language",
@@ -32,7 +47,7 @@
       Ein spezielles Programm, welches Javascript Programmcode außerhalb eines Browsers direkt auf dem System ausführt.
       // TODO: npm und so ja auch
     ],
-    group: "Web",
+    group: "Werkzeug",
   ),
   sessiontoken: (
     short: "Session Token",
@@ -48,7 +63,6 @@
     ],
     group: "Web",
   ),
-  WWW: "World Wide Web", // concise entry with only short: long
   hygrometer: (
     short: "hygrometer",
     description: quote()[
@@ -57,14 +71,20 @@
     reference: (
       key: "hygrometer_wiki",
     ),
-    group: "Messtechnik",
+    group: "Werkzeug",
   ),
   tally: (
     short: "tally",
     description: [
       Eine Website für Umfragen Generierung und Durchführung. In Idee ähnlich zu Google Forms.
     ],
-    group: "Messtechnik",
+    group: "Werkzeug",
+  ),
+  json: (
+    short: "JSON",
+    long: "JavaScriptObjectNotation",
+    description: [Ein Datenformat welches of im Web benutzt wird um Daten in einem Menschen leserlichen und leicht in @js übersetzbarem format zu übertragen.],
+    group: "Data",
   ),
   csv: (
     short: "CSV",
@@ -74,11 +94,51 @@
     ],
     group: "Data",
   ),
-  blender:(
-    short:"blender",
-    description:[
+  glb:(
+    short:"GLTF Binary",
+    long: "Graphics Library Transmission Format Binary",
+    description: [],
+    group: "Data",
+  ),
+  primuss: (
+    short: "Primuss",
+    long: "Primuss-Studienverwaltung",
+    description: [
+      Ein Verwaltungstool welches von der Hochschule benutzt wird um z.B. (für uns wichtig) die Stundenpläne an die Studenten zu verteilen.
+    ],
+    group: "Werkzeug",
+  ),
+  blender: (
+    short: "blender",
+    description: [
       Ein Programm zur Erstellung von 3D Modellen aus Punkten, Kanten und Flächen.
     ],
+    group: "Werkzeug",
+  ),
+  excel: (
+    short: "Excel",
+    long: "Microsoft 356 Copilot App Excel",
+    description: [
+      Ein Programm zur Erstellung von hauptsächlich Tabellen, Graphen und anderen Zell basierten Zwecken.
+    ],
+    group: "Werkzeug",
+  ),
+  figma: (
+    short: "Figma",
+    description: [
+    ],
+    group: "Werkzeug",
+  ),
+  figjam: (
+    short: "FigJam",
+    long: "Figma Jamboard",
+    description: [
+    ],
+    group: "Werkzeug",
+  ),
+  github:(
+    short: "GitHub",
+    description: [],
     group: "Werkzeug"
   )
   // tps: (
