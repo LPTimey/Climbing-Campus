@@ -251,7 +251,7 @@ Da wir wie erwähnt mit einem 3d-Framework arbeiten, mussten wir dieses zusätzl
 
   [
     #figure(
-      image("../assets/archive/Animation System Screenshot.png", width: 100%),
+      image("../assets/archive/Animation System.png", width: 100%),
       caption: [Animations-System],
     )
   ],
@@ -268,11 +268,11 @@ Da wir wie erwähnt mit einem 3d-Framework arbeiten, mussten wir dieses zusätzl
 Nachdem dieses Grundgerüst bestand, machten wir uns an das genauere Ausarbeiten der Inhalte. Dies betraf zum einen die konkreten Inhalt selbst, die wir in die vorher definierten Sektionen, bzw. Abschnitte einfügten, zum anderen jedoch auch das Styling. Dieses wurde durch feste Style-Definitionen per CSS und stets im Bezug zum festgelegten Styleguide realisiert.
 
 ==== Models
-Blender\
+Wie bereits erwähnt sieht unsere stilistische Ausrichtung eine harmonische Einbindung von 3d-Objekten innerhalb unserer Visualisierung vor. Da Konsistenz für uns von besonderer Bedeutung war, entschieden wir uns strikt dagegen, 3d-Assets aus dem Web extern zu beziehen, da diese sich nur sehr begrenzt stilistisch angleichen lassen. Folglich war eine unserer Kernaufgaben, alle benötigten 3d-Objekte in @blender:cap zu modellieren. Im nächsten Schritt wurden alle Objekte mit einem einheitlichen Material versehen, welches, wie im Styleguide definiert, eine einfarbige und glänzende Anmutung definiert. Somit erhielten wir letztenendes ein Set aus 24 glb-Dateien, von denen die meisten am Ende in unserer finalen Visualisierung Anwendung fanden.
 
 ==== JS
 
-Da wir unsere 3d-Objekte nicht nur schlicht ein- und ausblenden, sondern im Sinne einer visuell ansprechenden Darstellung dynamisch im Raum animieren wollten, mussten wir uns um ein Animationssystem kümmern. Wir entschieden uns hierbei, dieses selbst mittels JavaScript zu schreiben, um bessere Kontrolle über die Animationen zu haben und es im Allgemeinen an unseren Use Case anpassen zu können. Somit konnten wir für jedes importierte 3d-Objekt festlegen, wie es sich beim Erscheinen, Verweilen und schließlich beim Verschwinden animationstechnisch verhält. Dafür legten wir bestimmte Transformationen wie Skalierung, Translation und Rotation für das jeweilige Verhalten fest.
+Da wir die nun 3d-Objekte nicht nur schlicht ein- und ausblenden, sondern im Sinne einer visuell ansprechenden Darstellung dynamisch im Raum animieren wollten, mussten wir uns um ein Animationssystem kümmern. Wir entschieden uns hierbei, dieses selbst mittels JavaScript zu schreiben, um bessere Kontrolle über die Animationen zu haben und es im Allgemeinen an unseren Use Case anpassen zu können. Somit konnten wir für jedes importierte 3d-Objekt festlegen, wie es sich beim Erscheinen, Verweilen und schließlich beim Verschwinden animationstechnisch verhält. Dafür legten wir bestimmte Transformationen wie Skalierung, Translation und Rotation für das jeweilige Verhalten fest.
 Um die Objekte einer bestimmten Sektion innerhalb der Single Page Application zuzuweisen zu können, mussten wir die vertikale Scroll-Position des Nutzers mit Anfang und Ende der jeweiligen Abschnitte abgleichen, um bei Übereinstimmung die Animationen starten zu können. Leider gab es hier eine größere Limitation, da wir zunächst diese vertikale Positionen mit Gleitkommazahlen (floats) verglichen haben. Diese besitzen ihre Eigenheiten und sind nicht gut für direktes Vergleichen geeignet, was in Kombination mit Scroll Snapping dazu führte, dass bestimmte Animationen gar nicht oder im falschen Abschnitt geschahen. Dieses Problem lösten wir schließlich, indem wir quasi nur die Ganzzahl vor den Nullstellen verglichen (delta von 1), um sicherzustellen, dass alles korrekt abläuft.
 Aber nicht nur das, dass währe ja in der Entwicklung sofort aufgefallen. Das zweite Level tücke wurde durch den Browser hinzugefügt, da er das Problem versteckte. Genauer kam der Gleitkommazahl-Rundungsfehler nur bei einem Reload --- dem vollen neu laden einer Webseite meist mit "STRG"+"SHIFT"+R --- auf und wurde mit Refreshes --- dem normalen neuladen, bei einmaliegen drücken des Neuladenknopfes oder durch Entwicklungsumgebungen --- magisch behoben.
 Unsere beste Theorie, ist das der Browser bei Reloads die Positionen der Sections von neuem ausrechnet und bei Reloads von einem Cache weiter rechnet. Dabei würde ein winziger Fehlerwert ($lt.eq 0.01$px), welcher aufgrund seiner Größe von unter einem Pixel nie für Probleme sorgen würde, außer man nutzt unsaubere Gleitkommazahlen vergleiche und springt mit ScrollSnap immer an die gleiche Stelle.
@@ -281,14 +281,14 @@ Animationssystem:\
 
 === Gestaltung der Access Points
 
-Da wir eine rein digitale Informationsvisualisierung entwickeln, stoßen wir automatisch auf die Frage, wie man für den Betrachter sichtbar wird. Hierbei entschieden wir als Lösung für diese Problematik, eine Vielzahl an Stickern als Access Point zu gestalten. Diese zeigen eine leicht provokative, und folglich anregende Headline sowie einen kleinen Teaser-Text mit passendem 3d-Objekt. Zusätzlich, und von zentraler Wichtigkeit, befindet sich ganz links ein QR-Code, welcher auf unsere Website verlinken würde.
-Für diese Sticker entwarfen wir mehrere Designs, um genug Abwechslung zu schaffen und die Access Points in zwei Sprachen (Deutsch und Englisch) im Sinne der Inklusivität zugänglich zu machen.
+Nachdem wir eine rein digitale Informationsvisualisierung entwickeln, stoßen wir automatisch auf die Frage, wie man für den Betrachter sichtbar wird. Hierbei entschieden wir als Lösung für diese Problematik, eine Vielzahl an Stickern als Access Point zu gestalten. Diese zeigen eine leicht provokative, und folglich anregende Headline sowie einen kleinen Teaser-Text mit passendem 3d-Objekt. Zusätzlich, und von zentraler Wichtigkeit, befindet sich ganz links ein QR-Code, welcher auf unsere Website verlinken würde.
+Für diese Sticker entwarfen wir mehrere Designs, um genug Abwechslung zu schaffen und die Access Points in zwei Sprachen (Deutsch und Englisch) im Sinne der Inklusion zugänglich zu machen.
 
 #pad(top: 1cm, grid(
   columns: (auto, auto),
   rows: 6cm,
   gutter: 0.5em,
-  align: center + bottom,
+  align: center + top,
   [
     #figure(
       image("../assets/archive/stickers.png", width: 100%),
@@ -298,15 +298,10 @@ Für diese Sticker entwarfen wir mehrere Designs, um genug Abwechslung zu schaff
 
   [
     #figure(
-      block(
-        fill: gradient.linear(rgb("#e3e9ee"), rgb("#c0b0cd"), angle: 90deg),
-        inset: 1em,
-        height: 100%,
-      )[
-        #image("../assets/archive/sticker-on-stairs.png", width: 90%)
-      ],
-      caption: [Storyboard Sketches],
-    )],
+      image("../assets/archive/sticker-on-stairs.png", height:  100%),
+      caption: [Sticker MockUp],
+    )
+  ],
 ))
 
 #pagebreak(weak: true)
