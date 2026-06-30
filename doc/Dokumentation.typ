@@ -267,10 +267,10 @@ Da wir wie erwähnt mit einem 3d-Framework arbeiten, mussten wir dieses zusätzl
 
 Nachdem dieses Grundgerüst bestand, machten wir uns an das genauere Ausarbeiten der Inhalte. Dies betraf zum einen die konkreten Inhalt selbst, die wir in die vorher definierten Sektionen, bzw. Abschnitte einfügten, zum anderen jedoch auch das Styling. Dieses wurde durch feste Style-Definitionen per CSS und stets im Bezug zum festgelegten Styleguide realisiert.
 
-===== Models
+==== Models
 Blender\
 
-===== JS
+==== JS
 
 Da wir unsere 3d-Objekte nicht nur schlicht ein- und ausblenden, sondern im Sinne einer visuell ansprechenden Darstellung dynamisch im Raum animieren wollten, mussten wir uns um ein Animationssystem kümmern. Wir entschieden uns hierbei, dieses selbst mittels JavaScript zu schreiben, um bessere Kontrolle über die Animationen zu haben und es im Allgemeinen an unseren Use Case anpassen zu können. Somit konnten wir für jedes importierte 3d-Objekt festlegen, wie es sich beim Erscheinen, Verweilen und schließlich beim Verschwinden animationstechnisch verhält. Dafür legten wir bestimmte Transformationen wie Skalierung, Translation und Rotation für das jeweilige Verhalten fest.
 Um die Objekte einer bestimmten Sektion innerhalb der Single Page Application zuzuweisen zu können, mussten wir die vertikale Scroll-Position des Nutzers mit Anfang und Ende der jeweiligen Abschnitte abgleichen, um bei Übereinstimmung die Animationen starten zu können. Leider gab es hier eine größere Limitation, da wir zunächst diese vertikale Positionen mit Gleitkommazahlen (floats) verglichen haben. Diese besitzen ihre Eigenheiten und sind nicht gut für direktes Vergleichen geeignet, was in Kombination mit Scroll Snapping dazu führte, dass bestimmte Animationen gar nicht oder im falschen Abschnitt geschahen. Dieses Problem lösten wir schließlich, indem wir quasi nur die Ganzzahl vor den Nullstellen verglichen (delta von 1), um sicherzustellen, dass alles korrekt abläuft.
@@ -288,7 +288,7 @@ Für diese Sticker entwarfen wir mehrere Designs, um genug Abwechslung zu schaff
   columns: (auto, auto),
   rows: 6cm,
   gutter: 0.5em,
-  align: center + horizon,
+  align: center + bottom,
   [
     #figure(
       image("../assets/archive/stickers.png", width: 100%),
